@@ -551,6 +551,10 @@
 /area/tradeport/commons
 	icon_state = "green"
 
+/area/tradeport/lobby
+	name = "\improper Visitor Lobby"
+	icon_state = "yellow"
+
 /area/tradeport/dock
 	icon_state = "blue"
 	ambience = AMBIENCE_HANGAR
