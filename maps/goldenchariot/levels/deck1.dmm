@@ -1,0 +1,24098 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ai" = (
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	use_power = 1;
+	volume_rate = 700
+	},
+/turf/simulated/floor/reinforced/phoron,
+/area/space)
+"ak" = (
+/obj/effect/floor_decal/steeldecal/steel_decals_central4{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
+"at" = (
+/obj/machinery/power/emitter{
+	anchored = 1;
+	dir = 8;
+	id = "EngineEmitter";
+	pixel_y = 8;
+	state = 2
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 6
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
+"aB" = (
+/obj/structure/window/phoronreinforced/full{
+	icon_state = "phoronwindow0"
+	},
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"aF" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/item/radio/intercom{
+	pixel_y = -24
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/space)
+"aH" = (
+/obj/item/radio/intercom{
+	dir = 1;
+	name = "Station Intercom (General)";
+	pixel_y = 26
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"aO" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"aW" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/black{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"bc" = (
+/turf/simulated/floor/greengrid/nitrogen,
+/area/space)
+"bd" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/machinery/light,
+/turf/simulated/floor/plating,
+/area/space)
+"bf" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"bk" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for the engine radiator viewport shutters.";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutters";
+	pixel_x = 0;
+	pixel_y = 25;
+	req_access = list(10)
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"bp" = (
+/obj/machinery/atmospherics/component/quaternary/mixer,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"bt" = (
+/turf/simulated/floor/reinforced,
+/area/space)
+"bv" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"bC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"bH" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"bJ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"bR" = (
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -28
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"cm" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 6
+	},
+/obj/machinery/camera/network/engine{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"cn" = (
+/obj/machinery/light,
+/turf/simulated/floor/plating,
+/area/space)
+"cH" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"cV" = (
+/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"db" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"dd" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/blue,
+/turf/simulated/floor/plating,
+/area/space)
+"dg" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/plating,
+/area/space)
+"dm" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"dn" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"dC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"dG" = (
+/obj/machinery/air_alarm{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/machinery/atmospherics/component/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"dH" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/space)
+"dM" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"dZ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 6
+	},
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/space)
+"ey" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"eA" = (
+/obj/machinery/computer/general_air_control/supermatter_core{
+	dir = 1;
+	frequency = 1438;
+	input_tag = "cooling_in";
+	name = "Engine Cooling Control";
+	output_tag = "cooling_out";
+	pressure_setting = 100;
+	sensors = list("engine_sensor"="Engine Core")
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"eD" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"eF" = (
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"eG" = (
+/obj/machinery/button/ignition{
+	id = "engine_igniter";
+	pixel_y = 23
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"eV" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"fd" = (
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 6
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
+"fn" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for the engine radiator viewport shutters.";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutters";
+	pixel_x = 0;
+	pixel_y = 25;
+	req_access = list(10)
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"fo" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	layer = 3.3;
+	pixel_x = 26
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"fq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"fs" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"fx" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"fC" = (
+/obj/machinery/computer/general_air_control/large_tank_control{
+	frequency = 1438;
+	input_tag = "hotloop_in";
+	name = "Pressure Chamber Control";
+	sensors = list("hotloop_sensor"="Pressure Chamber")
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"fO" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 10
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor,
+/area/space)
+"fQ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"fR" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"fZ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/space)
+"gb" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"gm" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"gn" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"gy" = (
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"gD" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"gF" = (
+/obj/machinery/atmospherics/component/binary/circulator{
+	anchored = 1;
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"gH" = (
+/obj/machinery/atmospherics/component/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"gR" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"gS" = (
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id = "EngineVent";
+	name = "Reactor Vent"
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"gV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"ha" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"hc" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"hq" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 10;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"hA" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"hF" = (
+/obj/machinery/atmospherics/portables_connector,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"hG" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"hO" = (
+/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"ib" = (
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	dir = 4;
+	frequency = 1438;
+	id = "cooling_in";
+	name = "Coolant Injector";
+	pixel_y = 1;
+	power_rating = 30000;
+	use_power = 1;
+	volume_rate = 700
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/nitrogen{
+	initial_gas_mix = "n2=82.1472;TEMP=293.15"
+	},
+/area/space)
+"ig" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/plating,
+/area/space)
+"il" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"in" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ip" = (
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/space)
+"iw" = (
+/obj/structure/closet/radiation,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
+/turf/template_noop,
+/area/space)
+"iz" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/space)
+"iC" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"iV" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"jh" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"jo" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	dir = 1;
+	frequency = 1438;
+	id = "hotloop_in";
+	unacidable = 1;
+	volume_rate = 100
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"js" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"jw" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/vent/high_volume{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"jx" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"jz" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"jB" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"jH" = (
+/obj/machinery/button/remote/driver{
+	dir = 8;
+	id = "enginecore";
+	name = "Emergency Core Eject";
+	pixel_x = -21
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"jJ" = (
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for the engine radiator viewport shutters.";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutters";
+	pixel_x = -25;
+	req_access = list(10)
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"jL" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"jR" = (
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id = "SupermatterPort";
+	layer = 3.3;
+	name = "Reactor Blast Door"
+	},
+/turf/simulated/floor,
+/area/space)
+"jX" = (
+/obj/fiftyspawner/tritium,
+/obj/structure/table/reinforced,
+/obj/fiftyspawner/deuterium,
+/obj/fiftyspawner/deuterium,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"kj" = (
+/obj/machinery/air_alarm{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/machinery/atmospherics/component/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"kr" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"kz" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"kA" = (
+/obj/machinery/power/generator{
+	anchored = 1;
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"kI" = (
+/obj/machinery/power/emitter/gyrotron/anchored{
+	dir = 8;
+	id_tag = "engine-g"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"kX" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"kZ" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"lc" = (
+/obj/machinery/computer/general_air_control/supermatter_core{
+	frequency = 1437;
+	input_tag = "engine_in";
+	name = "Burn Chamber Control";
+	sensors = list("engine_sensor"="Burn Chamber")
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"le" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"lh" = (
+/obj/machinery/atmospherics/component/binary/pump,
+/turf/simulated/floor,
+/area/space)
+"lk" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/machinery/button/remote/airlock{
+	id = "engine_access_hatch";
+	name = "Door Bolt Control";
+	pixel_x = -4;
+	pixel_y = -28;
+	req_access = list(10);
+	specialfunctions = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ll" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ls" = (
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 10
+	},
+/obj/structure/grille,
+/turf/simulated/floor/plating,
+/area/space)
+"lA" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"lB" = (
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	icon_state = "pdoor1";
+	id = "EngineVent";
+	name = "Reactor Vent";
+	p_open = 0
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"lG" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/air_alarm{
+	pixel_y = 22
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"lM" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
+	},
+/turf/simulated/floor,
+/area/space)
+"lY" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"mf" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor/reinforced/oxygen,
+/area/space)
+"mm" = (
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id = "SupermatterPort";
+	layer = 3.3;
+	name = "Reactor Blast Door"
+	},
+/turf/simulated/floor,
+/area/space)
+"mp" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/machinery/fusion_fuel_injector/mapped{
+	dir = 8;
+	id_tag = "engine-i"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ms" = (
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/structure/grille,
+/turf/simulated/floor/plating,
+/area/space)
+"mv" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"mA" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"mK" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"nd" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/power/sensor{
+	name = "Powernet Sensor - Engine Output";
+	name_tag = "Engine Output"
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor/plating,
+/area/space)
+"nf" = (
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/space)
+"nF" = (
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for the engine charging port.";
+	id = "SupermatterPort";
+	name = "Reactor Blast Doors";
+	pixel_x = -25;
+	pixel_y = -5;
+	req_access = list(10)
+	},
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for the engine control room blast doors.";
+	id = "EngineBlast";
+	name = "Engine Monitoring Room Blast Doors";
+	pixel_x = -25;
+	pixel_y = 5;
+	req_access = list(10)
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"nM" = (
+/obj/machinery/air_alarm{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/machinery/atmospherics/component/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"nO" = (
+/obj/structure/sign/warning/radioactive,
+/turf/simulated/wall/r_wall,
+/area/space)
+"oe" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"og" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"oj" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"om" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/turf/space/basic,
+/area/space)
+"on" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"oo" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"or" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"ot" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"oz" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"oM" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 6
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"oN" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/machinery/camera/network/engine,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"oT" = (
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"pc" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"pg" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"pi" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	dir = 1;
+	frequency = 1438;
+	id = "hotloop_in";
+	unacidable = 1;
+	volume_rate = 100
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"pl" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor,
+/area/space)
+"pm" = (
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/atmospherics/pipe/simple/visible/universal{
+	dir = 1
+	},
+/obj/structure/grille,
+/turf/simulated/floor/plating,
+/area/space)
+"pv" = (
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"py" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"pX" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/item/radio/intercom{
+	dir = 2;
+	pixel_y = -24
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"qs" = (
+/obj/structure/sign/fire,
+/turf/simulated/wall/r_wall,
+/area/space)
+"qB" = (
+/obj/machinery/portable_atmospherics/canister/phoron,
+/turf/simulated/floor/reinforced/phoron,
+/area/space)
+"qD" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/machinery/atmospherics/valve/digital{
+	dir = 2;
+	name = "Emergency Cooling Valve 1"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"qE" = (
+/obj/machinery/igniter{
+	id = "engine_igniter";
+	on = 0
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"qJ" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"qO" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/plating,
+/area/space)
+"qW" = (
+/obj/machinery/atmospherics/component/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"rb" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"rk" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 1
+	},
+/obj/machinery/meter,
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"rs" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"ry" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"rE" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"rK" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 9
+	},
+/obj/machinery/computer/general_air_control/large_tank_control{
+	frequency = 1435;
+	input_tag = "exhaust_out";
+	name = "Engine Exhaust Control"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"rX" = (
+/obj/machinery/camera/network/engine{
+	dir = 1
+	},
+/obj/machinery/atmospherics/component/binary/pump{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/space)
+"sf" = (
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/space)
+"sn" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/red,
+/turf/simulated/floor/plating,
+/area/space)
+"sC" = (
+/obj/machinery/atmospherics/component/binary/circulator{
+	anchored = 1
+	},
+/turf/simulated/floor,
+/area/space)
+"sE" = (
+/obj/machinery/power/generator{
+	anchored = 1;
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/simulated/floor,
+/area/space)
+"sG" = (
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id = "SupermatterPort";
+	layer = 3.3;
+	name = "Reactor Blast Door"
+	},
+/turf/simulated/floor,
+/area/space)
+"sR" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/machinery/camera/network/engine,
+/turf/simulated/floor/plating,
+/area/space)
+"sT" = (
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id = "EngineVent";
+	name = "Reactor Vent"
+	},
+/turf/simulated/floor/reinforced/nitrogen{
+	initial_gas_mix = "n2=82.1472;TEMP=293.15"
+	},
+/area/space)
+"sW" = (
+/turf/space/basic,
+/area/space)
+"te" = (
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	frequency = 1438;
+	id = "hotloop_in";
+	unacidable = 1;
+	volume_rate = 100
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"tq" = (
+/obj/effect/floor_decal/steeldecal/steel_decals_central4{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/power/emitter{
+	anchored = 1;
+	dir = 8;
+	id = "EngineEmitter";
+	pixel_y = 8;
+	state = 2
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
+"ts" = (
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"tD" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"tJ" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/reinforced/nitrogen{
+	initial_gas_mix = "n2=82.1472;TEMP=293.15"
+	},
+/area/space)
+"tT" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 9
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"ug" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow,
+/turf/simulated/floor/plating,
+/area/space)
+"uh" = (
+/obj/machinery/air_alarm{
+	dir = 1;
+	pixel_y = -22
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"uo" = (
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id = "SupermatterPort";
+	layer = 3.3;
+	name = "Reactor Blast Door"
+	},
+/turf/simulated/floor,
+/area/space)
+"uN" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/space)
+"uR" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"uS" = (
+/obj/machinery/atmospherics/component/binary/circulator{
+	anchored = 1;
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"uT" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/space)
+"uZ" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/space)
+"vb" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"vg" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"vm" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/plating,
+/area/space)
+"vn" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"vo" = (
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"vr" = (
+/turf/template_noop,
+/area/space)
+"vT" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"vY" = (
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"wi" = (
+/obj/machinery/computer/fusion_fuel_control{
+	id_tag = "engine-i"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"wj" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/power/sensor{
+	name = "Powernet Sensor - Engine Output";
+	name_tag = "Engine Output"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"wl" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/machinery/door/firedoor/glass,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"wt" = (
+/obj/structure/closet/firecloset,
+/obj/item/extinguisher,
+/turf/template_noop,
+/area/space)
+"wy" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"wK" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/emitter/gyrotron/anchored{
+	dir = 8;
+	id_tag = "engine-g"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"wL" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"wM" = (
+/obj/machinery/atmospherics/pipe/simple/visible/purple,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"wX" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"xb" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"xe" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"xg" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/camera/network/engine,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"xj" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"xk" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/item/radio/intercom{
+	dir = 2;
+	pixel_y = -24
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"xm" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/plating,
+/area/space)
+"xv" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"xw" = (
+/obj/machinery/atmospherics/component/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"xz" = (
+/obj/structure/cable/cyan,
+/obj/machinery/power/emitter/gyrotron/anchored{
+	dir = 8;
+	id_tag = "engine-g"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"xK" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"xQ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"xR" = (
+/obj/machinery/shield_diffuser,
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	dir = 4;
+	frequency = 1439;
+	id = "waste_out";
+	name = "Waste Ejector";
+	pixel_y = 1;
+	power_rating = 30000;
+	use_power = 1;
+	volume_rate = 700
+	},
+/turf/simulated/floor/airless,
+/area/space)
+"xT" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"yd" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"ye" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 6
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"yj" = (
+/obj/item/radio/intercom{
+	pixel_y = -24
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"yn" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor,
+/area/space)
+"yo" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"yq" = (
+/obj/machinery/atmospherics/component/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"yy" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"yQ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"zg" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/black,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"zi" = (
+/obj/machinery/power/fusion_core/mapped{
+	id_tag = "engine"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"zn" = (
+/obj/machinery/air_alarm{
+	pixel_y = 22
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"zo" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/vault{
+	name = "REACTOR ROOM";
+	req_one_access = list(10)
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"zt" = (
+/turf/simulated/floor,
+/area/space)
+"zG" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/space)
+"zN" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"zQ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/simulated/floor/plating,
+/area/space)
+"Ao" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Aq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Ax" = (
+/obj/machinery/door/airlock/hatch{
+	icon_state = "door_locked";
+	id_tag = "engine_access_hatch";
+	locked = 1;
+	name = "Fusion Core Access";
+	req_access = list(11)
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/space)
+"AB" = (
+/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"AG" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/machinery/air_alarm{
+	dir = 1;
+	pixel_y = -22
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"AP" = (
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"AY" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/space)
+"Be" = (
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 4
+	},
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/space)
+"Bh" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/turf/space/basic,
+/area/space)
+"Bv" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 10
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"Bz" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 6
+	},
+/obj/machinery/camera/network/engine,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"BC" = (
+/obj/machinery/atmospherics/valve/digital,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"BG" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/plating,
+/area/space)
+"BH" = (
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/grille,
+/turf/simulated/floor/plating,
+/area/space)
+"BJ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"BN" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"BR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"BT" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"BV" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"BX" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/purple{
+	dir = 1
+	},
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/space)
+"Cc" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"Cj" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Cl" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"Cq" = (
+/obj/machinery/atmospherics/component/unary/vent_pump/high_volume{
+	frequency = 1438;
+	id_tag = "cooling_out";
+	pump_direction = 0;
+	on = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"Cr" = (
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	dir = 1;
+	frequency = 1438;
+	id = "cooling_in";
+	unacidable = 1;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"Ct" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Cv" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"CD" = (
+/obj/machinery/computer/gyrotron_control{
+	id_tag = "engine-g"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"CE" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"CO" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 6
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"CQ" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/vault{
+	name = "REACTOR ROOM";
+	req_one_access = list(10)
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"CU" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor,
+/area/space)
+"Dc" = (
+/obj/machinery/air_sensor{
+	frequency = 1437;
+	id_tag = "engine_sensor";
+	output = 63
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"De" = (
+/obj/machinery/light{
+	dir = 8;
+	light_range = 12
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Dl" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/machinery/door/firedoor/glass,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor,
+/area/space)
+"Dq" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Du" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"DB" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/space)
+"DX" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/computer/general_air_control/supermatter_core{
+	dir = 1;
+	input_tag = "cooling_in";
+	name = "Engine Cooling Control";
+	output_tag = "cooling_out";
+	sensors = list("engine_sensor"="Engine Core")
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	layer = 3.3;
+	pixel_x = 26
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Ef" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Eq" = (
+/turf/simulated/floor/reinforced/oxygen,
+/area/space)
+"Eu" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Ey" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"EG" = (
+/obj/machinery/atmospherics/component/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"EQ" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"EX" = (
+/obj/machinery/atmospherics/component/trinary/filter,
+/turf/simulated/floor/plating,
+/area/space)
+"Fc" = (
+/turf/simulated/floor/reinforced/phoron,
+/area/space)
+"Fe" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Fg" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 10;
+	icon_state = "intact"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Fl" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Fn" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Fy" = (
+/obj/machinery/computer/fusion_core_control{
+	id_tag = "engine"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"FY" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = 24
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Ge" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"Gf" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"Gy" = (
+/obj/machinery/door/airlock/hatch{
+	icon_state = "door_locked";
+	id_tag = "engine_access_hatch";
+	locked = 1;
+	req_access = list(11)
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"Gz" = (
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id = "SupermatterPort";
+	layer = 3.3;
+	name = "Reactor Blast Door"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor,
+/area/space)
+"GG" = (
+/obj/structure/window/reinforced/full,
+/obj/structure/grille,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/space)
+"GK" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"GL" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"GR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"GU" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"GV" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"GX" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Hb" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Hx" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"HA" = (
+/obj/effect/floor_decal/industrial/warning/cee{
+	dir = 8
+	},
+/obj/machinery/camera/network/engine{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/nitrogen{
+	initial_gas_mix = "n2=82.1472;TEMP=293.15"
+	},
+/area/space)
+"HO" = (
+/obj/machinery/fusion_fuel_compressor,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"HY" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Ie" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"If" = (
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Iy" = (
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Jb" = (
+/obj/machinery/atmospherics/component/binary/pump{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Jp" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/firedoor{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"JD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"JF" = (
+/obj/machinery/atmospherics/component/unary/vent_pump/engine{
+	dir = 1;
+	external_pressure_bound = 100;
+	external_pressure_bound_default = 0;
+	frequency = 1438;
+	icon_state = "map_vent_in";
+	id_tag = "cooling_out";
+	initialize_directions = 4;
+	pump_direction = 0;
+	on = 1
+	},
+/obj/effect/floor_decal/industrial/warning/cee{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced/nitrogen{
+	initial_gas_mix = "n2=82.1472;TEMP=293.15"
+	},
+/area/space)
+"JI" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/camera/network/engine{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"JL" = (
+/obj/machinery/atmospherics/component/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"JU" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/vault{
+	name = "REACTOR ROOM";
+	req_one_access = list(10)
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"JW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"JY" = (
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 5
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/space)
+"Kj" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Ko" = (
+/obj/machinery/air_alarm{
+	pixel_y = 22
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/table/steel,
+/obj/item/paper{
+	info = "For anyone who bothers to read this before whining about the new engine, here's how you set it up in the most basic hands-off way:\[list]1. Two cans of phoron in the hot loop\[br]2. Four cans of phoron in the cold loop\[br]3. Turn on the cold loop pump\[br]4. Set mixer N/S Input, W Output\[br]5. Turn on injectors, set to max\[br]6. Hit ignition switch\[/list]\[br]Engine won't burn forever, so don't panic when it goes out. As long as the CO2 in there stays nice and hot, your power output should be solid.";
+	name = "Engine Instructions"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"Ku" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/nitrogen{
+	initial_gas_mix = "n2=82.1472;TEMP=293.15"
+	},
+/area/space)
+"KI" = (
+/obj/machinery/meter,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
+"KJ" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"KU" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/machinery/computer/general_air_control/large_tank_control{
+	frequency = 1439;
+	name = "Reactor Waste Port";
+	output_tag = "waste_out";
+	sensors = null
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"KV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"KW" = (
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/space)
+"Lf" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/camera/network/engine{
+	dir = 8
+	},
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Lj" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Lo" = (
+/obj/machinery/atmospherics/component/binary/circulator{
+	anchored = 1;
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Lw" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"LC" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/grille,
+/turf/simulated/floor/plating,
+/area/space)
+"LD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 8
+	},
+/obj/machinery/door/airlock/vault{
+	name = "REACTOR ROOM";
+	req_one_access = list(10)
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"LP" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/valve/digital{
+	name = "Emergency Cooling Valve 2"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"LS" = (
+/obj/machinery/power/generator{
+	anchored = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"LV" = (
+/obj/machinery/atmospherics/component/binary/circulator{
+	anchored = 1;
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/space)
+"LW" = (
+/obj/structure/window/phoronreinforced/full{
+	icon_state = "phoronwindow0"
+	},
+/obj/structure/grille,
+/turf/simulated/floor,
+/area/space)
+"Mc" = (
+/obj/machinery/atmospherics/component/binary/pump/high_power{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Md" = (
+/turf/simulated/wall/r_wall,
+/area/space)
+"Mp" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Mr" = (
+/obj/machinery/power/supermatter{
+	layer = 4
+	},
+/obj/machinery/mass_driver{
+	dir = 8;
+	id = "enginecore"
+	},
+/turf/simulated/floor/greengrid/nitrogen,
+/area/space)
+"Mt" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/camera/network/engine{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"ML" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"MM" = (
+/obj/machinery/atmospherics/component/binary/pump,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"MO" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 10
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	name = "Station Intercom (General)";
+	pixel_y = 26
+	},
+/turf/simulated/floor,
+/area/space)
+"MW" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor,
+/area/space)
+"MY" = (
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	dir = 1;
+	frequency = 1437;
+	id = "engine_in";
+	unacidable = 1;
+	volume_rate = 100
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"Nf" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Nh" = (
+/obj/machinery/door/firedoor,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/vault{
+	name = "REACTOR ROOM";
+	req_one_access = list(10)
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Nn" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor,
+/area/space)
+"NA" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"NC" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/machinery/power/sensor{
+	name = "Powernet Sensor - Engine Output";
+	name_tag = "Engine Output"
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor,
+/area/space)
+"NH" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"NV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Oa" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 6
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Ob" = (
+/obj/machinery/air_sensor{
+	frequency = 1438;
+	id_tag = "engine_sensor";
+	output = 63
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"Ot" = (
+/turf/simulated/floor/plating,
+/area/space)
+"Ox" = (
+/obj/machinery/atmospherics/component/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"OC" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 5
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor,
+/area/space)
+"OK" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"OP" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Pk" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Po" = (
+/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
+/obj/machinery/air_sensor{
+	frequency = 1438;
+	id_tag = "hotloop_sensor";
+	output = 63
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"Pv" = (
+/obj/machinery/atmospherics/component/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"PR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"PS" = (
+/obj/machinery/atmospherics/component/binary/pump{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"PW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/camera/network/engine{
+	dir = 8
+	},
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"PX" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/fusion_fuel_injector/mapped{
+	dir = 8;
+	id_tag = "engine-i"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Qj" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Qs" = (
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"QH" = (
+/obj/structure/sign/vacuum,
+/turf/simulated/wall/r_wall,
+/area/space)
+"QN" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"QR" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/space)
+"Ra" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Re" = (
+/obj/structure/grille,
+/turf/space/basic,
+/area/space)
+"Rg" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Ro" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Ru" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Rw" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Rx" = (
+/obj/machinery/button/remote/blast_door{
+	id = "EngineVent";
+	name = "Reactor Ventillatory Control";
+	pixel_y = -25;
+	req_access = list(10)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/cee,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"RB" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"RH" = (
+/obj/machinery/atmospherics/component/binary/pump,
+/turf/simulated/floor/plating,
+/area/space)
+"RI" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 9
+	},
+/obj/machinery/light,
+/turf/simulated/floor,
+/area/space)
+"RJ" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"RR" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/plating,
+/area/space)
+"RZ" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"Sj" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"Sk" = (
+/obj/machinery/atmospherics/pipe/vent/high_volume,
+/turf/simulated/floor/reinforced/phoron,
+/area/space)
+"Su" = (
+/obj/machinery/power/generator{
+	anchored = 1;
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/space)
+"Sy" = (
+/obj/machinery/atmospherics/component/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Sz" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/plating,
+/area/space)
+"SB" = (
+/obj/machinery/shield_diffuser,
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	dir = 4;
+	frequency = 1435;
+	id = "exhaust_out";
+	unacidable = 1;
+	volume_rate = 100
+	},
+/turf/simulated/floor/airless/ceiling,
+/area/space)
+"SG" = (
+/obj/machinery/atmospherics/pipe/vent/high_volume{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/space)
+"SI" = (
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor,
+/area/space)
+"SV" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Tz" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	name = "Station Intercom (General)";
+	pixel_y = 26
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"TA" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/space)
+"TQ" = (
+/obj/machinery/atmospherics/component/binary/circulator{
+	anchored = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"TS" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"TY" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Uc" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/space)
+"Ut" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"UA" = (
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/obj/structure/window/phoronreinforced/full,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "EngineRadiatorViewport";
+	name = "Engine Radiator Viewport Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/space)
+"UE" = (
+/obj/machinery/power/generator{
+	anchored = 1;
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"UO" = (
+/obj/machinery/air_alarm{
+	dir = 1;
+	pixel_y = -22
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"UP" = (
+/obj/structure/window/phoronreinforced/full{
+	icon_state = "phoronwindow0"
+	},
+/obj/structure/grille,
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/space)
+"UQ" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/space)
+"UR" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/space)
+"UT" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Va" = (
+/obj/machinery/button/remote/blast_door{
+	dir = 1;
+	id = "EngineVent";
+	name = "Reactor Ventillatory Control";
+	pixel_y = -25;
+	req_access = list(10)
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Vh" = (
+/obj/structure/grille,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id = "SupermatterPort";
+	layer = 3.3;
+	name = "Reactor Blast Door"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"Vi" = (
+/obj/machinery/atmospherics/component/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/space)
+"Vm" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/plating,
+/area/space)
+"VM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"VQ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Wd" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Wg" = (
+/obj/machinery/light{
+	dir = 8;
+	light_range = 12
+	},
+/turf/simulated/floor,
+/area/space)
+"Wi" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Wl" = (
+/obj/structure/closet/radiation,
+/turf/template_noop,
+/area/space)
+"Ww" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Wx" = (
+/obj/structure/window/phoronreinforced/full{
+	icon_state = "phoronwindow0"
+	},
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/space)
+"WC" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/space)
+"WI" = (
+/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"WR" = (
+/obj/machinery/door/airlock/vault{
+	name = "REACTOR ROOM";
+	req_one_access = list(10)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"WS" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
+"Xm" = (
+/obj/machinery/atmospherics/component/binary/circulator{
+	anchored = 1;
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"XH" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/wall/r_wall,
+/area/space)
+"XM" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"XW" = (
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	dir = 1;
+	use_power = 1;
+	volume_rate = 700
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/space)
+"XX" = (
+/obj/machinery/atmospherics/component/binary/circulator{
+	anchored = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Yb" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Yc" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/camera/network/engine{
+	dir = 8
+	},
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Yl" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	frequency = 1438;
+	id = "hotloop_in";
+	unacidable = 1;
+	volume_rate = 100
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"Yq" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Yu" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor/plating,
+/area/space)
+"YA" = (
+/obj/structure/window/reinforced/full,
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/space)
+"YC" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"YG" = (
+/obj/machinery/atmospherics/valve/digital{
+	dir = 4;
+	name = "Emergency Cooling Valve 2"
+	},
+/turf/simulated/floor,
+/area/space)
+"YU" = (
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/component/unary/vent_pump/high_volume{
+	dir = 1;
+	frequency = 1438;
+	id_tag = "cooling_out";
+	pump_direction = 0;
+	on = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"YW" = (
+/obj/machinery/atmospherics/component/unary/vent_scrubber{
+	id_tag = null;
+	tag = null
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"YY" = (
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -28
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"YZ" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"Zb" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/component/unary/outlet_injector{
+	frequency = 1438;
+	id = "cooling_in";
+	unacidable = 1;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"Zh" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Zk" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/blue,
+/turf/simulated/floor,
+/area/space)
+"Zq" = (
+/obj/machinery/atmospherics/component/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Zt" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/button/remote/blast_door{
+	id = "EngineVent";
+	name = "Reactor Ventillatory Control";
+	pixel_x = 0;
+	pixel_y = -25;
+	req_access = list(10)
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Zu" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/machinery/door/firedoor{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Zx" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 8
+	},
+/obj/machinery/camera/network/engine{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"Zz" = (
+/obj/machinery/atmospherics/component/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ZA" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ZF" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 5
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"ZH" = (
+/obj/machinery/air_sensor{
+	frequency = 1438;
+	id_tag = "engine_sensor";
+	output = 63
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced/nitrogen{
+	initial_gas_mix = "n2=82.1472;TEMP=293.15"
+	},
+/area/space)
+"ZO" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ZZ" = (
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+
+(1,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(2,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(3,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(4,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(5,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(6,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(7,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(8,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(9,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(10,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(11,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(12,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(13,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(14,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(15,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(16,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(17,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(18,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(19,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(20,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(21,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(22,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(23,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(24,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(25,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(26,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(27,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(28,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(29,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(30,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(31,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(32,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(33,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(34,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(35,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(36,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(37,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(38,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(39,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(40,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(41,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(42,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(43,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(44,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(45,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(46,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(47,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(48,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(49,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(50,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(51,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(52,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(53,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(54,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(55,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(56,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(57,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(58,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(59,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(60,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(61,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(62,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(63,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(64,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(65,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(66,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(67,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(68,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(69,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(70,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(71,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(72,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(73,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(74,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(75,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(76,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(77,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(78,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(79,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(80,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(81,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(82,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(83,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(84,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(85,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(86,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(87,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(88,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(89,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(90,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(91,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(92,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(93,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(94,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(95,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(96,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(97,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(98,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(99,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(100,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(101,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(102,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(103,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(104,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(105,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(106,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(107,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(108,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(109,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(110,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(111,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(112,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(113,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(114,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(115,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(116,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(117,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(118,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(119,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(120,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(121,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(122,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(123,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(124,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(125,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(126,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(127,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(128,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(129,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(130,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(131,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(132,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(133,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(134,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(135,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(136,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(137,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(138,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(139,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(140,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(141,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(142,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(143,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(144,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(145,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(146,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(147,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(148,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(149,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(150,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(151,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(152,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(153,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(154,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(155,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(156,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(157,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(158,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(159,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(160,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(161,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(162,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(163,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(164,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(165,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(166,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(167,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(168,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(169,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(170,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(171,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(172,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(173,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(174,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(175,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(176,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(177,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(178,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(179,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(180,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(181,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(182,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(183,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(184,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(185,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(186,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(187,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(188,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(189,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(190,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(191,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(192,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(193,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(194,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(195,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(196,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(197,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(198,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(199,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(200,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(201,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(202,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(203,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(204,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(205,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(206,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(207,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(208,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(209,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(210,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(211,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(212,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(213,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(214,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(215,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(216,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(217,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(218,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(219,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(220,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(221,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(222,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(223,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(224,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(225,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(226,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(227,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(228,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(229,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(230,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(231,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(232,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(233,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(234,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(235,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(236,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(237,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(238,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(239,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(240,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(241,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(242,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+vr
+vr
+vr
+vr
+vr
+Md
+gS
+gS
+gS
+gS
+gS
+Md
+Md
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(243,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+vr
+vr
+vr
+vr
+vr
+dZ
+MY
+Dc
+ye
+ZF
+YW
+iz
+OP
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(244,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+vr
+vr
+vr
+vr
+vr
+BX
+MY
+ye
+Ey
+Ey
+ZF
+sf
+Va
+Md
+vr
+SB
+vr
+vr
+vr
+"}
+(245,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+pc
+pc
+pc
+Md
+Be
+Bz
+Ey
+Ey
+Ey
+tT
+sf
+Yq
+Md
+pc
+ry
+pc
+Md
+Md
+"}
+(246,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+bk
+vY
+wy
+De
+Be
+Bv
+Ey
+Ey
+Ey
+Cl
+JY
+aW
+eF
+BC
+rK
+gH
+dG
+qs
+"}
+(247,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+zo
+hc
+qW
+Kj
+Jb
+Be
+qE
+Bv
+tT
+vg
+YW
+UA
+fR
+oT
+Iy
+Iy
+PR
+gn
+WR
+"}
+(248,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+qs
+hc
+MM
+Kj
+Yb
+KW
+ip
+ip
+ip
+nf
+ip
+dH
+vn
+Lf
+VM
+CE
+GR
+YY
+Md
+"}
+(249,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+bJ
+vY
+db
+dm
+AP
+ey
+vY
+Yl
+jw
+pi
+xj
+xe
+Md
+Md
+qs
+Nh
+LD
+Md
+"}
+(250,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+rk
+VQ
+eD
+NA
+Wi
+gR
+vY
+te
+Po
+jo
+xj
+uh
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(251,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+lG
+uS
+HY
+fs
+gF
+HY
+vY
+vY
+vT
+jz
+yQ
+xk
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(252,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+Du
+UE
+Ru
+cH
+kA
+wj
+Dq
+Dq
+oo
+iV
+xK
+WI
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(253,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+xg
+TQ
+lA
+OK
+XX
+lA
+Jb
+PS
+vT
+xj
+vY
+JI
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(254,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+TS
+GU
+qJ
+jB
+GX
+dM
+xb
+xb
+bH
+xj
+vY
+fq
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(255,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+ls
+ms
+XH
+Qj
+vo
+XH
+LC
+ms
+XH
+YA
+GG
+Ra
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(256,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+Fc
+Sk
+pm
+wM
+bp
+pm
+SG
+Eq
+Md
+lc
+fC
+Ef
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(257,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+qB
+ai
+pm
+Kj
+hF
+pm
+XW
+mf
+Md
+eG
+Gf
+KV
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(258,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+BH
+BH
+Md
+vY
+vY
+Md
+BH
+BH
+Md
+Ko
+wX
+cV
+qs
+wt
+wt
+vr
+vr
+vr
+"}
+(259,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+Iy
+Iy
+UT
+TY
+iC
+xT
+dC
+dC
+If
+le
+EQ
+zN
+CQ
+vr
+vr
+vr
+vr
+vr
+"}
+(260,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+Iy
+Iy
+EG
+JL
+Iy
+Iy
+Iy
+Iy
+pv
+JL
+EG
+Iy
+JU
+vr
+vr
+vr
+vr
+vr
+"}
+(261,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(262,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+vr
+vr
+vr
+vr
+vr
+Md
+Md
+Md
+Md
+lB
+Md
+Md
+Md
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(263,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+vr
+vr
+vr
+vr
+vr
+Md
+Cq
+Zx
+YU
+YC
+YC
+Ax
+bd
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(264,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+vr
+vr
+vr
+vr
+vr
+Md
+bt
+dn
+ot
+bt
+bt
+LW
+lk
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(265,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+pc
+pc
+pc
+Md
+Md
+bt
+dn
+zi
+Ob
+bt
+LW
+NH
+Md
+pc
+pc
+pc
+Md
+Md
+"}
+(266,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+Md
+fn
+zt
+kX
+Wg
+LW
+bt
+dn
+ot
+bt
+bt
+LW
+NH
+Qs
+HO
+jX
+yq
+nM
+nO
+"}
+(267,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+sW
+zo
+py
+zt
+kX
+zt
+LW
+bt
+dn
+Zb
+YZ
+Cr
+LW
+gy
+on
+rE
+rE
+Cv
+Wd
+WR
+"}
+(268,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Md
+Md
+Md
+sW
+nO
+py
+Ot
+Mc
+Ot
+LW
+LW
+aB
+UP
+Wx
+LW
+LW
+mK
+Yc
+fo
+BN
+Aq
+bR
+Md
+"}
+(269,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+Ao
+zt
+XM
+Ot
+Ot
+kI
+PX
+wK
+mp
+xz
+Ot
+Lj
+Md
+Md
+nO
+Nh
+LD
+Md
+"}
+(270,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+py
+zt
+XM
+Ot
+Ot
+Ot
+gb
+Ot
+AY
+Ot
+Ot
+UO
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(271,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+zn
+Ot
+oz
+Vm
+RR
+RR
+BG
+GV
+jx
+nd
+Lw
+pX
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(272,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+WS
+tq
+KI
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+FY
+ig
+jh
+qD
+ZA
+kZ
+xm
+Sz
+Cj
+uR
+Fn
+AB
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(273,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+BV
+fd
+Ot
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+sR
+vm
+Lo
+LS
+Xm
+fx
+uZ
+Lo
+LS
+Xm
+gm
+Mt
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(274,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+QH
+sT
+QH
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+Ie
+Zh
+vb
+GL
+hG
+Nf
+Mp
+vb
+LP
+sn
+og
+kz
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(275,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Gz
+JF
+bc
+HA
+sG
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+eV
+Vi
+Zk
+Ot
+hq
+jL
+Eu
+Yu
+Yu
+ab
+Ot
+NV
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(276,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+mm
+tJ
+Mr
+tJ
+mm
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+Fg
+lh
+Zk
+Ot
+Ot
+xQ
+MW
+MW
+MW
+wl
+MW
+Jp
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(277,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+uo
+ZH
+Ku
+ib
+uo
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+aH
+Ot
+UQ
+Zz
+qO
+ug
+MW
+eA
+CD
+Fy
+wi
+Zt
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(278,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Gy
+jR
+Vh
+Md
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+om
+om
+Re
+sW
+Md
+GU
+ha
+UQ
+RH
+qO
+tD
+Dl
+bf
+rb
+JW
+mA
+hO
+nO
+Wl
+Wl
+vr
+vr
+vr
+"}
+(279,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+om
+om
+Re
+sW
+Md
+fQ
+mv
+GU
+GU
+xw
+Sy
+Zu
+Ct
+Pv
+vY
+js
+vY
+CQ
+vr
+vr
+vr
+vr
+vr
+"}
+(280,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+om
+om
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+Bh
+om
+om
+Re
+sW
+Md
+vY
+vY
+vY
+vY
+BR
+Hx
+ts
+JD
+vY
+vY
+Ox
+vY
+JU
+vr
+vr
+vr
+vr
+vr
+"}
+(281,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+Re
+Re
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+Re
+Re
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+"}
+(282,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+Re
+Re
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+Re
+Re
+sW
+sW
+sW
+sW
+vr
+vr
+vr
+vr
+vr
+Md
+Md
+Md
+QH
+sT
+QH
+Md
+Md
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(283,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+Re
+Re
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+Re
+Re
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+vr
+vr
+vr
+vr
+vr
+Md
+cm
+Gz
+JF
+bc
+HA
+sG
+Ot
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(284,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Re
+Re
+Re
+Re
+Re
+Re
+Re
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+vr
+vr
+vr
+vr
+vr
+Md
+ll
+mm
+tJ
+Mr
+tJ
+mm
+cn
+Md
+vr
+xR
+vr
+vr
+vr
+"}
+(285,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+pc
+pc
+pc
+Md
+Md
+gb
+uo
+ZH
+Ku
+ib
+uo
+Ot
+Md
+pc
+ry
+pc
+Md
+Md
+"}
+(286,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Ao
+Ot
+ML
+jH
+jJ
+DB
+Md
+Gy
+jR
+Vh
+Md
+ZZ
+Fl
+KU
+hA
+Zq
+kj
+nO
+"}
+(287,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+zo
+py
+Ot
+Ot
+Mc
+Ot
+in
+nF
+WS
+ak
+KI
+oe
+Oa
+oj
+Pk
+SV
+bv
+GK
+WR
+"}
+(288,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+nO
+sR
+Ot
+Ot
+XM
+Ot
+Rw
+RB
+BV
+at
+Ot
+yy
+yd
+PW
+DX
+Ro
+or
+bR
+Md
+"}
+(289,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Tz
+Ot
+Ot
+XM
+Ot
+Rw
+Ot
+gb
+SI
+BT
+bC
+aF
+Md
+Md
+nO
+Nh
+LD
+Md
+"}
+(290,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+lY
+RH
+dd
+XM
+Ot
+Rw
+Ot
+gb
+Ot
+Ot
+Ww
+zQ
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(291,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+eV
+Zz
+dd
+XM
+Ot
+Rw
+Ot
+gb
+Ot
+Ot
+Ww
+AG
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(292,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+py
+Ot
+oM
+KJ
+dg
+QN
+Ot
+gb
+Ot
+Ot
+Ww
+wL
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(293,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Nn
+Ge
+Cc
+OC
+Sj
+WC
+zt
+gb
+UQ
+RH
+Ut
+Fe
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(294,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+fO
+LV
+fZ
+fO
+LV
+zG
+lM
+gb
+UQ
+Zz
+Ut
+rX
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(295,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+yn
+sE
+TA
+Uc
+Su
+NC
+YG
+gb
+CO
+ZO
+pg
+Rx
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(296,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+UR
+sC
+uT
+pl
+sC
+uT
+BJ
+gb
+aO
+EX
+zg
+RI
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(297,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+MO
+uN
+QR
+CU
+uN
+QR
+RZ
+gD
+xQ
+Ot
+il
+yj
+Md
+vr
+vr
+vr
+vr
+vr
+"}
+(298,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+xw
+rs
+xv
+qO
+qO
+RJ
+qO
+qO
+tD
+Ot
+yo
+xw
+nO
+iw
+iw
+vr
+vr
+vr
+"}
+(299,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+oN
+kr
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Hb
+gV
+CQ
+vr
+vr
+vr
+vr
+vr
+"}
+(300,1,1) = {"
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+sW
+Md
+Pv
+vY
+vY
+vY
+vY
+vY
+vY
+vY
+vY
+vY
+vY
+Pv
+JU
+vr
+vr
+vr
+vr
+vr
+"}

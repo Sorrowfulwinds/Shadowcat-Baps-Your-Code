@@ -1,0 +1,126 @@
+Snowpiercer - Golden Chariot
+-Unique cars like real train?
+3 z levels (Floor 1, Floor 2, Roof), 5 cars
+
+Legend:
+Include room
+-xyz (comment)
+Do not include room
+X-abc (comment)
+-------------------------------------------
+
+X-ALL DEPT REC ROOMS (GO TO A FUCKING PUBLIC SPACE)
+
+Engineering
+-ENGINE (Multi-Engine support, baby this it needs to work fast we have no solars or geo)
+-ATMOS (Needs a sane setup, limited space for canisters so may be used a lot)
+-smes room
+-engine management room
+-drone fabricator room
+-Telecoms room
+-tech storage
+-Atmos/Engi gear room
+-Engineering storage
+-CE Office
+
+Cargo
+-Ordering Lobby
+-QM Office
+-Mining prep room
+-Cargo shuttle dock
+-Warehouse
+-Mining processor room
+-Surt teleporter
+-Belter shuttle
+
+Medbay
+-Medbay Lobby/Reception desk
+-CMO Office
+-Chemistry
+-Medbay main floor (Scanner/Sleeper)
+-Operating Theatre
+-Medbay/Paramedic storage
+-Patient ward
+-VIROLOGY (Big room)
+-Morgue
+-Cloning room
+
+
+Science (Shatter this department, cast it to the winds)
+-Research Lab (Literally the only room that matters)
+-RD Office
+-Research Servers (Put near engineering/telecomms?)
+-Circuitry Lab
+-Robotics (Trim down, make them go to medbay for surgery)
+-Xenoflora (Integrate with botany?)
+-XENOBIO (REALLY Big room)
+-Toxins lab (Burn chamber only/TTVs, make them buddy near atmos)
+-Xenoarcheology (Put closer to mining, maybe they will use it)
+X-Toxins storage (Delete make them share Atmos soda)
+X-Firing range (Go to securitys)
+
+Security
+-Security Reception
+-Security Cells (2-3?)
+-HoS Office
+-Forensics Lab
+-Detective Office (Merge close with above)
+-Evidence Lockup
+-Interogation chamber
+-Processing room
+-Firing Range
+-Locker/gear room
+-Warden Office X-Warden Room(Warden isn't even a quasi head he can go to dorms)
+-Armory (Put near explo, strip explo of guns. Make them interact)
+
+Command
+-Bridge
+-AI Upload
+-AI Chamber
+-Captains Office
+-HoP Office
+-IAA Office
+-Blueshield room (They can have a treat)
+-Vault (Fill with cool shit)
+X-Meeting Room (make a public meeting room lmao)
+
+Exploration
+-Exploration Shuttle (Big shuttle)
+X- Weapons room (Put armory nearby)
+X- Triage (Go to medbay)
+X- Meeting room (Public meeting room lmao)
+-Pathfinder Office
+X- Pilot prep (Make a single EVA room for shuttles to save space)
+X?- Courser shuttle (This might not make sense on a train, tentative)
+-Gateway
+-Explorer gear room (Most of this gear is unique, maybe squish into armory/pubeva?)
+
+Service
+-Bar/Cafe (Center of the entire map, put a lot of effort here)
+--Bar should have room for entertainment
+-Kitchen
+-Bar backroom
+-Botany (Xenobotany will be nextdoor)
+-Janitor
+-Library
+-Chapel
+-Chapel Incinerator
+
+Public Areas
+-Garden
+-Sauna/Pool
+-Dorms
+-Laundry
+-Primary Showers
+-Restrooms everywhere (Everything poops)
+-Gym
+-Cryo room
+-Adherant maintenance
+-Holodeck room (Do some cool shit with this? Integrate next to bar as stage/meeting room?)
+-Public meeting room (Please schedule usage time)
+
+Map Junk
+-Arrivals shuttle
+-Escape shuttle
+-Trader Shuttle
+-Other shuttles? (Deathsquad/ERT)
