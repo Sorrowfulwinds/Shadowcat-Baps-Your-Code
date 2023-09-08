@@ -54,6 +54,7 @@ Science (Shatter this department, cast it to the winds)
 -Robotics (Trim down, make them go to medbay for surgery)
 -Xenoflora (Integrate with botany?)
 -XENOBIO (REALLY Big room)
+-Telescience (Tie with gateway)
 -Toxins lab (Burn chamber only/TTVs, make them buddy near atmos)
 -Xenoarcheology (Put closer to mining, maybe they will use it)
 X-Toxins storage (Delete make them share Atmos soda)
@@ -68,7 +69,7 @@ Security
 -Evidence Lockup
 -Interogation chamber
 -Processing room
--Firing Range
+-Firing Range (Holodeck in firing range?)
 -Locker/gear room
 -Warden Office X-Warden Room(Warden isn't even a quasi head he can go to dorms)
 -Armory (Put near explo, strip explo of guns. Make them interact)
@@ -80,20 +81,20 @@ Command
 -Captains Office
 -HoP Office
 -IAA Office
--Blueshield room (They can have a treat)
+-Blueshield closet (They can have a treat)
 -Vault (Fill with cool shit)
 X-Meeting Room (make a public meeting room lmao)
 
 Exploration
 -Exploration Shuttle (Big shuttle)
+-Pathfinder Office
+-Gateway
+-Explorer gear room (Most of this gear is unique, maybe squish into armory/public eva?)
 X- Weapons room (Put armory nearby)
 X- Triage (Go to medbay)
 X- Meeting room (Public meeting room lmao)
--Pathfinder Office
 X- Pilot prep (Make a single EVA room for shuttles to save space)
 X?- Courser shuttle (This might not make sense on a train, tentative)
--Gateway
--Explorer gear room (Most of this gear is unique, maybe squish into armory/pubeva?)
 
 Service
 -Bar/Cafe (Center of the entire map, put a lot of effort here)
@@ -124,3 +125,7 @@ Map Junk
 -Escape shuttle
 -Trader Shuttle
 -Other shuttles? (Deathsquad/ERT)
+
+
+
+Player vision 7 up/down, 9 left/right
