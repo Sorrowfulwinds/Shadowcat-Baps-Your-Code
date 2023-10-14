@@ -4336,7 +4336,6 @@
 "pM" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/rack/shelf/steel,
-/obj/item/gun/energy/frontier/taj,
 /turf/simulated/floor/tiled/dark,
 /area/tradeport/facility)
 "pO" = (
@@ -6640,6 +6639,16 @@
 	pixel_x = -8;
 	pixel_y = 23
 	},
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
 /turf/simulated/floor/wood,
 /area/shuttle/trade_ship/general)
 "yg" = (
@@ -9491,13 +9500,12 @@
 /obj/structure/closet/crate/secure/weapon{
 	req_access = list(160)
 	},
-/obj/item/gun/energy/civtas,
-/obj/item/gun/energy/civtas,
-/obj/item/gun/energy/civtas,
 /obj/random/energy,
 /obj/random/handgun,
 /obj/random/weapon/guarenteed,
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/random/weapon/guarenteed,
+/obj/random/weapon/guarenteed,
 /turf/simulated/floor/tiled/dark,
 /area/tradeport/facility)
 "IK" = (
@@ -10445,11 +10453,11 @@
 /obj/structure/closet/crate/secure/weapon{
 	req_access = list(160)
 	},
-/obj/item/gun/energy/phasegun/pistol,
-/obj/item/gun/energy/phasegun/pistol,
 /obj/random/weapon/guarenteed,
 /obj/random/energy,
 /obj/random/energy,
+/obj/random/handgun,
+/obj/random/handgun,
 /turf/simulated/floor/tiled/dark,
 /area/tradeport/facility)
 "Mn" = (

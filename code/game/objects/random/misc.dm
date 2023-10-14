@@ -775,6 +775,7 @@
 		prob(2);/obj/item/gun/ballistic/shotgun/pump/rifle/taj,
 		prob(10);/obj/item/melee/baton,
 		prob(10);/obj/item/melee/telebaton,
+		prob(10);/obj/item/gun/energy/frontier/taj
 		prob(10);/obj/item/melee/classic_baton,
 		prob(9);/obj/item/gun/ballistic/automatic/wt550/lethal,
 		prob(9);/obj/item/gun/ballistic/automatic/pdw,
