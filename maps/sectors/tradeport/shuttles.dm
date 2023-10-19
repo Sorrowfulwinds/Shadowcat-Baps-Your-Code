@@ -37,7 +37,7 @@
 	warmup_time = 10
 	shuttle_area = list(/area/shuttle/visitor_ship/general, /area/shuttle/visitor_ship/cockpit)
 	current_location = "nebula_pad_3"
-	docking_controller_tag = "visitor_space_lock"
+	docking_controller_tag = "nebula_pump3"
 	fuel_consumption = 10
 	move_time = 10
 

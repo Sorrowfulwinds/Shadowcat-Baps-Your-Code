@@ -5104,6 +5104,11 @@
 	name = "Nebula Pad 3"
 	},
 /obj/overmap/entity/visitable/ship/landable/visitor_ship,
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1380;
+	id_tag = "Beluga_Port_Airlock";
+	pixel_x = -25
+	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/visitor_ship/general)
 "rq" = (
@@ -6549,7 +6554,7 @@
 /obj/map_helper/airlock/door/ext_door,
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 3702;
+	frequency = 1380;
 	master_tag = "Beluga_Port_Airlock";
 	pixel_x = 25;
 	pixel_y = 5
@@ -7362,6 +7367,20 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/tradeport/cyndi)
+"zc" = (
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	frequency = 3701;
+	id_tag = "trade_space_lock";
+	pixel_x = -25;
+	tag_airpump = null;
+	tag_chamber_sensor = null;
+	tag_exterior_door = null;
+	tag_exterior_sensor = null;
+	tag_interior_door = null;
+	tag_interior_sensor = null
+	},
+/turf/simulated/floor/tiled/dark,
+/area/shuttle/visitor_ship/general)
 "zd" = (
 /obj/machinery/computer/ship/sensors{
 	dir = 1
@@ -8518,7 +8537,7 @@
 /obj/machinery/atmospherics/component/unary/vent_pump/high_volume{
 	dir = 1;
 	id_tag = "Beluga_Port_Airlock";
-	frequency = 3702
+	frequency = 1380
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -8529,7 +8548,7 @@
 /obj/map_helper/airlock/sensor/chamber_sensor,
 /obj/map_helper/airlock/atmos/chamber_pump,
 /obj/machinery/airlock_sensor{
-	frequency = 3702;
+	frequency = 1380;
 	id_tag = "Beluga_Port_Airlock";
 	pixel_x = 25
 	},
@@ -12756,7 +12775,7 @@
 /obj/map_helper/airlock/door/int_door,
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 3702;
+	frequency = 1380;
 	master_tag = "Beluga_Port_Airlock";
 	pixel_x = -25;
 	pixel_y = -5
@@ -38674,7 +38693,7 @@ Zl
 ia
 gp
 Km
-lY
+zc
 UA
 lE
 lY
