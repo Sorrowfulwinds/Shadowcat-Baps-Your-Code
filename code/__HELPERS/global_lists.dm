@@ -30,8 +30,8 @@ var/global/list/mechas_list = list()
 GLOBAL_LIST_EMPTY(respawn_timers)
 
 //* Posters
-var/global/list/poster_designs = list()
-var/global/list/NT_poster_designs = list()
+var/global/list/poster_designs = list(new /datum/poster)
+var/global/list/NT_poster_designs = list(new /datum/poster/nanotrasen)
 
 //* Uplinks
 var/list/obj/item/uplink/world_uplinks = list()
