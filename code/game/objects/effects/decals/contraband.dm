@@ -26,6 +26,7 @@
 		else
 			serial_number = given_serial
 	name += " - No. [serial_number]"
+	desc = poster_designs[serial_number].desc
 
 //Places the poster on a wall
 /obj/item/contraband/poster/afterattack(atom/target, mob/user, clickchain_flags, list/params)
