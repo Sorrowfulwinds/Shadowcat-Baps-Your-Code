@@ -5,6 +5,7 @@
 	icon = 'icons/obj/food.dmi'
 	icon_state = null
 	atom_flags = OPENCONTAINER
+
 	var/bitesize = 1
 	var/bitecount = 0
 	var/trash = null
@@ -56,10 +57,7 @@
 		open(user)
 
 /obj/item/reagent_containers/food/snacks/proc/open(mob/user)
-	if(custom_open_sound)
-		playsound(loc,custom_open_sound, rand(10,50), 1)
-	else
-		playsound(loc,'sound/items/foodcanopen.ogg', rand(10,50), 1)
+	playsound(loc,custom_open_sound || 'sound/items/foodcanopen.ogg', rand(10,50), 1)
 
 	if(opened_icon)
 		icon_state = "[initial(icon_state)]-open"
@@ -152,7 +150,8 @@
 			user.visible_message("<span class='danger'>[user] feeds [M] [src].</span>")
 
 		if(reagents)								//Handle ingestion of the reagent.
-			playsound(M.loc,'sound/items/eatfood.ogg', rand(10,50), 1)
+			if(bite_sound)
+				playsound(M.loc,bite_sound, rand(10,50), 1)
 			if(reagents.total_volume)
 				if(reagents.total_volume > bitesize)
 					reagents.trans_to_mob(M, bitesize, CHEM_INGEST)
@@ -217,6 +216,9 @@
 		var/hide_item = !has_edge(W) || !can_slice_here
 
 		if (hide_item)
+			var/confirm=input(user, "Are you certain you want to insert \the [W] into [src]?","Hide item") as null|anything in list("Yes","No")
+			if(!confirm || confirm == "No")
+				return
 			if (W.w_class >= w_class || is_robot_module(W))
 				return
 			if(!user.attempt_insert_item_for_installation(W, src))
@@ -412,7 +414,7 @@
 	desc = "Freeze Dried peas covered in a very spicy substance!"
 	icon_state = "wasabi_peas"
 	nutriment_amt = 4
-	nutriment_desc = list("capsaicin" = 2, "protein" = 2)
+	nutriment_desc = list("wasabi" = 2, "protein" = 2)
 
 /obj/item/reagent_containers/food/snacks/bagged/wpeas/Initialize(mapload)
 	. = ..()
@@ -866,7 +868,6 @@
 /obj/item/reagent_containers/food/snacks/fishfingers/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent("protein", 9)
-	reagents.add_reagent("carpotoxin", 3)
 	bitesize = 3
 
 /obj/item/reagent_containers/food/snacks/hugemushroomslice // Buff 3 >> 5
@@ -1089,7 +1090,6 @@
 /obj/item/reagent_containers/food/snacks/fishburger/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent("protein", 15)
-	reagents.add_reagent("carpotoxin", 3)
 	bitesize = 6
 
 /obj/item/reagent_containers/food/snacks/tofuburger // Buff 6 >> 10
@@ -1417,7 +1417,6 @@
 /obj/item/reagent_containers/food/snacks/cubancarp/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent("protein", 9)
-	reagents.add_reagent("carpotoxin", 3)
 	reagents.add_reagent("capsaicin", 3)
 	bitesize = 4
 
@@ -2005,7 +2004,6 @@
 /obj/item/reagent_containers/food/snacks/fishandchips/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent("protein", 5)
-	reagents.add_reagent("carpotoxin", 3)
 	bitesize = 3
 
 /obj/item/reagent_containers/food/snacks/sandwich // Buff 6 >> 11
@@ -3731,7 +3729,6 @@ END CITADEL CHANGE */
 /obj/item/reagent_containers/food/snacks/sashimi/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent("protein", 4)
-	reagents.add_reagent("carpotoxin", 2)
 	bitesize = 3
 
 /obj/item/reagent_containers/food/snacks/benedict // Buff 6 >> 8
@@ -4795,7 +4792,7 @@ END CITADEL CHANGE */
 	nutriment_amt = 10
 
 /obj/item/reagent_containers/food/snacks/chipplate/attack_hand(mob/user, list/params)
-	. = ..()
+	// todo: sigh, no ..(); shift over to on_attack_hand
 	var/obj/item/reagent_containers/food/snacks/returningitem = new vendingobject(loc)
 	returningitem.reagents.clear_reagents()
 	reagents.trans_to_holder(returningitem.reagents, bitesize)
@@ -7010,3 +7007,10 @@ END CITADEL CHANGE */
 /obj/item/reagent_containers/food/snacks/tastybread/Initialize(mapload)
 	. = ..()
 	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/meatsicle
+	name = "meatsicle"
+	desc = "A frozen tajaran delight. This meat popsicle is sure to cool you down."
+	icon_state = "meatsicle"
+	nutriment_amt = 6
+	nutriment_desc = list("frozen meat" = 1)
