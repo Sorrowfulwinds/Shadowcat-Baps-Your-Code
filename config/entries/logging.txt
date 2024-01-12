@@ -1,5 +1,0 @@
-## Log all TGUI in /Topic, regardless of handling.
-# EMERGENCY_TGUI_LOGGING
-
-## Log all suspicious logins to file.
-LOG_SUSPICIOUS_LOGIN

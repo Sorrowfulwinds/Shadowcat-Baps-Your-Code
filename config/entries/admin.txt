@@ -1,2 +1,0 @@
-## Enable giving host admin rank to localhost connections
-ENABLE_LOCALHOST_RANK
