@@ -8,6 +8,10 @@
 /obj/item/storage/single_use/mre/random,
 /turf/simulated/floor/concrete/tile,
 /area/space)
+"c" = (
+/obj/item/stool,
+/turf/simulated/floor/concrete/tile,
+/area/space)
 "f" = (
 /obj/structure/closet/crate/corporate/heph,
 /obj/random/gun/random,
@@ -30372,7 +30376,7 @@ P
 B
 m
 F
-m
+c
 w
 P
 P
