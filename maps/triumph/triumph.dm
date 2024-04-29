@@ -19,6 +19,7 @@
 		/datum/map/sector/piratebase_192,
 		/datum/map/sector/mining_192,
 		/datum/map/sector/gaia_192,
+		/datum/map/sector/greenland_192,
 		/datum/map/sector/frozen_192,
 		/datum/map/sector/wasteland_192,
 		/datum/map/sector/tradeport_192,

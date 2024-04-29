@@ -35,10 +35,6 @@
 /obj/structure/flora/ausbushes/palebush,
 /turf/simulated/floor/outdoors/grass,
 /area/space)
-"j" = (
-/obj/overmap/entity/visitable/sector/miaphus,
-/turf/simulated/floor/water/deep,
-/area/space)
 "k" = (
 /obj/structure/flora/tree/jungle_small,
 /turf/simulated/floor/outdoors/grass,
@@ -65,6 +61,15 @@
 /area/space)
 "q" = (
 /turf/simulated/mineral/cave,
+/area/space)
+"r" = (
+/obj/effect/shuttle_landmark{
+	base_area = /area/space;
+	base_turf = /turf/simulated/floor/outdoors/beach/sand/desert;
+	landmark_tag = "greenland_beach_c";
+	name = "Greenland Beach (Center)"
+	},
+/turf/simulated/floor/outdoors/grass,
 /area/space)
 "s" = (
 /obj/structure/fence/wooden/corner,
@@ -161,6 +166,10 @@
 /area/space)
 "R" = (
 /turf/simulated/floor/water/river/west,
+/area/space)
+"S" = (
+/obj/overmap/entity/visitable/sector/greenland,
+/turf/simulated/floor/water/deep,
 /area/space)
 "T" = (
 /obj/structure/fence/wooden/corner{
@@ -569,7 +578,7 @@ O
 O
 O
 O
-j
+S
 u
 "}
 (3,1,1) = {"
@@ -8949,7 +8958,7 @@ a
 a
 a
 a
-a
+r
 a
 a
 a
