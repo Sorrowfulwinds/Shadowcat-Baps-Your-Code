@@ -3,7 +3,7 @@
 /obj/overmap/entity/visitable/sector/greenland
 	name = "greenland"
 	desc = "A recently discovered habitable world. Covered in forests."
-	scanner_desc = @{"[i]Stellar Body[/i]: greenland
+	scanner_desc = @{"[i]Stellar Body[/i]: Greenland
 [i]Class[/i]: M-Class Planet
 [i]Habitability[/i]: High
 [i]Population[/i]: Unknown - Minimal
