@@ -86,7 +86,7 @@
 
 	return
 
-/obj/machinery/computer/teleporter/attack_hand(mob/user, list/params)
+/obj/machinery/computer/teleporter/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	ui_interact(user)
 
 /obj/machinery/computer/teleporter/ui_interact(mob/user, datum/tgui/ui, datum/tgui/parent_ui)
@@ -190,7 +190,7 @@
 	playsound(get_turf(src), 'sound/machines/ping.ogg', 50, 0)
 
 /obj/machinery/computer/teleporter/verb/set_id(t as text)
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Set teleporter ID"
 	set src in oview(1)
 	set desc = "ID Tag:"

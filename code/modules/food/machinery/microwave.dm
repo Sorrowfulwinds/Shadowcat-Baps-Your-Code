@@ -162,7 +162,7 @@
 	if(istype(user, /mob/living/silicon/robot) && Adjacent(user))
 		attack_hand(user)
 
-/obj/machinery/microwave/attack_hand(mob/user, list/params)
+/obj/machinery/microwave/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	user.set_machine(src)
 	interact(user)
 
@@ -433,7 +433,7 @@
 
 /obj/machinery/microwave/verb/Eject()
 	set src in oview(1)
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Eject content"
 	usr.visible_message(
 	"<span class='notice'>[usr] tries to open [src] and remove its contents.</span>" ,

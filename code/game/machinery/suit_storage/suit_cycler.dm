@@ -260,7 +260,7 @@
 	updateUsrDialog()
 	return 1
 
-/obj/machinery/suit_cycler/attack_hand(mob/user, list/params)
+/obj/machinery/suit_cycler/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 
 	add_fingerprint(user)
 
@@ -434,7 +434,7 @@
 
 /obj/machinery/suit_cycler/verb/leave()
 	set name = "Eject Cycler"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 
 	if(usr.stat != 0)

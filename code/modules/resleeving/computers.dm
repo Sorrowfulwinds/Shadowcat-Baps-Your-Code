@@ -120,7 +120,7 @@
 	return ..()
 
 /obj/machinery/computer/transhuman/resleeving/verb/eject_mirror()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Eject Mirror"
 	set src in oview(1)
 
@@ -135,7 +135,7 @@
 /obj/machinery/computer/transhuman/resleeving/attack_ai(mob/user as mob)
 	return attack_hand(user)
 
-/obj/machinery/computer/transhuman/resleeving/attack_hand(mob/user, list/params)
+/obj/machinery/computer/transhuman/resleeving/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	user.set_machine(src)
 	add_fingerprint(user)
 
@@ -431,7 +431,7 @@
 	icon_state = "cmoemergency"
 	item_state = "card-id"
 
-/obj/item/cmo_disk_holder/attack_self(mob/user)
+/obj/item/cmo_disk_holder/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

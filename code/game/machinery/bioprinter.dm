@@ -125,7 +125,7 @@
 
 	. = ..()
 
-/obj/machinery/organ_printer/attack_hand(mob/user, list/params)
+/obj/machinery/organ_printer/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 
 	if(machine_stat & (BROKEN|NOPOWER))
 		return
@@ -187,7 +187,7 @@
 
 /obj/machinery/organ_printer/verb/eject_beaker()
 	set name = "Eject Beaker"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 
 	if(usr.stat != NONE)

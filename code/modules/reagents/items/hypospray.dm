@@ -60,7 +60,15 @@
 	icon_state = "[initial(icon_state)][vial_state]"
 	return ..()
 
-/obj/item/hypospray/attack_hand(mob/user, list/params)
+/obj/item/hypospray/update_overlays()
+	. = ..()
+	switch(inject_mode)
+		if(HYPOSPRAY_MODE_INJECT)
+			. += "inject"
+		if(HYPOSPRAY_MODE_SPRAY)
+			. += "spray"
+
+/obj/item/hypospray/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(user.is_holding_inactive(src))
 		if(isnull(loaded))
 			user.action_feedback(SPAN_WARNING("[src] has no vial loaded."), src)
@@ -97,7 +105,7 @@
 // todo: alt click context radials?
 /obj/item/hypospray/verb/set_transfer_amount()
 	set name = "Set Injection Amount"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(!inject_adjustable)
 		usr.action_feedback(SPAN_WARNING("[src] can't have its injection thresholds changed."), src)
@@ -110,7 +118,7 @@
 	inject_amount = amount
 	usr.action_feedback(SPAN_NOTICE("[src] is now set to inject [amount] per use."), src)
 
-/obj/item/hypospray/attack_self(mob/user)
+/obj/item/hypospray/attack_self(mob/user, datum/event_args/actor/actor)
 	switch(inject_mode)
 		if(HYPOSPRAY_MODE_INJECT)
 			inject_mode = HYPOSPRAY_MODE_SPRAY

@@ -341,7 +341,7 @@
 
 	return 1
 
-/obj/machinery/transhuman/synthprinter/attack_hand(mob/user, list/params)
+/obj/machinery/transhuman/synthprinter/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if((busy == 0) || (machine_stat & NOPOWER))
 		return
 	to_chat(user, "Current print cycle is [busy]% complete.")
@@ -430,7 +430,7 @@
 		manip_rating += M.rating
 	blur_amount = (48 - manip_rating * 8)
 
-/obj/machinery/transhuman/resleever/attack_hand(mob/user, list/params)
+/obj/machinery/transhuman/resleever/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	user.set_machine(src)
 	var/health_text = ""
 	var/mind_text = ""
@@ -618,7 +618,7 @@
 
 /obj/machinery/transhuman/resleever/verb/get_out()
 	set name = "EJECT Occupant"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 	if(usr.stat != CONSCIOUS)
 		return
@@ -628,7 +628,7 @@
 
 /obj/machinery/transhuman/resleever/verb/move_inside()
 	set name = "Move INSIDE"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 	if(usr.stat != CONSCIOUS || machine_stat & (NOPOWER|BROKEN))
 		return

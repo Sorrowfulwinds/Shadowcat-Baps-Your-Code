@@ -9,7 +9,7 @@
 // Forcibly shut down the device. To be used when something bugs out and the UI is nonfunctional.
 /obj/item/modular_computer/verb/emergency_shutdown()
 	set name = "Forced Shutdown"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in view(1)
 
 	if(usr.incapacitated() || !istype(usr, /mob/living))
@@ -33,7 +33,7 @@
 // Eject ID card from computer, if it has ID slot with card inside.
 /obj/item/modular_computer/verb/eject_id()
 	set name = "Eject ID"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in view(1)
 
 	if(usr.incapacitated() || !istype(usr, /mob/living))
@@ -49,7 +49,7 @@
 // Eject ID card from computer, if it has ID slot with card inside.
 /obj/item/modular_computer/verb/eject_usb()
 	set name = "Eject Portable Storage"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in view(1)
 
 	if(usr.incapacitated() || !istype(usr, /mob/living))
@@ -109,13 +109,13 @@
 /obj/item/modular_computer/attack_ai(mob/user)
 	return attack_self(user)
 
-/obj/item/modular_computer/attack_hand(mob/user, list/params)
+/obj/item/modular_computer/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(anchored)
 		return attack_self(user)
 	return ..()
 
 /// On-click handling. Turns on the computer if it's off and opens the GUI.
-/obj/item/modular_computer/attack_self(mob/user)
+/obj/item/modular_computer/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

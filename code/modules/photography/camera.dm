@@ -21,13 +21,13 @@
 
 /obj/item/camera/verb/change_size()
 	set name = "Set Photo Focus"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	var/nsize = input("Photo Size","Pick a size of resulting photo.") as null|anything in list(1,3,5,7)
 	if(nsize)
 		size = nsize
 		to_chat(usr, "<span class='notice'>Camera will now take [size]x[size] photos.</span>")
 
-/obj/item/camera/attack_self(mob/user)
+/obj/item/camera/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

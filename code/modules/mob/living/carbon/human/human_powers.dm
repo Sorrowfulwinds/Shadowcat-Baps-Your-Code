@@ -4,7 +4,7 @@
 /mob/living/carbon/human/proc/tie_hair()
 	set name = "Tie Hair"
 	set desc = "Style your hair."
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 
 	if(incapacitated())
 		to_chat(src, SPAN_WARNING("You can't mess with your hair right now!"))
@@ -77,7 +77,7 @@
 		src.afflict_paralyze(20 * rand(2,4))
 
 	for(var/mob/O in viewers(src, null))
-		if ((O.client && !( O.blinded )))
+		if ((O.client && !( O.has_status_effect(/datum/status_effect/sight/blindness) )))
 			O.show_message("<font color='red'><B>[src] [failed ? "tried to tackle" : "has tackled"] down [T]!</font></B>", 1)
 
 /mob/living/carbon/human/proc/regurgitate()
@@ -176,7 +176,7 @@
 /mob/living/carbon/human/proc/self_diagnostics()
 	set name = "Self-Diagnostics"
 	set desc = "Run an internal self-diagnostic to check for damage."
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 
 	if(stat == DEAD) return
 
@@ -217,7 +217,7 @@
 /mob/living/carbon/human/proc/setmonitor_state()
 	set name = "Set monitor display"
 	set desc = "Set your monitor display"
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 
 	if(stat == DEAD) return
 
@@ -287,7 +287,7 @@
 				to_chat(src, SPAN_NOTICE("You feel a slithering sensation as your [O.name] reform."))
 
 				var/agony_to_apply = round(0.66 * O.max_damage) // 66% of the limb's health is converted into pain.
-				src.apply_damage(agony_to_apply, HALLOSS)
+				src.apply_damage(agony_to_apply, DAMAGE_TYPE_HALLOSS)
 
 		for(var/organtype in species.has_organ) // Replace completely missing internal organs. -After- external ones, so they all should exist.
 			if(!src.internal_organs_by_name[organtype])
@@ -314,7 +314,7 @@
 /mob/living/carbon/human/verb/toggle_eyes_layer()
 	set name = "Switch Eyes/Monitor Layer"
 	set desc = "Toggle rendering of eyes/monitor above markings."
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 
 	if(stat)
 		to_chat(src, SPAN_WARNING("You must be awake and standing to perform this action!"))
@@ -392,29 +392,29 @@
 /mob/living/carbon/human/proc/hide_tail()
 	set name = "Toggle Hide Tail"
 	set desc = "Hide or reveal your tail."
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 
 	if(tail_style && !tail_style.can_be_hidden)
 		return
 	hiding_tail = !hiding_tail
 	to_chat(usr, SPAN_SMALLNOTICE("You are now [hiding_tail ? "hiding" : "showing"] your tail."))
-	update_tail_showing()
+	render_spriteacc_tail()
 
 /mob/living/carbon/human/proc/hide_wings()
 	set name = "Toggle Hide Wings"
 	set desc = "Hide or reveal your wings."
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 
 	if(wing_style && !wing_style.can_be_hidden)
 		return
 	hiding_wings = !hiding_wings
 	to_chat(usr, SPAN_SMALLNOTICE("You are now [hiding_wings ? "hiding" : "showing"] your wings."))
-	update_wing_showing()
+	render_spriteacc_wings()
 
 /mob/living/carbon/human/proc/hide_horns()
 	set name = "Toggle Hide Horns"
 	set desc = "Hide or reveal your horns."
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 
 	if(horn_style && !horn_style.can_be_hidden)
 		return

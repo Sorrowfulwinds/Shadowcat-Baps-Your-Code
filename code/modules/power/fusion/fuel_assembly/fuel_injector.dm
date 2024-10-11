@@ -79,7 +79,7 @@ var/list/fuel_injectors = list()
 
 	return ..()
 
-/obj/machinery/fusion_fuel_injector/attack_hand(mob/user, list/params)
+/obj/machinery/fusion_fuel_injector/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 
 	if(injecting)
 		to_chat(user, "<span class='warning'>Shut \the [src] off before playing with the fuel rod!</span>")
@@ -131,7 +131,7 @@ var/list/fuel_injectors = list()
 		StopInjecting()
 
 /obj/machinery/fusion_fuel_injector/verb/rotate_clockwise()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Rotate Generator Clockwise"
 	set src in view(1)
 
@@ -141,7 +141,7 @@ var/list/fuel_injectors = list()
 	src.setDir(turn(src.dir, 270))
 
 /obj/machinery/fusion_fuel_injector/verb/rotate_counterclockwise()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Rotate Generator Counterclockwise"
 	set src in view(1)
 

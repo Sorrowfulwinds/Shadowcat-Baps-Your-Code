@@ -92,7 +92,7 @@
 			toggle_close_open()
 
 
-/obj/structure/fireaxecabinet/attack_hand(mob/user, list/params)
+/obj/structure/fireaxecabinet/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	//var/hasaxe = 0	//Fuck this. Fuck everything about this. Who wrote this. Why.
 	//if(fireaxe)
 	//	hasaxe = 1
@@ -137,7 +137,7 @@
 
 /obj/structure/fireaxecabinet/verb/toggle_openness() //nice name, huh? HUH?! -Erro //YEAH -Agouri
 	set name = "Open/Close"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if (isrobot(usr) || locked || smashed)
 		if(locked)
@@ -151,7 +151,7 @@
 
 /obj/structure/fireaxecabinet/verb/remove_fire_axe()
 	set name = "Remove Fire Axe"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if (isrobot(usr))
 		return

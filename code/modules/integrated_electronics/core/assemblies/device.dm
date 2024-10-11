@@ -39,7 +39,7 @@
 	if(opened)
 		icon_state = icon_state + "-open"
 
-/obj/item/assembly/electronic_assembly/attack_self(mob/user)
+/obj/item/assembly/electronic_assembly/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -60,7 +60,7 @@
 
 /obj/item/assembly/electronic_assembly/verb/toggle()
 	set src in usr
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Open/Close Device Assembly"
 	set desc = "Open or close device assembly!"
 

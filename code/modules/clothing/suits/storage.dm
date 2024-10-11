@@ -95,9 +95,9 @@
 /obj/item/clothing/suit/storage/toggle
 	inv_hide_flags = HIDEHOLSTER
 	var/open = 0	//0 is closed, 1 is open, -1 means it won't be able to toggle
-	action_button_name = "Toggle Coat Buttons"
+	item_action_name = "Toggle Coat Buttons"
 
-/obj/item/clothing/suit/storage/toggle/ui_action_click()
+/obj/item/clothing/suit/storage/toggle/ui_action_click(datum/action/action, datum/event_args/actor/actor)
 	ToggleButtons()
 
 /obj/item/clothing/suit/storage/toggle/proc/ToggleButtons()
@@ -123,7 +123,7 @@
 
 /obj/item/clothing/suit/storage/hooded/toggle/verb/toggle()
 	set name = "Toggle Coat Buttons"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in usr
 	if(!CHECK_MOBILITY(usr, MOBILITY_CAN_USE))
 		return 0
@@ -149,7 +149,7 @@
 
 /obj/item/clothing/suit/storage/vest/verb/toggle()
 	set name ="Adjust Badge"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in usr
 	if(!CHECK_MOBILITY(usr, MOBILITY_CAN_USE))
 		return 0

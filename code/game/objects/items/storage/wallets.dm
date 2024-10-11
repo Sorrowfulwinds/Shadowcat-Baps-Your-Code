@@ -36,7 +36,11 @@
 		/obj/item/stamp,
 		/obj/item/clothing/accessory/permit,
 		/obj/item/clothing/accessory/badge,
-		/obj/item/makeover
+		/obj/item/clothing/gloves/ring,
+		/obj/item/clothing/accessory/bracelet,
+		/obj/item/clothing/accessory/necklace,
+		/obj/item/clothing/accessory/metal_necklace,
+		/obj/item/makeover,
 		)
 	insertion_blacklist = list(/obj/item/tool/screwdriver/power)
 	slot_flags = SLOT_ID
@@ -111,7 +115,7 @@
 
 /obj/item/storage/wallet/poly/verb/change_color()
 	set name = "Change Wallet Color"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set desc = "Change the color of the wallet."
 	set src in usr
 

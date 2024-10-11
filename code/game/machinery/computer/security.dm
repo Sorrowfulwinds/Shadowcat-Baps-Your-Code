@@ -58,7 +58,7 @@
 	return ..()
 
 /obj/machinery/computer/secure_data/verb/eject_id()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Eject ID Card"
 	set src in oview(1)
 
@@ -87,7 +87,7 @@
 /obj/machinery/computer/secure_data/attack_ai(mob/user as mob)
 	return attack_hand(user)
 
-/obj/machinery/computer/secure_data/attack_hand(mob/user, list/params)
+/obj/machinery/computer/secure_data/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(..())
 		return
 	add_fingerprint(user)

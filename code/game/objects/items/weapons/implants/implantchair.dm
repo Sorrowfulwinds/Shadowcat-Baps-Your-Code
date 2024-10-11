@@ -24,7 +24,7 @@
 	..()
 	add_implants()
 
-/obj/machinery/implantchair/attack_hand(mob/user, list/params)
+/obj/machinery/implantchair/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	user.set_machine(src)
 	var/health_text = ""
 	if(src.occupant)
@@ -141,7 +141,7 @@
 
 /obj/machinery/implantchair/verb/get_out()
 	set name = "Eject occupant"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 	if(usr.stat != 0)
 		return
@@ -152,7 +152,7 @@
 
 /obj/machinery/implantchair/verb/move_inside()
 	set name = "Move Inside"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 	if(usr.stat != 0 || machine_stat & (NOPOWER|BROKEN))
 		return

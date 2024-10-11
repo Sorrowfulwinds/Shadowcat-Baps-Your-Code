@@ -13,7 +13,7 @@
 
 /obj/item/hailer/verb/set_message()
 	set name = "Set Hailer Message"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set desc = "Alter the message shouted by your hailer."
 
 	if(!isnull(insults))
@@ -28,7 +28,7 @@
 
 	to_chat(usr, "You configure the hailer to shout \"[use_message]\".")
 
-/obj/item/hailer/attack_self(mob/user)
+/obj/item/hailer/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

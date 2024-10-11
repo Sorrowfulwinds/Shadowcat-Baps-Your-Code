@@ -6,7 +6,7 @@
 
 /obj/item/biology_analyzer/proc/print_report_verb()
 	set name = "Print Plant Report"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src = usr
 
 	if(usr.stat || usr.restrained() || usr.lying)
@@ -31,7 +31,7 @@
 	user.visible_message("\The [src] spits out a piece of paper.")
 	return
 
-/obj/item/biology_analyzer/attack_self(mob/user)
+/obj/item/biology_analyzer/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

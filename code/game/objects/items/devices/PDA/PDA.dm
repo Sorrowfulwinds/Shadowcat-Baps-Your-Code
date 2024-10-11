@@ -322,7 +322,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	return 1
 
 
-/obj/item/pda/ai/attack_self(mob/user)
+/obj/item/pda/ai/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -674,7 +674,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	ui.set_auto_update(auto_update)
 
 //NOTE: graphic resources are loaded on client login
-/obj/item/pda/attack_self(mob/user)
+/obj/item/pda/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -1018,7 +1018,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(i>=10 && i<= 20) //The PDA burns a hole in the holder.
 		j=1
 		if(M && isliving(M))
-			M.apply_damage( rand(30,60) , BURN)
+			M.apply_damage( rand(30,60) , DAMAGE_TYPE_BURN)
 		message += "You feel a searing heat! Your [P] is burning!"
 	if(i>=20 && i<=25) //EMP
 		empulse(P.loc, 1, 2, 4, 6, 1)
@@ -1128,7 +1128,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		tnote.Add(list(list("sent" = 1, "owner" = "[P.owner]", "job" = "[P.ownjob]", "message" = "[t]", "target" = "\ref[P]")))
 		P.tnote.Add(list(list("sent" = 0, "owner" = "[owner]", "job" = "[ownjob]", "message" = "[t]", "target" = "\ref[src]")))
 		for(var/mob/M in GLOB.player_list)
-			if(M.stat == DEAD && M.client && (M.is_preference_enabled(/datum/client_preference/ghost_ears))) // src.client is so that ghosts don't have to listen to mice
+			if(M.stat == DEAD && M.client && (M.get_preference_toggle(/datum/game_preference_toggle/observer/ghost_ears))) // src.client is so that ghosts don't have to listen to mice
 				if(istype(M, /mob/new_player))
 					continue
 				if(M.forbid_seeing_deadchat)
@@ -1210,7 +1210,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	new_message = 1
 
 /obj/item/pda/verb/verb_reset_pda()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Reset PDA"
 	set src in usr
 
@@ -1225,7 +1225,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		to_chat(usr, "<span class='notice'>You cannot do this while restrained.</span>")
 
 /obj/item/pda/verb/verb_remove_id()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Remove id"
 	set src in usr
 
@@ -1242,7 +1242,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 
 /obj/item/pda/verb/verb_remove_pen()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Remove pen"
 	set src in usr
 
@@ -1255,7 +1255,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		to_chat(usr, "<span class='notice'>You cannot do this while restrained.</span>")
 
 /obj/item/pda/verb/verb_remove_cartridge()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Remove cartridge"
 	set src in usr
 
@@ -1502,7 +1502,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if (istype(AM, /mob/living))
 		var/mob/living/M = AM
 
-		if(M.slip("the PDA",8) && M.real_name != src.owner && istype(src.cartridge, /obj/item/cartridge/clown))
+		if(M.slip_act(SLIP_CLASS_LUBRICANT, src, 5, 5) > 0 && M.real_name != src.owner && istype(src.cartridge, /obj/item/cartridge/clown))
 			if(src.cartridge.charges < 5)
 				src.cartridge.charges++
 

@@ -109,7 +109,7 @@
 					update_icon()
 
 
-/obj/structure/closet/fireaxecabinet/attack_hand(mob/user, list/params)
+/obj/structure/closet/fireaxecabinet/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	var/hasaxe = 0
 	if(fireaxe)
 		hasaxe = 1
@@ -161,7 +161,7 @@
 
 /obj/structure/closet/fireaxecabinet/verb/toggle_openness() //nice name, huh? HUH?! -Erro //YEAH -Agouri
 	set name = "Open/Close"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 
 	if (isrobot(usr) || src.locked || src.smashed)
@@ -176,7 +176,7 @@
 
 /obj/structure/closet/fireaxecabinet/verb/remove_fire_axe()
 	set name = "Remove Fire Axe"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 
 	if (isrobot(usr))

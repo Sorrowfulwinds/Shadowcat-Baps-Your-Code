@@ -35,7 +35,7 @@
 		else
 			deactivate()
 
-/obj/machinery/suspension_gen/attack_hand(mob/user, list/params)
+/obj/machinery/suspension_gen/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(panel_open)
 		if(cell)
 			to_chat(user, SPAN_NOTICE("You remove [cell]."))
@@ -179,7 +179,7 @@
 /obj/machinery/suspension_gen/verb/rotate_counterclockwise()
 	set src in view(1)
 	set name = "Rotate suspension gen Counterclockwise"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(anchored)
 		to_chat(usr, SPAN_DANGER("You cannot rotate [src], it has been firmly fixed to the floor."))
@@ -189,7 +189,7 @@
 /obj/machinery/suspension_gen/verb/rotate_clockwise()
 	set src in view(1)
 	set name = "Rotate suspension gen Clockwise"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(anchored)
 		to_chat(usr, SPAN_DANGER("You cannot rotate [src], it has been firmly fixed to the floor."))

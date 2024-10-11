@@ -67,7 +67,7 @@
 			return
 	..()
 
-/obj/item/deck/attack_hand(mob/user, list/params)
+/obj/item/deck/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	var/mob/living/carbon/human/H = user
 	if(istype(src.loc, /obj/item/storage) || src == H.r_store || src == H.l_store || src.loc == user) // so objects can be removed from storage containers or pockets. also added a catch-all, so if it's in the mob you'll pick it up.
 		..()
@@ -76,7 +76,7 @@
 
 /obj/item/deck/verb/draw_card()
 
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Draw"
 	set desc = "Draw a card from a deck."
 	set src in view(1)
@@ -118,7 +118,7 @@
 
 /obj/item/deck/verb/deal_card()
 
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Deal"
 	set desc = "Deal a card from a deck."
 	set src in view(1)
@@ -142,7 +142,7 @@
 
 /obj/item/deck/verb/deal_card_multi()
 
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Deal Multiple Cards"
 	set desc = "Deal multiple cards from a deck."
 	set src in view(1)
@@ -212,7 +212,7 @@
 
 	..()
 
-/obj/item/deck/attack_self(mob/user)
+/obj/item/deck/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -220,7 +220,7 @@
 
 
 /obj/item/deck/verb/verb_shuffle()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Shuffle"
 	set desc = "Shuffle the cards in the deck."
 	set src in view(1)
@@ -287,7 +287,7 @@
 	pickup_sound = 'sound/items/pickup/paper.ogg'
 
 
-/obj/item/pack/attack_self(mob/user)
+/obj/item/pack/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -316,7 +316,7 @@
 
 /obj/item/hand/verb/discard()
 
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Discard"
 	set desc = "Place (a) card(s) from your hand in front of you."
 
@@ -349,7 +349,7 @@
 	if(!cards.len)
 		qdel(src)
 
-/obj/item/hand/attack_self(mob/user)
+/obj/item/hand/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -366,7 +366,7 @@
 
 /obj/item/hand/verb/Removecard()
 
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Remove card"
 	set desc = "Remove a card from the hand."
 	set src in view(1)

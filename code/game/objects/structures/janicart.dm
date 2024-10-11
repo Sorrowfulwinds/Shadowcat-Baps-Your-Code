@@ -89,7 +89,7 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 		mybag.attackby(I, user)
 
 
-/obj/structure/janitorialcart/attack_hand(mob/user, list/params)
+/obj/structure/janitorialcart/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	nano_ui_interact(user)
 	return
 

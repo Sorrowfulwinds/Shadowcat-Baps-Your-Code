@@ -16,6 +16,7 @@
 	CanAtmosPass = ATMOS_PASS_PROC
 	w_class = WEIGHT_CLASS_NORMAL
 	rad_flags = RAD_BLOCK_CONTENTS | RAD_NO_CONTAMINATE
+	obj_flags = OBJ_MELEE_TARGETABLE | OBJ_RANGE_TARGETABLE | OBJ_ALLOW_THROW_THROUGH
 
 	plane = OBJ_PLANE
 	layer = WINDOW_LAYER
@@ -206,7 +207,7 @@
 	user.visible_message(SPAN_NOTICE("Something knocks on [src]."))
 	playsound(loc, 'sound/effects/Glasshit.ogg', 50, TRUE)
 
-/obj/structure/window/attack_hand(mob/user, list/params)
+/obj/structure/window/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 
@@ -290,7 +291,7 @@
 /obj/structure/window/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	. = ..()
 	if (exposed_temperature > maximal_heat)
-		inflict_atom_damage(damage_per_fire_tick, flag = ARMOR_FIRE, gradual = TRUE)
+		inflict_atom_damage(damage_per_fire_tick, damage_flag = ARMOR_FIRE, damage_mode = DAMAGE_MODE_GRADUAL)
 
 /obj/structure/window/drop_products(method, atom/where)
 	. = ..()
@@ -453,7 +454,7 @@
 
 /obj/structure/window/verb/rotate_counterclockwise()
 	set name = "Rotate Counterclockwise" // Temporary fix until someone more intelligent figures out how to add proper rotation verbs to the panels
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 
 	if (usr.incapacitated())
@@ -471,7 +472,7 @@
 
 /obj/structure/window/verb/rotate_clockwise()
 	set name = "Rotate Clockwise"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 
 	if (usr.incapacitated())

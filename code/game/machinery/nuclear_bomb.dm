@@ -162,7 +162,7 @@ var/bomb_set
 				return
 	..()
 
-/obj/machinery/nuclearbomb/attack_hand(mob/user, list/params)
+/obj/machinery/nuclearbomb/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(extended)
 		if(!ishuman(user))
 			to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
@@ -213,7 +213,7 @@ var/bomb_set
 	onclose(user, "nukebomb_hack")
 
 /obj/machinery/nuclearbomb/verb/make_deployable()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Make Deployable"
 	set src in oview(1)
 
@@ -423,6 +423,3 @@ var/bomb_set
 		log_game("[src], the last authentication disk, has been destroyed. Spawning [D] at ([D.x], [D.y], [D.z]).")
 	nuke_disks -= src
 	return ..()
-
-/obj/item/disk/nuclear/touch_map_edge()
-	qdel(src)

@@ -12,11 +12,12 @@
 	equip_sound = 'sound/items/toolbelt_equip.ogg'
 	drop_sound = 'sound/items/drop/toolbelt.ogg'
 	pickup_sound = 'sound/items/pickup/toolbelt.ogg'
+	worth_intrinsic = 50
 	var/show_above_suit = 0
 
 /obj/item/storage/belt/verb/toggle_layer()
 	set name = "Switch Belt Layer"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(show_above_suit == -1)
 		to_chat(usr, SPAN_NOTICE("\The [src] cannot be worn above your suit!"))
@@ -25,7 +26,7 @@
 	update_icon()
 
 // todo: this bad lol
-/obj/item/storage/belt/render_apply_overlays(mutable_appearance/MA, bodytype, inhands, datum/inventory_slot_meta/slot_meta, icon_used)
+/obj/item/storage/belt/render_apply_overlays(mutable_appearance/MA, bodytype, inhands, datum/inventory_slot/slot_meta, icon_used)
 	. = ..()
 	var/static/icon/funny_belt_icon = 'icons/mob/clothing/belt.dmi'
 	for(var/obj/item/I in contents)
@@ -261,8 +262,8 @@
 		/obj/item/cell/device/weapon,
 		/obj/item/material/butterfly,
 		/obj/item/material/knife,
-		/obj/item/melee/energy/sword,
-		/obj/item/shield/energy,
+		/obj/item/melee/transforming/energy/sword,
+		/obj/item/shield/transforming/energy,
 		/obj/item/ammo_casing/,
 		/obj/item/ammo_magazine/,
 		/obj/item/storage/box/beanbags,
@@ -409,6 +410,7 @@
 	icon_state = "janitor"
 	max_items = 7
 	max_single_weight_class = WEIGHT_CLASS_NORMAL
+	worth_intrinsic = 35
 	insertion_whitelist = list(
 		/obj/item/clothing/glasses,
 		/obj/item/flashlight,
@@ -432,6 +434,7 @@
 	name = "excavation gear-belt"
 	desc = "Can hold various excavation gear."
 	icon_state = "gear"
+	worth_intrinsic = 65
 	insertion_whitelist = list(
 		/obj/item/storage/box/samplebags,
 		/obj/item/core_sampler,
@@ -522,12 +525,16 @@
 	icon_state = "sheath-sabre"
 	max_items = 1
 	insertion_whitelist = list(
-		/obj/item/melee/sabre,
+		/obj/item/material/sword/sabre,
 		/obj/item/melee/baton/stunsword,
 		)
 	starts_with = list(
-		/obj/item/melee/sabre,
+		/obj/item/material/sword/sabre,
 		)
+
+/obj/item/storage/belt/sheath/initialize_storage()
+	. = ..()
+	obj_storage.update_icon_on_item_change = TRUE
 
 /obj/item/storage/belt/sheath/update_icon()
 	icon_state = "sheath"
@@ -539,6 +546,7 @@
 		var/mob/living/L = loc
 		L.regenerate_icons()
 	..()
+
 /obj/item/storage/belt/ranger
 	name = "ranger belt"
 	desc = "The fancy utility-belt holding the tools, cuffs and gadgets of the Go Go ERT-Rangers. The belt buckle is not real phoron, but it is still surprisingly comfortable to wear."
@@ -563,7 +571,7 @@
 		/obj/item/gun/energy/lasertag,
 		/obj/item/gun/energy/netgun,
 		/obj/item/gun/energy/phasegun/pistol,
-		/obj/item/gun/energy/pulse_pistol,
+		/obj/item/gun/energy/pulse_carbine,
 		/obj/item/gun/energy/retro,
 		/obj/item/gun/energy/service,
 		/obj/item/gun/energy/stunrevolver,

@@ -65,7 +65,7 @@
 
 /obj/machinery/dna_scannernew/verb/eject()
 	set src in oview(1)
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Eject DNA Scanner"
 
 	if (usr.stat != 0)
@@ -95,7 +95,7 @@
 
 /obj/machinery/dna_scannernew/verb/move_inside()
 	set src in oview(1)
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Enter DNA Scanner"
 
 	if (usr.stat != 0)
@@ -300,7 +300,7 @@
 	src.add_hiddenprint(user)
 	nano_ui_interact(user)
 
-/obj/machinery/computer/scan_consolenew/attack_hand(mob/user, list/params)
+/obj/machinery/computer/scan_consolenew/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(!..())
 		nano_ui_interact(user)
 

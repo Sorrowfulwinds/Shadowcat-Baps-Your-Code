@@ -60,13 +60,13 @@
 	E.replaced(target)
 	target.update_icons_body(FALSE)
 	target.update_health()
-	target.UpdateDamageIcon()
+	target.update_damage_overlay()
 
 /datum/surgery_step/limb/attach/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/E = tool
 	user.visible_message("<span class='warning'> [user]'s hand slips, damaging [target]'s [E.amputation_point]!</span>", \
 	"<span class='warning'> Your hand slips, damaging [target]'s [E.amputation_point]!</span>")
-	target.apply_damage(10, BRUTE, null, sharp=1)
+	target.apply_damage(10, DAMAGE_TYPE_BRUTE, null, sharp=1)
 
 ///////////////////////////////////////////////////////////////
 // Limb Connection Surgery
@@ -100,13 +100,13 @@
 	E.status &= ~ORGAN_CUT_AWAY
 	target.update_icons_body()
 	target.update_health()
-	target.UpdateDamageIcon()
+	target.update_damage_overlay()
 
 /datum/surgery_step/limb/connect/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/E = tool
 	user.visible_message("<span class='warning'> [user]'s hand slips, damaging [target]'s [E.amputation_point]!</span>", \
 	"<span class='warning'> Your hand slips, damaging [target]'s [E.amputation_point]!</span>")
-	target.apply_damage(10, BRUTE, null, sharp=1)
+	target.apply_damage(10, DAMAGE_TYPE_BRUTE, null, sharp=1)
 
 ///////////////////////////////////////////////////////////////
 // Robolimb Attachment Surgery
@@ -150,11 +150,11 @@
 
 	target.update_icons_body(FALSE)
 	target.update_health()
-	target.UpdateDamageIcon()
+	target.update_damage_overlay()
 
 	qdel(tool)
 
 /datum/surgery_step/limb/mechanize/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	user.visible_message("<span class='warning'> [user]'s hand slips, damaging [target]'s flesh!</span>", \
 	"<span class='warning'> Your hand slips, damaging [target]'s flesh!</span>")
-	target.apply_damage(10, BRUTE, null, sharp=1)
+	target.apply_damage(10, DAMAGE_TYPE_BRUTE, null, sharp=1)

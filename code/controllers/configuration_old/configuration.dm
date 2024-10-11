@@ -225,12 +225,6 @@
 
 	var/list/gamemode_cache = list()
 
-	var/lock_client_view_x
-	var/lock_client_view_y
-	var/max_client_view_x
-	var/max_client_view_y
-
-
 /datum/configuration_legacy/New()
 	var/list/L = subtypesof(/datum/game_mode)
 	for (var/T in L)
@@ -601,9 +595,6 @@
 
 				if("socket_talk")
 					socket_talk = text2num(value)
-
-				if("tickcomp")
-					Tickcomp = 1
 
 				if("humans_need_surnames")
 					humans_need_surnames = 1

@@ -3,7 +3,7 @@
 /obj/item/gun/ballistic/heavysniper/collapsible
 
 /obj/item/gun/ballistic/heavysniper/collapsible/verb/take_down()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Disassemble Rifle"
 
 	var/mob/living/carbon/human/user = usr
@@ -68,7 +68,7 @@
 	. = ..()
 	trigger_group = src
 
-/obj/item/sniper_rifle_part/attack_self(mob/user)
+/obj/item/sniper_rifle_part/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

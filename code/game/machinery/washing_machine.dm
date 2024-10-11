@@ -27,7 +27,7 @@
 
 /obj/machinery/washing_machine/verb/start()
 	set name = "Start Washing"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 
 	if(!istype(usr, /mob/living)) //ew ew ew usr, but it's the only way to check.
@@ -60,7 +60,7 @@
 
 /obj/machinery/washing_machine/verb/climb_out()
 	set name = "Climb out"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in usr.loc
 
 	sleep(20)
@@ -120,7 +120,7 @@
 		..()
 	update_icon()
 
-/obj/machinery/washing_machine/attack_hand(mob/user, list/params)
+/obj/machinery/washing_machine/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	switch(state)
 		if(1)
 			state = 2

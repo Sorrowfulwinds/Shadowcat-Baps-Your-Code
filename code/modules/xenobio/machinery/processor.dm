@@ -29,7 +29,7 @@
 		. += SPAN_NOTICE("It looks slick enough to let slimes glide over it.")
 	. += SPAN_BOLDNOTICE("The automatic intake switch is in the [auto_mode? "On" : "Off"] position.")
 
-/obj/machinery/processor/attack_hand(mob/user, list/params)
+/obj/machinery/processor/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(processing)
 		to_chat(user, SPAN_WARNING("The processor is in the process of processing!"))
 		return
@@ -84,7 +84,7 @@
 
 // Verb to remove everything.
 /obj/machinery/processor/verb/eject()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Eject Processor"
 	set src in oview(1)
 

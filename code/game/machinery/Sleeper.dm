@@ -37,7 +37,7 @@
 /obj/machinery/sleep_console/attack_ai(mob/user)
 	return attack_hand(user)
 
-/obj/machinery/sleep_console/attack_hand(mob/user, list/params)
+/obj/machinery/sleep_console/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(..())
 		return 1
 
@@ -295,7 +295,7 @@
 
 /obj/machinery/sleeper/verb/move_eject()
 	set name = "Eject occupant"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 	if(usr == occupant)
 		switch(usr.stat)

@@ -62,7 +62,7 @@
 		tape.ruin() //Fires destroy the tape
 	return ..()
 
-/obj/item/tape_recorder/attack_hand(mob/user, list/params)
+/obj/item/tape_recorder/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(user.get_inactive_held_item() == src)
 		if(tape)
 			eject()
@@ -205,7 +205,7 @@
 
 /obj/item/tape_recorder/verb/playback_memory()
 	set name = "Playback Tape"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(usr.incapacitated())
 		return
@@ -257,7 +257,7 @@
 
 /obj/item/tape_recorder/verb/eject()
 	set name = "Eject Tape"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(usr.incapacitated())
 		return
@@ -337,7 +337,7 @@
 
 /obj/item/tape_recorder/verb/record()
 	set name = "Start Recording"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(usr.incapacitated())
 		return
@@ -345,7 +345,7 @@
 
 /obj/item/tape_recorder/verb/stop()
 	set name = "Stop"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(usr.incapacitated())
 		return
@@ -355,7 +355,7 @@
 
 /obj/item/tape_recorder/verb/wipe_tape()
 	set name = "Wipe Tape"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(usr.incapacitated())
 		return
@@ -376,7 +376,7 @@
 
 /obj/item/tape_recorder/verb/print_transcript()
 	set name = "Print Transcript"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 
 	if(usr.incapacitated())
 		return
@@ -441,7 +441,7 @@
 /obj/item/tape_recorder/proc/print_cooldown()
 	TIMER_COOLDOWN_START(src, CD_INDEX_TAPE_PRINT, 30 SECONDS)
 
-/obj/item/tape_recorder/attack_self(mob/user)
+/obj/item/tape_recorder/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

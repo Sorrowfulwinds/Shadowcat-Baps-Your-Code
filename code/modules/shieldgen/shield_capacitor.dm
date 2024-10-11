@@ -67,7 +67,7 @@
 	else
 		..()
 
-/obj/machinery/shield_capacitor/attack_hand(mob/user, list/params)
+/obj/machinery/shield_capacitor/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(machine_stat & (BROKEN))
 		return
 	interact(user)
@@ -146,7 +146,7 @@
 
 /obj/machinery/shield_capacitor/verb/rotate_clockwise()
 	set name = "Rotate Capacitor Clockwise"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 
 	if (src.anchored)

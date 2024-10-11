@@ -47,7 +47,7 @@
 	on = TRUE
 	Rebuild()
 	update_icon()
-	START_PROCESSING(SSfastprocess, src)
+	START_PROCESSING(SSprocess_5fps, src)
 
 /obj/item/assembly/infra/proc/turn_off()
 	if(!on)
@@ -58,7 +58,7 @@
 	on = FALSE
 	Rebuild()
 	update_icon()
-	STOP_PROCESSING(SSfastprocess, src)
+	STOP_PROCESSING(SSprocess_5fps, src)
 
 /obj/item/assembly/infra/update_icon()
 	cut_overlays()
@@ -194,7 +194,7 @@
 
 /obj/item/assembly/infra/verb/rotate_clockwise()
 	set name = "Rotate Infrared Laser Clockwise"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in usr
 
 	setDir(turn(dir, 90))

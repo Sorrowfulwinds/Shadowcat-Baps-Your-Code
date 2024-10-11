@@ -27,7 +27,7 @@
 	var/obj/machinery/camera/camera
 	var/list/camera_networks
 
-	action_button_name = "Toggle Helmet Light"
+	item_action_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
 	brightness_on = 4
 	on = 0
@@ -35,7 +35,7 @@
 /obj/item/clothing/head/helmet/space/verb/toggle_camera()
 	set name = "Toggle Helmet Camera"
 	set desc = "Turn your helmet's camera on or off."
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in usr
 	if(usr.stat || usr.restrained() || usr.incapacitated())
 		return

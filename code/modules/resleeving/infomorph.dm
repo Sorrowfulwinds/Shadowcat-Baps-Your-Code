@@ -325,7 +325,7 @@ var/list/infomorph_emotions = list(
 
 /mob/living/silicon/infomorph/lay_down()
 	set name = "Rest"
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 
 	resting = !resting
 	icon_state = resting ? "[chassis]_rest" : "[chassis]"
@@ -343,7 +343,7 @@ var/list/infomorph_emotions = list(
 		if(stat != 2) close_up()
 	return
 
-/mob/living/silicon/infomorph/attack_hand(mob/user, list/params)
+/mob/living/silicon/infomorph/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	visible_message("<span class='danger'>[user.name] boops [src] on the head.</span>")
 	close_up()
 
@@ -382,7 +382,7 @@ var/list/infomorph_emotions = list(
 
 /mob/living/silicon/infomorph/verb/wipe_software()
 	set name = "Suspend Self"
-	set category = "OOC"
+	set category = VERB_CATEGORY_OOC
 	set desc = "Wipe yourself from your hardware. This is functionally equivalent to cryo or robotic storage, freeing up your job slot."
 
 	// Make sure people don't kill themselves accidentally

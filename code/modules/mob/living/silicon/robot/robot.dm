@@ -75,7 +75,7 @@
 	var/integrated_light_power = 4.5
 	var/datum/wires/robot/wires
 
-//! ## Icon stuff
+	//* Icon stuff
 	/// Persistent icontype tracking allows for cleaner icon updates
 	var/icontype
 	/// Used to store the associations between sprite names and sprite index.
@@ -85,7 +85,7 @@
 	/// Remaining attempts to select icon before a selection is forced.
 	var/icon_selection_tries = 0
 
-//! ## Hud stuff
+	//* Hud stuff
 
 	var/atom/movable/screen/cells = null
 	var/atom/movable/screen/inv1 = null
@@ -533,11 +533,13 @@
 /mob/living/silicon/robot/restrained()
 	return 0
 
-/mob/living/silicon/robot/bullet_act(var/obj/projectile/Proj)
-	..(Proj)
-	if(prob(75) && Proj.damage > 0)
+/mob/living/silicon/robot/on_bullet_act(obj/projectile/proj, impact_flags, list/bullet_act_args)
+	. = ..()
+	if(. & PROJECTILE_IMPACT_FLAGS_UNCONDITIONAL_ABORT)
+		return
+	// todo: why is this in bullet act and not where we take damage maybe?
+	if(prob(75) && proj.damage_force > 0)
 		spark_system.start()
-	return 2
 
 /mob/living/silicon/robot/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/handcuffs)) // fuck i don't even know why isrobot() in handcuff code isn't working so this will have to do
@@ -830,7 +832,7 @@
 	module = null
 	updatename("Default")
 
-/mob/living/silicon/robot/attack_hand(mob/user, list/params)
+/mob/living/silicon/robot/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	. = ..()
 	if(. & CLICKCHAIN_DO_NOT_PROPAGATE)
 		return
@@ -916,6 +918,7 @@
 	cut_overlays()
 
 	if (dogborg)
+		zmm_flags |= ZMM_LOOKAHEAD
 		// Resting dogborgs don't get overlays.
 		if (stat == CONSCIOUS && resting)
 			if(sitting)
@@ -925,6 +928,8 @@
 			else
 				icon_state = "[module_sprites[icontype]]-rest"
 			return
+	else
+		zmm_flags &= ~ZMM_LOOKAHEAD
 
 	if(stat == CONSCIOUS)
 		if(!shell || deployed) // Shell borgs that are not deployed will have no eyes.
@@ -1218,22 +1223,6 @@
 	lockcharge = state
 	update_mobility()
 
-/mob/living/silicon/robot/mode()
-	set name = "Activate Held Object"
-	set category = "IC"
-	set src = usr
-
-	if(world.time <= next_click) // Hard check, before anything else, to avoid crashing
-		return
-
-	next_click = world.time + 1
-
-	var/obj/item/W = get_active_held_item()
-	if (W)
-		W.attack_self(src)
-
-	return
-
 /mob/living/silicon/robot/proc/choose_icon(var/triesleft, var/list/module_sprites)
 	if(!module_sprites.len)
 		to_chat(src, "Something is badly wrong with the sprite selection. Harass a coder.")
@@ -1427,7 +1416,7 @@
 
 /mob/living/silicon/robot/verb/robot_nom(var/mob/living/T in living_mobs(1))
 	set name = "Robot Nom"
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 	set desc = "Allows you to eat someone."
 
 	if (stat != CONSCIOUS)
@@ -1436,7 +1425,7 @@
 
 /mob/living/silicon/robot/proc/rest_style()
 	set name = "Switch Rest Style"
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 	set desc = "Select your resting pose."
 	sitting = FALSE
 	bellyup = FALSE
@@ -1451,7 +1440,7 @@
 
 /mob/living/silicon/robot/proc/ex_reserve_refill()
 	set name = "Refill Extinguisher"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	var/datum/matter_synth/water = water_res
 	for(var/obj/item/extinguisher/E in module.modules)
 		if(E.reagents.total_volume < E.max_water)

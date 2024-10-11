@@ -34,7 +34,7 @@
 
 /obj/item/gun/launcher/pneumatic/verb/set_pressure() //set amount of tank pressure.
 	set name = "Set Valve Pressure"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in range(0)
 	var/N = input("Percentage of tank used per shot:","[src]") as null|anything in possible_pressure_amounts
 	if (N)
@@ -61,7 +61,7 @@
 	else
 		to_chat(user, "There is nothing to remove in \the [src].")
 
-/obj/item/gun/launcher/pneumatic/attack_hand(mob/user, list/params)
+/obj/item/gun/launcher/pneumatic/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(user.get_inactive_held_item() == src)
 		unload_hopper(user)
 	else
@@ -77,7 +77,7 @@
 	else if(istype(W) && item_storage.obj_storage.can_be_inserted(W))
 		item_storage.obj_storage.try_insert(W, new /datum/event_args/actor(user))
 
-/obj/item/gun/launcher/pneumatic/attack_self(mob/user)
+/obj/item/gun/launcher/pneumatic/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

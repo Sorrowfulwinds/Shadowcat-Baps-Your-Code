@@ -6,7 +6,7 @@
 	var/datum/seed/last_seed
 	var/list/last_reagents
 
-/obj/item/plant_analyzer/attack_self(mob/user)
+/obj/item/plant_analyzer/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -101,7 +101,7 @@
 
 /obj/item/plant_analyzer/proc/print_report_verb()
 	set name = "Print Plant Report"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src = usr
 
 	if(usr.stat || usr.restrained() || usr.lying)

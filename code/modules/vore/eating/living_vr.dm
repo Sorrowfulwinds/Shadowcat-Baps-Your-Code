@@ -23,7 +23,6 @@
 	var/absorbing_prey = 0 				// Determines if the person is using the succubus drain or not. See station_special_abilities_vr.
 	var/drain_finalized = 0				// Determines if the succubus drain will be KO'd/absorbed. Can be toggled on at any time.
 	var/fuzzy = 1						// Preference toggle for sharp/fuzzy icon.
-	var/tail_alt = 0					// Tail layer toggle.
 	var/permit_healbelly = TRUE
 	var/can_be_drop_prey = FALSE
 	var/can_be_drop_pred = TRUE			// Mobs are pred by default.
@@ -314,7 +313,7 @@
 //
 /mob/living/proc/lick(var/mob/living/tasted in living_mobs(1))
 	set name = "Lick"
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 	set desc = "Lick someone nearby!"
 	set popup_menu = FALSE // Stop licking by accident!
 
@@ -353,7 +352,7 @@
 // This is just the above proc but switched about.
 /mob/living/proc/smell(mob/living/smelled in living_mobs(1))
 	set name = "Smell"
-	set category = "IC"
+	set category = VERB_CATEGORY_IC
 	set desc = "Smell someone nearby!"
 	set popup_menu = FALSE
 
@@ -391,15 +390,10 @@
 	//You're in a belly!
 	if(isbelly(loc))
 		var/obj/belly/B = loc
-		var/confirm = alert(src, "You're in a mob. Don't use this as a trick to get out of hostile animals. This is for escaping from preference-breaking and if you're otherwise unable to escape from endo (pred AFK for a long time).", "Confirmation", "Okay", "Cancel")
-		if(!confirm == "Okay" || loc != B)
-			return
 		//Actual escaping
 		absorbed = 0	//Make sure we're not absorbed
 		muffled = 0		//Removes Muffling
 		forceMove(get_turf(src)) //Just move me up to the turf, let's not cascade through bellies, there's been a problem, let's just leave.
-		for(var/mob/living/simple_mob/SA in range(10))
-			SA.prey_excludes[src] = world.time
 		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of [key_name(B.owner)] ([B.owner ? "<a href='?_src_=holder;adminplayerobservecoodjump=1;X=[B.owner.x];Y=[B.owner.y];Z=[B.owner.z]'>JMP</a>" : "null"])")
 
 		if(!ishuman(B.owner))
@@ -743,7 +737,7 @@
 
 /mob/living/proc/switch_scaling()
 	set name = "Switch scaling mode"
-	set category = "Preferences"
+	set category = "OOC"
 	set desc = "Switch sharp/fuzzy scaling for current mob."
 	appearance_flags ^= PIXEL_SCALE
 

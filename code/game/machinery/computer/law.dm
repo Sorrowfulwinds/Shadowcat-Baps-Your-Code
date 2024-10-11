@@ -10,7 +10,7 @@
 
 
 /obj/machinery/computer/aiupload/verb/AccessInternals()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Access Computer's Internals"
 	set src in oview(1)
 	if(get_dist(src, usr) > 1 || usr.restrained() || usr.lying || usr.stat || istype(usr, /mob/living/silicon))
@@ -35,7 +35,7 @@
 		..()
 
 
-/obj/machinery/computer/aiupload/attack_hand(mob/user, list/params)
+/obj/machinery/computer/aiupload/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(machine_stat & NOPOWER)
 		to_chat(user, "The upload computer has no power!")
 		return
@@ -71,7 +71,7 @@
 		return ..()
 
 
-/obj/machinery/computer/borgupload/attack_hand(mob/user, list/params)
+/obj/machinery/computer/borgupload/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(machine_stat& NOPOWER)
 		to_chat(user, "The upload computer has no power!")
 		return

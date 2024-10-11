@@ -11,7 +11,7 @@
 	load_method = SINGLE_CASING
 
 	max_shells = 1
-	caliber = "musket"
+	caliber = /datum/ammo_caliber/musket
 
 	slot_flags = SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
@@ -33,7 +33,7 @@
 	if(!has_powder)
 		to_chat(user, SPAN_WARNING("\The [src] is not loaded with gunpowder!"))
 		return FALSE
-	if(!user?.client?.is_preference_enabled(/datum/client_preference/help_intent_firing) && user.a_intent == INTENT_HELP)
+	if(!user?.client?.get_preference_toggle(/datum/game_preference_toggle/game/help_intent_firing) && user.a_intent == INTENT_HELP)
 		to_chat(user, SPAN_WARNING("You refrain from firing [src] because your intent is set to help!"))
 		return FALSE
 	if(safety_state == GUN_SAFETY_ON)
@@ -64,7 +64,7 @@
 /obj/item/reagent_containers/glass/powder_horn
 	name = "powder horn"
 	desc = "An ivory container for gunpowder."
-	icon = 'icons/obj/ammo.dmi'
+	icon = 'icons/modules/projectiles/rp_ammo_unused.dmi'
 	icon_state = "powderhorn"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = SLOT_BELT
@@ -138,6 +138,6 @@
 	icon_state = "blunderbuss"
 	item_state = "blunderbuss"
 	wielded_item_state = "blunderbuss-wielded"
-	caliber = "blunderbuss"
+	caliber = /datum/ammo_caliber/blunderbuss
 
-	ammo_type = /obj/item/ammo_casing/musket/blunderbuss
+	ammo_type = /obj/item/ammo_casing/blunderbuss

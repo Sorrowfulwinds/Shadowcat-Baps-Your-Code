@@ -55,7 +55,7 @@
 	sides = 10
 	result = 10
 
-/obj/item/dice/attack_self(mob/user)
+/obj/item/dice/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -148,7 +148,7 @@
 		/obj/item/dice,
 		)
 
-/obj/item/storage/dicecup/attack_self(mob/user)
+/obj/item/storage/dicecup/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -168,7 +168,7 @@
 		to_chat(viewer, "The [D.name] shows a [D.result].")
 
 /obj/item/storage/dicecup/verb/peekAtDice()
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Peek at Dice"
 	set desc = "Peek at the dice under your cup."
 
@@ -176,7 +176,7 @@
 
 /obj/item/storage/dicecup/verb/revealDiceHand()
 
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set name = "Reveal Dice"
 	set desc = "Reveal the dice hidden under your cup."
 

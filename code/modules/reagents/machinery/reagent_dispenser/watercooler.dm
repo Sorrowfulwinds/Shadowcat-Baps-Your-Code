@@ -28,7 +28,7 @@
 
 /obj/structure/reagent_dispensers/water_cooler/verb/rotate_clockwise()
 	set name = "Rotate Cooler Clockwise"
-	set category = "Object"
+	set category = VERB_CATEGORY_OBJECT
 	set src in oview(1)
 
 	if (src.anchored || usr:stat)
@@ -122,7 +122,7 @@
 			to_chat(user, "<span class='warning'>There is already a cup dispenser there!</span>")
 		return
 
-/obj/structure/reagent_dispensers/water_cooler/attack_hand(mob/user)
+/obj/structure/reagent_dispensers/water_cooler/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(cups)
 		new /obj/item/reagent_containers/food/drinks/sillycup(src.loc)
 		cups--
