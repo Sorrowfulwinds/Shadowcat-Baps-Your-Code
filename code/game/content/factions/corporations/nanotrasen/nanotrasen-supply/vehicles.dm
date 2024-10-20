@@ -1,6 +1,6 @@
 /datum/supply_pack/nanotrasen/vehicles
 	category = "Vehicles"
-
+/*
 /datum/supply_pack/nanotrasen/vehicles/dune_buggy
 	name = "Exploration Dune Buggy"
 	contains = list(
@@ -84,3 +84,4 @@
 	worth = 500
 	container_type = /obj/structure/largecrate
 	container_name = "Cargo Train Trolley Crate"
+*/

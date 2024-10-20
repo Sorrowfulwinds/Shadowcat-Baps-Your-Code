@@ -111,7 +111,7 @@
 /obj/structure/largecrate/vehicle/bike
 	name = "spacebike crate"
 	starts_with = list(/obj/structure/vehiclecage/spacebike)
-*/
+
 /obj/structure/largecrate/vehicle/quadbike
 	name = "\improper ATV crate"
 	starts_with = list(/obj/vehicle/ridden/quadbike/random_color,
