@@ -65,9 +65,6 @@
 			if(!user.attempt_insert_item_for_installation(O, src))
 				return
 			fireaxe = O
-			if(fireaxe.wielded)
-				fireaxe.wielded = FALSE
-				fireaxe.update_icon()
 			to_chat(user, "<span class='notice'>You place the fire axe back in the [src.name].</span>")
 			update_icon()
 		else
@@ -109,7 +106,7 @@
 					update_icon()
 
 
-/obj/structure/closet/fireaxecabinet/attack_hand(mob/user, list/params)
+/obj/structure/closet/fireaxecabinet/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	var/hasaxe = 0
 	if(fireaxe)
 		hasaxe = 1

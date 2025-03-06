@@ -1,10 +1,10 @@
 // Representative icons for each research design
-/datum/asset/spritesheet/research_designs
+/datum/asset_pack/spritesheet/research_designs
 	name = "design"
 
-/datum/asset/spritesheet/research_designs/create_spritesheets()
-	for (var/path in subtypesof(/datum/design))
-		var/datum/design/D = path
+/datum/asset_pack/spritesheet/research_designs/generate()
+	for (var/path in subtypesof(/datum/prototype/design))
+		var/datum/prototype/design/D = path
 
 		var/icon_file
 		var/icon_state

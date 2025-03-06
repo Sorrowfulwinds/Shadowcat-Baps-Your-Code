@@ -1,3 +1,4 @@
+// todo: god damnit it's time to refactor lockers again ~silicons
 /obj/structure/closet
 	name = "closet"
 	desc = "It's a basic storage unit."
@@ -7,6 +8,8 @@
 	w_class = WEIGHT_CLASS_HUGE
 	layer = UNDER_JUNK_LAYER
 	armor_type = /datum/armor/object/medium
+
+	worth_intrinsic = 25
 
 	integrity = 200
 	integrity_max = 200
@@ -22,6 +25,7 @@
 	var/breakout_time = 2 //2 minutes by default
 	breakout_sound = 'sound/effects/grillehit.ogg'	//Sound that plays while breaking out
 
+	// todo: why the fuck is this in terms of mob defines?? this is stupid.
 	var/storage_capacity = 2 * MOB_MEDIUM //This is so that someone can't pack hundreds of items in a locker/crate
 							  //then open it in a populated area to crash clients.
 	var/storage_cost = 40	//How much space this closet takes up if it's stuffed in another closet
@@ -49,13 +53,18 @@
 	//! legacy
 	/// override attackby and anything else closet-like
 	var/not_actually_a_closet = FALSE
+	/// was made at mapload
+	var/was_made_at_mapload
 	//! end
 
-/obj/structure/closet/Initialize(mapload)
+/obj/structure/closet/Initialize(mapload, singleton/closet_appearance/use_closet_appearance)
 	. = ..()
 	if(mapload && !opened)
 		addtimer(CALLBACK(src, PROC_REF(take_contents)), 0)
+	if(!isnull(use_closet_appearance))
+		src.closet_appearance = use_closet_appearance
 	legacy_spawn_contents()
+	was_made_at_mapload = mapload
 	/*
 	if(secure)
 		lockerelectronics = new(src)
@@ -65,7 +74,6 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/structure/closet/LateInitialize()
-	. = ..()
 	if(starts_with)
 		create_objects_in_loc(src, starts_with)
 		starts_with = null
@@ -75,6 +83,8 @@
 			icon = app.icon
 			color = null
 			update_icon()
+	if(was_made_at_mapload && !opened)
+		take_contents()
 
 /obj/structure/closet/proc/update_icon_old()
 	if(!opened)
@@ -170,6 +180,7 @@
 	playsound(src, open_sound, 15, 1, -3)
 	if(initial(density))
 		density = !density
+	update_icon()
 	return 1
 
 /obj/structure/closet/proc/close()
@@ -195,6 +206,7 @@
 	playsound(src, close_sound, 15, 1, -3)
 	if(initial(density))
 		density = !density
+	update_icon()
 	return 1
 
 //Cham Projector Exception
@@ -250,7 +262,6 @@
 	if(!(opened ? close() : open()))
 		to_chat(user, "<span class='notice'>It won't budge!</span>")
 		return
-	update_icon()
 
 // this should probably use dump_contents()
 /obj/structure/closet/legacy_ex_act(severity)
@@ -308,7 +319,7 @@
 			return
 		if(!user.attempt_insert_item_for_installation(I, opened? loc : src))
 			return
-	else if(istype(I, /obj/item/melee/energy/blade))
+	else if(istype(I, /obj/item/melee/ninja_energy_blade))
 		if(emag_act(INFINITY, user, "<span class='danger'>The locker has been sliced open by [user] with \an [I]</span>!", "<span class='danger'>You hear metal being sliced and sparks flying.</span>"))
 			var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread()
 			spark_system.set_up(5, 0, loc)
@@ -406,7 +417,7 @@
 	if(!open())
 		to_chat(user, "<span class='notice'>It won't budge!</span>")
 
-/obj/structure/closet/attack_hand(mob/user, list/params)
+/obj/structure/closet/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	add_fingerprint(user)
 	if(locked && secure)
 		togglelock(user)
@@ -587,7 +598,7 @@
 		locked = !locked
 		playsound(src, 'sound/machines/click.ogg', 15, 1, -3)
 		for(var/mob/O in viewers(user, 3))
-			if((O.client && !( O.blinded )))
+			if((O.client && !( O.has_status_effect(/datum/status_effect/sight/blindness) )))
 				to_chat(O, "<span class='notice'>The locker has been [locked ? null : "un"]locked by [user].</span>")
 		update_icon()
 	else

@@ -19,7 +19,7 @@
 		var/effective_map_id = level.parent_map?.persistence_id || level.parent_map?.id
 		// level id required but not map id; if map id null, map persisting objects will simply use the level id
 		if(level.persistence_allowed && effective_level_id)
-			level.persistence.load_or_new(effective_level_id, effective_map_id || effective_level_id)
+			level.persistence.load_or_new(effective_level_id, effective_map_id || PERSISTENCE_MAP_ID_STANDALONE)
 		else
 			level.persistence_allowed = FALSE
 	return level.persistence
@@ -66,7 +66,7 @@
 
 	var/datum/db_query/query = SSdbcore.NewQuery(
 		"SELECT TIMESTAMPDIFF(HOUR, saved, NOW()), saved_round_id, data, generation \
-			FROM [format_table_name("persistence_level_metadata")] \
+			FROM [DB_PREFIX_TABLE_NAME("persistence_level_metadata")] \
 			WHERE level_id = :level",
 		list(
 			"level" = level_id,
@@ -103,7 +103,7 @@
 	src.round_id_saved = GLOB.round_number
 
 	SSdbcore.RunQuery(
-		"INSERT INTO [format_table_name("persistence_level_metadata")] (saved, saved_round_id, level_id, data, generation) \
+		"INSERT INTO [DB_PREFIX_TABLE_NAME("persistence_level_metadata")] (saved, saved_round_id, level_id, data, generation) \
 			VALUES (Now(), :round, :level, :data, :generation) ON DUPLICATE KEY UPDATE \
 			data = VALUES(data), generation = VALUES(generation), saved_round_id = VALUES(saved_round_id), saved = VALUES(saved)",
 		list(

@@ -9,14 +9,17 @@
 /datum/admins/proc/edit_admin_permissions()
 	if(!check_rights(R_PERMISSIONS))
 		return
-	var/datum/asset/asset_cache_datum = get_asset_datum(/datum/asset/group/permissions)
-	asset_cache_datum.send(usr)
+
+	var/datum/asset_pack/asset_cache_datum = SSassets.ready_asset_pack(/datum/asset_pack/simple/permissions)
+	SSassets.send_asset_pack(usr, asset_cache_datum)
+
+	SSassets.send_asset_pack(usr, /datum/asset_pack/simple/common)
 
 	var/output = {"<!DOCTYPE html>
 <html>
 <head>
 <title>Permissions Panel</title>
-<script type='text/javascript' src='[SSassets.transport.get_asset_url("search.js")]'></script>
+<script type='text/javascript' src='[asset_cache_datum.get_url("search.js")]'></script>
 <link rel='stylesheet' type='text/css' href='panels.css'>
 </head>
 <body onload='selectTextField();updateSearch();'>
@@ -75,7 +78,7 @@
 		return
 
 	var/datum/db_query/select_query = SSdbcore.RunQuery(
-		"SELECT id FROM [format_table_name("admin")] WHERE ckey = :ckey",
+		"SELECT id FROM [DB_PREFIX_TABLE_NAME("admin")] WHERE ckey = :ckey",
 		list(
 			"ckey" = adm_ckey
 		)
@@ -89,14 +92,14 @@
 
 	if(new_admin)
 		SSdbcore.RunQuery(
-			"INSERT INTO [format_table_name("admin")] (id, ckey, rank, level, flags) VALUES (null, :ckey, :rank, -1, 0)",
+			"INSERT INTO [DB_PREFIX_TABLE_NAME("admin")] (id, ckey, rank, level, flags) VALUES (null, :ckey, :rank, -1, 0)",
 			list(
 				"ckey" = adm_ckey,
 				"rank" = new_rank
 			)
 		)
 		SSdbcore.RunQuery(
-			"INSERT INTO [format_table_name("admin_log")] (id, datetime, adminckey, adminip, log) VALUES (NULL, NOW(), :ckey, :ip, :logstr)",
+			"INSERT INTO [DB_PREFIX_TABLE_NAME("admin_log")] (id, datetime, adminckey, adminip, log) VALUES (NULL, NOW(), :ckey, :ip, :logstr)",
 			list(
 				"ckey" = sanitizeSQL(usr.ckey),
 				"ip" = sanitizeSQL(usr.client.address),
@@ -107,14 +110,14 @@
 	else
 		if(!isnull(admin_id) && isnum(admin_id))
 			SSdbcore.RunQuery(
-				"UPDATE [format_table_name("admin")] SET rank = :rank WHERE id = :id",
+				"UPDATE [DB_PREFIX_TABLE_NAME("admin")] SET rank = :rank WHERE id = :id",
 				list(
 					"rank" = new_rank,
 					"id" = admin_id
 				)
 			)
 			SSdbcore.RunQuery(
-				"INSERT INTO [format_table_name("admin_log")] (id, datetime, adminckey, adminip, log) VALUES (NULL, Now(), :ckey, :addr, :log)",
+				"INSERT INTO [DB_PREFIX_TABLE_NAME("admin_log")] (id, datetime, adminckey, adminip, log) VALUES (NULL, Now(), :ckey, :addr, :log)",
 				list(
 					"ckey" = usr.ckey,
 					"addr" = usr.client.address,
@@ -152,7 +155,7 @@
 		return
 
 	var/datum/db_query/select_query = SSdbcore.RunQuery(
-		"SELECT id, flags FROM [format_table_name("admin")] WHERE ckey = :ckey",
+		"SELECT id, flags FROM [DB_PREFIX_TABLE_NAME("admin")] WHERE ckey = :ckey",
 		list(
 			"ckey" = adm_ckey
 		)
@@ -169,14 +172,14 @@
 
 	if(admin_rights & new_permission) //This admin already has this permission, so we are removing it.
 		SSdbcore.RunQuery(
-			"UPDATE [format_table_name("admin")] SET flags = :flags WHERE id = :id",
+			"UPDATE [DB_PREFIX_TABLE_NAME("admin")] SET flags = :flags WHERE id = :id",
 			list(
 				"flags" = admin_rights & ~new_permission,
 				"id" = admin_id
 			)
 		)
 		SSdbcore.RunQuery(
-			"INSERT INTO [format_table_name("admin_log")] (id, datetime, adminckey, adminip, log) VALUES (NULL, Now(), :ckey, :addr, :log)",
+			"INSERT INTO [DB_PREFIX_TABLE_NAME("admin_log")] (id, datetime, adminckey, adminip, log) VALUES (NULL, Now(), :ckey, :addr, :log)",
 			list(
 				"ckey" = usr.ckey,
 				"addr" = usr.client.address,
@@ -186,14 +189,14 @@
 		to_chat(usr, "<font color=#4F49AF>Permission removed.</font>")
 	else //This admin doesn't have this permission, so we are adding it.
 		SSdbcore.RunQuery(
-			"UPDATE [format_table_name("admin")] SET flags = :flags WHERE id = :id",
+			"UPDATE [DB_PREFIX_TABLE_NAME("admin")] SET flags = :flags WHERE id = :id",
 			list(
 				"flags" = admin_rights | new_permission,
 				"id" = admin_id
 			)
 		)
 		SSdbcore.RunQuery(
-			"INSERT INTO [format_table_name("admin_log")] (id, datetime, adminckey, adminip, log) VALUES (NULL, Now(), :ckey, :addr, :log)",
+			"INSERT INTO [DB_PREFIX_TABLE_NAME("admin_log")] (id, datetime, adminckey, adminip, log) VALUES (NULL, Now(), :ckey, :addr, :log)",
 			list(
 				"ckey" = usr.ckey,
 				"addr" = usr.client.address,

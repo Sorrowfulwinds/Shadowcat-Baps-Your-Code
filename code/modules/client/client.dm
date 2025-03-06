@@ -52,9 +52,17 @@
 	/// panic bunker is still resolving
 	var/panic_bunker_pending = FALSE
 
-	//? Context Menus
+	//* Actions *//
+	/// our action holder
+	var/datum/action_holder/action_holder
+
+	//* Context Menus *//
 	/// open context menu
 	var/datum/radial_menu/context_menu/context_menu
+
+	//* HUDs *//
+	/// active atom HUD providers associated to a list of ids or paths of atom huds that's providing it.
+	var/list/datum/atom_hud_provider/atom_hud_providers
 
 	//? Rendering
 	/// Click catcher
@@ -100,22 +108,6 @@
 	/// client preferences
 	var/datum/game_preferences/preferences
 
-	//? Statpanel
-	/// statpanel tab ; can be null (e.g. we're looking at verb tabs)
-	var/statpanel_tab
-	/// statpanel initialized
-	var/statpanel_ready = FALSE
-	/// turf being listed
-	var/turf/statpanel_turf
-	/// tabs the panel has
-	var/list/statpanel_tabs
-	/// statpanel variable tabs: spells / other "simple" action button frameworks
-	var/list/statpanel_spell_last
-	/// are we on byond stat? if so we can just skip the js one in data transmit (and vice versa)
-	var/statpanel_on_byond = FALSE
-	/// did we get autoswitched to byond stat for turf? if so we'll switch back when we un-list
-	var/statpanel_for_turf = FALSE
-
 	//? Throttling
 	/// block re-execution of expensive verbs
 	var/verb_throttle = 0
@@ -132,6 +124,21 @@
 	/// cutscene lockout: set after a browser synchronization command to delay the next one
 	/// since byond is deranged and will send winsets and browse calls out of order sometimes.
 	var/cutscene_lockout = FALSE
+
+	//* UI - Client *//
+	/// our tooltips system
+	var/datum/tooltip/tooltips
+	/// chat panel
+	var/datum/tgui_panel/tgui_panel
+	/// statpanel
+	var/datum/client_statpanel/tgui_stat
+
+	//* UI - Map *//
+	/// Our action drawer
+	var/datum/action_drawer/action_drawer
+	/// Our actor HUD holder
+	var/datum/actor_hud_holder/actor_huds
+
 
 		////////////////
 		//ADMIN THINGS//
@@ -156,13 +163,8 @@
 	// todo: rename to `preferences` & put it next to `persistent` to sate my OCD ~silicons
 	///Player preferences datum for the client
 	var/datum/preferences/prefs = null
-	///Current area of the controlled mob
-	var/area = null
 	///when the client last died as a mouse
 	var/time_died_as_mouse = null
-	var/datum/tooltip/tooltips 	= null
-
-	var/adminhelped = 0
 
 		///////////////
 		//SOUND STUFF//
@@ -173,16 +175,11 @@
 		////////////
 		//SECURITY//
 		////////////
-	// comment out the line below when debugging locally to enable the options & messages menu
-	//control_freak = 1
 
 	var/received_irc_pm = -99999
 	///IRC admin that spoke with them last.
 	var/irc_admin
 	var/mute_irc = 0
-	///Do we think they're using a proxy/vpn? Only if IP Reputation checking is enabled in config.
-	var/ip_reputation = 0
-
 
 		////////////////////////////////////
 		//things that require the database//
@@ -200,23 +197,12 @@
 	///Used for limiting the rate of clicks sends by the client to avoid abuse
 	var/list/clicklimiter
 
-	///List of all asset filenames sent to this client by the asset cache, along with their assoicated md5s
-	var/list/sent_assets = list()
-	///List of all completed blocking send jobs awaiting acknowledgement by send_asset
-	var/list/completed_asset_jobs = list()
-	///Last asset send job id.
-	var/last_asset_job = 0
-	var/last_completed_asset_job = 0
-
  	///world.time they connected
 	var/connection_time
  	///world.realtime they connected
 	var/connection_realtime
  	///world.timeofday they connected
 	var/connection_timeofday
-
-	/// If this client has been fully initialized or not
-	var/fully_created = FALSE
 
 /client/vv_edit_var(var_name, var_value)
 	switch (var_name)
@@ -230,6 +216,9 @@
 			change_view(var_value, TRUE)
 			return TRUE
 	return ..()
+
+
+//* Is-rank helpers *//
 
 /**
  * are we a guest account?
@@ -248,3 +237,60 @@
  */
 /client/proc/is_staff()
 	return !isnull(holder)
+
+//* Atom HUDs *//
+
+/client/proc/add_atom_hud(datum/atom_hud/hud, source)
+	ASSERT(istext(source))
+	if(isnull(atom_hud_providers))
+		atom_hud_providers = list()
+	var/list/datum/atom_hud_provider/providers = hud.resolve_providers()
+	for(var/datum/atom_hud_provider/provider as anything in providers)
+		var/already_there = atom_hud_providers[provider]
+		if(already_there)
+			atom_hud_providers[provider] |= source
+		else
+			atom_hud_providers[provider] = list(source)
+			provider.add_client(src)
+
+/client/proc/remove_atom_hud(datum/atom_hud/hud, source)
+	ASSERT(istext(source))
+	if(!length(atom_hud_providers))
+		return
+	if(!hud)
+		// remove all of source
+		for(var/datum/atom_hud_provider/provider as anything in atom_hud_providers)
+			if(!(source in atom_hud_providers[provider]))
+				continue
+			atom_hud_providers[provider] -= source
+			if(!length(atom_hud_providers[provider]))
+				atom_hud_providers -= provider
+				provider.remove_client(src)
+		return
+	hud = fetch_atom_hud(hud)
+	var/list/datum/atom_hud_provider/providers = hud.resolve_providers()
+	for(var/datum/atom_hud_provider/provider as anything in providers)
+		if(!length(atom_hud_providers[provider]))
+			continue
+		atom_hud_providers[provider] -= source
+		if(!length(atom_hud_providers[provider]))
+			atom_hud_providers -= provider
+			provider.remove_client(src)
+
+// todo: add_atom_hud_provider, remove_atom_hud_provider
+
+/client/proc/clear_atom_hud_providers()
+	for(var/datum/atom_hud_provider/provider as anything in atom_hud_providers)
+		provider.remove_client(src)
+	atom_hud_providers = null
+
+//* Transfer *//
+
+/**
+ * transfers us to a mob
+ *
+ * **never directly set ckey on a client or mob!**
+ */
+/client/proc/transfer_to(mob/moving_to)
+	var/mob/moving_from = mob
+	return moving_from.transfer_client_to(moving_to)

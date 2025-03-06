@@ -4,7 +4,7 @@
 	head = /obj/item/clothing/head/helmet/thunderdome
 	suit = /obj/item/clothing/suit/armor/vest
 	l_hand = /obj/item/material/knife
-	r_hand = /obj/item/gun/energy/pulse_rifle/destroyer
+	r_hand = /obj/item/gun/projectile/energy/nt_pulse/rifle
 	r_pocket = /obj/item/grenade/smokebomb
 	shoes = /obj/item/clothing/shoes/black
 
@@ -22,8 +22,8 @@
 	uniform = /obj/item/clothing/under/det
 	suit_store = /obj/item/clothing/suit/storage/det_trench
 	glasses = /obj/item/clothing/glasses/thermal/plain/monocle
-	r_hand = /obj/item/gun/ballistic/revolver
-	l_pocket = /obj/item/ammo_magazine/s357
+	r_hand = /obj/item/gun/projectile/ballistic/revolver
+	l_pocket = /obj/item/ammo_magazine/a357/speedloader
 
 /datum/outfit/tournament_gear/chef
 	name = "Tournament gear - Chef"

@@ -209,6 +209,19 @@
 		RegisterSignal(target, signal_type, proctype, override)
 
 /**
+ * RegisterSignal on SSdcs to listen to global signals.
+ */
+/datum/proc/RegisterGlobalSignal(signal_type, proctype, override = FALSE)
+	RegisterSignal(SSdcs, signal_type, proctype, override)
+
+/**
+ * RegisterSignal on SSdcs to listen to global signals.
+ */
+/datum/proc/RegisterGlobalSignals(list/signal_types, proctype, override = FALSE)
+	for (var/signal_type in signal_types)
+		RegisterGlobalSignal(SSdcs, signal_type, proctype, override)
+
+/**
  * Stop listening to a given signal from target
  *
  * Breaks the relationship between target and source datum, removing the callback when the signal fires
@@ -253,6 +266,20 @@
 	signal_procs[target] -= sig_type_or_types
 	if(!signal_procs[target].len)
 		signal_procs -= target
+
+/datum/proc/UnregisterGlobalSignal(sig_type_or_types)
+	UnregisterSignal(SSdcs, sig_type_or_types)
+
+/**
+ * Checks if a target is listening to a specific signal on us
+ *
+ * * This is just here for completeness. If you need to use this, you are almost certainly doing something wrong.
+ */
+/datum/proc/has_signal_registration(sigtype, datum/source)
+	var/list/existing_registree = comp_lookup[sigtype]
+	if(!existing_registree)
+		return FALSE
+	return existing_registree == source || (islist(existing_registree) && existing_registree[source])
 
 /**
  * Called on a component when a component of the same type was added to the same parent
@@ -318,11 +345,10 @@
 	for(var/datum/listening_datum as anything in queued_calls)
 		. |= call(listening_datum, queued_calls[listening_datum])(arglist(arguments))
 
-// The type arg is casted so initial works, you shouldn't be passing a real instance into this
 /**
- * Return any component assigned to this datum of the given type
+ * Return any component assigned to this datum of the given registered component type
  *
- * If it has a registered type, that'll be used instead!
+ * * `registered_type` must be set on the component for this to work.
  *
  * Arguments:
  * * datum/component/c_type The type of the component you want to get a reference to. It will be overridden with the type of its [registered_type] if it's set.
@@ -333,7 +359,9 @@
 	return . && (length(.) ? .[1] : .)
 
 /**
- * Get all components of a given type that are attached to this datum
+ * Get all components of a given registered component type that are attached to this datum
+ *
+ * * `registered_type` must be set on the component for this to work.
  *
  * Arguments:
  * * c_type The component type path

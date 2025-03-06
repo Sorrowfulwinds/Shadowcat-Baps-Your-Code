@@ -56,6 +56,7 @@
 #define SMITE_DROP_LIMB_RANDOM		"Remove one(1) arm and one(1) leg"
 #define SMITE_DROP_LIMB_ALL			"Remove all(4) limbs"
 #define SMITE_DROP_LIMB_PICK		"Remove one specific limb"
+#define SMITE_VALIDHUNT				"Declare KOS (and optionally noncanon)"
 
 #define ADMIN_LOOKUP(user)           ("[key_name_admin(user)][ADMIN_QUE(user)]")
 #define ADMIN_LOOKUPFLW(user)        ("[key_name_admin(user)][ADMIN_QUE(user)] [ADMIN_FLW(user)]")
@@ -84,7 +85,7 @@
 
 /atom/proc/Admin_Coordinates_Readable(area_name, admin_jump_ref)
 	var/turf/T = Safe_COORD_Location()
-	return T ? "[area_name ? "[get_area_name(T, TRUE)] " : " "]([T.x],[T.y],[T.z])[admin_jump_ref ? " [ADMIN_JMP(T)]" : ""]" : "nonexistent location"
+	return T ? "[area_name ? "[get_area_name(T, TRUE)] " : ""]([T.x],[T.y],[T.z])[admin_jump_ref ? " [ADMIN_JMP(T)]" : ""]" : "nonexistent location"
 
 /atom/proc/Safe_COORD_Location()
 	var/atom/A = drop_location()

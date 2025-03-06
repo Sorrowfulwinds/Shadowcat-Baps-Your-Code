@@ -88,11 +88,15 @@
 	forceMove(S)
 
 	// inventory handling start
+	// todo: this is pretty atrocious, do we have another way to hook into inventory?
+	//       this stuff is all very low level and won't call inventory procs properly
 
 	// todo: don't call dropped/pickup if going to same person
 	if(S.worn_slot)
-		pickup(S.worn_mob(), INV_OP_IS_ACCESSORY)
-		equipped(S.worn_mob(), S.worn_slot, INV_OP_IS_ACCESSORY)
+		var/mob/worn_mob = S.get_worn_mob()
+		pickup(worn_mob, INV_OP_IS_ACCESSORY)
+		equipped(worn_mob, S.worn_slot, INV_OP_IS_ACCESSORY)
+		on_inv_equipped(worn_mob,worn_mob?.inventory, S.worn_slot, INV_OP_IS_ACCESSORY)
 
 	// inventory handling end
 
@@ -109,11 +113,15 @@
 		return
 
 	// inventory handling start
+	// todo: this is pretty atrocious, do we have another way to hook into inventory?
+	//       this stuff is all very low level and won't call inventory procs properly
 
 	// todo: don't call dropped/pickup if going to same person
 	if(accessory_host.worn_slot)
-		unequipped(accessory_host.worn_mob(), accessory_host.worn_slot, INV_OP_IS_ACCESSORY)
-		dropped(accessory_host.worn_mob(), INV_OP_IS_ACCESSORY)
+		var/mob/host_worn_mob = accessory_host.get_worn_mob()
+		unequipped(host_worn_mob, accessory_host.worn_slot, INV_OP_IS_ACCESSORY)
+		on_inv_unequipped(host_worn_mob, host_worn_mob?.inventory, accessory_host.worn_slot == SLOT_ID_HANDS ? host_worn_mob.get_held_index(accessory_host) : accessory_host.worn_slot, INV_OP_IS_ACCESSORY)
+		dropped(host_worn_mob, INV_OP_IS_ACCESSORY)
 
 	// inventory handling stop
 
@@ -133,7 +141,7 @@
 	..()
 
 //default attack_hand behaviour
-/obj/item/clothing/accessory/attack_hand(mob/user, list/params)
+/obj/item/clothing/accessory/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	if(accessory_host)
 		return	//we aren't an object on the ground so don't call parent
 	..()
@@ -384,9 +392,9 @@
 	icon_state = "gaiter_red"
 	slot_flags = SLOT_TIE | SLOT_MASK
 	slot = ACCESSORY_SLOT_DECOR
-	action_button_name = "Adjust Gaiter"
+	item_action_name = "Adjust Gaiter"
 
-/obj/item/clothing/accessory/gaiter/attack_self(mob/user)
+/obj/item/clothing/accessory/gaiter/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -405,6 +413,30 @@
 /obj/item/clothing/accessory/gaiter/gray
 	name = "neck gaiter (gray)"
 	icon_state = "gaiter_gray"
+
+/obj/item/clothing/accessory/gaiter/green
+	name = "neck gaiter (green)"
+	icon_state = "gaiter_green"
+
+/obj/item/clothing/accessory/gaiter/blue
+	name = "neck gaiter (blue)"
+	icon_state = "gaiter_blue"
+
+/obj/item/clothing/accessory/gaiter/purple
+	name = "neck gaiter (purple)"
+	icon_state = "gaiter_purple"
+
+/obj/item/clothing/accessory/gaiter/orange
+	name = "neck gaiter (orange)"
+	icon_state = "gaiter_orange"
+
+/obj/item/clothing/accessory/gaiter/charcoal
+	name = "neck gaiter (charcoal)"
+	icon_state = "gaiter_charcoal"
+
+/obj/item/clothing/accessory/gaiter/snow
+	name = "neck gaiter (white)"
+	icon_state = "gaiter_snow"
 
 /obj/item/clothing/accessory/halfcape
 	name = "half cape"
@@ -473,7 +505,7 @@
 	overlay_state = "choker_cst_overlay"
 	var/customized = 0
 
-/obj/item/clothing/accessory/choker/attack_self(mob/user)
+/obj/item/clothing/accessory/choker/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return
@@ -670,7 +702,7 @@
 		M.afflict_paralyze(20 * 10)
 	return
 
-/obj/item/clothing/accessory/collar/shock/attack_self(mob/user as mob, flag1)
+/obj/item/clothing/accessory/collar/shock/attack_self(mob/user, datum/event_args/actor/actor)
 	if(!istype(user, /mob/living/carbon/human))
 		return
 	user.set_machine(src)
@@ -743,7 +775,7 @@
 /obj/item/clothing/accessory/collar/holo/indigestible/digest_act(var/atom/movable/item_storage = null)
 	return FALSE
 
-/obj/item/clothing/accessory/collar/attack_self(mob/user)
+/obj/item/clothing/accessory/collar/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

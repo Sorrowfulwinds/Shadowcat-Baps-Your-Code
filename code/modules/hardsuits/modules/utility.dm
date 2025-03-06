@@ -15,7 +15,7 @@
  * /obj/item/hardsuit_module/device/paperdispenser
  * /obj/item/hardsuit_module/device/pen
  * /obj/item/hardsuit_module/device/stamp
- * /obj/item/hardsuit_module/mounted/mop
+ * /obj/item/hardsuit_module/mop
  * /obj/item/hardsuit_module/cleaner_launcher
  * /obj/item/hardsuit_module/device/hand_defib
  */
@@ -411,7 +411,7 @@
 
 //Deployable Mop
 
-/obj/item/hardsuit_module/mounted/mop
+/obj/item/hardsuit_module/mop
 
 	name = "mop projector"
 	desc = "A powerful mop projector."
@@ -430,24 +430,7 @@
 	active_power_cost = 0
 	passive_power_cost = 0
 
-	gun = /obj/item/reagent_containers/spray/cleaner
-
-//obj/item/reagent_containers/spray/cleaner
-//	spary =
-
-/obj/item/hardsuit_module/mounted/engage(atom/target)
-
-	if(!..())
-		return 0
-
-	if(!target)
-		gun.attack_self(holder.wearer)
-		return 1
-
-	gun.Fire(target,holder.wearer)
-	return 1
-
-/obj/item/hardsuit_module/mounted/mop/process(delta_time)
+/obj/item/hardsuit_module/mop/process(delta_time)
 
 	if(holder && holder.wearer)
 		if(!(locate(/obj/item/mop_deploy) in holder.wearer))
@@ -456,13 +439,13 @@
 
 	return ..()
 
-/obj/item/hardsuit_module/mounted/mop/activate()
+/obj/item/hardsuit_module/mop/activate()
 
 	..()
 
 	var/mob/living/M = holder.wearer
 
-	if(M.l_hand && M.r_hand)
+	if(M.are_usable_hands_full())
 		to_chat(M, "<span class='danger'>Your hands are full.</span>")
 		deactivate()
 		return
@@ -471,7 +454,7 @@
 	blade.creator = M
 	M.put_in_hands(blade)
 
-/obj/item/hardsuit_module/mounted/mop/deactivate()
+/obj/item/hardsuit_module/mop/deactivate()
 
 	..()
 

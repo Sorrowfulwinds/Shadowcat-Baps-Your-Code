@@ -32,7 +32,7 @@
 		to_chat(target, "<span class='warning'>\The [src] seems to have given up on passing \the [I] to you.</span>")
 		return
 
-	if(target.hands_full())
+	if(target.are_usable_hands_full())
 		to_chat(target, "<span class='warning'>Your hands are full.</span>")
 		to_chat(src, "<span class='warning'>Their hands are full.</span>")
 		return
@@ -46,7 +46,7 @@
 	. = list()
 	for(var/i in scan)
 		var/mob/living/L = i
-		if(!GLOB.typecache_living[L.type])
+		if(!GLOB.typecache_living[L.type] || L.client == null)
 			continue
 		. += L
 	. -= src

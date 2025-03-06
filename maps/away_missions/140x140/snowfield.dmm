@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/unsimulated/wall/planetary/sif,
+/turf/unsimulated/wall/planetary,
 /area/awaymission/snowfield/restricted)
 "ab" = (
 /turf/simulated/floor/outdoors/snow{
@@ -1375,11 +1375,11 @@
 /area/awaymission/snowfield/base)
 "dZ" = (
 /obj/structure/closet/crate/secure/gear,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
+/obj/item/ammo_magazine/a7_62mm/clip,
+/obj/item/ammo_magazine/a7_62mm/clip,
+/obj/item/ammo_magazine/a7_62mm/clip,
+/obj/item/ammo_magazine/a7_62mm/clip,
+/obj/item/ammo_magazine/a7_62mm/clip,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/snowfield/base)
 "ea" = (
@@ -1431,7 +1431,7 @@
 /area/awaymission/snowfield/base)
 "eh" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/gun/ballistic/shotgun/pump/rifle,
+/obj/item/gun/projectile/ballistic/shotgun/pump/rifle,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/snowfield/base)
 "ei" = (

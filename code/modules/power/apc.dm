@@ -321,8 +321,6 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/power/apc, 22)
 
 	make_terminal()
 
-	addtimer(CALLBACK(src, PROC_REF(update)), 5)
-
 /obj/machinery/power/apc/examine(mob/user, dist)
 	. = ..()
 	if(Adjacent(user))
@@ -698,7 +696,7 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/power/apc, 22)
 					"<span class='notice'>You disassembled the broken APC frame.</span>",\
 					"You hear welding.")
 			else
-				new /obj/item/frame/apc(loc)
+				new /obj/item/frame2/apc(loc)
 				user.visible_message(\
 					"<span class='warning'>[src] has been cut from the wall by [user.name] with the [WT.name].</span>",\
 					"<span class='notice'>You cut the APC frame from the wall.</span>",\
@@ -706,7 +704,7 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/power/apc, 22)
 			qdel(src)
 			return
 	else if (opened && ((machine_stat & BROKEN) || hacker || emagged))
-		if (istype(W, /obj/item/frame/apc) && (machine_stat & BROKEN))
+		if (istype(W, /obj/item/frame2/apc) && (machine_stat & BROKEN))
 			if(cell)
 				to_chat(user, "<span class='warning'>You need to remove the power cell first.</span>")
 				return
@@ -787,7 +785,7 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/power/apc, 22)
 		wires.cut_all()
 		update_icon()
 
-/obj/machinery/power/apc/attack_hand(mob/user, list/params)
+/obj/machinery/power/apc/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 //	if (!can_use(user)) This already gets called in interact() and in topic()
 //		return
 	if(!user)
@@ -1435,10 +1433,12 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/power/apc, 22)
 		name = "[area.name] APC"
 	update()
 
-/obj/machinery/power/apc/proc/set_nightshift(on, var/automated)
+/obj/machinery/power/apc/proc/set_nightshift(on, automated)
 	set waitfor = FALSE
 	if(automated && istype(area, /area/shuttle))
 		return
+	if(nightshift_lights == on)
+		return //no change
 	nightshift_lights = on
 	update_nightshift()
 

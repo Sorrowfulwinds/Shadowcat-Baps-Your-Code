@@ -25,7 +25,7 @@
 	icon_dead = "piratemelee_dead"
 	catalogue_data = list(/datum/category_item/catalogue/fauna/pirate)
 
-	faction = "pirate"
+	iff_factions = MOB_IFF_FACTION_PIRATE
 
 	response_help = "pushes"
 	response_disarm = "shoves"
@@ -46,7 +46,7 @@
 
 	corpse = /obj/spawner/corpse/pirate/melee
 
-	ai_holder_type = /datum/ai_holder/simple_mob/merc
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/merc
 	say_list_type = /datum/say_list/pirate
 
 //Armored Variant
@@ -122,7 +122,7 @@
 	attack_sound = 'sound/weapons/blade1.ogg'
 
 
-	loot_list = list(/obj/item/melee/energy/sword/pirate = 100)
+	loot_list = list(/obj/item/melee/transforming/energy/sword/cutlass = 100)
 
 	corpse = /obj/spawner/corpse/pirate/melee_energy
 
@@ -134,7 +134,7 @@
 	icon_living = "piratemelee-las-armor"
 	movement_cooldown = 4
 	armor_legacy_mob = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 5, bio = 100, rad = 100)
-	loot_list = list(/obj/item/melee/energy/sword/pirate = 100, /obj/item/clothing/accessory/armor/armorplate/stab = 100)
+	loot_list = list(/obj/item/melee/transforming/energy/sword/cutlass = 100, /obj/item/clothing/accessory/armor/armorplate/stab = 100)
 
 	corpse = /obj/spawner/corpse/pirate/melee_energy_armor
 
@@ -156,7 +156,7 @@
 		if(prob(15))
 			visible_message("<span class='danger'>\The [src] blocks \the [O] with its shield!</span>")
 			if(user)
-				ai_holder.react_to_attack(user)
+				ai_holder.react_to_attack_polaris(user)
 			return
 		else
 			..()
@@ -164,15 +164,13 @@
 		to_chat(user, "<span class='warning'>This weapon is ineffective, it does no damage.</span>")
 		visible_message("<span class='warning'>\The [user] gently taps [src] with \the [O].</span>")
 
-/mob/living/simple_mob/humanoid/merc/melee/sword/bullet_act(var/obj/projectile/Proj)
-	if(!Proj)	return
+/mob/living/simple_mob/humanoid/merc/melee/sword/on_bullet_act(obj/projectile/proj, impact_flags, list/bullet_act_args)
 	if(prob(25))
-		visible_message("<font color='red'><B>[src] blocks [Proj] with its shield!</B></font>")
-		if(Proj.firer)
-			ai_holder.react_to_attack(Proj.firer)
-		return
-	else
-		..()
+		visible_message("<font color='red'><B>[src] blocks [proj] with its shield!</B></font>")
+		if(proj.firer)
+			ai_holder.react_to_attack_polaris(proj.firer)
+		return PROJECTILE_IMPACT_BLOCKED
+	return ..()
 
 // Armored Variant
 /mob/living/simple_mob/humanoid/pirate/shield/armored
@@ -242,9 +240,9 @@
 	projectiletype = /obj/projectile/bullet/shotgun
 	projectilesound = 'sound/weapons/weaponsounds_shotgunshot.ogg'
 
-	loot_list = list(/obj/item/gun/ballistic/pirate = 100, /obj/item/material/knife/tacknife = 100)
+	loot_list = list(/obj/item/gun/projectile/ballistic/pirate = 100, /obj/item/material/knife/tacknife = 100)
 
-	ai_holder_type = /datum/ai_holder/simple_mob/merc/ranged
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/merc/ranged
 
 	corpse = /obj/spawner/corpse/pirate/ranged
 
@@ -257,7 +255,7 @@
 	icon_living = "pirateranged-armor"
 	movement_cooldown = 4
 	armor_legacy_mob = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 5, bio = 100, rad = 100)
-	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/ballistic/pirate = 100, /obj/item/clothing/accessory/armor/armorplate/ballistic = 100)
+	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/projectile/ballistic/pirate = 100, /obj/item/clothing/accessory/armor/armorplate/ballistic = 100)
 
 	corpse = /obj/spawner/corpse/pirate/ranged_armor
 
@@ -279,9 +277,9 @@
 	projectiletype = /obj/projectile/bullet/pellet/shotgun
 	projectilesound = 'sound/weapons/weaponsounds_shotgunshot.ogg'
 
-	loot_list = list(/obj/item/gun/ballistic/shotgun/doublebarrel/sawn = 100, /obj/item/material/knife/tacknife = 100)
+	loot_list = list(/obj/item/gun/projectile/ballistic/shotgun/doublebarrel/sawn = 100, /obj/item/material/knife/tacknife = 100)
 
-	ai_holder_type = /datum/ai_holder/simple_mob/merc/ranged/shotgun
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/merc/ranged/shotgun
 
 	corpse = /obj/spawner/corpse/pirate/ranged_blunderbuss
 
@@ -293,7 +291,7 @@
 	icon_living = "pirateranged-blunder-armor"
 	movement_cooldown = 4
 	armor_legacy_mob = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 5, bio = 100, rad = 100)
-	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/ballistic/shotgun/doublebarrel/sawn = 100, /obj/item/clothing/accessory/armor/armorplate/ballistic = 100)
+	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/projectile/ballistic/shotgun/doublebarrel/sawn = 100, /obj/item/clothing/accessory/armor/armorplate/ballistic = 100)
 
 	corpse = /obj/spawner/corpse/pirate/ranged_blunderbuss_armor
 
@@ -315,9 +313,9 @@
 	projectiletype = /obj/projectile/beam/heavylaser
 	projectilesound = 'sound/weapons/weaponsounds_laserstrong.ogg'
 
-	loot_list = list(/obj/item/gun/energy/zip = 100, /obj/item/material/knife/tacknife = 100)
+	loot_list = list(/obj/item/gun/projectile/energy/zip = 100, /obj/item/material/knife/tacknife = 100)
 
-	ai_holder_type = /datum/ai_holder/simple_mob/ranged/aggressive
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/ranged/aggressive
 
 	corpse = /obj/spawner/corpse/pirate/ranged_laser
 
@@ -329,7 +327,7 @@
 	icon_living = "pirateranged-handcannon-armor"
 	movement_cooldown = 4
 	armor_legacy_mob = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 5, bio = 100, rad = 100)
-	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/energy/zip = 100, /obj/item/clothing/accessory/armor/armorplate/ballistic = 100)
+	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/projectile/energy/zip = 100, /obj/item/clothing/accessory/armor/armorplate/ballistic = 100)
 
 	corpse = /obj/spawner/corpse/pirate/ranged_laser_armor
 
@@ -352,7 +350,7 @@
 
 	armor_legacy_mob = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 5, bio = 100, rad = 100)
 
-	loot_list = list(/obj/item/melee/energy/sword/pirate = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
+	loot_list = list(/obj/item/melee/transforming/energy/sword/cutlass = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
 
 	corpse = /obj/spawner/corpse/pirate/mate
 
@@ -380,9 +378,9 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	base_attack_cooldown = 10
 
-	loot_list = list(/obj/item/gun/energy/retro = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
+	loot_list = list(/obj/item/gun/projectile/energy/retro = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
 
-	ai_holder_type = /datum/ai_holder/simple_mob/merc/ranged
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/merc/ranged
 
 	corpse = /obj/spawner/corpse/pirate/mate/pistol
 
@@ -391,9 +389,9 @@
 	desc = "An oily pirate mechanist. Thankfully he has but an old laser to defend himself with."
 	icon_state = "bosun"
 	icon_living = "bosun"
-	ai_holder_type = /datum/ai_holder/simple_mob/ranged/aggressive/blood_hunter // This is for use in the Pirate Ripley Mecha
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/ranged/aggressive/blood_hunter // This is for use in the Pirate Ripley Mecha
 
-	loot_list = list(/obj/item/gun/energy/retro = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
+	loot_list = list(/obj/item/gun/projectile/energy/retro = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
 
 	corpse = /obj/spawner/corpse/pirate/bosun
 
@@ -421,9 +419,9 @@
 	projectilesound = 'sound/weapons/weaponsounds_shotgunshot.ogg'
 	base_attack_cooldown = 5
 
-	ai_holder_type = /datum/ai_holder/simple_mob/merc/ranged/shotgun
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/merc/ranged/shotgun
 
-	loot_list = list(/obj/item/gun/ballistic/shotgun/doublebarrel/quad = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
+	loot_list = list(/obj/item/gun/projectile/ballistic/shotgun/doublebarrel/quad = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
 
 	corpse = /obj/spawner/corpse/pirate/mate/shotgun
 
@@ -451,7 +449,7 @@
 	projectilesound = 'sound/weapons/weaponsounds_heavyrifleshot.ogg'
 	base_attack_cooldown = 10
 
-	loot_list = list(/obj/item/gun/ballistic/shotgun/pump/rifle = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
+	loot_list = list(/obj/item/gun/projectile/ballistic/shotgun/pump/rifle = 100, /obj/item/clothing/suit/armor/riot/alt = 100)
 
 	corpse = /obj/spawner/corpse/pirate/mate/rifle
 
@@ -475,7 +473,7 @@
 
 	corpse = /obj/spawner/corpse/pirate/captain
 
-	loot_list = list(/obj/item/gun/energy/zip = 100, /obj/item/gun/energy/zip = 100, /obj/item/gun/energy/zip = 100, /obj/item/gun/energy/zip = 100) //Belt of pistols
+	loot_list = list(/obj/item/gun/projectile/energy/zip = 100, /obj/item/gun/projectile/energy/zip = 100, /obj/item/gun/projectile/energy/zip = 100, /obj/item/gun/projectile/energy/zip = 100) //Belt of pistols
 
 	var/obj/item/shield_projector/shields = null
 
@@ -526,13 +524,13 @@
 	icon_state = "old-piratemelee-las"
 	icon_living = "old-piratemelee-las"
 	icon_dead = "old-piratemelee_dead"
-	loot_list = list(/obj/item/melee/energy/sword/pirate = 100)
+	loot_list = list(/obj/item/melee/transforming/energy/sword/cutlass = 100)
 
 //Armored Variant
 /mob/living/simple_mob/humanoid/pirate/las/armored/old
 	icon_state = "old-piratemelee-las-armor"
 	icon_living = "old-piratemelee-las-armor"
-	loot_list = list(/obj/item/melee/energy/sword/pirate = 100, /obj/item/clothing/suit/armor/material/makeshift = 100)
+	loot_list = list(/obj/item/melee/transforming/energy/sword/cutlass = 100, /obj/item/clothing/suit/armor/material/makeshift = 100)
 
 //Shield Pirate
 /mob/living/simple_mob/humanoid/pirate/shield/old
@@ -563,14 +561,14 @@
 	icon_state = "old-pirateranged"
 	icon_living = "old-pirateranged"
 	icon_dead = "old-piratemelee_dead"
-	loot_list = list(/obj/item/gun/ballistic/pirate = 100, /obj/item/material/knife/tacknife = 100)
-	ai_holder_type = /datum/ai_holder/simple_mob/merc/ranged
+	loot_list = list(/obj/item/gun/projectile/ballistic/pirate = 100, /obj/item/material/knife/tacknife = 100)
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/merc/ranged
 
 //Armored Variant
 /mob/living/simple_mob/humanoid/pirate/ranged/armored/old
 	icon_state = "old-pirateranged-armor"
 	icon_living = "old-pirateranged-armor"
-	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/ballistic/pirate = 100, /obj/item/clothing/suit/armor/material/makeshift = 100)
+	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/projectile/ballistic/pirate = 100, /obj/item/clothing/suit/armor/material/makeshift = 100)
 
 //Pirate Blunderbuster
 
@@ -588,9 +586,9 @@
 	projectiletype = /obj/projectile/bullet/pellet/shotgun
 	projectilesound = 'sound/weapons/weaponsounds_shotgunshot.ogg'
 
-	loot_list = list(/obj/item/gun/ballistic/shotgun/doublebarrel/sawn = 100, /obj/item/material/knife/tacknife = 100)
+	loot_list = list(/obj/item/gun/projectile/ballistic/shotgun/doublebarrel/sawn = 100, /obj/item/material/knife/tacknife = 100)
 
-	ai_holder_type = /datum/ai_holder/simple_mob/ranged/aggressive
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/ranged/aggressive
 
 //Armored Variant
 /mob/living/simple_mob/humanoid/pirate/ranged/shotgun/armored
@@ -600,7 +598,7 @@
 	icon_living = "pirateranged-blunder-armor"
 	movement_cooldown = 4
 	armor_legacy_mob = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 5, bio = 100, rad = 100)
-	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/ballistic/shotgun/doublebarrel/sawn = 100, /obj/item/clothing/suit/armor/material/makeshift = 100)
+	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/projectile/ballistic/shotgun/doublebarrel/sawn = 100, /obj/item/clothing/suit/armor/material/makeshift = 100)
 
 ///////////////////////////////
 //		Pirate Ziplas
@@ -620,9 +618,9 @@
 	projectiletype = /obj/projectile/beam/heavylaser
 	projectilesound = 'sound/weapons/weaponsounds_laserstrong.ogg'
 
-	loot_list = list(/obj/item/gun/energy/zip = 100, /obj/item/material/knife/tacknife = 100)
+	loot_list = list(/obj/item/gun/projectile/energy/zip = 100, /obj/item/material/knife/tacknife = 100)
 
-	ai_holder_type = /datum/ai_holder/simple_mob/ranged/aggressive
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/ranged/aggressive
 
 //Armored Variant
 /mob/living/simple_mob/humanoid/pirate/ranged/handcannon/armored
@@ -632,7 +630,7 @@
 	icon_living = "pirateranged-handcannon-armor"
 	movement_cooldown = 4
 	armor_legacy_mob = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 5, bio = 100, rad = 100)
-	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/energy/zip = 100, /obj/item/clothing/suit/armor/material/makeshift = 100)
+	loot_list = list(/obj/item/material/knife/tacknife = 100, /obj/item/gun/projectile/energy/zip = 100, /obj/item/clothing/suit/armor/material/makeshift = 100)
 
 ///////////////////////////////
 //		First Mate
@@ -653,7 +651,7 @@
 
 	armor_legacy_mob = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 5, bio = 100, rad = 100)
 
-	loot_list = list(/obj/item/melee/energy/sword/pirate = 100, /obj/item/clothing/suit/pirate = 100)
+	loot_list = list(/obj/item/melee/transforming/energy/sword/cutlass = 100, /obj/item/clothing/suit/pirate = 100)
 
 
 ///////////////////////////////
@@ -680,18 +678,18 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	base_attack_cooldown = 10
 
-	loot_list = list(/obj/item/gun/energy/retro = 100, /obj/item/clothing/suit/pirate = 100)
+	loot_list = list(/obj/item/gun/projectile/energy/retro = 100, /obj/item/clothing/suit/pirate = 100)
 
-	ai_holder_type = /datum/ai_holder/simple_mob/merc/ranged
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/merc/ranged
 
 /mob/living/simple_mob/humanoid/pirate/mate/ranged/bosun /// Special Mech Pilot Pirate
 	name = "Bosun"
 	desc = "An oily pirate mechanist. Thankfully he has but an old laser to defend himself with."
 	icon_state = "bosun"
 	icon_living = "bosun"
-	ai_holder_type = /datum/ai_holder/simple_mob/ranged/aggressive/blood_hunter // This is for use in the Pirate Ripley Mecha
+	ai_holder_type = /datum/ai_holder/polaris/simple_mob/ranged/aggressive/blood_hunter // This is for use in the Pirate Ripley Mecha
 
-	loot_list = list(/obj/item/gun/energy/retro = 100, /obj/item/clothing/head/welding = 100, /obj/item/clothing/suit/pirate = 100)
+	loot_list = list(/obj/item/gun/projectile/energy/retro = 100, /obj/item/clothing/head/welding = 100, /obj/item/clothing/suit/pirate = 100)
 
 ///////////////////////////////
 //		Mate Sweeper
@@ -717,7 +715,7 @@
 	projectilesound = 'sound/weapons/weaponsounds_shotgunshot.ogg'
 	base_attack_cooldown = 5
 
-	loot_list = list(/obj/item/gun/ballistic/shotgun/doublebarrel/quad = 100, /obj/item/clothing/suit/pirate = 100)
+	loot_list = list(/obj/item/gun/projectile/ballistic/shotgun/doublebarrel/quad = 100, /obj/item/clothing/suit/pirate = 100)
 
 ///////////////////////////////
 //		Mate Marksman
@@ -743,7 +741,7 @@
 	projectilesound = 'sound/weapons/weaponsounds_heavyrifleshot.ogg'
 	base_attack_cooldown = 10
 
-	loot_list = list(/obj/item/gun/ballistic/shotgun/pump/rifle = 100, /obj/item/clothing/suit/pirate = 100)
+	loot_list = list(/obj/item/gun/projectile/ballistic/shotgun/pump/rifle = 100, /obj/item/clothing/suit/pirate = 100)
 
 ///////////////////////////////
 //		Pirate Captain
@@ -765,7 +763,7 @@
 
 	//corpse = /obj/spawner/corpse/pirate/ranged
 
-	loot_list = list(/obj/item/gun/energy/zip = 100, /obj/item/gun/energy/zip = 100, /obj/item/gun/energy/zip = 100, /obj/item/gun/energy/zip = 100) //Belt of pistols
+	loot_list = list(/obj/item/gun/projectile/energy/zip = 100, /obj/item/gun/projectile/energy/zip = 100, /obj/item/gun/projectile/energy/zip = 100, /obj/item/gun/projectile/energy/zip = 100) //Belt of pistols
 
 	var/obj/item/shield_projector/shields = null
 

@@ -44,8 +44,6 @@
 		dna.real_name = real_name
 		sync_organ_dna()
 
-	init_world_bender_hud()
-
 	if(mapload)
 		return INITIALIZE_HINT_LATELOAD
 
@@ -53,9 +51,12 @@
 	regenerate_icons()
 	update_transform()
 
+	//Permanent blindness due to stupidly setup vision organs
+	if(!species.vision_organ)
+		add_blindness_source(TRAIT_BLINDNESS_SPECIES)
+
 //! WARNING SHITCODE REMOVE LATER
 /mob/living/carbon/human/LateInitialize()
-	. = ..()
 	regenerate_icons()
 	update_transform()
 
@@ -65,18 +66,7 @@
 		qdel(organ)
 	QDEL_NULL(nif)
 	QDEL_LIST_NULL(vore_organs)
-	cleanup_world_bender_hud()
 	return ..()
-
-/mob/living/carbon/human/prepare_data_huds()
-	//Update med hud images...
-	. = ..()
-	//...sec hud images...
-	update_hud_sec_implants()
-	update_hud_sec_job()
-	update_hud_sec_status()
-	//...and display them.
-	add_to_all_human_data_huds()
 
 /mob/living/carbon/human/statpanel_data(client/C)
 	. = ..()
@@ -117,7 +107,7 @@
 		. += species.statpanel_status(C, src, C.statpanel_tab("Species"))
 
 /mob/living/carbon/human/legacy_ex_act(severity)
-	if(!blinded)
+	if(!has_status_effect(/datum/status_effect/sight/blindness))
 		flash_eyes()
 
 	var/shielded = 0
@@ -197,8 +187,6 @@
 				)
 
 /mob/living/carbon/human/proc/implant_loyalty(override = FALSE) // Won't override by default.
-	if(!config_legacy.use_loyalty_implants && !override) return // Nuh-uh.
-
 	var/obj/item/implant/loyalty/L = new/obj/item/implant/loyalty(src)
 	if(L.handle_implant(src, BP_HEAD))
 		L.post_implant(src)
@@ -313,29 +301,6 @@
 /mob/living/carbon/human/proc/get_idcard()
 	if(wear_id)
 		return wear_id.GetID()
-
-//Removed the horrible safety parameter. It was only being used by ninja code anyways.
-//Now checks siemens_coefficient of the affected area by default
-/mob/living/carbon/human/electrocute_act(var/shock_damage, var/obj/source, var/base_siemens_coeff = 1.0, var/def_zone = null)
-
-	if(status_flags & STATUS_GODMODE)	return 0	//godmode
-
-	if (!def_zone)
-		def_zone = pick("l_hand", "r_hand")
-
-	if(species.siemens_coefficient == -1)
-		if(stored_shock_by_ref["\ref[src]"])
-			stored_shock_by_ref["\ref[src]"] += shock_damage
-		else
-			stored_shock_by_ref["\ref[src]"] = shock_damage
-		return
-
-	var/obj/item/organ/external/affected_organ = get_organ(check_zone(def_zone))
-	var/siemens_coeff = base_siemens_coeff * get_siemens_coefficient_organ(affected_organ)
-	if(fire_stacks < 0) // Water makes you more conductive.
-		siemens_coeff *= 1.5
-
-	return ..(shock_damage, source, siemens_coeff, def_zone)
 
 /mob/living/carbon/human/Topic(href, href_list)
 	if (href_list["mach_close"])
@@ -923,6 +888,18 @@
 	if(L)
 		L.rupture()
 
+/mob/living/carbon/human/proc/asbestos_lung()
+	var/obj/item/organ/internal/lungs/L = internal_organs_by_name[O_LUNGS]
+
+	if(L)
+		L.damage_lung()
+
+/mob/living/carbon/human/proc/heart_attack()
+	var/obj/item/organ/internal/heart/H = internal_organs_by_name[O_HEART]
+
+	if(H)
+		H.heart_attack()
+
 /*
 /mob/living/carbon/human/verb/simulate()
 	set name = "sim"
@@ -1139,8 +1116,8 @@
 	// i seriously hate vorecode
 	species.on_apply(src)
 
-	// set our has hands
-	has_hands = (species && species.hud)? species.hud.has_hands : TRUE
+	inventory.set_inventory_slots(species.inventory_slots)
+	inventory.set_hand_count(species.hud? (species.hud.has_hands ? 2 : 0) : 2)
 
 	// until we unfuck hud datums, this will force reload our entire hud
 	if(hud_used)
@@ -1291,6 +1268,7 @@
 		W.add_fingerprint(src)
 
 /mob/living/carbon/human/emp_act(severity)
+	. = ..()
 	if(isSynthetic())
 		switch(severity)
 			if(1)
@@ -1310,8 +1288,6 @@
 		to_chat(src, "<font align='center' face='fixedsys' size='10' color='red'><B>*BZZZT*</B></font>")
 		to_chat(src, "<font face='fixedsys'><span class='danger'>Warning: Electromagnetic pulse detected.</span></font>")
 		to_chat(src, "<font face='fixedsys'><span class='danger'>Warning: Navigation systems offline. Restarting...</span></font>")
-		..()
-
 
 /mob/living/carbon/human/can_inject(var/mob/user, var/error_msg, var/target_zone, var/ignore_thickness = FALSE)
 	. = 1
@@ -1336,6 +1312,9 @@
 	else if (affecting.thick_skin && prob(70 - round(affecting.brute_dam + affecting.burn_dam / 2)))	// Allows transplanted limbs with thick skin to maintain their resistance.
 		. = 0
 		fail_msg = "Your needle fails to penetrate \the [affecting]'s thick hide..."
+	else if (affecting.behaviour_flags & BODYPART_NO_INJECT)
+		. = 0
+		fail_msg = "That limb is unable to be penetrated."
 	else
 		switch(target_zone)
 			if(BP_HEAD) //If targeting head, check helmets
@@ -1416,18 +1395,6 @@
 		if(eyes && istype(eyes) && !(eyes.status & ORGAN_CUT_AWAY))
 			return 1
 	return 0
-
-/mob/living/carbon/human/slip(var/slipped_on, stun_duration=8)
-	var/list/equipment = list(src.w_uniform,src.wear_suit,src.shoes)
-	var/footcoverage_check = FALSE
-	for(var/obj/item/clothing/C in equipment)
-		if(C.body_cover_flags & FEET)
-			footcoverage_check = TRUE
-			break
-	if((species.species_flags & NO_SLIP && !footcoverage_check) || (shoes && (shoes.clothing_flags & NOSLIP))) //Footwear negates a species' natural traction.
-		return 0
-	if(..(slipped_on,stun_duration))
-		return 1
 
 /mob/living/carbon/human/proc/relocate()
 	set category = VERB_CATEGORY_OBJECT
@@ -1617,32 +1584,17 @@
 	msg += get_display_species()
 	return msg
 
-//Crazy alternate human stuff
-/mob/living/carbon/human/proc/init_world_bender_hud()
-	var/animal = pick("cow","chicken_brown", "chicken_black", "chicken_white", "chick", "mouse_brown", "mouse_gray", "mouse_white", "lizard", "cat2", "goose", "penguin")
-	var/image/img = image('icons/mob/animal.dmi', src, animal)
-	// hud refactor when
-	img.override = TRUE
-	LAZYINITLIST(hud_list)
-	hud_list[WORLD_BENDER_ANIMAL_HUD] = img
-	var/datum/atom_hud/world_bender/animals/A = GLOB.huds[WORLD_BENDER_HUD_ANIMALS]
-	A.add_to_hud(src)
-
-/mob/living/carbon/human/proc/cleanup_world_bender_hud()
-	var/datum/atom_hud/world_bender/animals/A = GLOB.huds[WORLD_BENDER_HUD_ANIMALS]
-	A.remove_from_hud(src)
-
 /mob/living/carbon/human/get_mob_riding_slots()
 	return list(back, head, wear_suit)
 
 /mob/living/carbon/human/inducer_scan(obj/item/inducer/I, list/things_to_induce = list(), inducer_flags)
 	. = ..()
-	if(isSynthetic())
+	if(isSynthetic() || fast_is_species_type(src, /datum/species/holosphere)) // for code reasons holospheres are not 'synthetic'
 		things_to_induce += src
 
 /mob/living/carbon/human/inducer_act(obj/item/inducer/I, amount, inducer_flags)
 	. = ..()
-	if(!isSynthetic())
+	if(!isSynthetic() && !fast_is_species_type(src, /datum/species/holosphere))
 		return
 	var/needed = (species.max_nutrition - nutrition)
 	if(needed <= 0)
@@ -1651,23 +1603,8 @@
 	adjust_nutrition(got)
 	return (got * SYNTHETIC_NUTRITION_KJ_PER_UNIT) / GLOB.cellrate / SYNTHETIC_NUTRITION_INDUCER_CHEAT_FACTOR
 
-/mob/living/carbon/human/can_wield_item(obj/item/W)
-	//Since teshari are small by default, they have different logic to allow them to use certain guns despite that.
-	//If any other species need to adapt for this, you can modify this proc with a list instead
-	if(istype(species, /datum/species/teshari))
-		return !W.heavy //return true if it is not heavy, false if it is heavy
-	else return ..()
-
 /mob/living/carbon/human/set_nutrition(amount)
 	nutrition = clamp(amount, 0, species.max_nutrition * 1.5)
-
-/mob/living/carbon/human/get_bullet_impact_effect_type(var/def_zone)
-	var/obj/item/organ/external/E = get_organ(def_zone)
-	if(!E || E.is_stump())
-		return BULLET_IMPACT_NONE
-	if(BP_IS_ROBOTIC(E))
-		return BULLET_IMPACT_METAL
-	return BULLET_IMPACT_MEAT
 
 /mob/living/carbon/human/reduce_cuff_time()
 	if(istype(gloves, /obj/item/clothing/gloves/gauntlets/hardsuit))

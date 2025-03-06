@@ -111,15 +111,16 @@
 		null,
 		flattened = flatten,
 	)
+	var/alpha_to_use = species.species_appearance_flags & HAS_HAIR_ALPHA ? hair_alpha : head_organ.hair_opacity
 	// todo: this is awful
 	if(islist(rendered))
 		for(var/image/I as anything in rendered)
 			I.pixel_y += head_spriteacc_offset
-			I.alpha = head_organ.hair_opacity
+			I.alpha = alpha_to_use
 	else
 		var/image/I = rendered
 		I.pixel_y += head_spriteacc_offset
-		I.alpha = head_organ.hair_opacity
+		I.alpha = alpha_to_use
 
 	. = rendered
 	set_standing_overlay(HUMAN_OVERLAY_FACEHAIR, rendered)
@@ -151,15 +152,16 @@
 		null,
 		flattened = flatten,
 	)
+	var/alpha_to_use = species.species_appearance_flags & HAS_HAIR_ALPHA ? hair_alpha : head_organ.hair_opacity
 	// todo: this is awful
 	if(islist(rendered))
 		for(var/image/I as anything in rendered)
 			I.pixel_y += head_spriteacc_offset
-			I.alpha = head_organ.hair_opacity
+			I.alpha = alpha_to_use
 	else
 		var/image/I = rendered
 		I.pixel_y += head_spriteacc_offset
-		I.alpha = head_organ.hair_opacity
+		I.alpha = alpha_to_use
 
 	. = rendered
 	set_standing_overlay(HUMAN_OVERLAY_HAIR, rendered)
@@ -316,8 +318,6 @@
 
 /mob/living/carbon/human/get_sprite_accessory_variation(slot)
 	var/datum/sprite_accessory/resolved = get_sprite_accessory(slot)
-	if(!length(resolved?.variations))
-		return null
 	var/variation
 	switch(slot)
 		if(SPRITE_ACCESSORY_SLOT_HAIR)
@@ -328,7 +328,11 @@
 			variation = legacy_tail_variation
 		if(SPRITE_ACCESSORY_SLOT_WINGS)
 			variation = legacy_wing_variation
-	return (resolved.variations[variation])? variation : null
+	if(istype(resolved, /datum/sprite_accessory/tail) && variation == SPRITE_ACCESSORY_VARIATION_WAGGING)
+		var/datum/sprite_accessory/tail/tail = resolved
+		if(tail.ani_state)
+			return SPRITE_ACCESSORY_VARIATION_WAGGING
+	return (resolved.variations?[variation])? variation : null
 
 //! old code below
 
@@ -573,7 +577,7 @@
 			if(husk)
 				base_icon.ColorTone(husk_color_mod)
 			else if(hulk)
-				var/list/tone = ReadRGB(hulk_color_mod)
+				var/list/tone = rgb2num(hulk_color_mod)
 				base_icon.MapColors(rgb(tone[1],0,0),rgb(0,tone[2],0),rgb(0,0,tone[3]))
 
 		// Handle husk overlay.
@@ -588,9 +592,14 @@
 
 		GLOB.human_icon_cache[icon_key] = base_icon
 
+
 	//END CACHED ICON GENERATION.
 	stand_icon.Blend(base_icon,ICON_OVERLAY)
-	icon = stand_icon
+
+	var/image/img = image(stand_icon, layer = HUMAN_LAYER_BODY)
+	if(species.species_appearance_flags & HAS_BODY_ALPHA)
+		img.alpha = body_alpha
+	set_standing_overlay(HUMAN_OVERLAY_BODY, img)
 
 	//tail
 	render_spriteacc_tail()
@@ -621,7 +630,6 @@
 		both.add_overlay(bloodsies)
 
 	set_standing_overlay(HUMAN_OVERLAY_BLOOD, both)
-
 
 //UNDERWEAR OVERLAY
 /mob/living/carbon/human/proc/update_underwear()
@@ -836,25 +844,17 @@
 	inventory.update_slot_render(SLOT_ID_BACK)
 
 /mob/living/carbon/human/update_inv_handcuffed()
+	inventory.on_handcuffed_update()
 	inventory.update_slot_render(SLOT_ID_HANDCUFFED)
 
 /mob/living/carbon/human/update_inv_legcuffed()
 	inventory.update_slot_render(SLOT_ID_LEGCUFFED)
 
-/mob/living/carbon/human/update_inv_r_hand()
-	if(isnull(r_hand))
-		remove_standing_overlay(HUMAN_OVERLAY_RHAND)
+/mob/living/carbon/human/update_inv_hand(index)
+	if(isnull(inventory.held_items[index]))
+		remove_standing_overlay(HUMAN_OVERLAY_HAND(index))
 		return
 	set_standing_overlay(
-		HUMAN_OVERLAY_RHAND,
-		r_hand.render_mob_appearance(src, 2, BODYTYPE_DEFAULT),
-	)
-
-/mob/living/carbon/human/update_inv_l_hand()
-	if(isnull(l_hand))
-		remove_standing_overlay(HUMAN_OVERLAY_LHAND)
-		return
-	set_standing_overlay(
-		HUMAN_OVERLAY_LHAND,
-		l_hand.render_mob_appearance(src, 1, BODYTYPE_DEFAULT),
+		HUMAN_OVERLAY_HAND(index),
+		inventory.held_items[index].render_mob_appearance(src, index, BODYTYPE_DEFAULT),
 	)

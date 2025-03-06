@@ -9,7 +9,8 @@
 	icon_rest = "rest"
 	icon_dead = "puddle"
 
-	faction = "neutral"
+	iff_factions = MOB_IFF_FACTION_NEUTRAL
+
 	maxHealth = 250
 	health = 250
 	say_list_type = /datum/say_list/protean_blob
@@ -51,8 +52,7 @@
 	var/obj/item/organ/internal/nano/refactory/refactory
 	var/datum/modifier/healing
 
-	var/datum/weakref/prev_left_hand
-	var/datum/weakref/prev_right_hand
+	var/list/datum/weakref/previously_held
 
 	player_msg = "In this form, you can move a little faster and your health will regenerate as long as you have metal in you!"
 	holder_type = /obj/item/holder/protoblob
@@ -109,8 +109,7 @@
 		var/obj/item/organ/external/E = humanform.get_organ(BP_TORSO)
 		//Set us to their health, but, human health ignores robolimbs so we do it 'the hard way'
 		health = maxHealth - E.brute_dam - E.burn_dam
-		movement_cooldown = 0.5 + max(0, (maxHealth - health) - 100) / 35
-		base_attack_cooldown = 10 + max(0, (maxHealth - health) - 100) / 15
+		movement_cooldown = 0.5 + max(0, (maxHealth - health) - 100) / 50
 
 		//Alive, becoming dead
 		if((stat < DEAD) && (health <= 0))
@@ -144,9 +143,6 @@
 	else
 		..()
 
-/mob/living/simple_mob/protean_blob/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone, var/used_weapon=null)
-	return FALSE //ok so tasers hurt protean blobs what the fuck
-
 /mob/living/simple_mob/protean_blob/adjustBruteLoss(var/amount,var/include_robo)
 	return humanform? humanform.take_targeted_damage(brute = amount, body_zone = BP_TORSO) : ..()
 
@@ -157,7 +153,7 @@
 /mob/living/simple_mob/protean_blob/death(gibbed, deathmessage = "dissolves away, leaving only a few spare parts!")
 	if(!QDELETED(humanform))
 		humanform.forceMove(loc)
-		humanform.ckey = ckey
+		transfer_client_to(humanform)
 		humanform.gib()
 	humanform = null
 	. = ..()
@@ -258,7 +254,7 @@
 	else
 		return ..()
 
-/mob/living/simple_mob/protean_blob/attack_hand(mob/user, list/params)
+/mob/living/simple_mob/protean_blob/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	var/mob/living/L = user
 	if(!istype(L))
 		return
@@ -320,17 +316,12 @@
 	//Size update
 	blob.transform = matrix()*size_multiplier
 	blob.size_multiplier = size_multiplier
-
-	if(l_hand)
-		blob.prev_left_hand = WEAKREF(l_hand) //Won't save them if dropped above, but necessary if handdrop is disabled.
-	if(r_hand)
-		blob.prev_right_hand = WEAKREF(r_hand)
-
+	blob.previously_held = inventory?.get_held_items_as_weakrefs()
 	//languages!!
-	for(var/datum/language/L in languages)
+	for(var/datum/prototype/language/L in languages)
 		blob.add_language(L.name)
 	//Put our owner in it (don't transfer var/mind)
-	blob.ckey = ckey
+	transfer_client_to(blob)
 	temporary_form = blob
 
 	//Mail them to nullspace
@@ -472,7 +463,7 @@
 	forceMove(reform_spot)
 
 	//Put our owner in it (don't transfer var/mind)
-	ckey = blob.ckey
+	blob.transfer_client_to(src)
 	temporary_form = null
 
 	if(client && panel_selected)
@@ -485,10 +476,12 @@
 		B.forceMove(src)
 		B.owner = src
 
-	if(blob.prev_left_hand)
-		put_in_left_hand(blob.prev_left_hand.resolve()) //The restore for when reforming.
-	if(blob.prev_right_hand)
-		put_in_right_hand(blob.prev_right_hand.resolve())
+	for(var/i in 1 to length(blob.previously_held))
+		var/datum/weakref/ref = blob.previously_held[i]
+		var/obj/item/resolved = ref?.resolve()
+		if(isnull(resolved))
+			continue
+		put_in_hands_or_drop(resolved, specific_index = i)
 
 	if(!isnull(blob.mob_radio))
 		if(!equip_to_slots_if_possible(blob.mob_radio, list(
@@ -663,7 +656,7 @@
 		if("headsets")
 			chosen_list = GLOB.clothing_headsets
 			icon_file = 'icons/mob/clothing/ears.dmi'
-			
+
 	var/picked = input(src,"What clothing would you like to mimic?","Mimic Clothes") as null|anything in chosen_list
 
 	if(!ispath(chosen_list[picked]))
@@ -673,7 +666,7 @@
 	if(isnull(H.icon_override))
 		H.icon_override = icon_file
 	H.update_worn_icon()	//so our overlays update.
-	
+
 	if (ismob(H.loc))
 		var/mob/M = H.loc
 		M.update_inv_belt() //so our overlays
@@ -717,7 +710,7 @@
 			chosenpart = H.boots
 			chosen_list = GLOB.clothing_shoes
 
-	
+
 	var/picked = input(src,"What clothing would you like to mimic?","Mimic Clothes") as null|anything in chosen_list
 
 	if(!ispath(chosen_list[picked]))
@@ -738,7 +731,7 @@
 
 	var/obj/item/holder/H = loc
 	var/color_in = input("Pick a color. Cancelling sets it to default.","Color", H.color) as null|color
-	
+
 	if(color_in)
 		H.color = color_in
 	else

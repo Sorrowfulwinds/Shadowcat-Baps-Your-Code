@@ -1,12 +1,16 @@
 /// Any floor or wall. What makes up the station and the rest of the map.
 /turf
 	abstract_type = /turf
-
 	icon = 'icons/turf/floors.dmi'
+	luminosity = 1
+
+	//* Default turf inbuilts *//
+
 	layer = TURF_LAYER
 	plane = TURF_PLANE
-	luminosity = 1
-	level = 1
+	opacity = FALSE
+	density = FALSE
+	alpha = 255
 
 	//* Atmospherics
 	/**
@@ -16,6 +20,10 @@
 	 * - an atmosphere id (use defines please)
 	 */
 	var/initial_gas_mix = GAS_STRING_TURF_DEFAULT
+	/**
+	 * Act like a specific temperature for heat exchanger pipes.
+	 */
+	var/temperature_for_heat_exchangers
 
 	//* Automata
 	/// acted automata - automata associated to power, act_cross() will be called when something enters us while this is set
@@ -69,7 +77,7 @@
 	 * FALSE - as it implies
 	 * null - use area default
 	 */
-	var/outdoors = FALSE
+	var/outdoors = null
 
 	//* Radiation
 	/// cached rad insulation of contents
@@ -150,20 +158,19 @@
 
 	SETUP_SMOOTHING()
 
-	// queue if necessary; QUEUE_SMOOTH implicitly checks IS_SMOOTH so don't check again
 	QUEUE_SMOOTH(src)
 
 	//atom color stuff
 	if(color)
-		add_atom_colour(color, FIXED_COLOUR_PRIORITY)
+		add_atom_color(color)
 
 	// todo: uh oh.
 	// TODO: what would tg do (but maybe not that much component signal abuse?)
 	// this is to trigger entered effects
 	// bad news is this is not necessarily currently idempotent
 	// we probably have to deal with this at.. some point.
-	for(var/atom/movable/AM in src)
-		Entered(AM)
+	for(var/atom/movable/content as anything in src)
+		Entered(content)
 
 	var/area/A = loc
 
@@ -228,7 +235,7 @@
 
 	// clear vis contents here instead of in Init
 	if(length(vis_contents))
-		vis_contents.len = 0
+		vis_contents.Cut()
 
 	..()
 
@@ -255,7 +262,7 @@
 /turf/proc/is_solid_structure()
 	return TRUE
 
-/turf/attack_hand(mob/user, list/params)
+/turf/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	. = ..()
 	//QOL feature, clicking on turf can toggle doors, unless pulling something
 	if(!user.pulling)
@@ -284,6 +291,11 @@
 		step(user.pulling, get_dir(user.pulling.loc, src))
 	return 1
 
+/turf/attack_ai(mob/user as mob) //this feels like a bad idea ultimately but this is the cheapest way to let cyborgs nudge things they're pulling around
+	. = ..()
+	if(Adjacent(user))
+		attack_hand(user, list("siliconattack" = TRUE))
+
 /turf/attackby(obj/item/I, mob/user, list/params, clickchain_flags, damage_multiplier)
 	if(I.obj_storage?.allow_mass_gather && I.obj_storage.allow_mass_gather_via_click)
 		I.obj_storage.auto_handle_interacted_mass_pickup(new /datum/event_args/actor(user), src)
@@ -291,32 +303,33 @@
 	return ..()
 
 // Hits a mob on the tile.
-/turf/proc/attack_tile(obj/item/W, mob/living/user)
-	if(!istype(W))
-		return FALSE
+// todo: redo this
+// /turf/proc/attack_tile(obj/item/W, mob/living/user)
+// 	if(!istype(W))
+// 		return FALSE
 
-	var/list/viable_targets = list()
-	var/success = FALSE	// Hitting something makes this true. If its still false, the miss sound is played.
+// 	var/list/viable_targets = list()
+// 	var/success = FALSE	// Hitting something makes this true. If its still false, the miss sound is played.
 
-	for(var/mob/living/L in contents)
-		if(L == user)	// Don't hit ourselves.
-			continue
-		viable_targets += L
+// 	for(var/mob/living/L in contents)
+// 		if(L == user)	// Don't hit ourselves.
+// 			continue
+// 		viable_targets += L
 
-	if(!viable_targets.len)	// No valid targets on this tile.
-		if(W.can_cleave)
-			success = W.cleave(user, src)
-	else
-		var/mob/living/victim = pick(viable_targets)
-		success = W.resolve_attackby(victim, user)
+// 	if(!viable_targets.len)	// No valid targets on this tile.
+// 		if(W.can_cleave)
+// 			success = W.cleave(user, src)
+// 	else
+// 		var/mob/living/victim = pick(viable_targets)
+// 		success = W.resolve_attackby(victim, user)
 
-	user.setClickCooldown(user.get_attack_speed(W))
-	user.do_attack_animation(src, no_attack_icons = TRUE)
+// 	user.setClickCooldown(user.get_attack_speed(W))
+// 	user.do_attack_animation(src, no_attack_icons = TRUE)
 
-	if(!success)	// Nothing got hit.
-		user.visible_message("<span class='warning'>\The [user] swipes \the [W] over \the [src].</span>")
-		playsound(src, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-	return success
+// 	if(!success)	// Nothing got hit.
+// 		user.visible_message("<span class='warning'>\The [user] swipes \the [W] over \the [src].</span>")
+// 		playsound(src, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+// 	return success
 
 /turf/MouseDroppedOnLegacy(atom/movable/O as mob|obj, mob/user as mob)
 	var/turf/T = get_turf(user)
@@ -356,10 +369,6 @@
 
 /turf/proc/is_plating()
 	return 0
-
-/turf/proc/levelupdate()
-	for(var/obj/O in src)
-		O.hide(O.hides_under_flooring() && !is_plating())
 
 /turf/proc/AdjacentTurfs(var/check_blockage = TRUE)
 	. = list()
@@ -575,19 +584,19 @@
 
 //* Atom Color - we don't use the expensive system. *//
 
-/turf/get_atom_colour()
+/turf/get_atom_color()
 	return color
 
-/turf/add_atom_colour(coloration, colour_priority)
+/turf/add_atom_color(coloration, colour_priority)
 	color = coloration
 
-/turf/remove_atom_colour(colour_priority, coloration)
+/turf/remove_atom_color(colour_priority, coloration)
 	color = null
 
-/turf/update_atom_colour()
+/turf/update_atom_color()
 	return
 
-/turf/copy_atom_colour(atom/other, colour_priority)
+/turf/copy_atom_color(atom/other, colour_priority)
 	if(isnull(other.color))
 		return
 	color = other.color
@@ -606,6 +615,12 @@
 
 //* Multiz *//
 
+/**
+ * Update multiz linkage. This is done when a zlevel rebuilds its multiz state.
+ *
+ * todo: maybe include params for 'z_offset_up', 'z_offset_down'? manuallly fetching on
+ *       every turf is slow as balls.
+ */
 /turf/proc/update_multiz()
 	return
 
@@ -640,3 +655,36 @@
 
 /turf/proc/update_rad_insulation()
 	rad_insulation_contents = 1
+
+//* Underfloor *//
+
+/**
+ * returns if we should hide underfloor objects
+ *
+ * * override this on child types for speed!
+ * * if the turf has an is_plating() override, it probably needs an override for this!
+ *
+ * @return a truthy value. Do not use this value for anything else; all we care is whether or not it's truthy.
+ */
+/turf/proc/hides_underfloor_objects()
+	return !is_plating()
+
+/**
+ * tell all objects on us to reconsider their underfloor status
+ *
+ * we are always called at mapload by turfs that can hide underfloor objects,
+ * because objs are configured to only check themselves outside of mapload.
+ */
+/turf/proc/update_underfloor_objects()
+	var/we_should_cover = hides_underfloor_objects()
+	for(var/obj/thing in contents)
+		if(thing.hides_underfloor == OBJ_UNDERFLOOR_UNSUPPORTED)
+			continue
+		thing.update_hiding_underfloor(
+			(thing.hides_underfloor != OBJ_UNDERFLOOR_NEVER) && we_should_cover,
+		)
+
+//* VV *//
+
+/turf/vv_delete()
+	ScrapeAway()

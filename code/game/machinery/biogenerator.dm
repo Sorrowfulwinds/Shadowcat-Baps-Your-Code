@@ -56,7 +56,7 @@
 
 /obj/machinery/biogenerator/Initialize(mapload, newdir)
 	. = ..()
-	var/datum/reagents/R = new/datum/reagents(1000)
+	var/datum/reagent_holder/R = new/datum/reagent_holder(1000)
 	reagents = R
 	R.my_atom = src
 
@@ -102,6 +102,7 @@
 		BIOGEN_ITEM("Leather Coat", /obj/item/clothing/suit/leathercoat, 1, 500),
 		BIOGEN_ITEM("Leather Jacket", /obj/item/clothing/suit/storage/toggle/brown_jacket, 1, 500),
 		BIOGEN_ITEM("Winter Coat", /obj/item/clothing/suit/storage/hooded/wintercoat, 1, 500),
+		BIOGEN_ITEM("Winter Boots", /obj/item/clothing/shoes/boots/winter, 1, 250),
 		BIOGEN_ITEM("4 Algae Sheets", /obj/item/stack/material/algae, 4, 400),
 		BIOGEN_ITEM("50 Algae Sheets", /obj/item/stack/material/algae, 50, 5000),
 	)
@@ -126,6 +127,7 @@
 
 	beaker = inserted_beaker
 	update_appearance()
+	SStgui.update_uis(src)
 
 /*
  * Eject the current stored beaker either into the user's hands or onto the ground.
@@ -248,6 +250,7 @@
 
 /obj/machinery/biogenerator/update_icon()
 	cut_overlays()
+	. = ..()
 	if(beaker)
 		add_overlay("[base_icon_state]-standby")
 		if(processing)
@@ -263,13 +266,7 @@
 	if(default_unfasten_wrench(user, O, 40))
 		return
 	if(istype(O, /obj/item/reagent_containers/glass))
-		if(beaker)
-			to_chat(user, SPAN_NOTICE("\The [src] is already loaded."))
-		else
-			if(!user.attempt_insert_item_for_installation(O, src))
-				return
-			beaker = FALSE
-			SStgui.update_uis(src)
+		insert_beaker(user, O)
 	else if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
 	else if(istype(O, /obj/item/storage/bag))
@@ -280,7 +277,8 @@
 			to_chat(user, SPAN_NOTICE("\The [src] is already full! Activate it."))
 		else
 			for(var/obj/item/reagent_containers/food/snacks/grown/G in O.contents)
-				G.loc = src
+				O.obj_storage.remove(G)
+				G.forceMove(src)
 				i++
 				if(i >= 10)
 					to_chat(user, SPAN_NOTICE("You fill \the [src] to its capacity."))

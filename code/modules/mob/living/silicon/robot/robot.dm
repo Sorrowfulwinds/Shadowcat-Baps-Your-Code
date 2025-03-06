@@ -75,7 +75,7 @@
 	var/integrated_light_power = 4.5
 	var/datum/wires/robot/wires
 
-//! ## Icon stuff
+	//* Icon stuff
 	/// Persistent icontype tracking allows for cleaner icon updates
 	var/icontype
 	/// Used to store the associations between sprite names and sprite index.
@@ -85,7 +85,7 @@
 	/// Remaining attempts to select icon before a selection is forced.
 	var/icon_selection_tries = 0
 
-//! ## Hud stuff
+	//* Hud stuff
 
 	var/atom/movable/screen/cells = null
 	var/atom/movable/screen/inv1 = null
@@ -182,7 +182,7 @@
 	add_language(LANGUAGE_EAL, TRUE)
 	// todo: translation contexts on language holder?
 	// this is messy
-	for(var/datum/language/L as anything in SScharacters.all_languages())
+	for(var/datum/prototype/language/L as anything in RSlanguages.fetch_subtypes_immutable(/datum/prototype/language))
 		if(!(L.translation_class & TRANSLATION_CLASSES_CYBORG_SPEAKS))
 			continue
 		add_language(L, TRUE)
@@ -190,6 +190,7 @@
 	wires = new(src)
 
 	robot_modules_background = new()
+	robot_modules_background.icon = 'icons/screen/hud/common/storage.dmi'
 	robot_modules_background.icon_state = "block"
 	ident = rand(1, 999)
 	module_sprites["Basic"] = "robot"
@@ -533,11 +534,13 @@
 /mob/living/silicon/robot/restrained()
 	return 0
 
-/mob/living/silicon/robot/bullet_act(var/obj/projectile/Proj)
-	..(Proj)
-	if(prob(75) && Proj.damage > 0)
+/mob/living/silicon/robot/on_bullet_act(obj/projectile/proj, impact_flags, list/bullet_act_args)
+	. = ..()
+	if(. & PROJECTILE_IMPACT_FLAGS_UNCONDITIONAL_ABORT)
+		return
+	// todo: why is this in bullet act and not where we take damage maybe?
+	if(prob(75) && proj.damage_force > 0)
 		spark_system.start()
-	return 2
 
 /mob/living/silicon/robot/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/handcuffs)) // fuck i don't even know why isrobot() in handcuff code isn't working so this will have to do
@@ -830,7 +833,7 @@
 	module = null
 	updatename("Default")
 
-/mob/living/silicon/robot/attack_hand(mob/user, list/params)
+/mob/living/silicon/robot/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	. = ..()
 	if(. & CLICKCHAIN_DO_NOT_PROPAGATE)
 		return
@@ -969,11 +972,11 @@
 			if(sleeper_r)
 				add_overlay("[module_sprites[icontype]]-sleeper_r")
 
-			if(istype(module_active, /obj/item/gun/energy/taser/mounted/cyborg))
+			if(istype(module_active, /obj/item/gun/projectile/energy/taser/mounted/cyborg))
 				add_overlay("taser")
-			else if(istype(module_active, /obj/item/gun/energy/laser/mounted))
+			else if(istype(module_active, /obj/item/gun/projectile/energy/laser/mounted))
 				add_overlay("laser")
-			else if(istype(module_active, /obj/item/gun/energy/taser/xeno/robot))
+			else if(istype(module_active, /obj/item/gun/projectile/energy/taser/xeno/robot))
 				add_overlay("taser")
 
 			if(lights_on)
@@ -1220,22 +1223,6 @@
 	lockdown = state
 	lockcharge = state
 	update_mobility()
-
-/mob/living/silicon/robot/mode()
-	set name = "Activate Held Object"
-	set category = VERB_CATEGORY_IC
-	set src = usr
-
-	if(world.time <= next_click) // Hard check, before anything else, to avoid crashing
-		return
-
-	next_click = world.time + 1
-
-	var/obj/item/W = get_active_held_item()
-	if (W)
-		W.attack_self(src)
-
-	return
 
 /mob/living/silicon/robot/proc/choose_icon(var/triesleft, var/list/module_sprites)
 	if(!module_sprites.len)

@@ -2,7 +2,7 @@
 /obj/item/organ/external/chest/unbreakable/nano
 	robotic = ORGAN_NANOFORM
 	encased = FALSE
-	max_damage = 100
+	max_damage = 200
 	min_broken_damage = 1000
 	vital = TRUE
 	emp_mod = 7
@@ -145,6 +145,11 @@
 
 	//Failure
 	return 0
+
+/obj/item/organ/internal/nano/refactory/loaded
+	stored_materials = list(
+		MAT_STEEL = /obj/item/organ/internal/nano/refactory::max_storage,
+	)
 
 /obj/item/organ/internal/mmi_holder/posibrain/nano
 	name = "protean posibrain"

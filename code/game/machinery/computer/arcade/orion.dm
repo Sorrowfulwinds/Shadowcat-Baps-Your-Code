@@ -127,11 +127,11 @@ GLOBAL_LIST_INIT(orion_events, generate_orion_events())
 
 	if(gamers[gamer] > ORION_GAMER_REPORT_THRESHOLD && prob(20 * gamers[gamer]))
 
-		radio.set_frequency(SEC_FREQ)
-		radio.talk_into(src, "SECURITY ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please watch for violent behavior.", SEC_FREQ)
+		radio.set_frequency(FREQ_SECURITY)
+		radio.talk_into(src, "SECURITY ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please watch for violent behavior.", FREQ_SECURITY)
 
-		radio.set_frequency(MED_FREQ)
-		radio.talk_into(src, "PSYCH ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please schedule psych evaluation.", MED_FREQ)
+		radio.set_frequency(FREQ_MEDICAL)
+		radio.talk_into(src, "PSYCH ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please schedule psych evaluation.", FREQ_MEDICAL)
 
 		gamers[gamer] = ORION_GAMER_PAMPHLET //next report send a pamph
 
@@ -151,10 +151,9 @@ GLOBAL_LIST_INIT(orion_events, generate_orion_events())
 		ui = new(user, src, "OrionGame", name)
 		ui.open()
 
-/obj/machinery/computer/arcade/orion_trail/ui_assets(mob/user)
-	return list(
-		get_asset_datum(/datum/asset/spritesheet/moods),
-	)
+/obj/machinery/computer/arcade/orion_trail/ui_asset_injection(datum/tgui/ui, list/immediate, list/deferred)
+	immediate += /datum/asset_pack/spritesheet/moods
+	return ..()
 
 /obj/machinery/computer/arcade/orion_trail/ui_data(mob/user, datum/tgui/ui)
 	var/list/data = list()
@@ -488,7 +487,6 @@ GLOBAL_LIST_INIT(orion_events, generate_orion_events())
 /mob/living/simple_mob/hostile/humanoid/orion
 	name = "spaceport security"
 	desc = "Premier corporate security forces for all spaceports found along the Orion Trail."
-	faction = "orion"
 	loot_list = list()
 	//del_on_death = TRUE
 
@@ -506,7 +504,7 @@ GLOBAL_LIST_INIT(orion_events, generate_orion_events())
 	else
 		. += SPAN_NOTICE("There's a little switch on the bottom. It's flipped up.")
 
-/obj/item/orion_ship/attack_self(mob/user)
+/obj/item/orion_ship/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
 	if(.)
 		return

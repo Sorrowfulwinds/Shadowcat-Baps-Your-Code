@@ -240,7 +240,7 @@
 	name = "Winter Coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat
 
-/datum/loadout_entry/suit/wintercoat
+/datum/loadout_entry/suit/wintercoat/formal
 	name = "Winter Coat - Assistant Formal"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/aformal
 
@@ -488,6 +488,10 @@
 	name = "Brown Fancy Coat"
 	path = /obj/item/clothing/suit/storage/toggle/brown_fancycoat
 
+/datum/loadout_entry/suit/blackfancycoat
+	name = "Black Fancy Coat"
+	path = /obj/item/clothing/suit/storage/toggle/brown_fancycoat/black
+
 /datum/loadout_entry/suit/motojacket
 	name = "Motorcycle Jacket"
 	path = /obj/item/clothing/suit/storage/toggle/moto_jacket
@@ -520,6 +524,10 @@
 	name = "Fancy Overcoat Brown"
 	path = /obj/item/clothing/suit/storage/overcoat_fancy
 
+/datum/loadout_entry/suit/overcoat_fancy/black
+	name = "Fancy Overcoat Black"
+	path = /obj/item/clothing/suit/storage/overcoat_fancy/black
+
 /datum/loadout_entry/suit/drive
 	name = "Relatable Jacket"
 	path = /obj/item/clothing/suit/storage/drive
@@ -543,6 +551,11 @@
 /datum/loadout_entry/suit/bomj
 	name = "Bomj Coat"
 	path = /obj/item/clothing/suit/storage/bomj
+
+/datum/loadout_entry/suit/cropped_turtle
+	name = "Turtleneck Cropped"
+	path = /obj/item/clothing/suit/storage/cropped_turtleneck
+
 
 /datum/loadout_entry/suit/violetjacket
 	name = "Violet Jacket"
@@ -608,10 +621,17 @@
 	name = "Cropped Sweater (Female)"
 	path = /obj/item/clothing/suit/cropped_sweater/female
 
+/datum/loadout_entry/suit/cybersun_jacket
+	name = "Cybersun Jacket"
+	path = /obj/item/clothing/suit/storage/toggle/cybersun_paramedic
+
 /datum/loadout_entry/suit/aureate_kimono
 	name = "Aureate Kimono"
 	path = /obj/item/clothing/suit/storage/aureate
 
+/datum/loadout_entry/suit/aureate_kimono_dark
+	name = "Aureate Dark Kimono"
+	path = /obj/item/clothing/suit/storage/aureate/dark
 
 //Tajaran wears
 
@@ -684,3 +704,23 @@
 
 //Signalis Armor Accessories (no armor stats)//
 
+//Ranger Ponchos
+/datum/loadout_entry/suit/ranger_poncho
+	name = "Ranger poncho selection"
+	description = "A selection of colourful ponchos that match the common gaiter masks."
+	path = /obj/item/clothing/accessory/poncho/roles/ranger
+
+/datum/loadout_entry/suit/ranger_poncho/New()
+	..()
+	var/list/ranger_ponchos = list(
+		"red ranger poncho" = /obj/item/clothing/accessory/poncho/roles/ranger,
+		"tan ranger poncho" = /obj/item/clothing/accessory/poncho/roles/ranger/tan,
+		"gray ranger poncho" = /obj/item/clothing/accessory/poncho/roles/ranger/gray,
+		"green ranger poncho" = /obj/item/clothing/accessory/poncho/roles/ranger/green,
+		"blue ranger poncho" = /obj/item/clothing/accessory/poncho/roles/ranger/blue,
+		"purple ranger poncho" = /obj/item/clothing/accessory/poncho/roles/ranger/purple,
+		"orange ranger poncho" = /obj/item/clothing/accessory/poncho/roles/ranger/orange,
+		"charcoal ranger poncho" = /obj/item/clothing/accessory/poncho/roles/ranger/charcoal,
+		"white ranger poncho" = /obj/item/clothing/accessory/poncho/roles/ranger/snow
+	)
+	tweaks += new/datum/loadout_tweak/path(tim_sort(ranger_ponchos, GLOBAL_PROC_REF(cmp_text_asc)))

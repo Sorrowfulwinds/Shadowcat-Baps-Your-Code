@@ -14,64 +14,6 @@
 
 	feedback_add_details("admin_verb","DG2") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-// callproc moved to code/modules/admin/callproc
-
-/client/proc/simple_DPS()
-	set name = "Simple DPS"
-	set category = "Debug"
-	set desc = "Gives a really basic idea of how much hurt something in-hand does."
-
-	var/obj/item/I = null
-	var/mob/living/user = null
-	if(isliving(usr))
-		user = usr
-		I = user.get_active_held_item()
-		if(!I || !istype(I))
-			to_chat(user, "<span class='warning'>You need to have something in your active hand, to use this verb.</span>")
-			return
-		var/weapon_attack_speed = user.get_attack_speed(I) / 10
-		var/weapon_damage = I.damage_force
-		var/modified_damage_percent = 1
-
-		for(var/datum/modifier/M in user.modifiers)
-			if(!isnull(M.outgoing_melee_damage_percent))
-				weapon_damage *= M.outgoing_melee_damage_percent
-				modified_damage_percent *= M.outgoing_melee_damage_percent
-
-		if(istype(I, /obj/item/gun))
-			var/obj/item/gun/G = I
-			var/obj/projectile/P
-
-			if(istype(I, /obj/item/gun/energy))
-				var/obj/item/gun/energy/energy_gun = G
-				P = new energy_gun.projectile_type()
-
-			else if(istype(I, /obj/item/gun/ballistic))
-				var/obj/item/gun/ballistic/projectile_gun = G
-				var/obj/item/ammo_casing/ammo = projectile_gun.chambered
-				P = ammo.get_projectile()
-
-			else
-				to_chat(user, "<span class='warning'>DPS calculation by this verb is not supported for \the [G]'s type. Energy or Ballistic only, sorry.</span>")
-
-			weapon_damage = P.damage
-			weapon_attack_speed = G.fire_delay / 10
-			qdel(P)
-
-		var/DPS = weapon_damage / weapon_attack_speed
-		to_chat(user, "<span class='notice'>Damage: [weapon_damage][modified_damage_percent != 1 ? " (Modified by [modified_damage_percent*100]%)":""]</span>")
-		to_chat(user, "<span class='notice'>Attack Speed: [weapon_attack_speed]/s</span>")
-		to_chat(user, "<span class='notice'>\The [I] does <b>[DPS]</b> damage per second.</span>")
-		if(DPS > 0)
-			to_chat(user, "<span class='notice'>At your maximum health ([user.getMaxHealth()]), it would take approximately;</span>")
-			to_chat(user, "<span class='notice'>[(user.getMaxHealth() - config_legacy.health_threshold_softcrit) / DPS] seconds to softcrit you. ([config_legacy.health_threshold_softcrit] health)</span>")
-			to_chat(user, "<span class='notice'>[(user.getMaxHealth() - config_legacy.health_threshold_crit) / DPS] seconds to hardcrit you. ([config_legacy.health_threshold_crit] health)</span>")
-			to_chat(user, "<span class='notice'>[(user.getMaxHealth() - config_legacy.health_threshold_dead) / DPS] seconds to kill you. ([config_legacy.health_threshold_dead] health)</span>")
-
-	else
-		to_chat(user, "<span class='warning'>You need to be a living mob, with hands, and for an object to be in your active hand, to use this verb.</span>")
-		return
-
 /client/proc/Cell()
 	set category = "Debug"
 	set name = "Cell"
@@ -142,7 +84,7 @@
 	var/mob/living/silicon/pai/pai = new(card)
 	pai.name = sanitizeSafe(input(choice, "Enter your pAI name:", "pAI Name", "Personal AI") as text)
 	pai.real_name = pai.name
-	pai.key = choice.key
+	choice.transfer_client_to(pai)
 	card.setPersonality(pai)
 	for(var/datum/paiCandidate/candidate in paiController.pai_candidates)
 		if(candidate.key == choice.key)
@@ -336,11 +278,11 @@
 			return
 		else
 			var/mob/observer/dead/ghost = new/mob/observer/dead(M,1)
-			ghost.ckey = M.ckey
+			M.transfer_client_to(ghost)
 	message_admins("<font color=#4F49AF>[key_name_admin(usr)] assumed direct control of [M].</font>", 1)
 	log_admin("[key_name(usr)] assumed direct control of [M].")
 	var/mob/adminmob = src.mob
-	M.ckey = src.ckey
+	transfer_to(M)
 	if( isobserver(adminmob) )
 		qdel(adminmob)
 	feedback_add_details("admin_verb","ADC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -551,6 +493,7 @@
 				var/obj/item/tank/phoron/Phoron = new/obj/item/tank/phoron(Rad)
 
 				Phoron.air_contents.gas[GAS_ID_PHORON] = 29.1154	//This is a full tank if you filled it from a canister
+				Phoron.air_contents.update_values()
 				Rad.P = Phoron
 
 				Phoron.loc = Rad
@@ -685,16 +628,6 @@
 			var/log = "[key_name(src)] changed [planet.name]'s time to [planet.current_time.show_time("hh:mm")]."
 			message_admins(log)
 			log_admin(log)
-
-/client/proc/reload_configuration()
-	set category = "Debug"
-	set name = "Reload Configuration"
-	set desc = "Force config reload to world default"
-	if(!check_rights(R_DEBUG))
-		return
-	if(alert(usr, "Are you absolutely sure you want to reload the configuration from the default path on the disk, wiping any in-round modificatoins?", "Really reset?", "No", "Yes") == "Yes")
-		config.admin_reload()
-		load_configuration()		//for legacy
 
 /datum/admins/proc/quick_nif()
 	set category = "Fun"
