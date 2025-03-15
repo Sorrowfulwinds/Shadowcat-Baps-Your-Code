@@ -1,0 +1,14 @@
+            - name: Check Duplicate DMI Icon States
+  # You may pin to the exact commit or the version.
+  # uses: spacestation13/dmi-duplicate-state-checker@07d0f0ddd40696619ef9a1b5f2318dd9093eac0d
+  uses: spacestation13/dmi-duplicate-state-checker@v1.0.5
+  with:
+    # A GITHUB_TOKEN to fetch the tool
+    GITHUB_TOKEN: 
+    # Folders to search, comma delineated (default: root folder)
+    folders_to_search: # optional, default is .
+    # Put other flags for the duplicate checker here
+    flags: # optional, default is --warn-read --actions-fmt
+    # Version of the tool to use (default: latest)
+    version: # optional, default is v1.0.4
+          
