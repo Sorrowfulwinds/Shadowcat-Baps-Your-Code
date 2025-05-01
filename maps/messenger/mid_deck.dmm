@@ -1,7 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/area/space,
-/turf/space/basic)
+/turf/space/basic,
+/area/space)
+"N" = (
+/obj/structure/stairs/spawner/east,
+/turf/simulated/floor/tiled,
+/area/space)
+"Q" = (
+/turf/simulated/floor/tiled,
+/area/space)
 
 (1,1,1) = {"
 a
@@ -13477,11 +13484,11 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
+Q
+Q
+Q
+Q
+Q
 a
 a
 a
@@ -13671,11 +13678,11 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
+Q
+Q
+Q
+Q
+Q
 a
 a
 a
@@ -13865,11 +13872,11 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
+N
+Q
+Q
+Q
+N
 a
 a
 a
@@ -14059,11 +14066,11 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
+Q
+Q
+Q
+Q
+Q
 a
 a
 a
