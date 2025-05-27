@@ -64,27 +64,35 @@
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_COMMAND))
 			heads[name] = rank
 			department = 1
+			continue
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_SECURITY))
 			sec[name] = rank
 			department = 1
+			continue
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_ENGINEERING))
 			eng[name] = rank
 			department = 1
+			continue
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_MEDICAL))
 			med[name] = rank
 			department = 1
+			continue
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_RESEARCH))
 			sci[name] = rank
 			department = 1
+			continue
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_CARGO))
 			car[name] = rank
 			department = 1
+			continue
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_PLANET))
 			pla[name] = rank
 			department = 1
+			continue
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_CIVILIAN))
 			civ[name] = rank
 			department = 1
+			continue
 		if(!department && !(name in heads))
 			misc[name] = rank
 
@@ -216,50 +224,59 @@ GLOBAL_LIST_EMPTY(PDA_Manifest)
 			depthead = 1
 			if(rank=="Site Manager" && heads.len != 1)
 				heads.Swap(1,heads.len)
+			continue
 
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_SECURITY))
 			sec[++sec.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			if(depthead && sec.len != 1)
 				sec.Swap(1,sec.len)
+			continue
 
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_ENGINEERING))
 			eng[++eng.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			if(depthead && eng.len != 1)
 				eng.Swap(1,eng.len)
+			continue
 
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_MEDICAL))
 			med[++med.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			if(depthead && med.len != 1)
 				med.Swap(1,med.len)
+			continue
 
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_RESEARCH))
 			sci[++sci.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			if(depthead && sci.len != 1)
 				sci.Swap(1,sci.len)
+			continue
 
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_PLANET))
 			pla[++pla.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
+			continue
 
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_CARGO))
 			car[++car.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			if(depthead && car.len != 1)
 				car.Swap(1,car.len)
+			continue
 
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_CIVILIAN))
 			civ[++civ.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			if(depthead && civ.len != 1)
 				civ.Swap(1,civ.len)
+			continue
 
 		if(SSjob.is_job_in_department(real_rank, DEPARTMENT_SYNTHETIC))
 			bot[++bot.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
+			continue
 
 		if(!department && !(name in heads))
 			misc[++misc.len] = list("name" = name, "rank" = rank, "active" = isactive)
