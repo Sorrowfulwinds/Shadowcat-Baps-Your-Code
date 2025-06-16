@@ -125,7 +125,7 @@ CREATE_STANDARD_TURFS(/turf/simulated/floor/wood)
 
 
 /turf/simulated/floor/wood/broken
-	icon_state = "broken0" // This gets changed when spawned.
+	icon_state = "wood_broken0" // This gets changed when spawned.
 
 /turf/simulated/floor/wood/broken/Initialize(mapload)
 	break_tile()
