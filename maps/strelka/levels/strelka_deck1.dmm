@@ -43945,14 +43945,6 @@
 /obj/structure/window/phoronreinforced,
 /turf/simulated/floor/reinforced/airless,
 /area/strelka/shipbase/deck2/engineering/nacelle)
-"yhs" = (
-/obj/machinery/porta_turret/crescent{
-	density = 1;
-	faction = "neutral";
-	uid = "pointdefence"
-	},
-/turf/simulated/floor/tiled/monodark,
-/area/strelka/shipbase/pointdefense)
 "yhA" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
@@ -45841,7 +45833,7 @@ tEL
 tEL
 tEL
 tEL
-wto
+tEL
 tEL
 tEL
 tEL
@@ -46020,8 +46012,8 @@ tEL
 tEL
 tEL
 tEL
-wto
-dSV
+tEL
+tEL
 iJw
 iOf
 mCM
@@ -46035,8 +46027,8 @@ tEL
 tEL
 tEL
 tEL
-dSV
-wto
+tEL
+tEL
 tEL
 tEL
 tEL
@@ -46214,8 +46206,8 @@ tEL
 tEL
 tEL
 wto
-dSV
-yhs
+tEL
+tEL
 iOf
 lMK
 lMK
@@ -46229,9 +46221,9 @@ tEL
 tEL
 tEL
 tEL
-yhs
-dSV
-wto
+tEL
+tEL
+tEL
 tEL
 tEL
 tEL
@@ -46423,9 +46415,9 @@ tEL
 tEL
 tEL
 tEL
-jrE
-dkE
-dkE
+tEL
+tEL
+tEL
 tEL
 tEL
 tEL
@@ -46617,10 +46609,10 @@ tEL
 tEL
 tEL
 tEL
-jrE
-dkE
-dkE
-dkE
+tEL
+tEL
+tEL
+tEL
 tEL
 tEL
 tEL
@@ -73172,8 +73164,8 @@ tEL
 tEL
 tEL
 wto
-dSV
-yhs
+tEL
+tEL
 uhJ
 uhJ
 uhJ
@@ -73197,8 +73189,8 @@ qcz
 qcz
 qcz
 qcz
-yhs
-dSV
+tEL
+tEL
 wto
 tEL
 tEL
@@ -73366,8 +73358,8 @@ tEL
 tEL
 tEL
 tEL
-wto
-dSV
+tEL
+tEL
 teA
 kVD
 rOT
@@ -73391,8 +73383,8 @@ elh
 tud
 tud
 cwA
-dSV
-wto
+tEL
+tEL
 tEL
 tEL
 tEL
