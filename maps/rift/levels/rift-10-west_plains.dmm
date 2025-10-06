@@ -10991,10 +10991,10 @@
 /obj/structure/closet/crate/radiation,
 /obj/item/fuel_assembly/tritium,
 /obj/item/fuel_assembly/tritium,
-/obj/item/fuelrod/plutonium,
-/obj/item/fuelrod/plutonium,
-/obj/item/fuelrod/uranium,
-/obj/item/fuelrod/uranium,
+/obj/item/fuelrod_legacy/plutonium,
+/obj/item/fuelrod_legacy/plutonium,
+/obj/item/fuelrod_legacy/uranium,
+/obj/item/fuelrod_legacy/uranium,
 /obj/effect/map_effect/radiation_emitter/strong,
 /obj/effect/overlay/snow/floor/edges{
 	dir = 4

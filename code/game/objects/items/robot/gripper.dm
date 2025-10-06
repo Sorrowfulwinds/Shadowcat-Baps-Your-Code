@@ -21,7 +21,7 @@
 		/obj/item/tank,
 		/obj/item/circuitboard,
 		/obj/item/smes_coil,
-		/obj/item/fuelrod/,
+		/obj/item/fuelrod_legacy/,
 		/obj/item/fuel_assembly/
 		)
 

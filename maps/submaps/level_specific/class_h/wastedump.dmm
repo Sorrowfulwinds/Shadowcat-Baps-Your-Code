@@ -11,10 +11,10 @@
 "e" = (
 /obj/effect/debris/cleanable/greenglow,
 /obj/structure/closet/crate/trashcart,
-/obj/item/fuelrod/plutonium,
-/obj/item/fuelrod/plutonium,
-/obj/item/fuelrod/plutonium,
-/obj/item/fuelrod/plutonium,
+/obj/item/fuelrod_legacy/plutonium,
+/obj/item/fuelrod_legacy/plutonium,
+/obj/item/fuelrod_legacy/plutonium,
+/obj/item/fuelrod_legacy/plutonium,
 /turf/simulated/mineral/floor/cave,
 /area/sector/miaphus/beach/desert/poi/wastedump)
 "f" = (
@@ -52,10 +52,10 @@
 "t" = (
 /obj/random/junk,
 /obj/structure/closet/crate/trashcart,
-/obj/item/fuelrod/uranium,
-/obj/item/fuelrod/uranium,
-/obj/item/fuelrod/uranium,
-/obj/item/fuelrod/uranium,
+/obj/item/fuelrod_legacy/uranium,
+/obj/item/fuelrod_legacy/uranium,
+/obj/item/fuelrod_legacy/uranium,
+/obj/item/fuelrod_legacy/uranium,
 /turf/simulated/mineral/floor/cave,
 /area/sector/miaphus/beach/desert/poi/wastedump)
 "u" = (
@@ -84,7 +84,7 @@
 /turf/simulated/mineral/floor/cave,
 /area/sector/miaphus/beach/desert/poi/wastedump)
 "J" = (
-/obj/item/fuelrod/plutonium,
+/obj/item/fuelrod_legacy/plutonium,
 /turf/simulated/mineral/floor/cave,
 /area/sector/miaphus/beach/desert/poi/wastedump)
 "K" = (
@@ -99,10 +99,10 @@
 "Q" = (
 /obj/effect/debris/cleanable/greenglow,
 /obj/structure/closet/crate/trashcart,
-/obj/item/fuelrod/uranium,
-/obj/item/fuelrod/uranium,
-/obj/item/fuelrod/uranium,
-/obj/item/fuelrod/uranium,
+/obj/item/fuelrod_legacy/uranium,
+/obj/item/fuelrod_legacy/uranium,
+/obj/item/fuelrod_legacy/uranium,
+/obj/item/fuelrod_legacy/uranium,
 /turf/simulated/mineral/floor/cave,
 /area/sector/miaphus/beach/desert/poi/wastedump)
 "U" = (
@@ -117,7 +117,7 @@
 /turf/simulated/floor/outdoors/beach/sand/lowdesert,
 /area/sector/miaphus/beach/desert/poi/wastedump)
 "Y" = (
-/obj/item/fuelrod/uranium,
+/obj/item/fuelrod_legacy/uranium,
 /turf/simulated/mineral/floor/cave,
 /area/sector/miaphus/beach/desert/poi/wastedump)
 

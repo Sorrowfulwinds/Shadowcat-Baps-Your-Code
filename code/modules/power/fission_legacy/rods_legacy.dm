@@ -2,7 +2,7 @@
 #define ROD_TEMPERATURE_CUTOFF 10000
 #define ROD_EXPOSED_POWER 0.1
 
-/obj/item/fuelrod
+/obj/item/fuelrod_legacy
 	name = "Fuel Rod"
 	desc = "A nuclear rod."
 	icon = 'icons/obj/machines/power/fission.dmi'
@@ -22,23 +22,23 @@
 	var/melting_point = 3000 // Entering the danger zone.
 	var/decay_heat = 0 // MJ/mol (Yes, using MegaJoules per Mole. Techincally reduces power, but that reflects reduced lifespan.)
 
-/obj/item/fuelrod/Initialize(mapload)
+/obj/item/fuelrod_legacy/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/fuelrod/Destroy()
+/obj/item/fuelrod_legacy/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/fuelrod/process(delta_time)
+/obj/item/fuelrod_legacy/process(delta_time)
 	if(isnull(loc))
 		return PROCESS_KILL
 
-	if(!istype(loc, /obj/machinery/power/fission))
+	if(!istype(loc, /obj/machinery/power/fission_legacy))
 		var/turf/T = get_turf(src)
 		equalize(T.return_air(), gasefficiency)
 
-		if(decay_heat > 0 && !istype(loc, /obj/item/storage/briefcase/fission))
+		if(decay_heat > 0 && !istype(loc, /obj/item/storage/briefcase/fission_legacy))
 			var/insertion_multiplier = ROD_EXPOSED_POWER
 			if(integrity == 0)
 				insertion_multiplier = 1
@@ -46,11 +46,11 @@
 			adjust_thermal_energy(power)
 			radiation_pulse(src, max(power * ROD_RADIATION_MULTIPLIER, 0))
 
-/obj/item/fuelrod/proc/equalize(var/E, var/efficiency)
+/obj/item/fuelrod_legacy/proc/equalize(var/E, var/efficiency)
 	var/our_heatcap = heat_capacity()
 	// Ugly code ahead. Thanks for not allowing polymorphism, Byond.
-	if(istype(E, /obj/machinery/power/fission))
-		var/obj/machinery/power/fission/sharer = E
+	if(istype(E, /obj/machinery/power/fission_legacy))
+		var/obj/machinery/power/fission_legacy/sharer = E
 		var/share_heatcap = sharer.heat_capacity()
 
 		if(our_heatcap + share_heatcap)
@@ -80,7 +80,7 @@
 	if(integrity == 0 && integrity_lost > 0) // Meltdown time.
 		meltdown()
 
-/obj/item/fuelrod/adjust_thermal_energy(var/thermal_energy)
+/obj/item/fuelrod_legacy/adjust_thermal_energy(var/thermal_energy)
 	if(mass < 1)
 		return 0
 
@@ -93,10 +93,10 @@
 	temperature += thermal_energy/heat_capacity
 	return thermal_energy
 
-/obj/item/fuelrod/proc/heat_capacity()
+/obj/item/fuelrod_legacy/proc/heat_capacity()
 	. = specific_heat * (mass / molar_mass)
 
-/obj/item/fuelrod/proc/tick_life(var/apply_heat = 0, var/insertion_override = 0)
+/obj/item/fuelrod_legacy/proc/tick_life(var/apply_heat = 0, var/insertion_override = 0)
 	var/applied_insertion = get_insertion()
 	if(insertion_override)
 		applied_insertion = insertion_override
@@ -111,16 +111,16 @@
 			return ((decay_heat * (mass / molar_mass)) / lifespan) * (min(life, 100) / 100) * applied_insertion
 	return 0
 
-/obj/item/fuelrod/proc/get_insertion()
+/obj/item/fuelrod_legacy/proc/get_insertion()
 	var/applied_insertion = 1
-	if(istype(loc, /obj/machinery/power/fission) && icon_state != "rod_melt")
+	if(istype(loc, /obj/machinery/power/fission_legacy) && icon_state != "rod_melt")
 		applied_insertion = insertion
 	return clamp( applied_insertion, 0,  1)
 
-/obj/item/fuelrod/proc/is_melted()
+/obj/item/fuelrod_legacy/proc/is_melted()
 	return (icon_state == "rod_melt") ? 1 : 0
 
-/obj/item/fuelrod/proc/meltdown()
+/obj/item/fuelrod_legacy/proc/meltdown()
 	if(!is_melted())
 		if(decay_heat > 0)
 			life = life * 10
@@ -142,7 +142,7 @@
 // Silver: 1235 -> 1835
 // Tungsten Carbide: 3058 -> (no change)
 // Boron: 2349 -> 2749
-/obj/item/fuelrod/uranium
+/obj/item/fuelrod_legacy/uranium
 	name = "uranium fuel rod"
 	desc = "A nuclear fuel rod."
 	color = "#75716E"
@@ -152,7 +152,7 @@
 	melting_point = 2405
 	decay_heat = 19536350 // MJ/mol
 
-/obj/item/fuelrod/plutonium
+/obj/item/fuelrod_legacy/plutonium
 	name = "plutonium fuel rod"
 	desc = "A nuclear fuel rod."
 	color = "#cbcbcb"
@@ -163,7 +163,7 @@
 	decay_heat = 20342002 // MJ/mol
 	lifespan = 1800
 
-/obj/item/fuelrod/beryllium
+/obj/item/fuelrod_legacy/beryllium
 	name = "beryllium reflector"
 	desc = "A neutron reflector."
 	color = "#878B96"
@@ -173,7 +173,7 @@
 	melting_point = 2360
 	lifespan = 7200
 
-/obj/item/fuelrod/tungstencarbide
+/obj/item/fuelrod_legacy/tungstencarbide
 	name = "tungsten carbide reflector"
 	desc = "A neutron reflector."
 	color = "#525252"
@@ -183,7 +183,7 @@
 	melting_point = 3058
 	lifespan = 14400
 
-/obj/item/fuelrod/silver
+/obj/item/fuelrod_legacy/silver
 	name = "silver control rod"
 	desc = "A nuclear control rod."
 	color = "#D1C9B6"
@@ -194,7 +194,7 @@
 	melting_point = 1835
 	lifespan = 4800
 
-/obj/item/fuelrod/boron
+/obj/item/fuelrod_legacy/boron
 	name = "boron control rod"
 	desc = "A nuclear control rod."
 	color = "#6F6E6A"

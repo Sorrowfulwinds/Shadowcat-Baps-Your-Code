@@ -6,7 +6,7 @@
 /area/tradeport/cyndishow)
 "aab" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/storage/briefcase/fission{
+/obj/item/storage/briefcase/fission_legacy{
 	starts_with = list(/obj/item/coin/supermatter,/obj/item/coin/supermatter,/obj/item/coin/supermatter)
 	},
 /turf/simulated/floor/tiled/dark,

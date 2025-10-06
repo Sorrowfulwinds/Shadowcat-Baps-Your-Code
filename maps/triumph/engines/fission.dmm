@@ -678,9 +678,9 @@
 	req_access = list(11)
 	},
 /obj/structure/window/reinforced,
-/obj/item/storage/briefcase/fission/reflectormixed,
-/obj/item/storage/briefcase/fission/tungstencarbide,
-/obj/item/storage/briefcase/fission/beryllium,
+/obj/item/storage/briefcase/fission_legacy/reflectormixed,
+/obj/item/storage/briefcase/fission_legacy/tungstencarbide,
+/obj/item/storage/briefcase/fission_legacy/beryllium,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/engine_room)
 "In" = (
@@ -892,7 +892,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "Oe" = (
-/obj/machinery/computer/fission_monitor,
+/obj/machinery/computer/fission_monitor_legacy,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -1046,7 +1046,7 @@
 	dir = 8;
 	id = "enginecore"
 	},
-/obj/machinery/power/fission,
+/obj/machinery/power/fission_legacy,
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
@@ -1079,8 +1079,8 @@
 /area/engineering/engine_room)
 "Td" = (
 /obj/structure/closet/crate/secure/engineering,
-/obj/item/storage/briefcase/fission/uranium,
-/obj/item/storage/briefcase/fission/uranium,
+/obj/item/storage/briefcase/fission_legacy/uranium,
+/obj/item/storage/briefcase/fission_legacy/uranium,
 /obj/machinery/door/window/northleft{
 	dir = 2;
 	name = "Fuel Rods";
@@ -1092,8 +1092,8 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/storage/briefcase/fission/plutonium,
-/obj/item/storage/briefcase/fission/plutonium,
+/obj/item/storage/briefcase/fission_legacy/plutonium,
+/obj/item/storage/briefcase/fission_legacy/plutonium,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/engine_room)
 "Tf" = (
@@ -1218,15 +1218,15 @@
 /area/engineering/engine_room)
 "VZ" = (
 /obj/structure/closet/crate/secure/engineering,
-/obj/item/storage/briefcase/fission/boron,
+/obj/item/storage/briefcase/fission_legacy/boron,
 /obj/machinery/door/window/northleft{
 	dir = 4;
 	name = "Control Rods";
 	req_access = list(11)
 	},
 /obj/structure/window/reinforced,
-/obj/item/storage/briefcase/fission/controlmixed,
-/obj/item/storage/briefcase/fission/silver,
+/obj/item/storage/briefcase/fission_legacy/controlmixed,
+/obj/item/storage/briefcase/fission_legacy/silver,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/engine_room)
 "Wi" = (

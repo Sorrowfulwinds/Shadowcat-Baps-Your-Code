@@ -1,7 +1,7 @@
-/datum/computer_file/program/fission_monitor
+/datum/computer_file/program/fission_monitor_legacy
 	filename = "fismon"
 	filedesc = "Fission Monitoring"
-	nanomodule_path = /datum/nano_module/fission_monitor/
+	nanomodule_path = /datum/nano_module/fission_monitor_legacy/
 	program_icon_state = "smmon_0"
 	program_key_state = "tech_key"
 	program_menu_icon = "notice"
@@ -13,9 +13,9 @@
 	size = 5
 	var/last_status = 0
 
-/datum/computer_file/program/fission_monitor/process_tick()
+/datum/computer_file/program/fission_monitor_legacy/process_tick()
 	..()
-	var/datum/nano_module/fission_monitor/NMS = NM
+	var/datum/nano_module/fission_monitor_legacy/NMS = NM
 	var/new_status = istype(NMS) ? NMS.get_status() : 0
 	if(last_status != new_status)
 		last_status = new_status
@@ -24,28 +24,28 @@
 		if(istype(computer))
 			computer.update_icon()
 
-/datum/nano_module/fission_monitor
+/datum/nano_module/fission_monitor_legacy
 	name = "Fission monitor"
 	var/list/fissioncores
-	var/obj/machinery/power/fission/active = null		// Currently selected fission core.
+	var/obj/machinery/power/fission_legacy/active = null		// Currently selected fission core.
 
-/datum/nano_module/fission_monitor/Destroy()
+/datum/nano_module/fission_monitor_legacy/Destroy()
 	. = ..()
 	active = null
 	fissioncores = null
 
-/datum/nano_module/fission_monitor/New()
+/datum/nano_module/fission_monitor_legacy/New()
 	..()
 	refresh()
 
 // Refreshes list of active fission cores
-/datum/nano_module/fission_monitor/proc/refresh()
+/datum/nano_module/fission_monitor_legacy/proc/refresh()
 	fissioncores = list()
 	var/z = get_z(nano_host())
 	if(!z)
 		return
 	var/valid_z_levels = (LEGACY_MAP_DATUM).get_map_levels(z)
-	for(var/obj/machinery/power/fission/F in GLOB.machines)
+	for(var/obj/machinery/power/fission_legacy/F in GLOB.machines)
 		// Unsecured, blown up, not within coverage, not on a tile.
 		if(!F.anchored || F.exploded || !(F.z in valid_z_levels) || !istype(F.loc, /turf/))
 			continue
@@ -54,14 +54,14 @@
 	if(!(active in fissioncores))
 		active = null
 
-/datum/nano_module/fission_monitor/proc/get_status()
+/datum/nano_module/fission_monitor_legacy/proc/get_status()
 	. = FALSE
-	for(var/obj/machinery/power/fission/F in fissioncores)
+	for(var/obj/machinery/power/fission_legacy/F in fissioncores)
 		if(F.anchored && F.powered())
 			. = TRUE
 			break
 
-/datum/nano_module/fission_monitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = default_state)
+/datum/nano_module/fission_monitor_legacy/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = default_state)
 	var/list/data = host.initial_data()
 
 	if(istype(active) && active.anchored)
@@ -70,7 +70,7 @@
 
 	else
 		var/list/FCS = list()
-		for(var/obj/machinery/power/fission/F in fissioncores)
+		for(var/obj/machinery/power/fission_legacy/F in fissioncores)
 			var/area/A = get_area(F)
 			if(!A)
 				fissioncores = fissioncores - F
@@ -94,7 +94,7 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/datum/nano_module/fission_monitor/Topic(href, href_list)
+/datum/nano_module/fission_monitor_legacy/Topic(href, href_list)
 	if(..())
 		return 1
 	if( href_list["clear"] )
@@ -105,7 +105,7 @@
 		return 1
 	if( href_list["set"] )
 		var/newuid = text2num(href_list["set"])
-		for(var/obj/machinery/power/fission/F in fissioncores)
+		for(var/obj/machinery/power/fission_legacy/F in fissioncores)
 			if(F.uid == newuid)
 				active = F
 		return 1

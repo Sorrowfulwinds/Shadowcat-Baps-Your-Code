@@ -10427,7 +10427,7 @@
 /turf/simulated/floor,
 /area/chapel/main)
 "jSn" = (
-/obj/machinery/computer/fission_monitor{
+/obj/machinery/computer/fission_monitor_legacy{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,

@@ -2,11 +2,11 @@
 #error T_BOARD macro is not defined but we need it!
 #endif
 
-/obj/item/circuitboard/fission_monitor
+/obj/item/circuitboard/fission_monitor_legacy
 	name = T_BOARD("fission monitoring console")
-	build_path = /obj/machinery/computer/fission_monitor
+	build_path = /obj/machinery/computer/fission_monitor_legacy
 
-/obj/machinery/computer/fission_monitor
+/obj/machinery/computer/fission_monitor_legacy
 	name = "fission monitoring console"
 	desc = "Used to monitor a linked fission core."
 	icon_keyboard = "tech_key"
@@ -15,17 +15,17 @@
 	use_power = 1
 	idle_power_usage = 250
 	active_power_usage = 500
-	circuit = /obj/item/circuitboard/fission_monitor
-	var/obj/machinery/power/fission/linked
+	circuit = /obj/item/circuitboard/fission_monitor_legacy
+	var/obj/machinery/power/fission_legacy/linked
 
-/obj/machinery/computer/fission_monitor/Destroy()
+/obj/machinery/computer/fission_monitor_legacy/Destroy()
 	linked = null
 	return ..()
 
-/obj/machinery/computer/fission_monitor/attackby(var/obj/item/W as obj, var/mob/user as mob)
+/obj/machinery/computer/fission_monitor_legacy/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	if(istype(W, /obj/item/multitool))
 		var/obj/item/multitool/M = W
-		if (!isnull(M.connectable) && istype(M.connectable, /obj/machinery/power/fission))
+		if (!isnull(M.connectable) && istype(M.connectable, /obj/machinery/power/fission_legacy))
 			linked = M.connectable
 			to_chat(user, "<span class='notice'>You link \the [M.connectable] to \the [src].</span>")
 			M.connectable = null
@@ -34,16 +34,16 @@
 		return
 	return ..()
 
-/obj/machinery/computer/fission_monitor/attack_ai(mob/user)
+/obj/machinery/computer/fission_monitor_legacy/attack_ai(mob/user)
 	attack_hand(user)
 
-/obj/machinery/computer/fission_monitor/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
+/obj/machinery/computer/fission_monitor_legacy/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	add_fingerprint(user)
 	if(machine_stat & (BROKEN|NOPOWER))
 		return
 	nano_ui_interact(user)
 
-/obj/machinery/computer/fission_monitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/machinery/computer/fission_monitor_legacy/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	if(!src.powered())
 		return
 
@@ -62,14 +62,14 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/computer/fission_monitor/Topic(href,href_list)
+/obj/machinery/computer/fission_monitor_legacy/Topic(href,href_list)
 	if(..())
 		return 1
 	if(isnull(linked) || !linked.powered())
 		return 1
 
 	if(href_list["rod_insertion"])
-		var/obj/item/fuelrod/rod = locate(href_list["rod_insertion"])
+		var/obj/item/fuelrod_legacy/rod = locate(href_list["rod_insertion"])
 		if(istype(rod) && rod.loc == linked)
 			var/new_insersion = input(usr,"Enter new insertion (0-100)%","Insertion control",rod.insertion * 100) as num
 			rod.insertion = clamp( new_insersion / 100, 0,  1)

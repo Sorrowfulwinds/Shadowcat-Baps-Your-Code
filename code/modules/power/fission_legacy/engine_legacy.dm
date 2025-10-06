@@ -3,7 +3,7 @@
 #define REACTOR_TEMPERATURE_CUTOFF 10000
 #define REACTOR_RADS_TO_MJ 10000
 
-/obj/machinery/power/fission
+/obj/machinery/power/fission_legacy
 	icon = 'icons/obj/machines/power/fission.dmi'
 	density = 1
 	anchored = 0
@@ -32,11 +32,11 @@
 	var/mass = 200			// kg
 	var/max_temp = 3058
 	var/temperature = T20C
-	var/list/obj/item/fuelrod/rods
+	var/list/obj/item/fuelrod_legacy/rods
 	var/list/obj/machinery/atmospherics/pipe/pipes
 	var/obj/item/radio/radio
 
-/obj/machinery/power/fission/Initialize(mapload, newdir)
+/obj/machinery/power/fission_legacy/Initialize(mapload, newdir)
 	. = ..()
 	uid = gl_uid++
 	rods = new()
@@ -46,7 +46,7 @@
 	radio.icon_state = "radio"
 	radio.channels = list("Engineering")
 
-/obj/machinery/power/fission/Destroy()
+/obj/machinery/power/fission_legacy/Destroy()
 	for(var/rod in rods) // assume the rods are valid.
 		eject_rod(rod)
 	rods = null
@@ -54,7 +54,7 @@
 	QDEL_NULL(radio)
 	return ..()
 
-/obj/machinery/power/fission/process(delta_time)
+/obj/machinery/power/fission_legacy/process(delta_time)
 	var/turf/L = loc
 
 	if(isnull(L))		// We have a null turf...something is wrong, stop processing this entity.
@@ -70,7 +70,7 @@
 	var/meltingrods = 0
 	if(rods.len > 0)
 		for(var/i=1,i<=rods.len,i++)
-			var/obj/item/fuelrod/rod = rods[i]
+			var/obj/item/fuelrod_legacy/rod = rods[i]
 			if(rod.is_melted())
 				meltedrods++
 			else if(rod.temperature >= rod.melting_point)
@@ -95,7 +95,7 @@
 
 	if(rods.len > 0)
 		for(var/i=1,i<=rods.len,i++)
-			var/obj/item/fuelrod/rod = rods[i]
+			var/obj/item/fuelrod_legacy/rod = rods[i]
 			rod.equalize(src, gasefficiency)
 
 	if(temperature > max_temp && health > 0 && max_temp > 0) // Overheating, reduce structural integrity, emit more rads.
@@ -108,16 +108,16 @@
 	var/power = (decay_heat / REACTOR_RADS_TO_MJ) * max(healthmul, 0.1)
 	radiation_pulse(src, max(power * REACTOR_RADIATION_MULTIPLIER, 0), RAD_FALLOFF_ENGINE_FISSION)
 
-/obj/machinery/power/fission/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
+/obj/machinery/power/fission_legacy/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)
 	nano_ui_interact(user)
 
-/obj/machinery/power/fission/attack_robot(mob/user)
+/obj/machinery/power/fission_legacy/attack_robot(mob/user)
 	nano_ui_interact(user)
 
-/obj/machinery/power/fission/attack_ai(mob/user)
+/obj/machinery/power/fission_legacy/attack_ai(mob/user)
 	nano_ui_interact(user)
 
-/obj/machinery/power/fission/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/power/fission_legacy/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	if(!powered() || !anchored)
 		return
 
@@ -130,7 +130,7 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/power/fission/proc/nuke_ui_data(need_power = FALSE)
+/obj/machinery/power/fission_legacy/proc/nuke_ui_data(need_power = FALSE)
 	var/data[0]
 
 	data["integrity_percentage"] = round(get_integrity())
@@ -157,7 +157,7 @@
 
 		data["rods"] = new /list(rods.len)
 		for(var/i=1,i<=rods.len,i++)
-			var/obj/item/fuelrod/rod = rods[i]
+			var/obj/item/fuelrod_legacy/rod = rods[i]
 			var/roddata[0]
 			roddata["rod"] = "\ref[rod]"
 			roddata["name"] = rod.name
@@ -170,19 +170,19 @@
 
 	return data
 
-/obj/machinery/power/fission/Topic(href,href_list)
+/obj/machinery/power/fission_legacy/Topic(href,href_list)
 	if(..())
 		return 1
 	if(exploded)
 		return 1
 
 	if(href_list["rod_eject"])
-		var/obj/item/fuelrod/rod = locate(href_list["rod_eject"])
+		var/obj/item/fuelrod_legacy/rod = locate(href_list["rod_eject"])
 		if(istype(rod) && rod.loc == src)
 			eject_rod(rod)
 
 	if(href_list["rod_insertion"])
-		var/obj/item/fuelrod/rod = locate(href_list["rod_insertion"])
+		var/obj/item/fuelrod_legacy/rod = locate(href_list["rod_insertion"])
 		if(istype(rod) && rod.loc == src)
 			var/new_insersion = input(usr,"Enter new insertion (0-100)%","Insertion control",rod.insertion * 100) as num
 			rod.insertion = clamp( new_insersion / 100, 0,  1)
@@ -197,7 +197,7 @@
 	usr.set_machine(src)
 	src.add_fingerprint(usr)
 
-/obj/machinery/power/fission/attackby(obj/item/W , mob/user)
+/obj/machinery/power/fission_legacy/attackby(obj/item/W , mob/user)
 	add_fingerprint(user)
 	if(exploded)
 		return ..()
@@ -215,11 +215,11 @@
 		M.connectable = src
 		return
 
-	if(istype(W, /obj/item/fuelrod))
+	if(istype(W, /obj/item/fuelrod_legacy))
 		if(rods.len >= rod_capacity)
 			to_chat(user, "<span class='notice'>Looks like \the [src] is full.</span>")
 		else
-			var/obj/item/fuelrod/rod = W
+			var/obj/item/fuelrod_legacy/rod = W
 			if(rod.is_melted())
 				to_chat(user, "<span class='notice'>That's probably a bad idea.</span>")
 				return
@@ -237,13 +237,13 @@
 		if(rods.len == 0)
 			to_chat(user, "<span class='notice'>There's nothing left to remove.</span>")
 			return
-		for(var/obj/item/fuelrod/rod in rods)
+		for(var/obj/item/fuelrod_legacy/rod in rods)
 			if(rod.integrity == 0 || rod.life == 0)
 				to_chat(user, "<span class='notice'>You carefully start removing \the [rod] from \the [src].</span>")
 				if(do_after(user, 40))
 					eject_rod(rod)
 				return
-		var/obj/item/fuelrod/rod = rods[rods.len]
+		var/obj/item/fuelrod_legacy/rod = rods[rods.len]
 		to_chat(user, "<span class='notice'>You carefully start removing \the [rod] from \the [src].</span>")
 		if(do_after(user, 40))
 			eject_rod(rod)
@@ -277,7 +277,7 @@
 				"You [anchored ? "secure" : "unsecure"] the bolts holding [src] to the floor.", \
 				"You hear a ratchet.")
 
-/obj/machinery/power/fission/proc/equalize(datum/gas_mixture/env, var/efficiency)
+/obj/machinery/power/fission_legacy/proc/equalize(datum/gas_mixture/env, var/efficiency)
 	var/datum/gas_mixture/sharer = env.remove(efficiency * env.total_moles)
 	var/our_heatcap = heat_capacity()
 	var/share_heatcap = sharer.heat_capacity()
@@ -291,7 +291,7 @@
 
 	env.merge(sharer)
 
-/obj/machinery/power/fission/proc/equalize_all()
+/obj/machinery/power/fission_legacy/proc/equalize_all()
 	var/our_heatcap = heat_capacity()
 	var/total_heatcap = our_heatcap
 	var/total_energy = temperature * our_heatcap
@@ -323,7 +323,7 @@
 					removed.temperature = clamp( removed.temperature, 0,  REACTOR_TEMPERATURE_CUTOFF)
 				env.merge(removed)
 
-/obj/machinery/power/fission/adjust_thermal_energy(var/thermal_energy)
+/obj/machinery/power/fission_legacy/adjust_thermal_energy(var/thermal_energy)
 	if(mass < 1)
 		return 0
 
@@ -336,15 +336,15 @@
 	temperature += thermal_energy/heat_capacity
 	return thermal_energy
 
-/obj/machinery/power/fission/proc/heat_capacity()
+/obj/machinery/power/fission_legacy/proc/heat_capacity()
 	. = specific_heat * (mass / molar_mass)
 
-/obj/machinery/power/fission/proc/get_integrity()
+/obj/machinery/power/fission_legacy/proc/get_integrity()
 	var/integrity = round(health / max_health * 100)
 	integrity = integrity < 0 ? 0 : integrity
 	return integrity
 
-/obj/machinery/power/fission/proc/eject_rod(var/obj/item/fuelrod/rod)
+/obj/machinery/power/fission_legacy/proc/eject_rod(var/obj/item/fuelrod_legacy/rod)
 	if(!istype(rod) || rod.loc != src)
 		return
 	rods -= rod
@@ -358,7 +358,7 @@
 		if(melted == 0)
 			meltwarned = 0
 
-/obj/machinery/power/fission/proc/anchor()
+/obj/machinery/power/fission_legacy/proc/anchor()
 	if(!anchored)
 		anchored = 1
 		var/list/datum/pipeline/pipelines = new()
@@ -382,7 +382,7 @@
 		anchored = 0
 		pipes = new()
 
-/obj/machinery/power/fission/proc/announce_warning(var/meltedrods, var/meltingrods, var/core_overheat)
+/obj/machinery/power/fission_legacy/proc/announce_warning(var/meltedrods, var/meltingrods, var/core_overheat)
 	if(src.powered() && !exploded && (meltedrods > 0 || meltingrods > 0 || temperature >= max_temp))
 		var/location = sanitize((get_area(src)).name)
 		if((world.timeofday - lastwarning) >= warning_delay * 10)
@@ -402,7 +402,7 @@
 				else
 					radio.autosay("Warning! [meltingrods] rods are overheating!", "Nuclear Monitor", "Engineering")
 
-/obj/machinery/power/fission/proc/go_nuclear()
+/obj/machinery/power/fission_legacy/proc/go_nuclear()
 	if(health < 1 && !exploded)
 		var/off_station = 0
 		if(!(src.z in (LEGACY_MAP_DATUM).station_levels))
@@ -417,7 +417,7 @@
 			anchor()
 		var/decaying_rods = 0
 		var/decay_heat = 0
-		for(var/obj/item/fuelrod/rod in rods)
+		for(var/obj/item/fuelrod_legacy/rod in rods)
 			if(rod.life > 0 && rod.decay_heat > 0)
 				decay_heat += rod.tick_life()
 				decaying_rods++
@@ -442,7 +442,7 @@
 
 		// Some engines just want to see the world burn.
 		spawn(17 SECONDS)
-			for(var/obj/item/fuelrod/rod in rods)
+			for(var/obj/item/fuelrod_legacy/rod in rods)
 				rod.forceMove(L)
 			rods.Cut()
 			pipes.Cut()
@@ -457,7 +457,7 @@ I'm commenting this out until I have time to make this less stupid.
 			if(L.z == 13) // underdark z but hardcoded
 				now_you_done_it(L)
 
-/obj/machinery/power/fission/proc/now_you_done_it(var/turf/L)
+/obj/machinery/power/fission_legacy/proc/now_you_done_it(var/turf/L)
 	sleep(3 SECONDS)
 	if (!istype(L))
 		return
@@ -469,7 +469,7 @@ I'm commenting this out until I have time to make this less stupid.
 			spider_spawn = locate(tx + ix, ty + iy, L.z)
 			if (!istype(spider_spawn, /turf/space))
 				for (var/i = 0, i < rand(1,3), i++)
-					var/a_problem = /obj/nuclear_mistake_spawner
+					var/a_problem = /obj/nuclear_mistake_spawner_legacy
 					new a_problem(spider_spawn)
 */
 
@@ -477,7 +477,7 @@ I'm commenting this out until I have time to make this less stupid.
 // see Citadel-Station-13/Citadel-Station-13-RP#2039 for why i had to shove all this in here
 // code from _tether_submaps.dm, only pasted here for travis "compliance"
 // fuck this
-/obj/nuclear_mistake_spawner
+/obj/nuclear_mistake_spawner_legacy
 	name = "the Underdark's revenge"
 	desc = "hardcoded piece of trash that should never be seen PLEASE report this if you do"
 	icon = 'icons/mob/screen1.dmi'
@@ -514,7 +514,7 @@ I'm commenting this out until I have time to make this less stupid.
 	var/mob/living/simple_mob/my_mob
 	var/depleted = FALSE
 
-/obj/nuclear_mistake_spawner/Initialize(mapload)
+/obj/nuclear_mistake_spawner_legacy/Initialize(mapload)
 	. = ..()
 
 	if(!LAZYLEN(mobs_to_pick_from))
@@ -522,7 +522,7 @@ I'm commenting this out until I have time to make this less stupid.
 		return INITIALIZE_HINT_QDEL
 	START_PROCESSING(SSobj, src)
 
-/obj/nuclear_mistake_spawner/process(delta_time)
+/obj/nuclear_mistake_spawner_legacy/process(delta_time)
 	if(my_mob && my_mob.stat != DEAD)
 		return //No need
 

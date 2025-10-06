@@ -256,11 +256,11 @@
 /datum/supply_pack/nanotrasen/engineering/engine/fission
 	name = "Fission Starter crate"
 	contains = list(
-		/obj/machinery/power/fission,
-		/obj/item/circuitboard/fission_monitor,
-		/obj/item/storage/briefcase/fission/fuelmixed,
-		/obj/item/storage/briefcase/fission/reflectormixed,
-		/obj/item/storage/briefcase/fission/controlmixed,
+		/obj/machinery/power/fission_legacy,
+		/obj/item/circuitboard/fission_monitor_legacy,
+		/obj/item/storage/briefcase/fission_legacy/fuelmixed,
+		/obj/item/storage/briefcase/fission_legacy/reflectormixed,
+		/obj/item/storage/briefcase/fission_legacy/controlmixed,
 	)
 	worth = 2750
 	container_type = /obj/structure/closet/crate/secure/engineering
@@ -269,10 +269,10 @@
 /datum/supply_pack/nanotrasen/engineering/engine/fission/expansion
 	name = "Fission Expansion crate"
 	contains = list(
-		/obj/item/circuitboard/fission_monitor,
-		/obj/item/storage/briefcase/fission/uranium,
-		/obj/item/storage/briefcase/fission/tungstencarbide,
-		/obj/item/storage/briefcase/fission/boron,
+		/obj/item/circuitboard/fission_monitor_legacy,
+		/obj/item/storage/briefcase/fission_legacy/uranium,
+		/obj/item/storage/briefcase/fission_legacy/tungstencarbide,
+		/obj/item/storage/briefcase/fission_legacy/boron,
 	)
 	worth = 2000
 	container_type = /obj/structure/closet/crate/secure/engineering

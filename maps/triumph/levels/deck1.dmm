@@ -9283,7 +9283,7 @@
 /turf/simulated/wall/r_wall/prepainted/engineering,
 /area/engineering/portnacelle)
 "Fa" = (
-/obj/machinery/computer/fission_monitor,
+/obj/machinery/computer/fission_monitor_legacy,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
