@@ -169,7 +169,10 @@
 	var/spatial_instability = 0
 	/// If set, object matter var will be a list containing these values.
 	var/list/composite_material
-	var/is_fusion_fuel
+	/// Can the RUST use this as fuel
+	var/is_fusion_fuel = FALSE
+	/// Can the fission reactor use this as fuel
+	var/is_fission_fuel = FALSE
 
 	//! Placeholder vars for the time being, todo properly integrate windows/light tiles/rods.
 	var/created_window

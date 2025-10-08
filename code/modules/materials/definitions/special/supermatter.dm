@@ -10,7 +10,8 @@
 	door_icon_base = "stone"
 	sheet_singular_name = "crystal"
 	sheet_plural_name = "crystals"
-	is_fusion_fuel = 1
+	is_fusion_fuel = TRUE
+	is_fission_fuel = TRUE
 	stack_origin_tech = list(TECH_MATERIAL = 8, TECH_PHORON = 5, TECH_BLUESPACE = 4)
 
 	relative_integrity = 3

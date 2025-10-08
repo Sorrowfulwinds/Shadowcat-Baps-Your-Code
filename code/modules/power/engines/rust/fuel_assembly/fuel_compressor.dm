@@ -1,3 +1,6 @@
+/**
+ * Compresses various materials into fuel assemblies for fission or fusion reactors.
+ */
 /obj/machinery/fusion_fuel_compressor
 	name = "fuel compressor"
 	icon = 'icons/obj/machines/power/fusion.dmi'

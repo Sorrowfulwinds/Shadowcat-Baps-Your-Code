@@ -9,11 +9,14 @@
  *
  * INTEGRITY variable from /atom/ damage maybe?
  */
-/obj/machinery/power/fission_legacy
+/obj/machinery/fission_reactor
 	name = "fission reactor"
 	desc = "A heavy reinforced structure for making power from radioactive materials."
 	icon = 'icons/obj/machines/power/fission.dmi'
 	icon_state = "engine"
+	base_icon_state = "engine"
 	density = 1
+	anchored = 1
+	rad_flags = RAD_NO_CONTAMINATE | RAD_BLOCK_CONTENTS
 
 

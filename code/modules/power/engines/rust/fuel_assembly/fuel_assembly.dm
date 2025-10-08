@@ -20,8 +20,8 @@
 
 /obj/item/fuel_assembly/Initialize(mapload)
 	. = ..()
-	var/datum/prototype/material/material = get_material_by_name(fuel_type)
-	if(istype(material))
+	var/datum/prototype/material/material = RSmaterials.fetch_local_or_throw(fuel_type)
+	if(istype(material, /datum/prototype/material))
 		name = "[material.use_name] fuel rod assembly"
 		desc = "A fuel rod for a fusion reactor. This one is made from [material.use_name]."
 		fuel_colour = material.icon_colour

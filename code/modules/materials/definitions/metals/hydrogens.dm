@@ -19,7 +19,7 @@
 	stack_type = /obj/item/stack/material/mhydrogen
 	icon_colour = "#E6C5DE"
 	stack_origin_tech = list(TECH_MATERIAL = 6, TECH_POWER = 6, TECH_MAGNET = 5)
-	is_fusion_fuel = 1
+	is_fusion_fuel = TRUE
 	tgui_icon_key = "mhydrogen"
 	worth = 50
 
@@ -33,7 +33,7 @@
 	stack_origin_tech = list(TECH_MATERIAL = 5)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
-	is_fusion_fuel = 1
+	is_fusion_fuel = TRUE
 	tgui_icon_key = "ingots"
 	worth = 35
 
@@ -45,6 +45,6 @@
 	stack_origin_tech = list(TECH_MATERIAL = 3)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
-	is_fusion_fuel = 1
+	is_fusion_fuel = TRUE
 	tgui_icon_key = "ingots"
 	worth = 22.5
