@@ -10,13 +10,14 @@
 	var/list/rod_quantities = list()
 	var/fuel_type = "composite"
 	var/fuel_colour
-	var/radioactivity = 0
+	var/radioactivity
 	var/const/initial_amount = 300
 
-/obj/item/fuel_assembly/Initialize(mapload, _material, _colour)
+/obj/item/fuel_assembly/Initialize(mapload, _material, _colour, _radiation)
 	. = ..()
 	fuel_type = _material
 	fuel_colour = _colour
+	radioactivity = _radiation
 
 /obj/item/fuel_assembly/Initialize(mapload)
 	. = ..()
@@ -26,6 +27,7 @@
 		desc = "A fuel rod for a fusion reactor. This one is made from [material.use_name]."
 		fuel_colour = material.icon_colour
 		fuel_type = material.use_name
+		material
 	else
 		name = "[fuel_type] fuel rod assembly"
 		desc = "A fuel rod for a fusion reactor. This one is made from [fuel_type]."
@@ -48,3 +50,6 @@
 
 /obj/item/fuel_assembly/supermatter/Initialize(mapload, material_key)
 	return ..(mapload, "supermatter")
+
+/obj/item/fuel_assembly/uranium/Initialize(mapload, material_key)
+	return ..(mapload, "uranium")
