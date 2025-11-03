@@ -210,48 +210,6 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define VANTAG_KIDNAP	"vantag_kidnap"
 #define VANTAG_KILL		"vantag_kill"
 
-
-// Job groups
-// todo: nuke this from fucking orbit during job refactor
-#define DEPARTMENT_CARGO			"cargo"
-#define DEPARTMENT_CIVILIAN			"civilian"
-#define DEPARTMENT_COMMAND			"command"
-#define DEPARTMENT_ENGINEERING		"engineering"
-#define DEPARTMENT_EVERYONE			"everyone"
-#define DEPARTMENT_MEDICAL			"medical"
-#define DEPARTMENT_OFFDUTY			"offduty"
-#define DEPARTMENT_PLANET			"exploration"
-#define DEPARTMENT_RESEARCH			"research"
-#define DEPARTMENT_SECURITY			"security"
-#define DEPARTMENT_SYNTHETIC		"synthetic"
-/// Leaving this definition in place, can perhaps use it in the future but removing it will require digging into other stuff im not comfortable with -BLoop
-#define DEPARTMENT_TALON			"talon"
-#define DEPARTMENT_TRADE			"trade"
-#define DEPARTMENT_UNKNOWN			"unknown"
-
-// TODO: nuke this from fucking orbit during job refactor
-var/list/economy_station_departments = list(
-	DEPARTMENT_CARGO,
-	DEPARTMENT_CIVILIAN,
-	DEPARTMENT_COMMAND,
-	DEPARTMENT_ENGINEERING,
-	DEPARTMENT_MEDICAL,
-	DEPARTMENT_PLANET,
-	DEPARTMENT_RESEARCH,
-	DEPARTMENT_SECURITY
-)
-
-// Off-duty time
-#define PTO_CARGO			"Cargo"
-#define PTO_CIVILIAN		"Civilian"
-#define PTO_COMMAND			"Command"
-#define PTO_CYBORG			"Cyborg"
-#define PTO_ENGINEERING 	"Engineering"
-#define PTO_EXPLORATION 	"Exploration"
-#define PTO_MEDICAL			"Medical"
-#define PTO_SCIENCE			"Science"
-#define PTO_SECURITY		"Security"
-
 // Canonical spellings of TSCs, so typos never have to happen again due to human error.
 #define TSC_BC		"Bishop Cybernetics"
 #define TSC_GIL 	"Gilthari"
