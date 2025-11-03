@@ -60,14 +60,13 @@
 	var/memory
 	var/list/learned_recipes
 
-	// todo: id, not title
-	var/assigned_role
-	// todo: id, not title; also unify /datum/prototype/role/(job | antagonist | ghostrole)?
-	var/special_role
-
-	var/role_alt_title
-
-	var/datum/prototype/role/job/assigned_job
+	//? Roles
+	/// Component ID string of this minds role
+	var/role_id
+	/// Component ID string of this minds alt-title role
+	var/role_alt_id
+	/// Component ID string of this minds special role
+	var/special_role_id
 
 	var/list/datum/objective/objectives = list()
 	var/list/datum/objective/special_verbs = list()
@@ -532,10 +531,9 @@
 	return (duration <= world.time - brigged_since)
 
 /datum/mind/proc/reset()
-	assigned_role =   null
-	special_role =    null
-	role_alt_title =  null
-	assigned_job =    null
+	role_id = null
+	role_alt_id = null
+	special_role_id = null
 	//faction =       null //Uncommenting this causes a compile error due to 'undefined type', fucked if I know.
 	changeling =      null
 	initial_account = null
