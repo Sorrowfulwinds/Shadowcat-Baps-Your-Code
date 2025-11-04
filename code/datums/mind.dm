@@ -61,11 +61,13 @@
 	var/list/learned_recipes
 
 	//? Roles
+	/// Component ID string of this minds faction
+	var/faction_id
 	/// Component ID string of this minds role
 	var/role_id
-	/// Component ID string of this minds alt-title role
+	/// Component ID string if our role has an alt-title
 	var/role_alt_id
-	/// Component ID string of this minds special role
+	/// Component ID string if this mind has a special role
 	var/special_role_id
 
 	var/list/datum/objective/objectives = list()
@@ -74,8 +76,6 @@
 	/// Tracks if this mind has been a rev or not.
 	var/has_been_rev = 0
 
-	/// Associated faction.
-	var/datum/faction/faction
 	/// Changeling holder.
 	var/datum/changeling/changeling
 
