@@ -263,7 +263,6 @@
 #include "code\__DEFINES\items\clothing\uniforms.dm"
 #include "code\__DEFINES\jobs\availability.dm"
 #include "code\__DEFINES\jobs\factions.dm"
-#include "code\__DEFINES\jobs\jobs.dm"
 #include "code\__DEFINES\jobs\join_types.dm"
 #include "code\__DEFINES\jobs\spawnpoints.dm"
 #include "code\__DEFINES\languages\flags.dm"
