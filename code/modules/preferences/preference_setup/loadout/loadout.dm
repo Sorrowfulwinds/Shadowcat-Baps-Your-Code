@@ -439,9 +439,9 @@
 		var/datum/loadout_entry/entry = gear_datums[id]
 		if(!(flags & PREF_COPY_TO_LOADOUT_IGNORE_ROLE))
 			if(length(entry.allowed_roles))
-				if(!istype(role, /datum/prototype/role/job))
+				if(!istype(role, /datum/prototype/role/legacy_job))
 					continue
-				var/datum/prototype/role/job/J = role
+				var/datum/prototype/role/legacy_job/J = role
 				if(!(J.title in entry.allowed_roles))
 					continue
 		if(!(flags & PREF_COPY_TO_LOADOUT_IGNORE_WHITELIST))

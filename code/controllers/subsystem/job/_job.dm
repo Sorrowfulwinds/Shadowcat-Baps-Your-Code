@@ -29,7 +29,7 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/reconstruct_job_ui_caches()
 	// todo: this is shit but it works
 	job_pref_ui_cache = list()
-	for(var/datum/prototype/role/job/J as anything in RSroles.legacy_all_sorted_job_datums())
+	for(var/datum/prototype/role/legacy_job/J as anything in RSroles.legacy_all_sorted_job_datums())
 		if(!(J.join_types & JOB_ROUNDSTART))
 			continue
 		var/faction = J.faction
@@ -48,7 +48,7 @@ SUBSYSTEM_DEF(job)
 		for(var/depname in asinine_sort)
 			faction[depname] = asinine_sort[depname]
 
-/datum/controller/subsystem/job/proc/add_to_departments(datum/prototype/role/job/J)
+/datum/controller/subsystem/job/proc/add_to_departments(datum/prototype/role/legacy_job/J)
 	// Adds to the regular job lists in the departments, which allow multiple departments for a job.
 	for(var/D in J.departments)
 		var/datum/department/dept = LAZYACCESS(department_datums, D)
@@ -74,7 +74,7 @@ SUBSYSTEM_DEF(job)
 
 	tim_sort(department_datums, GLOBAL_PROC_REF(cmp_department_datums), TRUE)
 
-	for(var/datum/prototype/role/job/job as anything in RSroles.legacy_all_job_datums())
+	for(var/datum/prototype/role/legacy_job/job as anything in RSroles.legacy_all_job_datums())
 		if(LAZYLEN(job.departments))
 			add_to_departments(job)
 
@@ -111,8 +111,8 @@ SUBSYSTEM_DEF(job)
 
 // Returns a reference to the primary department datum that a job is in.
 // Can receive job datum refs, typepaths, or job title strings.
-/datum/controller/subsystem/job/proc/get_primary_department_of_job(datum/prototype/role/job/J)
-	if(!istype(J, /datum/prototype/role/job))
+/datum/controller/subsystem/job/proc/get_primary_department_of_job(datum/prototype/role/legacy_job/J)
+	if(!istype(J, /datum/prototype/role/legacy_job))
 		if(ispath(J))
 			J = RSroles.legacy_job_by_type(J)
 		else if(istext(J))

@@ -93,7 +93,7 @@
 	if(card)
 		data["card"] = "[card]"
 		data["assignment"] = card.assignment
-		var/datum/prototype/role/job/job = RSroles.legacy_job_by_title(card.rank)
+		var/datum/prototype/role/legacy_job/job = RSroles.legacy_job_by_title(card.rank)
 		if(job)
 			data["job_datum"] = list(
 				"title" = job.title,
@@ -155,7 +155,7 @@
 
 /obj/machinery/computer/timeclock/proc/getOpenOnDutyJobs(var/mob/user, var/department)
 	var/list/available_jobs = list()
-	for(var/datum/prototype/role/job/job in RSroles.legacy_all_job_datums())
+	for(var/datum/prototype/role/legacy_job/job in RSroles.legacy_all_job_datums())
 		if(isOpenOnDutyJob(user, department, job))
 			var/list/titles = available_titles(user, job)
 			if(!length(titles))
@@ -163,11 +163,11 @@
 			available_jobs[job.title] = titles
 	return available_jobs
 
-/obj/machinery/computer/timeclock/proc/available_titles(mob/user, var/datum/prototype/role/job/job)
+/obj/machinery/computer/timeclock/proc/available_titles(mob/user, var/datum/prototype/role/legacy_job/job)
 	var/list/datum/lore/character_background/backgrounds = user.mind?.original_background_ids()
 	return job.alt_title_query(backgrounds)
 
-/obj/machinery/computer/timeclock/proc/isOpenOnDutyJob(var/mob/user, var/department, var/datum/prototype/role/job/job)
+/obj/machinery/computer/timeclock/proc/isOpenOnDutyJob(var/mob/user, var/department, var/datum/prototype/role/legacy_job/job)
 	return job \
 		   && job.is_position_available() \
 		   && !job.whitelist_only \
@@ -179,8 +179,8 @@
 		   && (job.check_mob_availability_one(user) == ROLE_AVAILABLE)
 
 /obj/machinery/computer/timeclock/proc/makeOnDuty(var/newrank, var/newassignment)
-	var/datum/prototype/role/job/oldjob = RSroles.legacy_job_by_title(card.rank)
-	var/datum/prototype/role/job/newjob = RSroles.legacy_job_by_title(newrank)
+	var/datum/prototype/role/legacy_job/oldjob = RSroles.legacy_job_by_title(card.rank)
+	var/datum/prototype/role/legacy_job/newjob = RSroles.legacy_job_by_title(newrank)
 	if(!oldjob || !isOpenOnDutyJob(usr, oldjob.pto_type, newjob))
 		return
 	if(newassignment != newjob.title && !(newassignment in newjob.alt_titles))
@@ -203,12 +203,12 @@
 	return
 
 /obj/machinery/computer/timeclock/proc/makeOffDuty()
-	var/datum/prototype/role/job/foundjob = RSroles.legacy_job_by_title(card.rank)
+	var/datum/prototype/role/legacy_job/foundjob = RSroles.legacy_job_by_title(card.rank)
 	if(!foundjob)
 		return
 	var/new_dept = foundjob.pto_type || PTO_CIVILIAN
-	var/datum/prototype/role/job/ptojob = null
-	for(var/datum/prototype/role/job/job in RSroles.legacy_all_job_datums())
+	var/datum/prototype/role/legacy_job/ptojob = null
+	for(var/datum/prototype/role/legacy_job/job in RSroles.legacy_all_job_datums())
 		if(job.pto_type == new_dept && job.is_off_duty)
 			ptojob = job
 			break

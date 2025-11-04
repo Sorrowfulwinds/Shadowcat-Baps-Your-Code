@@ -11,10 +11,10 @@
 
 /datum/lore/character_background/faction
 	abstract_type = /datum/lore/character_background/faction
-	/// station job types you can play as under this - **string ids** e.g. /datum/prototype/role/job/station/security_officer::id, etc
+	/// station job types you can play as under this - **string ids** e.g. /datum/prototype/role/legacy_job/station/security_officer::id, etc
 	/// if null, you can play as everything
 	var/list/job_whitelist = list()
-	/// station job types explicitly cannot play under this - **string ids** e.g. /datum/prototype/role/job/station/security_officer::id, etc
+	/// station job types explicitly cannot play under this - **string ids** e.g. /datum/prototype/role/legacy_job/station/security_officer::id, etc
 	var/list/job_blacklist
 	/// where 'desc' is the corporation description, this is what a player should know if they're a contractor
 	var/contractor_info
@@ -65,7 +65,7 @@
 	contractor_info = "You are an employee working for Nanotrasen. You are not a contractor, <i>you belong here.</i>"
 	job_whitelist = null
 	job_blacklist = list(
-		/datum/prototype/role/job/trader::id,
+		/datum/prototype/role/legacy_job/trader::id,
 	)
 
 /datum/lore/character_background/faction/freetradeunion
@@ -83,39 +83,39 @@
 	// They get a whitelist, not a blacklist.
 	job_whitelist = list(
 		// cargo
-		/datum/prototype/role/job/station/cargo_tech::id,
-		/datum/prototype/role/job/station/quartermaster::id,
-		/datum/prototype/role/job/station/mining::id,
+		/datum/prototype/role/legacy_job/station/cargo_tech::id,
+		/datum/prototype/role/legacy_job/station/quartermaster::id,
+		/datum/prototype/role/legacy_job/station/mining::id,
 		// exploration - no pathfinder
-		/datum/prototype/role/job/station/explorer::id,
-		/datum/prototype/role/job/station/field_medic::id,
+		/datum/prototype/role/legacy_job/station/explorer::id,
+		/datum/prototype/role/legacy_job/station/field_medic::id,
 		// ship staff
-		/datum/prototype/role/job/station/pilot::id,
+		/datum/prototype/role/legacy_job/station/pilot::id,
 		// civ staff
-		/datum/prototype/role/job/station/assistant::id,
-		/datum/prototype/role/job/station/bartender::id,
-		/datum/prototype/role/job/station/chaplain::id,
-		/datum/prototype/role/job/station/chef::id,
-		/datum/prototype/role/job/station/clown::id,
-		/datum/prototype/role/job/station/entertainer::id,
-		/datum/prototype/role/job/station/hydro::id,
-		/datum/prototype/role/job/station/janitor::id,
-		/datum/prototype/role/job/station/librarian::id,
-		/datum/prototype/role/job/station/mime::id,
-		/datum/prototype/role/job/station/outsider::id,
+		/datum/prototype/role/legacy_job/station/assistant::id,
+		/datum/prototype/role/legacy_job/station/bartender::id,
+		/datum/prototype/role/legacy_job/station/chaplain::id,
+		/datum/prototype/role/legacy_job/station/chef::id,
+		/datum/prototype/role/legacy_job/station/clown::id,
+		/datum/prototype/role/legacy_job/station/entertainer::id,
+		/datum/prototype/role/legacy_job/station/hydro::id,
+		/datum/prototype/role/legacy_job/station/janitor::id,
+		/datum/prototype/role/legacy_job/station/librarian::id,
+		/datum/prototype/role/legacy_job/station/mime::id,
+		/datum/prototype/role/legacy_job/station/outsider::id,
 		// med staff - paramedic only
-		/datum/prototype/role/job/station/paramedic::id,
+		/datum/prototype/role/legacy_job/station/paramedic::id,
 		// engineering staff - engi and atmos tech
-		/datum/prototype/role/job/station/engineer::id,
-		/datum/prototype/role/job/station/atmos::id,
+		/datum/prototype/role/legacy_job/station/engineer::id,
+		/datum/prototype/role/legacy_job/station/atmos::id,
 		// off duty
-		/datum/prototype/role/job/station/off_duty/cargo::id,
-		/datum/prototype/role/job/station/off_duty/civilian::id,
-		/datum/prototype/role/job/station/off_duty/exploration::id,
-		/datum/prototype/role/job/station/off_duty/engineering::id,
-		/datum/prototype/role/job/station/off_duty/medical::id,
+		/datum/prototype/role/legacy_job/station/off_duty/cargo::id,
+		/datum/prototype/role/legacy_job/station/off_duty/civilian::id,
+		/datum/prototype/role/legacy_job/station/off_duty/exploration::id,
+		/datum/prototype/role/legacy_job/station/off_duty/engineering::id,
+		/datum/prototype/role/legacy_job/station/off_duty/medical::id,
 		// trader
-		/datum/prototype/role/job/trader::id,
+		/datum/prototype/role/legacy_job/trader::id,
 	)
 	innate_languages = list(
 		/datum/prototype/language/trader,
@@ -133,26 +133,26 @@
 	job_whitelist = null
 	job_blacklist = list(
 		// NT is still in charge
-		/datum/prototype/role/job/station/captain::id,
+		/datum/prototype/role/legacy_job/station/captain::id,
 		// NT is still in charge
-		/datum/prototype/role/job/station/head_of_personnel::id,
+		/datum/prototype/role/legacy_job/station/head_of_personnel::id,
 		// NT is still in charge
-		/datum/prototype/role/job/station/research_director::id,
+		/datum/prototype/role/legacy_job/station/research_director::id,
 		// NT is still in charge
-		/datum/prototype/role/job/station/pathfinder::id,
+		/datum/prototype/role/legacy_job/station/pathfinder::id,
 		// loyalty - NT paranoia
-		/datum/prototype/role/job/station/blueshield::id,
+		/datum/prototype/role/legacy_job/station/blueshield::id,
 		// loyalty - NT paranoia
-		/datum/prototype/role/job/station/head_of_security::id,
+		/datum/prototype/role/legacy_job/station/head_of_security::id,
 		// loyalty - NT paranoia
 		// no science
 		// exception: roboticist
-		/datum/prototype/role/job/station/senior_researcher::id,
-		/datum/prototype/role/job/station/scientist::id,
+		/datum/prototype/role/legacy_job/station/senior_researcher::id,
+		/datum/prototype/role/legacy_job/station/scientist::id,
 		// not their specialty
-		/datum/prototype/role/job/station/chief_medical_officer::id,
+		/datum/prototype/role/legacy_job/station/chief_medical_officer::id,
 		//Outside NT
-		/datum/prototype/role/job/station/outsider::id,
+		/datum/prototype/role/legacy_job/station/outsider::id,
 	)
 
 /datum/lore/character_background/faction/oculum
@@ -167,19 +167,19 @@
 	// They get a whitelist, not a blacklist.
 	job_whitelist = list(
 		// civ staff
-		/datum/prototype/role/job/station/assistant::id,
-		/datum/prototype/role/job/station/bartender::id,
-		/datum/prototype/role/job/station/chaplain::id,
-		/datum/prototype/role/job/station/chef::id,
-		/datum/prototype/role/job/station/clown::id,
-		/datum/prototype/role/job/station/entertainer::id,
-		/datum/prototype/role/job/station/hydro::id,
-		/datum/prototype/role/job/station/janitor::id,
-		/datum/prototype/role/job/station/librarian::id,
-		/datum/prototype/role/job/station/mime::id,
-		/datum/prototype/role/job/station/outsider::id,
+		/datum/prototype/role/legacy_job/station/assistant::id,
+		/datum/prototype/role/legacy_job/station/bartender::id,
+		/datum/prototype/role/legacy_job/station/chaplain::id,
+		/datum/prototype/role/legacy_job/station/chef::id,
+		/datum/prototype/role/legacy_job/station/clown::id,
+		/datum/prototype/role/legacy_job/station/entertainer::id,
+		/datum/prototype/role/legacy_job/station/hydro::id,
+		/datum/prototype/role/legacy_job/station/janitor::id,
+		/datum/prototype/role/legacy_job/station/librarian::id,
+		/datum/prototype/role/legacy_job/station/mime::id,
+		/datum/prototype/role/legacy_job/station/outsider::id,
 		// off duty
-		/datum/prototype/role/job/station/off_duty/civilian::id,
+		/datum/prototype/role/legacy_job/station/off_duty/civilian::id,
 	)
 
 /datum/lore/character_background/faction/veymed
@@ -197,24 +197,24 @@
 	job_whitelist = null
 	job_blacklist = list(
 		// NT is still in charge
-		/datum/prototype/role/job/station/captain::id,
+		/datum/prototype/role/legacy_job/station/captain::id,
 		// NT is still in charge
-		/datum/prototype/role/job/station/head_of_personnel::id,
+		/datum/prototype/role/legacy_job/station/head_of_personnel::id,
 		// NT is still in charge
-		/datum/prototype/role/job/station/research_director::id,
+		/datum/prototype/role/legacy_job/station/research_director::id,
 		// NT is still in charge
-		/datum/prototype/role/job/station/pathfinder::id,
+		/datum/prototype/role/legacy_job/station/pathfinder::id,
 		// loyalty - NT paranoia
-		/datum/prototype/role/job/station/blueshield::id,
+		/datum/prototype/role/legacy_job/station/blueshield::id,
 		// loyalty - NT paranoia
-		/datum/prototype/role/job/station/head_of_security::id,
+		/datum/prototype/role/legacy_job/station/head_of_security::id,
 		// loyalty - NT paranoia
 		// no science
 		// exception: roboticist
-		/datum/prototype/role/job/station/senior_researcher::id,
-		/datum/prototype/role/job/station/scientist::id,
+		/datum/prototype/role/legacy_job/station/senior_researcher::id,
+		/datum/prototype/role/legacy_job/station/scientist::id,
 		// not their specialty
-		/datum/prototype/role/job/station/chief_engineer::id,
+		/datum/prototype/role/legacy_job/station/chief_engineer::id,
 		//Outside NT
-		/datum/prototype/role/job/station/outsider::id,
+		/datum/prototype/role/legacy_job/station/outsider::id,
 	)

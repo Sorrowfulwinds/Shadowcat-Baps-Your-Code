@@ -953,7 +953,7 @@ var/list/admin_verbs_event_manager = list(
 	set category = "Admin"
 	if(holder)
 		var/list/jobs = list()
-		for (var/datum/prototype/role/job/J in RSroles.legacy_all_job_datums())
+		for (var/datum/prototype/role/legacy_job/J in RSroles.legacy_all_job_datums())
 			if (J.current_positions >= J.total_positions && J.total_positions != -1)
 				jobs += J.title
 		if (!jobs.len)

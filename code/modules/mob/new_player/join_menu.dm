@@ -34,9 +34,9 @@ GLOBAL_DATUM_INIT(join_menu, /datum/join_menu, new)
 	data["jobs"] = jobs
 
 	// collect
-	var/list/datum/prototype/role/job/eligible = list()
+	var/list/datum/prototype/role/legacy_job/eligible = list()
 	for(var/title in RSroles.legacy_all_job_titles())
-		var/datum/prototype/role/job/J = RSroles.legacy_job_by_title(title)
+		var/datum/prototype/role/legacy_job/J = RSroles.legacy_job_by_title(title)
 		if(!(J.join_types & JOB_LATEJOIN))
 			continue
 		if(!IsJobAvailable(J, N))
@@ -44,7 +44,7 @@ GLOBAL_DATUM_INIT(join_menu, /datum/join_menu, new)
 		eligible += J
 
 	// make
-	for(var/datum/prototype/role/job/J as anything in eligible)	// already type filtered
+	for(var/datum/prototype/role/legacy_job/J as anything in eligible)	// already type filtered
 		// faction
 		var/list/faction
 		if(!jobs[J.faction])
@@ -133,7 +133,7 @@ GLOBAL_DATUM_INIT(join_menu, /datum/join_menu, new)
  * checks if job is available
  * if not, it shouldn't even show
  */
-/datum/join_menu/proc/IsJobAvailable(datum/prototype/role/job/J, mob/new_player/N)
+/datum/join_menu/proc/IsJobAvailable(datum/prototype/role/legacy_job/J, mob/new_player/N)
 	return J.check_client_availability_one(N.client, TRUE, TRUE) == ROLE_AVAILABLE
 
 /**
@@ -146,13 +146,13 @@ GLOBAL_DATUM_INIT(join_menu, /datum/join_menu, new)
 /**
  * return effective title - used for alt titles - JOBS ONLY, not ghostroles
  */
-/datum/join_menu/proc/EffectiveTitle(datum/prototype/role/job/J, mob/new_player/N)
+/datum/join_menu/proc/EffectiveTitle(datum/prototype/role/legacy_job/J, mob/new_player/N)
 	return N.client.prefs.get_job_alt_title_name(J) || J.title
 
 /**
  * returns effective desc - used for alt titles - JOBS ONLY, not ghostroles
  */
-/datum/join_menu/proc/EffectiveDesc(datum/prototype/role/job/J, mob/new_player/N)
+/datum/join_menu/proc/EffectiveDesc(datum/prototype/role/legacy_job/J, mob/new_player/N)
 	var/title = N.client.prefs.get_job_alt_title_name(J)
 	var/datum/prototype/struct/alt_title/T = J.alt_titles?[title]
 	return isnull(T)? J.desc : (initial(T.title_blurb) || J.desc)
@@ -209,7 +209,7 @@ GLOBAL_DATUM_INIT(join_menu, /datum/join_menu, new)
 					if(!config_legacy.enter_allowed)
 						to_chat(usr, SPAN_NOTICE("There is an administrative lock on entering the game."))
 						return
-					var/datum/prototype/role/job/J = RSroles.legacy_job_by_id(id)
+					var/datum/prototype/role/legacy_job/J = RSroles.legacy_job_by_id(id)
 					if(!J)
 						to_chat(usr, SPAN_WARNING("Failed to find job [id]."))
 						return

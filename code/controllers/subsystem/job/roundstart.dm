@@ -12,7 +12,7 @@
 		if(NP?.mind)
 			NP.mind.assigned_role = null
 			NP.mind.special_role = null
-	for(var/datum/prototype/role/job/job as anything in RSroles.legacy_all_job_datums())
+	for(var/datum/prototype/role/legacy_job/job as anything in RSroles.legacy_all_job_datums())
 		job.current_positions = 0
 
 /datum/controller/subsystem/job/proc/gather_unassigned()
