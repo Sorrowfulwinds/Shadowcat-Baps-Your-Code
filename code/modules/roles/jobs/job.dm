@@ -21,7 +21,7 @@
 	/// List of department IDs this job belongs to, if any. The first one on the list will be the 'primary' department.
 	var/list/departments = null
 	/// Supervisors text blurb, explain who this job reports too.
-	var/supervisors = "Big Jim and the investors"
+	var/supervisors = "Ultracommand and his lieutenants"
 	/// Used for sorting jobs so boss jobs go above regular ones, and their boss's boss is above that. Higher numbers = higher in sorting.
 	var/sorting_order = 0
 
@@ -37,9 +37,9 @@
 	var/list/minimal_access = null
 	/// With minimal access off, this gets added
 	var/list/additional_access = null
-	/// List of department IDs this position is manager of.
+	/// List of department IDs and accounts this position is manager of.
 	var/departments_managed = null
-	/// List of department accounts this position gets PINs of.
+	/// List of additional department accounts this position gets PINs of.
 	var/department_accounts = null
 
 	//? Off-Duty
@@ -82,4 +82,130 @@
 	var/has_headset = TRUE
 	/// Bitflags representing mob type this job spawns
 	var/mob_type = JOB_CARBON
+
+/datum/prototype/role/job/New()
+	. = ..()
+	department_accounts = department_accounts || departments_managed
+
+//? Availability
+/**
+ * checks slots remaining
+ *
+ * @return 0 to X number of slots remaining.
+ */
+/datum/prototype/role/job/proc/slots_remaining(latejoin)
+	//If roundstart, return available spawns.
+	if(!latejoin)
+		if(spawn_positions == -1)
+			return INFINITY
+		return max(spawn_positions, 0)
+	//If latejoin, return available positions.
+	if(total_positions == -1)
+		return INFINITY
+	return max(total_positions - current_positions, 0)
+
+/**
+ * how many days till the client unlocks this role
+ *
+ * @return 0 to X number of days remaining.
+ */
+/datum/prototype/role/job/proc/unlocks_in_daysclient/C)
+	if(C.has_jexp_bypass())
+		return 0
+	if(!CONFIG_GET(flag/job_check_account_age))
+		return 0
+	if(isnum(C.player.player_age) && isnum(minimal_player_age))
+		return max(0, minimal_player_age - C.player.player_age)
+	return 0
+
+/**
+ * checks if we're available for a given client,
+ * but short circuits with the most common checks first
+ * for efficiency
+ *
+ * @params
+ * - C - client
+ * - check_char - TRUE/FALSE check the current loaded character for violations
+ *
+ * @return ROLE_UNAVAILABLE_X bitflag
+ * todo: check ckey proc too?
+ */
+/datum/prototype/role/job/proc/check_client_availability(client/C, check_char, latejoin)
+	. = NONE
+	if(whitelist_only && !Configuration.check_role_whitelist(id, C.ckey))
+		return ROLE_UNAVAILABLE_WHITELIST
+	else if(latejoin && !slots_remaining(TRUE))
+		return ROLE_UNAVAILABLE_SLOTS_FULL
+	else if(jobban_isbanned(C.mob, title))
+		return ROLE_UNAVAILABLE_BANNED
+	else if(!unlocks_in_daysC))
+		return ROLE_UNAVAILABLE_CONNECT_TIME
+	if(check_char)
+		var/datum/preferences/P = C.prefs
+		if(P.age < minimum_character_age)
+			return ROLE_UNAVAILABLE_CHAR_AGE
+		//TODO: Unscrungle faction check
+		if(!P.lore_faction_job_check(src))
+			return ROLE_UNAVAILABLE_CHAR_FACTION
+		//TODO: Dud check till Species V2
+		if(!P.character_species_job_check(src))
+			return ROLE_UNAVAILABLE_CHAR_SPECIES
+
+	// todo: JEXP/ROLE-EXP hours system
+
+/**
+ * get an user-friendly reason of why they can't spawn as us
+ *
+ * @params
+ * - C - client
+ * - reason - ROLE_UNAVAILABLE_X bitfield
+ *
+ * @return a string explaining the first ROLE_UNAVAILABLE bitflag found.
+ */
+/datum/prototype/role/job/proc/get_availability_reason(client/C, reason)
+	if(reason & ROLE_UNAVAILABLE_BANNED)
+		return "BANNED"
+	if(reason & ROLE_UNAVAILABLE_SLOTS_FULL)
+		return "Slots are currently full; Please refresh the join menu."
+	if(reason & ROLE_UNAVAILABLE_ROLE_TIME)
+		return "You do not have enough hours in the relevant department(s)."
+	if(reason & ROLE_UNAVAILABLE_WHITELIST)
+		return "This role is whitelisted."
+	if(reason & ROLE_UNAVAILABLE_CONNECT_TIME)
+		return "Your account is too new; please wait a few days or contact administration if this is in error."
+	if(reason & ROLE_UNAVAILABLE_CHAR_AGE)
+		return "Your character is too young; they must be at least [minimum_character_age] years old."
+	if(reason & ROLE_UNAVAILABLE_CHAR_FACTION)
+		return "This faction is not allowed in this job."
+	if(reason & ROLE_UNAVAILABLE_CHAR_SPECIES)
+		return "This species is not allowed in this job."
+	return "This role is available; seeing this message is a bug. How did you get here?"
+
+/**
+ * get a short abbreviation for why they can't spawn as us; used for preferences
+ *
+ * @params
+ * - C - client
+ * - reason - ROLE_UNAVAILABLE_X bitfield
+ *
+ * @return a short string explaining the first ROLE_UNAVAILABLE bitflag found.
+ */
+/datum/prototype/role/job/proc/get_availability_error(client/C, reason)
+	if(reason & ROLE_UNAVAILABLE_BANNED)
+		return "BANNED"
+	if(reason & ROLE_UNAVAILABLE_SLOTS_FULL)
+		return "SLOTS FULL"
+	if(reason & ROLE_UNAVAILABLE_ROLE_TIME)
+		return "INSUFFICIENT HOURS"
+	if(reason & ROLE_UNAVAILABLE_WHITELIST)
+		return "WHITELISTED"
+	if(reason & ROLE_UNAVAILABLE_CONNECT_TIME)
+		return C? "IN [unlocks_in_daysC)] DAYS" : "MIN ACCOUNT AGE"
+	if(reason & ROLE_UNAVAILABLE_CHAR_AGE)
+		return "MIN AGE: [minimum_character_age]"
+	if(reason & ROLE_UNAVAILABLE_CHAR_FACTION)
+		return "FACTION"
+	if(reason & ROLE_UNAVAILABLE_CHAR_SPECIES)
+		return "SPECIES"
+	return "UNKNOWN (BUG)"
 

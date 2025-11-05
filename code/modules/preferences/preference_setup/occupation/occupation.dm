@@ -152,7 +152,7 @@
 	var/client/C = pref.client
 	if(!C)
 		return null
-	var/reasons = J.check_client_availability_one(C, TRUE, FALSE) & ~(ROLE_UNAVAILABILITY_EPHEMERAL)
+	var/reasons = J.check_client_availability(C, TRUE, FALSE) & ~(ROLE_UNAVAILABILITY_EPHEMERAL)
 	if(reasons)
 		return J.get_availability_error(C, reasons)
 	return null
@@ -305,7 +305,7 @@
  * roundstart procs. returns JOB_PRIORITY_NEVER if we can't be said job.
  */
 /client/proc/effective_job_priority(datum/prototype/role/legacy_job/J)
-	if(J.check_client_availability_one(src) != ROLE_AVAILABLE)
+	if(J.check_client_availability(src) != ROLE_AVAILABLE)
 		return JOB_PRIORITY_NEVER
 	return prefs?.effective_job_priority(J)
 
@@ -320,7 +320,7 @@
 	. = list()
 	var/list/priorities = sanitize_islist(prefs.get_character_data(CHARACTER_DATA_JOBS))
 	for(var/datum/prototype/role/legacy_job/J as anything in RSroles.legacy_all_job_datums())
-		if(J.check_client_availability_one(src) != ROLE_AVAILABLE)
+		if(J.check_client_availability(src) != ROLE_AVAILABLE)
 			continue
 		var/id = J.id
 		if(!priorities[id])

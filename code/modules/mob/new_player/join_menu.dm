@@ -134,7 +134,7 @@ GLOBAL_DATUM_INIT(join_menu, /datum/join_menu, new)
  * if not, it shouldn't even show
  */
 /datum/join_menu/proc/IsJobAvailable(datum/prototype/role/legacy_job/J, mob/new_player/N)
-	return J.check_client_availability_one(N.client, TRUE, TRUE) == ROLE_AVAILABLE
+	return J.check_client_availability(N.client, TRUE, TRUE) == ROLE_AVAILABLE
 
 /**
  * checks if ghostrole is available

@@ -410,7 +410,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 		return 0
 	var/datum/prototype/role/legacy_job/J = RSroles.legacy_job_by_title(rank)
 	var/reason
-	if((reason = J.check_client_availability_one(client)) != ROLE_AVAILABLE)
+	if((reason = J.check_client_availability(client)) != ROLE_AVAILABLE)
 		to_chat(src, SPAN_WARNING("[rank] is not available: [J.get_availability_reason(client, reason)]"))
 		return FALSE
 	if(!spawn_checks_vr())

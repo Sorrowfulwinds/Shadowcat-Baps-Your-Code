@@ -17,7 +17,7 @@
 	job_debug("Running AR, Player: [player], Rank: [rank], LJ: [latejoin]")
 	if(player && player.mind && rank)
 		var/datum/prototype/role/legacy_job/job = RSroles.legacy_job_by_title(rank)
-		var/reasons = job.check_client_availability_one(player.client)
+		var/reasons = job.check_client_availability(player.client)
 		if(reasons != ROLE_AVAILABLE)
 			job_debug("AR failed: player [player], rank [rank], latejoin [latejoin], failed for [reasons]")
 			return FALSE
@@ -44,7 +44,7 @@
 	job_debug("Running FOC, Job: [job], Level: [level]")
 	var/list/candidates = list()
 	for(var/mob/new_player/player in divide_unassigned)
-		var/reasons = job.check_client_availability_one(player.client)
+		var/reasons = job.check_client_availability(player.client)
 		if(reasons != ROLE_AVAILABLE)
 			job_debug("FOC failed for [reasons], player: [player]")
 			continue
@@ -57,7 +57,7 @@
 /datum/controller/subsystem/job/proc/GiveRandomJob(mob/new_player/player)
 	job_debug("GRJ Giving random job, Player: [player]")
 	for(var/datum/prototype/role/legacy_job/job in shuffle(RSroles.legacy_all_job_datums()))
-		var/reasons = job.check_client_availability_one(player.client)
+		var/reasons = job.check_client_availability(player.client)
 		if(reasons != ROLE_AVAILABLE)
 			job_debug("GRJ failed for [reasons] on [job.id]")
 			continue
@@ -202,7 +202,7 @@
 			for(var/datum/prototype/role/legacy_job/job in shuffledoccupations) // SHUFFLE ME BABY
 				if(job.title in SSticker.mode.disabled_jobs)
 					continue
-				var/reasons = job.check_client_availability_one(player.client)
+				var/reasons = job.check_client_availability(player.client)
 				if(reasons != ROLE_AVAILABLE)
 					job_debug("DO failed for [reasons] on [job.id] for [player]")
 					continue
