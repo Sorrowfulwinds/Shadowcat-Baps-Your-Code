@@ -1,5 +1,6 @@
 /**
  * This datum is intended to hold basic information for a faction to attach to roles. This may be expanded later but lets admire its simplicity for now.
+ * A "faction" may be a company, organization, government body, tribe, etc.
  */
 /datum/prototype/struct/faction
 	abstract_type = /datum/prototype/struct/faction
