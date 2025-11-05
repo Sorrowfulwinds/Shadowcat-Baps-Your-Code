@@ -169,7 +169,7 @@
 
 /obj/machinery/computer/timeclock/proc/isOpenOnDutyJob(var/mob/user, var/department, var/datum/prototype/role/legacy_job/job)
 	return job \
-		   && job.is_position_available() \
+		   && job.slots_remaining() \
 		   && !job.whitelist_only \
 		   && !jobban_isbanned(user,job.title) \
 		   && job.player_old_enough(user.client) \

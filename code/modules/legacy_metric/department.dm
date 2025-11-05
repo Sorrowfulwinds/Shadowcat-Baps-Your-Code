@@ -102,20 +102,3 @@
 /datum/legacy_metric/proc/count_people_with_job(job_type, cutoff = 75)
 	var/list/L = get_people_with_job(job_type, cutoff)
 	return L.len
-
-
-
-/datum/legacy_metric/proc/get_people_with_alt_title(job_type, alt_title_type, cutoff = 75)
-	. = list()
-
-	var/list/people_with_jobs = get_people_with_job(job_type, cutoff)
-	var/datum/prototype/role/legacy_job/J = RSroles.legacy_job_by_type(job_type)
-	var/datum/prototype/struct/alt_title/A = new alt_title_type()
-
-	for(var/M in people_with_jobs)
-		if(J.has_alt_title(M, null, A.title))
-			. += M
-
-/datum/legacy_metric/proc/count_people_with_alt_title(job_type, alt_title_type, cutoff = 75)
-	var/list/L = get_people_with_alt_title(job_type, alt_title_type, cutoff)
-	return L.len

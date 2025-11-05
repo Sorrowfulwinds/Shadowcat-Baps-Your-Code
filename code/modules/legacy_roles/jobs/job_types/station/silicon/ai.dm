@@ -33,9 +33,6 @@
 		return GLOB.empty_playable_ai_cores.len
 	return ..()
 
-/datum/prototype/role/legacy_job/station/ai/is_position_available()
-	return (GLOB.empty_playable_ai_cores.len != 0)
-
 /datum/prototype/role/legacy_job/station/ai/equip_preview(mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/straight_jacket(H), SLOT_ID_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/cardborg(H), SLOT_ID_HEAD)
