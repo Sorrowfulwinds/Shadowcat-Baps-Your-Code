@@ -29,15 +29,15 @@
 	/// starting money multiplier
 	var/economy_payscale = ECONOMY_PAYSCALE_JOB_DEFAULT
 	/// Does this role get a bank account? (Tribals dont have banks!)
-	var/account_allowed = TRUE
+	var/give_bank_account = TRUE
 
 	//? Access
 	// Job access. The use of minimal_access and additional_access is determined by a config setting: config.jobs_have_minimal_access
 	/// Minimal access
 	var/list/minimal_access = null
-	/// With minimal access off, this gets added
+	/// With minimal access off, this gets added to minimal_access.
 	var/list/additional_access = null
-	/// List of department IDs and accounts this position is manager of.
+	/// List of department IDs (and accounts) this position is manager of.
 	var/departments_managed = null
 	/// List of additional department accounts this position gets PINs of.
 	var/department_accounts = null

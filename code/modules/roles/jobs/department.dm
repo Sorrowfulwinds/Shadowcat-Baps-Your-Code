@@ -14,9 +14,9 @@
 	/// Color to use in UIs to represent this department.
 	var/const/color = "#000000"
 	///Lazy Assoc list. Key is the job ID, and the value is a reference to the job datum. Populated by SSjob subsystem.
-	var/alist/jobs = null
+	var/tmp/alist/jobs = null
 	/// Same as above, but only jobs with their 'primary' department are put here. Primary being the first department in their list.
-	var/alist/primary_jobs = null
+	var/tmp/alist/primary_jobs = null
 	/// Used to sort departments, e.g. Command always being on top. 0 is highest priority.
 	var/const/sorting_order = 0
 	/// Departmental pay modifier

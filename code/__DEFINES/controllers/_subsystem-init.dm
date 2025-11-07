@@ -38,6 +38,7 @@
 #define INIT_ORDER_EARLY_INIT      200
 #define INIT_ORDER_INPUT           170
 #define INIT_ORDER_PREFERENCES     150
+#define INIT_ORDER_ROLE            (INIT_ORDER_JOBS + 1)
 #define INIT_ORDER_JOBS            125
 #define INIT_ORDER_ASSETS          100
 #define INIT_ORDER_INSTRUMENTS     50
