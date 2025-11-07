@@ -37,6 +37,9 @@
 	var/list/minimal_access = null
 	/// With minimal access off, this gets added to minimal_access.
 	var/list/additional_access = null
+	//todo: --deploy access refactor and use this instead--
+	//var/datum/access/access
+
 	/// List of department IDs (and accounts) this position is manager of.
 	var/departments_managed = null
 	/// List of additional department accounts this position gets PINs of.

@@ -83,56 +83,6 @@ SUBSYSTEM_DEF(job)
 		tim_sort(dept.jobs, GLOBAL_PROC_REF(cmp_job_datums), TRUE)
 		tim_sort(dept.primary_jobs, GLOBAL_PROC_REF(cmp_job_datums), TRUE)
 
-/datum/controller/subsystem/job/proc/get_all_department_datums()
-	var/list/dept_datums = list()
-	for(var/D in department_datums)
-		dept_datums += department_datums[D]
-	return dept_datums
-
-// Determines if a job title is inside of a specific department.
-// Useful to replace the old `if(job_title in command_positions)` code.
-/datum/controller/subsystem/job/proc/is_job_in_department(rank, target_department_name)
-	var/datum/department/D = LAZYACCESS(department_datums, target_department_name)
-	if(istype(D))
-		return LAZYFIND(D.jobs, rank) ? TRUE : FALSE
-	return FALSE
-
-// Returns a list of all job names in a specific department.
-/datum/controller/subsystem/job/proc/get_job_titles_in_department(target_department_name)
-	var/datum/department/D = LAZYACCESS(department_datums, target_department_name)
-	if(istype(D))
-		var/list/job_titles = list()
-		for(var/J in D.jobs)
-			job_titles += J
-		return job_titles
-
-	job_debug_message("Was asked to get job titles for a non-existant department '[target_department_name]'.")
-	return list()
-
-// Returns a reference to the primary department datum that a job is in.
-// Can receive job datum refs, typepaths, or job title strings.
-/datum/controller/subsystem/job/proc/get_primary_department_of_job(datum/prototype/role/legacy_job/J)
-	if(!istype(J, /datum/prototype/role/legacy_job))
-		if(ispath(J))
-			J = RSroles.legacy_job_by_type(J)
-		else if(istext(J))
-			J = RSroles.legacy_job_by_title(J)
-
-	if(!istype(J))
-		job_debug_message("Was asked to get department for job '[J]', but input could not be resolved into a job datum.")
-		return
-
-	if(!LAZYLEN(J.departments))
-		return
-
-	var/primary_department = J.departments[1]
-	var/datum/department/dept = LAZYACCESS(department_datums, primary_department)
-	if(!istype(dept))
-		job_debug_message("Job '[J.title]' has their primary department be '[primary_department]', but it does not exist.")
-		return
-
-	return department_datums[primary_department]
-
 /datum/controller/subsystem/job/proc/job_debug_message(message)
 	if(debug_messages)
 		log_debug(SPAN_DEBUG("JOB DEBUG: [message]"))
