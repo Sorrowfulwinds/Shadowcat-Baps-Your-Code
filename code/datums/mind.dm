@@ -60,14 +60,12 @@
 	var/memory
 	var/list/learned_recipes
 
-	// todo: id, not title
-	var/assigned_role
-	// todo: id, not title; also unify /datum/prototype/role/(job | antagonist | ghostrole)?
-	var/special_role
-
-	var/role_alt_title
-
-	var/datum/prototype/role/job/assigned_job
+	///Assigned public job
+	var/datum/prototype/role/assigned_drole
+	///Alternate title for our assigned_role
+	var/datum/alt_title/drole_alt_title
+	///Evil assigned_role
+	var/datum/prototype/role/special_drole
 
 	var/list/datum/objective/objectives = list()
 	var/list/datum/objective/special_verbs = list()
@@ -75,8 +73,6 @@
 	/// Tracks if this mind has been a rev or not.
 	var/has_been_rev = 0
 
-	/// Associated faction.
-	var/datum/faction/faction
 	/// Changeling holder.
 	var/datum/changeling/changeling
 
@@ -532,11 +528,9 @@
 	return (duration <= world.time - brigged_since)
 
 /datum/mind/proc/reset()
-	assigned_role =   null
-	special_role =    null
-	role_alt_title =  null
-	assigned_job =    null
-	//faction =       null //Uncommenting this causes a compile error due to 'undefined type', fucked if I know.
+	assigned_drole =   null
+	special_drole =    null
+	drole_alt_title =  null
 	changeling =      null
 	initial_account = null
 	objectives =      list()
