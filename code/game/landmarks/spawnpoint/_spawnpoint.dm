@@ -38,11 +38,11 @@
 
 /obj/landmark/spawnpoint/proc/Register()
 	SHOULD_CALL_PARENT(TRUE)
-	ssrole.spawnpoints += src
+	SSrole.spawnpoints += src
 
 /obj/landmark/spawnpoint/proc/Unregister()
 	SHOULD_CALL_PARENT(TRUE)
-	ssrole.spawnpoints -= src
+	SSrole.spawnpoints -= src
 
 /obj/landmark/spawnpoint/proc/AutoListRegister(list/L)
 	if(src in L)

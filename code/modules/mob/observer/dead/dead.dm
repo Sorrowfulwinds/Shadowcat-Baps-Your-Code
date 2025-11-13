@@ -143,7 +143,7 @@ GLOBAL_LIST_EMPTY(observer_list)
 		mind = body.mind	//we don't transfer the mind but we keep a reference to it.
 
 	if(!T)
-		T = ssrole.get_latejoin_spawnpoint()
+		T = SSrole.get_latejoin_spawnpoint()
 	if(!T)
 		T = locate(1,1,1)
 	forceMove(T)
