@@ -467,8 +467,8 @@ SUBSYSTEM_DEF(ticker)
 	//! TEMPORARY PATCH: putting people in nullspace results in obscene behavior from BYOND
 	//? since we really don't want to kill login ..() without reason, we spawn them at random overflow spawnpoint.
 	var/obj/landmark/spawnpoint/S
-	for(var/faction in SSjob.overflow_spawnpoints)
-		var/list/spawnpoints = SSjob.overflow_spawnpoints[faction]
+	for(var/faction in SSrole.overflow_spawnpoints)
+		var/list/spawnpoints = SSrole.overflow_spawnpoints[faction]
 		S = SAFEPICK(spawnpoints)
 	if(!S)
 		log_and_message_admins("Unable to get overflow spawnpoint; roundstart is going to lag.")

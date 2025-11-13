@@ -38,11 +38,11 @@
 
 /obj/landmark/spawnpoint/proc/Register()
 	SHOULD_CALL_PARENT(TRUE)
-	SSjob.spawnpoints += src
+	ssrole.spawnpoints += src
 
 /obj/landmark/spawnpoint/proc/Unregister()
 	SHOULD_CALL_PARENT(TRUE)
-	SSjob.spawnpoints -= src
+	ssrole.spawnpoints -= src
 
 /obj/landmark/spawnpoint/proc/AutoListRegister(list/L)
 	if(src in L)
@@ -115,15 +115,15 @@
 	. = ..()
 	if(!job_path)
 		return
-	LAZYINITLIST(SSjob.job_spawnpoints)
-	LAZYINITLIST(SSjob.job_spawnpoints[job_path])
-	AutoListRegister(SSjob.job_spawnpoints[job_path])
+	LAZYINITLIST(SSrole.job_spawnpoints)
+	LAZYINITLIST(SSrole.job_spawnpoints[job_path])
+	AutoListRegister(SSrole.job_spawnpoints[job_path])
 
 /obj/landmark/spawnpoint/job/Unregister()
 	. = ..()
 	if(!job_path)
 		return
-	AutoListUnregister(SSjob.job_spawnpoints[job_path])
+	AutoListUnregister(SSrole.job_spawnpoints[job_path])
 
 /**
  * renders a html message for someone joining
@@ -168,15 +168,15 @@
 	. = ..()
 	if(!faction)
 		return
-	LAZYINITLIST(SSjob.latejoin_spawnpoints)
-	LAZYINITLIST(SSjob.latejoin_spawnpoints[faction])
-	AutoListRegister(SSjob.latejoin_spawnpoints[faction])
+	LAZYINITLIST(SSrole.latejoin_spawnpoints)
+	LAZYINITLIST(SSrole.latejoin_spawnpoints[faction])
+	AutoListRegister(SSrole.latejoin_spawnpoints[faction])
 
 /obj/landmark/spawnpoint/latejoin/Unregister()
 	. = ..()
 	if(!faction)
 		return
-	AutoListUnregister(SSjob.latejoin_spawnpoints[faction])
+	AutoListUnregister(SSrole.latejoin_spawnpoints[faction])
 
 /obj/landmark/spawnpoint/latejoin/vv_edit_var(var_name, var_value, massedit)
 	if(var_name == NAMEOF(src, faction))
@@ -202,15 +202,15 @@
 	. = ..()
 	if(!faction)
 		return
-	LAZYINITLIST(SSjob.overflow_spawnpoints)
-	LAZYINITLIST(SSjob.overflow_spawnpoints[faction])
-	AutoListRegister(SSjob.overflow_spawnpoints[faction])
+	LAZYINITLIST(SSrole.overflow_spawnpoints)
+	LAZYINITLIST(SSrole.overflow_spawnpoints[faction])
+	AutoListRegister(SSrole.overflow_spawnpoints[faction])
 
 /obj/landmark/spawnpoint/overflow/Unregister()
 	. = ..()
 	if(!faction)
 		return
-	AutoListUnregister(SSjob.overflow_spawnpoints[faction])
+	AutoListUnregister(SSrole.overflow_spawnpoints[faction])
 
 /obj/landmark/spawnpoint/overflow/vv_edit_var(var_name, var_value, massedit)
 	if(var_name == NAMEOF(src, faction))
@@ -231,15 +231,15 @@
 	. = ..()
 	if(!key)
 		return
-	LAZYINITLIST(SSjob.custom_spawnpoints)
-	LAZYINITLIST(SSjob.custom_spawnpoints[key])
-	AutoListRegister(SSjob.custom_spawnpoints[key])
+	LAZYINITLIST(SSrole.custom_spawnpoints)
+	LAZYINITLIST(SSrole.custom_spawnpoints[key])
+	AutoListRegister(SSrole.custom_spawnpoints[key])
 
 /obj/landmark/spawnpoint/custom/Unregister()
 	. = ..()
 	if(!key)
 		return
-	AutoListUnregister(SSjob.custom_spawnpoints[key])
+	AutoListUnregister(SSrole.custom_spawnpoints[key])
 
 /obj/landmark/spawnpoint/custom/vv_edit_var(var_name, var_value, massedit)
 	if(var_name == NAMEOF(src, key))
