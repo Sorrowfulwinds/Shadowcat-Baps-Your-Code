@@ -184,7 +184,7 @@
 			var/list/ids
 			var/list/ids_allowed = allowed_accesses()
 			if(category)
-				ids = SSjob.access_ids_of_category(category) & ids_allowed
+				ids = SSrole.access_ids_of_category(category) & ids_allowed
 			else
 				ids = ids_allowed
 			selected |= ids
@@ -195,7 +195,7 @@
 			var/list/ids
 			var/list/ids_allowed = allowed_accesses()
 			if(category)
-				ids = SSjob.access_ids_of_category(category) & ids_allowed
+				ids = SSrole.access_ids_of_category(category) & ids_allowed
 			else
 				ids = ids_allowed
 			selected -= ids

@@ -52,7 +52,7 @@
 				conf_req_access = null
 				conf_req_one_access = null
 			else
-				var/list/access_ids = SSjob.access_ids_of_category(category)
+				var/list/access_ids = SSrole.access_ids_of_category(category)
 				LAZYREMOVE(conf_req_one_access, access_ids)
 				LAZYREMOVE(conf_req_access, access_ids)
 			return TRUE

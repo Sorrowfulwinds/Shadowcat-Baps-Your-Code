@@ -1,0 +1,158 @@
+
+/// Returns TRUE if mob M has sufficient access to use this object
+/obj/proc/allowed(mob/M)
+	if(IsAdminGhost(M))
+		return TRUE
+	//check if it doesn't require any access at all
+	if(src.check_access(null))
+		return TRUE
+
+	var/id = M.GetIdCard()
+	if(id)
+		return check_access(id)
+	return 0
+
+/atom/movable/proc/GetAccess()
+	var/obj/item/card/id/id = GetIdCard()
+	return id ? id.GetAccess() : list()
+
+/obj/proc/GetID()
+	return null
+
+/obj/proc/check_access(obj/item/I)
+	return check_access_list(I ? I.GetAccess() : list())
+
+/obj/proc/check_access_list(var/list/L)
+	if(!L)
+		return 0
+	if(!istype(L, /list))
+		return 0
+	return has_access(req_access, req_one_access, L)
+
+/proc/has_access(var/list/req_access, var/list/req_one_access, var/list/accesses)
+	var/has_RA = LAZYLEN(req_access)
+	var/has_ROA = LAZYLEN(req_one_access)
+	var/has_A = LAZYLEN(accesses)
+	if(!has_RA && !has_ROA)		//we need none
+		return TRUE
+	if(!has_A)					//we need them but don't have them
+		return FALSE
+	if(has_RA && length(req_access - accesses))			//we don't have every access we need
+		return FALSE
+	if(has_ROA && !length(req_one_access & accesses))	//we have atleast one access from this list
+		return FALSE
+	return TRUE
+
+/proc/get_all_accesses()
+	// todo: remove this proc
+	RETURN_TYPE(/list)
+	return SSrole.access_ids_of_type(ACCESS_TYPE_ALL)
+
+/proc/get_all_station_access()
+	// todo: remove this proc
+	RETURN_TYPE(/list)
+	return SSrole.access_ids_of_type(ACCESS_TYPE_STATION)
+
+/proc/get_all_centcom_access()
+	// todo: remove this proc
+	RETURN_TYPE(/list)
+	return SSrole.access_ids_of_type(ACCESS_TYPE_CENTCOM)
+
+/proc/get_region_accesses(region)
+	// todo: remove this proc
+	RETURN_TYPE(/list)
+	return SSrole.access_ids_of_region(region)
+
+/proc/get_region_accesses_name(var/code)
+	// todo: remove this proc
+	switch(code)
+		if(ACCESS_REGION_ALL)
+			return "All"
+		if(ACCESS_REGION_SECURITY) //security
+			return "Security"
+		if(ACCESS_REGION_MEDBAY) //medbay
+			return "Medbay"
+		if(ACCESS_REGION_RESEARCH) //research
+			return "Research"
+		if(ACCESS_REGION_ENGINEERING) //engineering and maintenance
+			return "Engineering"
+		if(ACCESS_REGION_COMMAND) //command
+			return "Command"
+		if(ACCESS_REGION_GENERAL) //station general
+			return "Station General"
+		if(ACCESS_REGION_SUPPLY) //supply
+			return "Supply"
+
+/proc/get_access_desc(id)
+	// todo: remove this proc
+	return SSrole.access_lookup(id)?.access_name
+
+/proc/get_access_by_id(id)
+	// todo: remove this proc
+	return SSrole.access_lookup(id)
+
+/proc/get_all_centcom_jobs()
+	// todo: remove this proc
+	return list("VIP Guest",
+		"Custodian",
+		"Thunderdome Overseer",
+		"Intel Officer",
+		"Medical Officer",
+		"Death Commando",
+		"Research Officer",
+		"BlackOps Commander",
+		"Supreme Commander",
+		"Emergency Response Team",
+		"Emergency Response Team Leader")
+
+/atom/movable/proc/GetIdCard()
+	return null
+
+/mob/living/bot/GetIdCard()
+	return botcard
+
+/mob/living/carbon/human/GetIdCard()
+	if(get_active_held_item())
+		var/obj/item/I = get_active_held_item()
+		var/id = I.GetID()
+		if(id)
+			return id
+	if(wear_id)
+		var/id = wear_id.GetID()
+		if(id)
+			return id
+
+/mob/living/silicon/GetIdCard()
+	return idcard
+
+/proc/FindNameFromID(var/mob/living/carbon/human/H)
+	ASSERT(istype(H))
+	var/obj/item/card/id/C = H.GetIdCard()
+	if(C)
+		return C.registered_name
+
+/proc/get_all_job_icons() //For all existing HUD icons
+	return RSroles.legacy_all_job_titles() + list("Prisoner")
+
+/obj/proc/GetJobName() //Used in secHUD icon generation
+	var/obj/item/card/id/I = GetID()
+
+	if(I)
+		if(istype(I,/obj/item/card/id/centcom))
+			return "Centcom"
+
+		var/job_icons = get_all_job_icons()
+		if(I.assignment	in job_icons) //Check if the job has a hud icon
+			return I.assignment
+		if(I.rank in job_icons)
+			return I.rank
+
+		var/centcom = get_all_centcom_jobs()
+		if(I.assignment	in centcom) //Return with the NT logo if it is a CentCom job
+			return "CentCom"
+		if(I.rank in centcom)
+			return "CentCom"
+	else
+		return
+
+	return "Unknown" //Return unknown if none of the above apply

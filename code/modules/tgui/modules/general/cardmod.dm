@@ -256,7 +256,7 @@
 			if(!target)
 				return TRUE
 			var/cat = params["cat"]
-			var/list/resultant = auth_access_edit(usr, target, source, cat? SSjob.access_ids_of_category(cat) : SSjob.access_ids())
+			var/list/resultant = auth_access_edit(usr, target, source, cat? SSrole.access_ids_of_category(cat) : SSrole.access_ids())
 			LAZYINITLIST(target.access)
 			target.access |= resultant
 			return TRUE
@@ -264,7 +264,7 @@
 			if(!target)
 				return TRUE
 			var/cat = params["cat"]
-			var/list/resultant = auth_access_edit(usr, target, source, cat? SSjob.access_ids_of_category(cat) : SSjob.access_ids())
+			var/list/resultant = auth_access_edit(usr, target, source, cat? SSrole.access_ids_of_category(cat) : SSrole.access_ids())
 			LAZYINITLIST(target.access)
 			target.access -= resultant
 			return TRUE
@@ -295,7 +295,7 @@
 /datum/tgui_module/card_mod/standard/query_access_ids(mob/user, obj/item/card/id/editing, obj/item/card/id/authing, list/direct)
 	. = list()
 	for(var/id in (direct || (((authing?.access || list())) & SSjob.cached_access_edit_relevant)))
-		var/datum/access/A = SSjob.access_lookup(id)
+		var/datum/access/A = SSrole.access_lookup(id)
 		if(isnull(A.access_edit_list))
 			continue
 		var/list/built = list()
@@ -306,19 +306,19 @@
 /datum/tgui_module/card_mod/standard/query_access_types(mob/user, obj/item/card/id/editing, obj/item/card/id/authing, list/direct)
 	. = NONE
 	for(var/id in (direct || (((authing?.access || list())) & SSjob.cached_access_edit_relevant)))
-		var/datum/access/A = SSjob.access_lookup(id)
+		var/datum/access/A = SSrole.access_lookup(id)
 		. |= A.access_edit_type
 
 /datum/tgui_module/card_mod/standard/query_access_categories(mob/user, obj/item/card/id/editing, obj/item/card/id/authing, list/direct)
 	. = list()
 	for(var/id in (direct || (((authing?.access || list())) & SSjob.cached_access_edit_relevant)))
-		var/datum/access/A = SSjob.access_lookup(id)
+		var/datum/access/A = SSrole.access_lookup(id)
 		. |= A.access_edit_category
 
 /datum/tgui_module/card_mod/standard/query_access_regions(mob/user, obj/item/card/id/editing, obj/item/card/id/authing, list/direct)
 	. = NONE
 	for(var/id in (direct || (((authing?.access || list())) & SSjob.cached_access_edit_relevant)))
-		var/datum/access/A = SSjob.access_lookup(id)
+		var/datum/access/A = SSrole.access_lookup(id)
 		if(isnull(A.access_edit_region))
 			continue
 		. |= A.access_edit_region
@@ -436,7 +436,7 @@
 	return ADMIN_STATE(NONE)
 
 /datum/tgui_module/card_mod/admin/query_access_ids(mob/user, obj/item/card/id/editing, obj/item/card/id/authing, list/direct)
-	return SSjob.access_ids()
+	return SSrole.access_ids()
 
 /datum/tgui_module/card_mod/admin/query_access_types(mob/user, obj/item/card/id/editing, obj/item/card/id/authing, list/direct)
 	return ACCESS_TYPE_ALL
