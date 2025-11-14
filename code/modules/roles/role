@@ -74,7 +74,7 @@
  * A player-readable error string if the process failed.
  */
 /datum/prototype/role/proc/try_spawn_role(client/C, datum/prototype/alt_title)
-	if(alt_title.parent_role != self)
+	if(alt_title?.parent_role != self.id)
 		return "Error! Please report this to staff immediately! Tried spawning [id] role with invalid [alt_title.id] alt title."
 
 	if (!istype(spawner, /datum/role_instantiator) || isnull(spawner))
