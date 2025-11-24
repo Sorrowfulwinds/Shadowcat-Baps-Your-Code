@@ -11,6 +11,7 @@
 	composite_material = list(MAT_PLASTEEL = SHEET_MATERIAL_AMOUNT, MAT_DIAMOND = SHEET_MATERIAL_AMOUNT) //shrug
 	table_icon_base = "metal"
 	tgui_icon_key = "durasteel"
+	fission_flags = FISSION_BLOCKER
 
 	worth = 35
 

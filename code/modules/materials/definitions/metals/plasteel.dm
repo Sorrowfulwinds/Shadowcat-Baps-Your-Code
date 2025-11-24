@@ -13,6 +13,7 @@
 	composite_material = list(MAT_STEEL = SHEET_MATERIAL_AMOUNT, MAT_PLATINUM = SHEET_MATERIAL_AMOUNT) //todo
 	table_icon_base = "metal"
 	tgui_icon_key = "plasteel"
+	fission_flags = FISSION_BLOCKER
 
 	worth = 17
 

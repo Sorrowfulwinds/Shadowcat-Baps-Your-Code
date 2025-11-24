@@ -171,8 +171,8 @@
 	var/list/composite_material
 	/// Can the RUST use this as fuel
 	var/is_fusion_fuel = FALSE
-	/// Can the fission reactor use this as fuel
-	var/is_fission_fuel = FALSE
+	/// Neutron interaction values for the fission reactor
+	var/fission_flags
 
 	//! Placeholder vars for the time being, todo properly integrate windows/light tiles/rods.
 	var/created_window

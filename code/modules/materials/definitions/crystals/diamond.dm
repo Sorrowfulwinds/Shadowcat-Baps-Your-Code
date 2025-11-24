@@ -9,6 +9,7 @@
 	tableslam_noise = 'sound/effects/Glasshit.ogg'
 	stack_origin_tech = list(TECH_MATERIAL = 6)
 	tgui_icon_key = "diamond"
+	fission_flags = FISSION_BLOCKER
 
 	relative_integrity = 1.25
 	relative_reactivity = 0.05

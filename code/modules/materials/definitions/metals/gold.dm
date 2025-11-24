@@ -7,6 +7,7 @@
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 	tgui_icon_key = "gold"
+	fission_flags = FISSION_MIRROR
 
 	worth = 15
 

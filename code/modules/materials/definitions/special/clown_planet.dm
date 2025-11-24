@@ -8,6 +8,7 @@
 	negation = 5 // boing.
 	stack_origin_tech = list(TECH_MATERIAL = 5, TECH_ILLEGAL = 3)
 	tgui_icon_key = "bananium"
+	fission_flags = FISSION_MIRROR
 
 	relative_integrity = 2
 	density = 8 * 3
@@ -37,6 +38,7 @@
 	explosion_resistance = 10 //described as brittle but probably not like glass
 	stack_origin_tech = list(TECH_MATERIAL = 7, TECH_ILLEGAL = 1)
 	tgui_icon_key = "silencium"
+	fission_flags = FISSION_BLOCKER
 
 	relative_integrity = 2
 	density = 8 * 3

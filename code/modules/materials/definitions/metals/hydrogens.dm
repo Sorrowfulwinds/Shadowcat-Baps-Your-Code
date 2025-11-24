@@ -22,6 +22,7 @@
 	is_fusion_fuel = TRUE
 	tgui_icon_key = "mhydrogen"
 	worth = 50
+	fission_flags = FISSION_BLOCKER
 
 	material_constraints = MATERIAL_CONSTRAINT_RIGID | MATERIAL_CONSTRAINT_CONDUCTIVE
 

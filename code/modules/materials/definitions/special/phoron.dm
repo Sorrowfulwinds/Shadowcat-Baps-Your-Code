@@ -11,6 +11,7 @@
 	door_icon_base = "stone"
 	sheet_singular_name = "crystal"
 	sheet_plural_name = "crystals"
+	fission_flags = FISSION_MIRROR
 
 	relative_integrity = 0.5
 	weight_multiplier = 0.7

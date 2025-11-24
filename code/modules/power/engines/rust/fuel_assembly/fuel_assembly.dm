@@ -9,15 +9,14 @@
 	var/percent_depleted = 1
 	var/list/rod_quantities = list()
 	var/fuel_type = "composite"
-	var/fuel_colour
-	var/radioactivity
+	var/fuel_color
+	var/fission_flags
 	var/const/initial_amount = 300
 
-/obj/item/fuel_assembly/Initialize(mapload, _material, _colour, _radiation)
+/obj/item/fuel_assembly/Initialize(mapload, _material, _color)
 	. = ..()
 	fuel_type = _material
-	fuel_colour = _colour
-	radioactivity = _radiation
+	fuel_color = _color
 
 /obj/item/fuel_assembly/Initialize(mapload)
 	. = ..()
@@ -25,16 +24,16 @@
 	if(istype(material, /datum/prototype/material))
 		name = "[material.use_name] fuel rod assembly"
 		desc = "A fuel rod for a fusion reactor. This one is made from [material.use_name]."
-		fuel_colour = material.icon_colour
+		fuel_color = material.icon_colour
 		fuel_type = material.use_name
-		material
+		fission_flags = material.fission_flags
 	else
 		name = "[fuel_type] fuel rod assembly"
 		desc = "A fuel rod for a fusion reactor. This one is made from [fuel_type]."
 
 	icon_state = "blank"
 	var/image/I = image(icon, "fuel_assembly")
-	I.color = fuel_colour
+	I.color = fuel_color
 	add_overlay(list(I, image(icon, "fuel_assembly_bracket")))
 	rod_quantities[fuel_type] = initial_amount
 

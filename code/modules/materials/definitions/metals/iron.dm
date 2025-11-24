@@ -6,6 +6,7 @@
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 	tgui_icon_key = "ingots"
+	fission_flags = FISSION_BLOCKER
 
 	worth = 1
 

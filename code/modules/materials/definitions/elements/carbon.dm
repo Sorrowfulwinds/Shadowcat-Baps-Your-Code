@@ -10,6 +10,7 @@
 	door_icon_base = "stone"
 	sheet_singular_name = "sheet"
 	sheet_plural_name = "sheets"
+	fission_flags = FISSION_BLOCKER
 
 	// raw carbon is bad
 	relative_integrity = 0.7
