@@ -7,8 +7,8 @@
 	//!Set id on downstreams
 	//id = "AltStationFungineer"
 
-	/// What role is this alt_title used by.
-	var/const/datum/prototype/role/parent_role = null
+	/// What role id is this alt_title used by.
+	var/const/parent_role = null
 
 	/// New title to replace base title.
 	var/const/title = "GENERIC ALT TITLE"

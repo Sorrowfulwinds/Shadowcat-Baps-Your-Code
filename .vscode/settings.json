@@ -30,5 +30,26 @@
 	"[javascript][typescript][typescriptreact][javascriptreact]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"folder-color.pathColors": [
+		{
+			"folderPath": "Shadowcat-Baps-Your-Code\\code\\modules\\roles\\",
+			"color": "foldercolorizer.color_666600",
+			"badge": "👑"
+		},
+		{
+			"folderPath": "Shadowcat-Baps-Your-Code\\code\\controllers\\subsystem\\role\\",
+			"color": "foldercolorizer.color_990066",
+			"badge": "🧰"
+		},
+		{
+			"folderPath": "Shadowcat-Baps-Your-Code\\code\\controllers\\repository\\roles.dm\\",
+			"color": "foldercolorizer.color_ffff66",
+			"badge": "🗄️"
+		},
+		{
+			"folderPath": "Shadowcat-Baps-Your-Code\\code\\controllers\\repository\\roles\\",
+			"badge": "💾"
+		}
+	]
 }
