@@ -1,5 +1,6 @@
 /**
  * !!/role/job specific calls
+ * A lot of station specific code only cares about jobs. This is kept for simplication.
  */
 
 /**

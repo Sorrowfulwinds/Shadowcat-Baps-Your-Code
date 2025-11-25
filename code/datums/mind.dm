@@ -61,11 +61,11 @@
 	var/list/learned_recipes
 
 	///Assigned public job
-	var/datum/prototype/role/assigned_drole
-	///Alternate title for our assigned_role
-	var/datum/alt_title/drole_alt_title
-	///Evil assigned_role
-	var/datum/prototype/role/special_drole
+	var/assigned_role_id
+	///Alternate title for our assigned_role (if we have one)
+	var/alt_title_id
+	///Evil assigned_role (if we have one)
+	var/special_role_id
 
 	var/list/datum/objective/objectives = list()
 	var/list/datum/objective/special_verbs = list()
@@ -528,9 +528,9 @@
 	return (duration <= world.time - brigged_since)
 
 /datum/mind/proc/reset()
-	assigned_drole =   null
-	special_drole =    null
-	drole_alt_title =  null
+	assigned_role_id =   null
+	special_role_id =    null
+	alt_title_id =  null
 	changeling =      null
 	initial_account = null
 	objectives =      list()
