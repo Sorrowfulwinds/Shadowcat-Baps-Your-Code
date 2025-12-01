@@ -6,6 +6,17 @@ REPOSITORY_DEF(roles)
 	expected_type = /datum/prototype/role
 
 /**
+ * Verifies a role prototype id exists
+ * @return
+ * TRUE/FALSE
+ */
+/datum/controller/repository/roles/proc/verify_id(id)
+	for(var/datum/prototype/role/r as anything in fetch_subtypes_immutable(/datum/prototype/role))
+		if (r.id == id)
+			return TRUE
+	return FALSE
+
+/**
  * Only returns /datum/prototype/role
  */
 /datum/controller/repository/roles/proc/get_role_by_id(id) as /datum/prototype/role
@@ -18,7 +29,7 @@ REPOSITORY_DEF(roles)
 	return fetch_local_or_throw(type)
 
 /**
- * Only returns /datum/prototype/role
+ * Only returns /list
  */
 /datum/controller/repository/roles/proc/get_all_role_ids() as /list
 	. = list()
@@ -26,7 +37,7 @@ REPOSITORY_DEF(roles)
 		. += r.id
 
 /**
- * Only returns /datum/prototype/role
+ * Only returns /list
  */
 /datum/controller/repository/roles/proc/get_all_role_types() as /list
 	. = list()
@@ -34,7 +45,7 @@ REPOSITORY_DEF(roles)
 		. += r.type
 
 /**
- * Only returns /datum/prototype/role
+ * Only returns /list
  */
 /datum/controller/repository/roles/proc/get_all_role_titles() as /list
 	. = list()
@@ -42,7 +53,7 @@ REPOSITORY_DEF(roles)
 		. += r.title
 
 /**
- * Only returns /datum/prototype/role
+ * Only returns a /list of /datum/prototype/role
  */
 /datum/controller/repository/roles/proc/get_all_role_datums() as /list
 	. = list()
@@ -50,7 +61,7 @@ REPOSITORY_DEF(roles)
 		. += r
 
 /**
- * Only returns /datum/prototype/role
+ * Only returns a /list of /datum/prototype/role
  */
 /datum/controller/repository/roles/proc/legacy_all_sorted_role_datums() as /list
 	. = get_all_role_datums()

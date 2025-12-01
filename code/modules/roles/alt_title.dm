@@ -1,5 +1,5 @@
 /**
- * Used to give role's alternate titles with modified descriptions or outfits.
+ * Used to give roles different titles with modified descriptions or outfits.
  */
 /datum/prototype/alt_title
 	abstract_type = /datum/prototype/alt_title

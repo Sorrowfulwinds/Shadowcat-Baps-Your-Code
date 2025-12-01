@@ -26,18 +26,20 @@
 	var/join_types = JOB_ROUNDSTART | JOB_LATEJOIN
 	/// If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least this many days old. (meaning they first signed in at least that many days before.)
 	var/minimum_player_age = 0
-	/// If you have usewhitelist config option enabled, this option will require players to be whitelisted for this role.
+	/// This option will require players to be whitelisted for this role.
 	var/whitelisted = FALSE
 
 	//? Advanced Info
-	/// List of alternate titles, if any.
+	/// Lazylist of alternate titles ids, if any.
 	var/list/alt_titles = null
 	/// The faction datum this role belongs to, if any.
 	var/datum/faction/faction
 	/// Outfit to equip to this role, if any. May be trampled by spawner if invalid.
 	var/datum/outfit/outfit
 	/// The instantiator to spawn this role. May override player character.
-	var/datum/role_instantiator/spawner
+	var/datum/role_instantiator/instancer
+	/// The uninstantiator to clean up this role.
+	var/datum/role_uninstantiator/uninstancer
 
 	//? Settings
 	/// Flags for this roles behaviour on manifests. See flags for more details.
@@ -56,9 +58,7 @@
 		return 0
 	if(!CONFIG_GET(flag/job_check_account_age))
 		return 0
-	if(isnum(C.player.player_age) && isnum(minimum_player_age))
-		return max(0, minimum_player_age - C.player.player_age)
-	return 0
+	return max(0, minimum_player_age - C.player.player_age)
 
 /**
  * Start the spawning process for client C in this role.

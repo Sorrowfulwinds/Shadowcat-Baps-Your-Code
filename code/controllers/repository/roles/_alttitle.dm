@@ -10,3 +10,14 @@ REPOSITORY_DEF(alttitle)
  */
 /datum/controller/repository/alttitle/proc/get_alt_by_id(id) as /datum/prototype/alt_title
 	return fetch_local_or_throw(id)
+
+/**
+ * Verifies a role alt title id exists
+ * @return
+ * TRUE/FALSE
+ */
+/datum/controller/repository/alttitle/proc/verify_id(id)
+	for(var/datum/prototype/alt_title/at as anything in fetch_subtypes_immutable(/datum/prototype/alt_title))
+		if (at.id == id)
+			return TRUE
+	return FALSE
