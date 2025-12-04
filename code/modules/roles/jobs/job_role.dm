@@ -25,18 +25,20 @@
 	var/selection_color = COLOR_WHITE
 	/// List of departments this job belongs to, if any. The first one on the list will be the 'primary' department.
 	var/list/departments = list()
-	/// Used for sorting jobs so boss jobs go above regular ones, and their boss's boss is above that. Higher numbers = higher in sorting.
+	/// Used for sorting jobs so boss jobs go above regular ones, and their boss's boss is above that. Larger number = higher in sorting.
 	var/sorting_order = 0
+
 	/// Is this a management position?  If yes, list of departments managed.  Otherwise null.
 	var/departments_managed = null
-	/// Which department accounts should people with this position be given the pin for?
+	/// Which department accounts should people with this position be given the pin for? Hint: should match departments_managed.
 	var/department_accounts = null
-	/// Should it show up on things like the ID computer?
-	var/assignable = TRUE
+
 	/// How young a character can be for this job
 	var/minimum_character_age = 0
-	/// Character age discrimination for roundstart job assignment
+	/// Character age discrimination for roundstart job assignment lottery
 	var/ideal_character_age = 30
 
-	// Disallow joining as this job midround from off-duty position via going on-duty
-	var/disallow_jobhop = FALSE
+	/// Should it show up on things like the ID computer?
+	var/can_assign = TRUE
+	// Allow joining as this job midround from off-duty position via going on-duty
+	var/allow_jobhop = TRUE

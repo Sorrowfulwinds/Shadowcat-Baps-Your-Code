@@ -30,10 +30,10 @@
 	var/whitelisted = FALSE
 
 	//? Advanced Info
-	/// Lazylist of alternate titles ids, if any.
+	/// Lazylist of alternate title ids, if any.
 	var/list/alt_titles = null
-	/// The faction datum this role belongs to, if any.
-	var/datum/faction/faction
+	/// The faction string this role belongs to. May be replaced by a datum later.
+	var/faction = JOB_FACTION_STATION
 	/// Outfit to equip to this role, if any. May be trampled by spawner if invalid.
 	var/datum/outfit/outfit
 	/// The instantiator to spawn this role. May override player character.
@@ -42,7 +42,7 @@
 	var/datum/role_uninstantiator/uninstancer
 
 	//? Settings
-	/// Flags for this roles behaviour on manifests. See flags for more details.
+	/// Flags for this role's behavior on manifests. See flags for more details.
 	var/manifest_flags = MANIFEST_SHOW_ALL
 
 /datum/prototype/role/can_be_unloaded()
