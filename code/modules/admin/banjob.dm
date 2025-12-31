@@ -13,7 +13,7 @@ var/jobban_keylist[0]		//to store the keys & ranks
 	jobban_keylist.Add("[ckey] - [rank]")
 	jobban_savebanfile()
 
-//returns a reason if M is banned from rank, returns 0 otherwise
+//returns a reason if M is banned from rank, returns FALSE otherwise
 /proc/jobban_isbanned(mob/M, rank)
 	if(M && rank)
 		/*
@@ -34,7 +34,7 @@ var/jobban_keylist[0]		//to store the keys & ranks
 					if(text)
 						return text
 				return "Reason Unspecified"
-	return 0
+	return FALSE
 
 /*
 DEBUG

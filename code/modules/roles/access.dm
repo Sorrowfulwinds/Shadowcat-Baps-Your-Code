@@ -132,7 +132,7 @@
 		return C.registered_name
 
 /proc/get_all_job_icons() //For all existing HUD icons
-	return RSroles.legacy_all_job_titles() + list("Prisoner")
+	return RSroles.get_all_job_titles() + list("Prisoner")
 
 /obj/proc/GetJobName() //Used in secHUD icon generation
 	var/obj/item/card/id/I = GetID()

@@ -21,6 +21,13 @@
 	/// Important rules/policy info
 	var/const/important_info
 
+	//? Access
+	// The use of minimal_access and additional_access is determined by a config setting: config.jobs_have_minimal_access. May be irrelivant if this role never has an ID card.
+	/// Minimum access
+	var/const/list/minimal_access
+	/// With minimal access off, this gets added
+	var/const/list/additional_access
+
 	//? Requirements
 	/// Determines when this role can be spawned into by players
 	var/const/join_types = JOB_ROUNDSTART | JOB_LATEJOIN
@@ -61,23 +68,90 @@
 	return max(0, minimum_player_age - C.player.player_age)
 
 /**
- * Start the spawning process for client C in this role.
- * Calls the instantiator set for this role unless you left it blank.
+ * @return a list of access macros for this role.
+ */
+/datum/prototype/role/proc/get_access()
+	. = minimal_access
+	. |= config_legacy.jobs_have_minimal_access ? 0 : additional_access
+
+/**
+ * Start the spawning process for client C.
+ * Calls the instantiator set for this role.
  * Override if you need to do something deranged.
  *
  * @params
- * C - The client to spawn in this role
- * alt_title - Alternate title to use for this role
+ * ignore_availability - Ignore availability checks for infinite roles.
+ * C - The client to spawn in
+ * alt_title - Optional alternate title to use
  *
  * @return
  * TRUE if the spawning process succeeded.
  * A player-readable error string if the process failed.
  */
-/datum/prototype/role/proc/try_spawn_role(client/C, datum/prototype/alt_title)
-	if(alt_title?.parent_role != self.id)
-		return "Error! Please report this to staff immediately! Tried spawning [id] role with invalid [alt_title.id] alt title."
+/datum/prototype/role/proc/AttemptSpawn(ignore_availability, client/C, datum/prototype/alt_title/alt_title)
+	if(!istype(C, /client)) //Should be impossible.
+		return "Error! Please report this to staff immediately! Tried spawning [id] role with no client!"
+		//TODO CAT: admin log this error
 
-	if (!istype(spawner, /datum/role_instantiator) || isnull(spawner))
-		return "Error! No instantiator set for this role. Please report this to staff immediately! [id] role has no instantiator set and failed spawn_role()."
+	if(!ignore_availability && !SSrole.get_position_available(id))
+		return "No open positions for this role. Please refresh your menu."
 
-	return spawner.try_spawning(C, self, alt_title)
+	if(C.persistent.ligma)
+		log_shadowban("[key_name(C)] ghostrole join as [id] blocked.")
+		return "No open positions for this role. Please refresh your menu."
+
+	var/bancheck = jobban_isbanned(C.mob, id)
+	if (bancheck != FALSE)
+		return "You cannot spawn due to a role ban. Reason: [bancheck]"
+
+	if(whitelisted && !Configuration.check_role_whitelist(id, C.ckey))
+		return "You are not whitelisted for this role."
+
+	if(!unlock_in_days(C))
+		return "Your account is not old enough for this role. Please try again in [unlock_in_days(C)] days."
+
+	if(alt_title?.parent_role != id) //Should be impossible to select
+		return "Error! Please report this to staff! Tried spawning [id] role with invalid [alt_title.id] alt title."
+		//TODO CAT: admin log this error too
+
+	if(!istype(instancer, /datum/role_instantiator)) //Coder error if true
+		return "Error! No instantiator set for this role. Please report this to staff! [id] role has no instantiator set and failed AttemptSpawn()."
+		//TODO CAT: definitely admin log this error
+
+	. = instancer.AttemptSpawn(C, src, alt_title)
+	if(. == TRUE) //Spawn suceeded
+		SSrole.fill_role(id)
+	return .
+
+/**
+ * Admin override for FORCING a role to spawn. Only does core functionality checks. Ignores bans, filled roles, etc. Use at your own risk.
+ *
+ * @params
+ * nofill - Do not fill a role slot
+ * C - The client to spawn in
+ * alt_title - Optional alternate title to use
+ * force_instancer - Tell the spawner to try its absolute hardest
+ *
+ * @return
+ * TRUE if the spawning process succeeded.
+ * A admin-readable error string if the process failed.
+ */
+/datum/prototype/role/proc/ForceSpawn(nofill, client/C, datum/prototype/alt_title/alt_title, force_instancer)
+	if(!istype(C, /client))
+		return "Error! Invalid client parameter."
+
+	if(alt_title?.parent_role != id)
+		return "Error! Invalid alt-title, null is acceptable."
+
+	if(!istype(instancer, /datum/role_instantiator))
+		return "Error! No instantiator set for this role. Its coded wrong."
+
+	//TODO CAT: Put one of those admin log macros here. No good deed can go unpunished.
+
+	if(force_instancer)
+		. = instancer.ForceSpawn(C, src, alt_title)
+	else
+		. = instancer.AttemptSpawn(C, src, alt_title)
+	if(. == TRUE && !nofill)
+		SSrole.fill_role(id)
+	return .

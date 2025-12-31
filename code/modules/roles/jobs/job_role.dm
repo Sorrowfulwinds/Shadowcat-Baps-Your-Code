@@ -13,13 +13,6 @@
 	/// starting money multiplier
 	var/const/economy_payscale = ECONOMY_PAYSCALE_JOB_DEFAULT
 
-	//? Access
-	// Job access. The use of minimal_access and additional_access is determined by a config setting: config.jobs_have_minimal_access
-	/// Minimal access
-	var/const/list/minimal_access = list()
-	/// With minimal access off, this gets added
-	var/const/list/additional_access = list()
-
 	//? Unsorted
 	/// Selection screen color
 	var/const/selection_color = COLOR_WHITE
@@ -42,3 +35,23 @@
 	var/const/can_assign = TRUE
 	// Allow joining as this job midround from off-duty position via going on-duty
 	var/const/allow_jobhop = TRUE
+
+/datum/prototype/role/job/AttemptSpawn(ignore_availability, client/C, datum/prototype/alt_title/alt_title)
+	. = ..()
+	if(. != TRUE)
+		return .
+
+	if(C.prefs.age < minimum_character_age)
+		return "Your character is too young; they must be at least [minimum_character_age] years old."
+	if(!C.prefs.lore_faction_job_check(src))
+		return "Your character is of the wrong faction."
+	if(!C.prefs.character_species_job_check(src))
+		return "This species is not allowed in this job."
+
+	return .
+
+/datum/prototype/role/job/get_access()
+	. = ..()
+	if(team == JOB_FACTION_STATION && CONFIG_GET(flag/almost_everyone_has_maintenance_access))
+		. |= ACCESS_ENGINEERING_MAINT
+

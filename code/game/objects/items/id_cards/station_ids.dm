@@ -31,7 +31,7 @@
 	var/primary_color = rgb(0,0,0) // Obtained by eyedroppering the stripe in the middle of the card
 	var/secondary_color = rgb(0,0,0) // Likewise for the oval in the top-left corner
 
-	var/datum/prototype/role/job/job_access_type = /datum/prototype/role/job/station/assistant    // Job type to acquire access rights from, if any
+	var/role_access_id = "JobNtAssistant"    // role id to acquire access rights from, if any
 
 	//alt titles are handled a bit weirdly in order to unobtrusively integrate into existing ID system
 	var/assignment = null	//can be alt title or the actual job
@@ -43,18 +43,11 @@
 	/// * lazy list
 	var/list/stored_redemption_points
 
-/obj/item/card/id/Initialize(mapload)
+/obj/item/card/id/Initialize()
 	. = ..()
-	var/datum/prototype/role/job/getting_from
-	if(ispath(job_access_type))
-		job_access_type = RSroles.legacy_job_by_type(job_access_type)
-	if(istype(job_access_type))
-		getting_from = job_access_type
-	else
-		getting_from = RSroles.legacy_job_by_title(rank)
-	if(!isnull(getting_from))
-		access = getting_from.get_access()
-		job_access_type = getting_from
+	if(role_access_id)
+		access = RSroles.get_role_by_id(role_access_id).get_access()
+		//No role no access bozo
 
 /obj/item/card/id/examine(mob/user, dist)
 	. = ..()
