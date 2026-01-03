@@ -36,10 +36,11 @@
 	// Allow joining as this job midround from off-duty position via going on-duty
 	var/const/allow_jobhop = TRUE
 
-/datum/prototype/role/job/AttemptSpawn(ignore_availability, client/C, datum/prototype/alt_title/alt_title)
+/datum/prototype/role/job/AttemptSpawn(mob/player, datum/prototype/alt_title/alt_title, ignore_availability)
 	. = ..()
 	if(. != TRUE)
 		return .
+	var/client/C = player.client
 
 	if(C.prefs.age < minimum_character_age)
 		return "Your character is too young; they must be at least [minimum_character_age] years old."

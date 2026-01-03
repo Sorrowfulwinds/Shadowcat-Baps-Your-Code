@@ -31,6 +31,7 @@
 	//? Requirements
 	/// Determines when this role can be spawned into by players
 	var/const/join_types = JOB_ROUNDSTART | JOB_LATEJOIN
+
 	/// If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least this many days old. (meaning they first signed in at least that many days before.)
 	var/const/minimum_player_age = 0
 	/// This option will require players to be whitelisted for this role.
@@ -75,29 +76,30 @@
 	. |= config_legacy.jobs_have_minimal_access ? 0 : additional_access
 
 /**
- * Start the spawning process for client C.
- * Calls the instantiator set for this role.
- * Override if you need to do something deranged.
+ * Verify the client attached to a mob is valid for this role with their current selected character slot.
  *
  * @params
- * ignore_availability - Ignore availability checks for infinite roles.
- * C - The client to spawn in
- * alt_title - Optional alternate title to use
+ * player - A mob with the client we are trying to spawn. The mob is not inspected.
+ * alt_title - Optional alternate title to verify,
+ * ignore_slots - Do not check if slots are full
  *
  * @return
- * TRUE if the spawning process succeeded.
- * A player-readable error string if the process failed.
+ * FALSE if verification passed.
+ * A player-readable error string if the verification failed.
  */
-/datum/prototype/role/proc/AttemptSpawn(ignore_availability, client/C, datum/prototype/alt_title/alt_title)
-	if(!istype(C, /client)) //Should be impossible.
-		return "Error! Please report this to staff immediately! Tried spawning [id] role with no client!"
+/datum/prototype/role/proc/VerifyPlayer(/mob/player, datum/prototype/alt_title/alt_title, ignore_slots)
+	if(!istype(player)) //Should be impossible.
+		return "Error! Please report this to staff immediately! Tried spawning [id] role with non-mob!"
 		//TODO CAT: admin log this error
+	if(!player.client)
+		return "You should not be able to see this. Client no longer exists on mob."
+	var/client/C = player.client
 
-	if(!ignore_availability && !SSrole.get_position_available(id))
+	if(!ignore_slots && !SSrole.get_position_available(id))
 		return "No open positions for this role. Please refresh your menu."
 
 	if(C.persistent.ligma)
-		log_shadowban("[key_name(C)] ghostrole join as [id] blocked.")
+		log_shadowban("[key_name(C)] role verification as [id] blocked.")
 		return "No open positions for this role. Please refresh your menu."
 
 	var/bancheck = jobban_isbanned(C.mob, id)
@@ -110,16 +112,52 @@
 	if(!unlock_in_days(C))
 		return "Your account is not old enough for this role. Please try again in [unlock_in_days(C)] days."
 
-	if(alt_title?.parent_role != id) //Should be impossible to select
+	if(alt_title?.parent_role != id) //Should be impossible to select or is a coder flub
 		return "Error! Please report this to staff! Tried spawning [id] role with invalid [alt_title.id] alt title."
 		//TODO CAT: admin log this error too
 
-	if(!istype(instancer, /datum/role_instantiator)) //Coder error if true
+	return FALSE
+
+
+
+/**
+ * Start the spawning process for the client of Player.
+ * Calls the instantiator set for this role.
+ * Override if you need to do something deranged.
+ *
+ * @params
+ * player - Mob of the player we are trying to spawn,
+ * alt_title - Optional alternate title to use,
+ * ignore_slots - Spawn even if role is full,
+ * verify_player - Check VerifyPlayer within proc or skip.
+ *
+ * @return
+ * FALSE if the spawning process succeeded.
+ * A player-readable error string if the process failed.
+ */
+/datum/prototype/role/proc/AttemptSpawn(/mob/player, datum/prototype/alt_title/alt_title, ignore_slots, verify_player)
+	if(!istype(player)) //Should be impossible.
+		return "Error! Please report this to staff immediately! Tried spawning [id] role with non-mob!"
+		//TODO CAT: admin log this error
+	if(!player.client)
+		return "You should not be able to see this. Client no longer exists on mob."
+	var/client/C = player.client
+
+	if(!istype(instancer)) //Coder error if true
 		return "Error! No instantiator set for this role. Please report this to staff! [id] role has no instantiator set and failed AttemptSpawn()."
 		//TODO CAT: definitely admin log this error
 
-	. = instancer.AttemptSpawn(C, src, alt_title)
-	if(. == TRUE) //Spawn suceeded
+	if (verify_player)
+		. = VerifyPlayer(player, alt_title, ignore_slots)
+	if(.)
+		return .
+
+	if (!ignore_slots && !verify_player && !SSrole.get_position_available(id))
+		return "No open positions for this role. Please refresh your menu."
+
+
+	. = instancer.AttemptSpawn(player, src, alt_title)
+	if(!.) //Spawn suceeded
 		SSrole.fill_role(id)
 	return .
 
@@ -127,18 +165,21 @@
  * Admin override for FORCING a role to spawn. Only does core functionality checks. Ignores bans, filled roles, etc. Use at your own risk.
  *
  * @params
+ * player - The mob of the client to spawn in,
+ * alt_title - Optional alternate title to use,
+ * force_instancer - Tell the spawner to try its absolute hardest,
  * nofill - Do not fill a role slot
- * C - The client to spawn in
- * alt_title - Optional alternate title to use
- * force_instancer - Tell the spawner to try its absolute hardest
  *
  * @return
- * TRUE if the spawning process succeeded.
+ * FALSE if the spawning process succeeded.
  * A admin-readable error string if the process failed.
  */
-/datum/prototype/role/proc/ForceSpawn(nofill, client/C, datum/prototype/alt_title/alt_title, force_instancer)
-	if(!istype(C, /client))
-		return "Error! Invalid client parameter."
+/datum/prototype/role/proc/ForceSpawn(mob/player, datum/prototype/alt_title/alt_title, force_instancer, nofill)
+	if(!istype(player))
+		return "Error! Player should be the current mob of the target client."
+
+	if(!player.client)
+		return "Error! Mob does not have a player client attached. Did they log out?"
 
 	if(alt_title?.parent_role != id)
 		return "Error! Invalid alt-title, null is acceptable."
@@ -149,9 +190,9 @@
 	//TODO CAT: Put one of those admin log macros here. No good deed can go unpunished.
 
 	if(force_instancer)
-		. = instancer.ForceSpawn(C, src, alt_title)
+		. = instancer.ForceSpawn(player, src, alt_title)
 	else
-		. = instancer.AttemptSpawn(C, src, alt_title)
-	if(. == TRUE && !nofill)
+		. = instancer.AttemptSpawn(player, src, alt_title)
+	if(!. && !nofill) //Spawn succeeded
 		SSrole.fill_role(id)
 	return .
