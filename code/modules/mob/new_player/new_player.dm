@@ -1,7 +1,8 @@
 INITIALIZE_IMMEDIATE(/mob/new_player)
 /mob/new_player
 	var/ready = 0
-	var/spawning = 0			// Referenced when you want to delete the new_player later on in the code.
+	///To prevent dropping the client during spawning if they disconnect.
+	var/spawning = FALSE
 	var/totalPlayers = 0		// Player counts for the Lobby tab
 	var/totalPlayersReady = 0
 	var/datum/browser/panel
@@ -413,7 +414,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	if((reason = J.check_client_availability_one(client)) != ROLE_AVAILABLE)
 		to_chat(src, SPAN_WARNING("[rank] is not available: [J.get_availability_reason(client, reason)]"))
 		return FALSE
-	if(!spawn_checks_vr())
+	if(!client?.legacy_spawn_checks_vr())
 		return FALSE
 	var/list/errors = list()
 	var/list/warnings = list()
@@ -503,7 +504,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 /mob/new_player/proc/create_character(var/turf/T)
 	// don't lose out if we join fast
 	SSplaytime.queue_playtimes(client)
-	if(!spawn_checks_vr())
+	if(!client?.legacy_spawn_checks_vr())
 		return FALSE
 	var/list/errors = list()
 	// warnings ignored for now.
@@ -635,53 +636,3 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 
 /mob/new_player/MayRespawn()
 	return 1
-
-/mob/new_player/proc/spawn_checks_vr() //Custom spawn checks.
-	var/pass = TRUE
-
-	//Are they on the VERBOTEN LIST?
-	if (prevent_respawns.Find(client.prefs.real_name))
-		to_chat(src,"<span class='warning'>You've already quit the round as this character. You can't go back now that you've free'd your job slot. Play another character, or wait for the next round.</span>")
-		pass = FALSE
-
-	//Do they have their scale properly setup?
-	if(!client.prefs.size_multiplier)
-		pass = FALSE
-		to_chat(src, SPAN_WARNING("You have not set your scale yet.  Do this on the Species Customization tab in character setup."))
-
-	//Custom species checks
-	if (client && client.prefs && client.prefs.real_species_name() == SPECIES_CUSTOM)
-
-		//Didn't name it
-		if(!client.prefs.custom_species)
-			pass = FALSE
-			to_chat(src, SPAN_WARNING("You have to name your custom species.  Do this on the Species Customization tab in character setup."))
-
-		//Check traits/costs
-		var/list/megalist = client.prefs.pos_traits + client.prefs.neu_traits + client.prefs.neg_traits
-		var/points_left = client.prefs.starting_trait_points
-		var/traits_left = client.prefs.max_traits
-		for(var/T in megalist)
-			var/cost = traits_costs[T]
-
-			if(cost)
-				traits_left--
-
-			//A trait was removed from the game
-			if(isnull(cost))
-				pass = FALSE
-				to_chat(src,"<span class='warning'>Your custom species is not playable. One or more traits appear to have been removed from the game or renamed. Enter character setup to correct this.</span>")
-				break
-			else
-				points_left -= traits_costs[T]
-
-		//Went into negatives
-		if(points_left < 0 || traits_left < 0)
-			pass = FALSE
-			to_chat(src, SPAN_WARNING("Your custom species is not playable.  Reconfigure your traits on the Species Customization tab."))
-
-	//Final popup notice
-	if (!pass)
-		spawn()
-			alert(src,"There were problems with spawning your character. Check your message log for details.","Error","OK")
-	return pass

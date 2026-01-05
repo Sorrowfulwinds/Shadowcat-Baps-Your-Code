@@ -45,8 +45,6 @@
 	var/static/respawn_time = 3000		// time before a dead player is allowed to respawn (in ds, though the config file asks for minutes, and it's converted below)
 	var/static/respawn_message = "<span class='notice'><B>Make sure to play a different character, and please roleplay correctly!</B></span>"
 
-	var/guest_jobban = 1
-	var/usewhitelist = 0
 	var/kick_inactive = 0				//force disconnect for inactive players after this many minutes, if non-0
 	var/load_jobs_from_txt = 0
 	var/ToRban = 0
@@ -299,9 +297,6 @@
 				if ("mapurl")
 					config_legacy.mapurl = value
 
-				if ("guest_jobban")
-					config_legacy.guest_jobban = 1
-
 				if ("guest_ban")
 					config_legacy.guests_allowed = 0
 
@@ -320,9 +315,6 @@
 
 				if ("disable_respawn")
 					config_legacy.abandon_allowed = 0
-
-				if ("usewhitelist")
-					config_legacy.usewhitelist = 1
 
 				if ("feature_object_spell_system")
 					config_legacy.feature_object_spell_system = 1

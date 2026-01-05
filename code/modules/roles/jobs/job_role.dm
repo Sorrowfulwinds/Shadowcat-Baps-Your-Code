@@ -36,7 +36,12 @@
 	// Allow joining as this job midround from off-duty position via going on-duty
 	var/const/allow_jobhop = TRUE
 
-/datum/prototype/role/job/AttemptSpawn(mob/player, datum/prototype/alt_title/alt_title, ignore_availability)
+/datum/prototype/role/job/get_access()
+	. = ..()
+	if(team == JOB_FACTION_STATION && CONFIG_GET(flag/almost_everyone_has_maintenance_access))
+		. |= ACCESS_ENGINEERING_MAINT
+
+/datum/prototype/role/job/VerifyPlayer(mob/player, datum/prototype/alt_title/alt_title, ignore_slots)
 	. = ..()
 	if(. != TRUE)
 		return .
@@ -50,9 +55,4 @@
 		return "This species is not allowed in this job."
 
 	return .
-
-/datum/prototype/role/job/get_access()
-	. = ..()
-	if(team == JOB_FACTION_STATION && CONFIG_GET(flag/almost_everyone_has_maintenance_access))
-		. |= ACCESS_ENGINEERING_MAINT
 

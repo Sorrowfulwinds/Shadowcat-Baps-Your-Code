@@ -55,5 +55,6 @@
 			"folderPath": "Shadowcat-Baps-Your-Code\\code\\datums\\mind.dm\\",
 			"badge": "🧠"
 		}
-	]
+	],
+	"chat.agent.enabled": false
 }

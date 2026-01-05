@@ -13,18 +13,22 @@ var/jobban_keylist[0]		//to store the keys & ranks
 	jobban_keylist.Add("[ckey] - [rank]")
 	jobban_savebanfile()
 
-//returns a reason if M is banned from rank, returns FALSE otherwise
+/**
+ * Checks if the mobs client is banned for "rank".
+ *
+ * @params
+ * M - A mob attached to the client you wish to check.
+ * rank - The title of a job, or the name of a HUD item, or Records, or a faction.
+ *
+ * @return
+ * FALSE - The person is not banned.
+ * A string reason if they are banned.
+ */
 /proc/jobban_isbanned(mob/M, rank)
 	if(M && rank)
 		/*
 		if(_jobban_isbanned(M, rank)) return "Reason Unspecified"	//for old jobban
 		*/
-
-		if (guest_jobbans(rank))
-			if(config_legacy.guest_jobban && IsGuestKey(M.key))
-				return "Guest Job-ban"
-			if(config_legacy.usewhitelist && !check_whitelist(M))
-				return "Whitelisted Job"
 
 		for (var/s in jobban_keylist)
 			if( findtext(s,"[M.ckey] - [rank]") == 1 )

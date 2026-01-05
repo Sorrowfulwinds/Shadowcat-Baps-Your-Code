@@ -1,12 +1,13 @@
 /**
- * Handles mob creation, equip, and ckey transfer.
- * Instantiators can be generic or bespoke to a role. AttemptSpawn() is the master call.
+ * Handles mob creation, mob manipulation, equip, and ckey transfer.
+ * Instantiators can be generic or bespoke to a role. AttemptInstantiate() is the master call.
+ * These either spawn a new mob or modify an existing one. Read the comments.
  */
 /datum/role_instantiator
 	//Cool comment
 
 /**
- * Master proc to start the spawning chain. Takes in the client and the role and tries to complete the spawning process.
+ * Master proc to start the spawning/applying chain. Takes in the client and the role and tries to complete the spawning/applying process.
  *
  * player - the mob of the client to spawn in
  * role - the role datum to spawn
@@ -14,7 +15,7 @@
  *
  * Returns TRUE if spawning completes or a player readable string if spawning fails.
  */
-/datum/role_instantiator/proc/AttemptSpawn(mob/player, datum/prototype/role/role, datum/prototype/alt_title)
+/datum/role_instantiator/proc/AttemptInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title)
 	/**
 	 * This is the last point for if the process actually spawns the player or rejects the spawning.
 	 * The instantiator is past the point of confirming if a role is available or if a player is banned.
@@ -28,6 +29,6 @@
  * Admin override proc. Will try to push through any non-critical issues and complete the spawning.
  * Return TRUE if successful or an Admin-readable string if it fails.
  */
-/datum/role_instantiator/proc/ForceSpawn(mob/player, datum/prototype/role/role, datum/prototype/alt_title)
-	//If your instantiator is particularly simple consider just hooking this straight into AttemptSpawn() above.
-	return "No ForceSpawn proc set for this instantiator. Try FALSE for force_instantiator"
+/datum/role_instantiator/proc/ForceInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title)
+	//If your instantiator is particularly simple consider just hooking this straight into AttemptInstantiate() above.
+	return "No ForceInstantiate proc set for this instantiator. Try FALSE for force_instantiator"

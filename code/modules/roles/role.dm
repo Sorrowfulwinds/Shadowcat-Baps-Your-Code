@@ -34,7 +34,7 @@
 
 	/// If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least this many days old. (meaning they first signed in at least that many days before.)
 	var/const/minimum_player_age = 0
-	/// This option will require players to be whitelisted for this role.
+	/// This option will require players to be whitelisted via check_role_whitelist() if enabled.
 	var/const/whitelisted = FALSE
 
 	//? Advanced Info
@@ -87,7 +87,7 @@
  * FALSE if verification passed.
  * A player-readable error string if the verification failed.
  */
-/datum/prototype/role/proc/VerifyPlayer(/mob/player, datum/prototype/alt_title/alt_title, ignore_slots)
+/datum/prototype/role/proc/VerifyPlayer(mob/player, datum/prototype/alt_title/alt_title, ignore_slots)
 	if(!istype(player)) //Should be impossible.
 		return "Error! Please report this to staff immediately! Tried spawning [id] role with non-mob!"
 		//TODO CAT: admin log this error
@@ -99,17 +99,17 @@
 		return "No open positions for this role. Please refresh your menu."
 
 	if(C.persistent.ligma)
-		log_shadowban("[key_name(C)] role verification as [id] blocked.")
+		log_shadowban("[key_name(player)] role verification as [id] blocked.")
 		return "No open positions for this role. Please refresh your menu."
 
-	var/bancheck = jobban_isbanned(C.mob, id)
-	if (bancheck != FALSE)
+	var/bancheck = jobban_isbanned(player, id)
+	if (bancheck)
 		return "You cannot spawn due to a role ban. Reason: [bancheck]"
 
-	if(whitelisted && !Configuration.check_role_whitelist(id, C.ckey))
+	if(whitelisted && !Configuration.check_role_whitelist(id, player.client.ckey))
 		return "You are not whitelisted for this role."
 
-	if(!unlock_in_days(C))
+	if(!unlock_in_days(player.client))
 		return "Your account is not old enough for this role. Please try again in [unlock_in_days(C)] days."
 
 	if(alt_title?.parent_role != id) //Should be impossible to select or is a coder flub
@@ -135,13 +135,12 @@
  * FALSE if the spawning process succeeded.
  * A player-readable error string if the process failed.
  */
-/datum/prototype/role/proc/AttemptSpawn(/mob/player, datum/prototype/alt_title/alt_title, ignore_slots, verify_player)
+/datum/prototype/role/proc/AttemptSpawn(mob/player, datum/prototype/alt_title/alt_title, ignore_slots, verify_player)
 	if(!istype(player)) //Should be impossible.
 		return "Error! Please report this to staff immediately! Tried spawning [id] role with non-mob!"
 		//TODO CAT: admin log this error
 	if(!player.client)
 		return "You should not be able to see this. Client no longer exists on mob."
-	var/client/C = player.client
 
 	if(!istype(instancer)) //Coder error if true
 		return "Error! No instantiator set for this role. Please report this to staff! [id] role has no instantiator set and failed AttemptSpawn()."
@@ -156,7 +155,7 @@
 		return "No open positions for this role. Please refresh your menu."
 
 
-	. = instancer.AttemptSpawn(player, src, alt_title)
+	. = instancer.AttemptInstantiate(player, src, alt_title)
 	if(!.) //Spawn suceeded
 		SSrole.fill_role(id)
 	return .
@@ -190,9 +189,9 @@
 	//TODO CAT: Put one of those admin log macros here. No good deed can go unpunished.
 
 	if(force_instancer)
-		. = instancer.ForceSpawn(player, src, alt_title)
+		. = instancer.ForceInstantiate(player, src, alt_title)
 	else
-		. = instancer.AttemptSpawn(player, src, alt_title)
+		. = instancer.AttemptInstantiate(player, src, alt_title)
 	if(!. && !nofill) //Spawn succeeded
 		SSrole.fill_role(id)
 	return .
