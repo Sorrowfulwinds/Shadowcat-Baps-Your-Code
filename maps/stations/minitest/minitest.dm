@@ -67,7 +67,7 @@
 							NETWORK_INTERROGATION
 							)
 
-	allowed_spawns = list("Arrivals Shuttle")
+	allowed_spawns = list(LATEJOIN_METHOD_ARRIVALS_SHUTTLE)
 
 /datum/map_level/minitest
 	persistence_allowed = TRUE

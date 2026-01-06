@@ -422,9 +422,9 @@
  *
  * @params
  * * flags - PREF_COPY_TO flags
- * * role - the role being used for equip
+ * * role_id - the role id being used for equip
  */
-/datum/preferences/proc/generate_loadout_entry_list(flags, datum/prototype/role/role, override_slot = null)
+/datum/preferences/proc/generate_loadout_entry_list(flags, role_id, override_slot = null)
 	RETURN_TYPE(/list)
 	. = list()
 	var/list/loadout_slots = get_character_data(CHARACTER_DATA_LOADOUT)
@@ -439,10 +439,7 @@
 		var/datum/loadout_entry/entry = gear_datums[id]
 		if(!(flags & PREF_COPY_TO_LOADOUT_IGNORE_ROLE))
 			if(length(entry.allowed_roles))
-				if(!istype(role, /datum/prototype/role/job))
-					continue
-				var/datum/prototype/role/job/J = role
-				if(!(J.title in entry.allowed_roles))
+				if(!(role_id in entry.allowed_roles))
 					continue
 		if(!(flags & PREF_COPY_TO_LOADOUT_IGNORE_WHITELIST))
 			if(length(entry.ckeywhitelist) && !(client_ckey in entry.ckeywhitelist))

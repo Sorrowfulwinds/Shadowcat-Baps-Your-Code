@@ -43,155 +43,6 @@
 		LAZYDISTINCTADD(custom_spawnpoints[S.key], S)
 
 /**
- * Gets a valid spawnpoint to use for a roundstart spawn
- *
- * @params
- * - M - the mob being spawned
- * - C - (optional) the client of the player
- * - job_path - (optional) path to job
- * - faction - what faction the player is in terms of job factions
- * - random - deterministic first pick or random?
- * - harder - used when the first iteration failed, tells spawnpoints to skip certain checks
- *
- */
-/datum/controller/subsystem/role/proc/get_roundstart_spawnpoint(mob/M, client/C, job_path, faction, random = TRUE, harder = FALSE)
-	RETURN_TYPE(/obj/landmark/spawnpoint)
-	if(random)
-		. = list()
-	// Priority 1: Job specific spawnpoints
-	if(job_path && length(job_spawnpoints[job_path]))
-		for(var/obj/landmark/spawnpoint/job/J as anything in job_spawnpoints[job_path])
-			if(!J.roundstart)
-				continue
-			if(!J.Available(M, C, harder))
-				continue
-			if(random)
-				. += J
-			else
-				return J
-	if(random && length(.))
-		return pick(.)
-	// Priority 2: Overflow spawnpoints as a last resort
-	if(length(overflow_spawnpoints[faction]))
-		for(var/obj/landmark/spawnpoint/overflow/S as anything in overflow_spawnpoints[faction])
-			if(!S.Available(M, C, harder))
-				continue
-			if(random)
-				. += S
-			else
-				return S
-	if(random && length(.))
-		return pick(.)
-	if(!harder)
-		subsystem_log("get_roundstart_spawnpoint() failed to get a spawnpoint, trying against with harder = TRUE")
-		return get_roundstart_spawnpoint(M, C, job_path, faction, random, TRUE)
-	else
-		CRASH("get_roundstart_spawnpoint() failed to get a spawnpoint.")
-
-/**
- * Gets a spawnpoint to use for a latejoin spawn
- * Note that there's no mob argument, since latejoin won't make the mob until there's a free spawnpoint
- *
- * This is not a random pick, this is first priority-availability first server and fully deterministic.
- *
- * @params
- * - C - (optional) the client of the player
- * - job_path - (optional) path to job
- * - faction - what faction the player is in terms of job factions
- * - method - (optional) required method for the spawnpoint - this will make the proc return null instead of an overflow, if it can't find something for the method.
- * - random - deterministic first pick or random?
- * - harder - used when the first iteration failed, tells spawnpoints to skip certain checks
- */
-/datum/controller/subsystem/role/proc/get_latejoin_spawnpoint(client/C, job_path, faction = JOB_FACTION_STATION, method, random = TRUE, harder = FALSE)
-	RETURN_TYPE(/obj/landmark/spawnpoint)
-	if(random)
-		. = list()
-	// Priority 1: Job specific spawnpoints
-	if(job_path && length(job_spawnpoints[job_path]))
-		for(var/obj/landmark/spawnpoint/job/J as anything in job_spawnpoints[job_path])
-			if(!J.latejoin)
-				continue
-			if(!J.latejoin_override && method && (method != J.method))
-				continue
-			if(!J.Available(null, C, harder))
-				continue
-			if(random)
-				. += J
-			else
-				return J
-	if(random && length(.))
-		return pick(.)
-	// Priority 2: Latejoin spawnpoints, if latejoin
-	if(length(latejoin_spawnpoints[faction]))
-		for(var/obj/landmark/spawnpoint/latejoin/S as anything in latejoin_spawnpoints[faction])
-			if(!S.Available(null, C, harder))
-				continue
-			if(method && (S.method != method))
-				continue
-			if(random)
-				. += S
-			else
-				return S
-	if(random && length(.))
-		return pick(.)
-	// Priority 3: Overflow spawnpoints as a last resort
-	if(length(overflow_spawnpoints[faction]))
-		for(var/obj/landmark/spawnpoint/overflow/S as anything in overflow_spawnpoints[faction])
-			if(!S.Available(null, C, harder))
-				continue
-			if(random)
-				. += S
-			else
-				return S
-	if(random)
-		if(length(.))
-			return pick(.)
-		else
-			. = null
-	if(!harder)
-		subsystem_log("get_latejoin_spawnpoint() failed to get a spawnpoint, trying against with harder = TRUE")
-		return get_roundstart_spawnpoint(C, job_path, faction, method, random, TRUE)
-	else
-		. = null
-		CRASH("get_latejoin_spawnpoint() failed to get a spawnpoint.")
-
-/**
- * Gets a list of possible join methods
- *
- * If latejoining and a job-specific spawnpoint has latejoin override, only that method will be returned
- *
- * The "harder" argument is automatically set to TRUE here, as we're checking for all possibilities.
- *
- * @params
- * - C - (optional) the client of the player
- * - job_path - (optional) path to job
- * - faction - what faction the player is in terms of job factions
- */
-/datum/controller/subsystem/role/proc/possible_latejoin_spawnpoints(client/C, job_path, faction)
-	. = list()
-	// Get all job specific methods, and allow for override if needed
-	if(job_path && length(job_spawnpoints[job_path]))
-		for(var/obj/landmark/spawnpoint/job/J as anything in job_spawnpoints[job_path])
-			if(!J.latejoin)
-				continue
-			if(J.latejoin_override)
-				return list(J.method)
-			if(J.Available(null, C, TRUE))
-				continue
-			. |= J.method
-	// Get all standard latejoin methods
-	if(length(latejoin_spawnpoints[faction]))
-		for(var/obj/landmark/spawnpoint/latejoin/S as anything in latejoin_spawnpoints[faction])
-			if(!S.Available(null, C, TRUE))
-				continue
-			. |= S.method
-	// If there's none, add overflow method if overflow spawnpoints exist
-	if(!length(.) && length(overflow_spawnpoints[faction]))
-		for(var/obj/landmark/spawnpoint/overflow/S as anything in overflow_spawnpoints[faction])
-			if(S.Available(null, C, TRUE))
-				return list("Overflow")
-
-/**
  * Gets a valid custom spawnpoint to use by key
  *
  * @params
@@ -214,83 +65,75 @@
 	return spawnpoints
 
 
-
-
-
-
-
-
-//! ---------- New spawnpoint proc so I can stop pulling my hair out. The above spawnpoint behaviour will be somewhat invalid.----
 /**
- * Gets a valid spawnpoint for the provided parameters.
+ * Gets a valid spawnpoint for the provided parameters. Or CRASH trying.
  *
  * @params
- * - M - the mob being spawned
- * - C - (optional) the client of the player
+ * - M - (Optional) the mob being spawned
  * - role_id - id of the role
- * - team - what team the player is on
- * - harder - used when the first iteration failed, tells spawnpoints to skip certain checks
+ * - harder - (Optional) used when the first iteration failed, tells spawnpoints to skip certain checks
  *
+ * @returns
+ * A /obj/landmark/spawnpoint if successful
+ * null if failed
  */
-/datum/controller/subsystem/role/proc/try_get_spawnpoint(mob/M, client/C, role_id, team, harder = FALSE)
+/datum/controller/subsystem/role/proc/get_role_spawnpoint(mob/M, role_id, harder = FALSE)
 	RETURN_TYPE(/obj/landmark/spawnpoint)
+	var/datum/prototype/role/role = RSroles.get_role_by_id(role_id)
 
-	//Put logic here to determine if we are using mob or client var and establish that internally.
+	if(!istype(role)) //fuck
+		return null
+
+	var/round_started = SSticker.HasRoundStarted()
+	var/pref_method
+	. = list()
 
 	// Priority 1: Pref specific spawnpoint - Latejoin only
-	//Checks for and turns pref spawnpoint method into a real spawnpoint.
-	if(C && spawntypes[C.prefs.spawnpoint]) //If the prefs spawnpoint is in spawntypes[] it exists and is valid.
+	//Checks for
+	if(round_started && spawntypes[M?.client?.prefs.spawnpoint])
+		//If spawnpoint is in spawntypes it is valid to try.
 		//Legacy generic pref spawnpoints
-		var/datum/spawnpoint/spawnpos = spawntypes[C.prefs.spawnpoint]
+		var/datum/spawnpoint/spawnpos = spawntypes[M.client.prefs.spawnpoint]
+		if(spawnpos.check_job_spawning(role_id))
+			pref_method = spawnpos.method
 
-		if(spawnpos.check_job_spawning(role_id)) //Check white/black-list
-			//! Instead of doing this, record method and check it below if true.
-			S = SSjob.get_latejoin_spawnpoint(method = spawnpos.method)
-
-
-
-	if(random)
-		. = list()
 	// Priority 2: Job specific spawnpoints - Roundstart/Latejoin
-	if(job_path && length(job_spawnpoints[job_path]))
-		for(var/obj/landmark/spawnpoint/job/J as anything in job_spawnpoints[job_path])
-			if(!J.roundstart)
+	if(length(job_spawnpoints[role_id]))
+		for(var/obj/landmark/spawnpoint/job/J in job_spawnpoints[role_id])
+			if(round_started ? !J.latejoin : !J.roundstart)
 				continue
-			if(!J.Available(M, C, harder))
+			if(round_started && !J.latejoin_override && pref_method && (pref_method != J.method))
 				continue
-			if(random)
-				. += J
-			else
-				return J
-	if(random && length(.))
+			if(!J.Available(M, null, harder))
+				continue
+			. += J
+	if(length(.))
 		return pick(.)
+
 	// Priority 3: Latejoin spawnpoints - Latejoin only
-	if(length(latejoin_spawnpoints[faction]))
-		for(var/obj/landmark/spawnpoint/latejoin/S as anything in latejoin_spawnpoints[faction])
-			if(!S.Available(null, C, harder))
+	if(round_started && length(latejoin_spawnpoints[role.team]))
+		for(var/obj/landmark/spawnpoint/latejoin/S in latejoin_spawnpoints[role.team])
+			if(!S.Available(M, null, harder))
 				continue
-			if(method && (S.method != method))
+			if(pref_method && (pref_method != S.method))
 				continue
-			if(random)
-				. += S
-			else
-				return S
-	if(random && length(.))
+			. += S
+	if(length(.))
 		return pick(.)
+
 	// Priority 3: Overflow spawnpoints - Roundstart/Latejoin
-	if(length(overflow_spawnpoints[faction]))
-		for(var/obj/landmark/spawnpoint/overflow/S as anything in overflow_spawnpoints[faction])
-			if(!S.Available(M, C, harder))
+	if(length(overflow_spawnpoints[role.team]))
+		for(var/obj/landmark/spawnpoint/overflow/S in overflow_spawnpoints[role.team])
+			if(!S.Available(M, null, harder))
 				continue
-			if(random)
-				. += S
-			else
-				return S
-	if(random && length(.))
+			. += S
+	if(length(.))
 		return pick(.)
+
+	. = null
 	if(!harder)
-		subsystem_log("get_roundstart_spawnpoint() failed to get a spawnpoint, trying against with harder = TRUE")
-		return get_roundstart_spawnpoint(M, C, job_path, faction, random, TRUE)
+		subsystem_log("get_role_spawnpoint() failed to get a spawnpoint, trying against with harder = TRUE")
+		return get_role_spawnpoint(M, role_id, TRUE)
 	else
-		CRASH("get_roundstart_spawnpoint() failed to get a spawnpoint.")
+		CRASH("get_role_spawnpoint() failed to get a spawnpoint.")
 

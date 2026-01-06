@@ -153,7 +153,7 @@
 
 	bot_patrolling = FALSE
 
-	allowed_spawns = list(LATEJOIN_METHOD_ARRIVALS_SHUTTLE,"Beruang Trading Corp Cryo","Cryogenic Storage","Nebula Visitor Arrival")
+	allowed_spawns = list(LATEJOIN_METHOD_ARRIVALS_SHUTTLE,"Beruang Trading Corp Cryo",LATEJOIN_METHOD_CRYOGENIC_STORAGE,"Nebula Visitor Arrival")
 	spawnpoint_died = /datum/spawnpoint/arrivals
 	spawnpoint_left = /datum/spawnpoint/arrivals
 	spawnpoint_stayed = /datum/spawnpoint/cryo

@@ -1,10 +1,13 @@
-var/list/datum/spawnpoint/spawntypes = list()
+var/list/datum/spawnpoint/spawntypes = alist()
 
+//TODO: Delete /datum/spawnpoint and just use method directly
 /proc/populate_spawn_points()
-	spawntypes = list()
+	spawntypes = alist()
 	for(var/type in typesof(/datum/spawnpoint)-/datum/spawnpoint)
 		var/datum/spawnpoint/S = new type()
-		spawntypes[S.display_name] = S
+		//Only keep map valid spawns to simplify lookup
+		if (S.method in (LEGACY_MAP_DATUM).allowed_spawns)
+			spawntypes[S.method] = S
 
 // pending removal
 /datum/spawnpoint
@@ -24,23 +27,20 @@ var/list/datum/spawnpoint/spawntypes = list()
 
 	return 1
 
-/datum/spawnpoint/proc/get_spawn_position(faction)
-	return SSrole.get_latejoin_spawnpoint(faction = faction, method = method)
-
 /datum/spawnpoint/arrivals
-	display_name = "Arrivals Shuttle"
+	display_name = LATEJOIN_METHOD_ARRIVALS_SHUTTLE
 	method = LATEJOIN_METHOD_ARRIVALS_SHUTTLE
 
 /datum/spawnpoint/gateway
-	display_name = "Gateway"
+	display_name = LATEJOIN_METHOD_GATEWAY
 	method = LATEJOIN_METHOD_GATEWAY
 
 /datum/spawnpoint/cryo
-	display_name = "Cryogenic Storage"
+	display_name = LATEJOIN_METHOD_CRYOGENIC_STORAGE
 	disallow_job = list("Cyborg")
 	method = LATEJOIN_METHOD_CRYOGENIC_STORAGE
 
 /datum/spawnpoint/cyborg
-	display_name = "Cyborg Storage"
+	display_name = LATEJOIN_METHOD_ROBOT_STORAGE
 	restrict_job = list("Cyborg")
 	method = LATEJOIN_METHOD_ROBOT_STORAGE

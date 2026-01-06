@@ -95,7 +95,7 @@
 		return "You should not be able to see this. Client no longer exists on mob."
 	var/client/C = player.client
 
-	if(!ignore_slots && !SSrole.get_position_available(id))
+	if(!ignore_slots && !SSrole.get_slots_available(id))
 		return "No open positions for this role. Please refresh your menu."
 
 	if(C.persistent.ligma)
@@ -151,7 +151,7 @@
 	if(.)
 		return .
 
-	if (!ignore_slots && !verify_player && !SSrole.get_position_available(id))
+	if (!ignore_slots && !verify_player && !SSrole.get_slots_available(id))
 		return "No open positions for this role. Please refresh your menu."
 
 
@@ -183,7 +183,7 @@
 	if(alt_title?.parent_role != id)
 		return "Error! Invalid alt-title, null is acceptable."
 
-	if(!istype(instancer, /datum/role_instantiator))
+	if(!istype(instancer))
 		return "Error! No instantiator set for this role. Its coded wrong."
 
 	//TODO CAT: Put one of those admin log macros here. No good deed can go unpunished.

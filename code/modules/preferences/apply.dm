@@ -73,11 +73,11 @@
  * @params
  * * character - the mob
  * * flags - PREF_COPY_TO_ flags like in [copy_to]
- * * role - (optional) the /datum/prototype/role being used.
+ * * role_id - (optional) the id of the role being used.
  * * allow_storage_spawn - spawn extra items in storage instead of stuffing into reject.
  * * reject - list to stuff rejected items into. if null, they're deleted.
  */
-/datum/preferences/proc/equip_loadout(mob/character, flags, datum/prototype/role/role, allow_storage_spawn, list/reject)
+/datum/preferences/proc/equip_loadout(mob/character, flags, role_id, allow_storage_spawn, list/reject)
 	//! todo: copypaste, refactor
 	var/mob/living/carbon/human/H = character
 	if(!istype(H))
@@ -90,8 +90,8 @@
 		allow_storage_spawn = PREF_COPYING_TO_CHECK_IS_SPAWNING(flags)
 
 	// generate gear datum + data list
-	var/list/loadout = generate_loadout_entry_list(flags, role)
-	SEND_SIGNAL(character, COMSIG_HUMAN_EQUIPPING_LOADOUT, flags, role, loadout)
+	var/list/loadout = generate_loadout_entry_list(flags, role_id)
+	SEND_SIGNAL(character, COMSIG_HUMAN_EQUIPPING_LOADOUT, flags, role_id, loadout)
 	// overflow list of items associated to slot IDs
 	var/list/obj/item/overflow = list()
 

@@ -34,6 +34,7 @@ var/list/gear_datums = list()
 	/// Slot to equip to.
 	var/slot
 	/// Roles that can spawn with this item.
+	//TODO CAT: Convert all of these to the shiny new UIDs :D
 	var/list/allowed_roles
 	// todo: remove in favor of uid locks and or just a better system.
 	// Term to check the whitelist for.

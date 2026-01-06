@@ -42,7 +42,7 @@
 		despawn_occupant(user)
 
 /datum/spawnpoint/tram
-	display_name = "Tram Station"
+	display_name = LATEJOIN_METHOD_TRAM
 	method = LATEJOIN_METHOD_TRAM
 
 /obj/machinery/cryopod/robot/door/dorms

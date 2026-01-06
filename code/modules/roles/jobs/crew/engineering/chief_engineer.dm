@@ -50,8 +50,8 @@
 	//? Unsorted
 	selection_color =  "#7F6E2C"
 	departments = list(
-		DEPARTMENT_ENGINEERING,
-		DEPARTMENT_COMMAND,
+		"DeptEngineering",
+		"DeptCommand",
 	)
 	sorting_order = 2
 	departments_managed = list(DEPARTMENT_ENGINEERING)
