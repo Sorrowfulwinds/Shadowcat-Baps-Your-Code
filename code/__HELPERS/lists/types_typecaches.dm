@@ -16,8 +16,10 @@
 			return TRUE
 	return FALSE
 
-/proc/subtypesof(prototype)
-	return (typesof(prototype) - prototype)
+/**
+ * Returns typesof() without the base type
+ */
+#define subtypesof(X) (typesof(X) - X)
 
 /**
  *! Typecaches,

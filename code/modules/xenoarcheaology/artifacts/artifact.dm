@@ -13,11 +13,11 @@
 /obj/machinery/artifact/Initialize(mapload, newdir)
 	. = ..()
 
-	var/effecttype = pick(typesof(/datum/artifact_effect) - /datum/artifact_effect)
+	var/effecttype = pick(subtypesof(/datum/artifact_effect))
 	my_effect = new effecttype(src)
 
 	if(prob(75))
-		effecttype = pick(typesof(/datum/artifact_effect) - /datum/artifact_effect)
+		effecttype = pick(subtypesof(/datum/artifact_effect))
 		secondary_effect = new effecttype(src)
 		if(prob(75))
 			secondary_effect.ToggleActivate(0)
@@ -60,7 +60,7 @@
 	return ..()
 
 /obj/machinery/artifact/proc/choose_effect()
-	var/effect_type = input(usr, "What type do you want?", "Effect Type") as null|anything in typesof(/datum/artifact_effect) - /datum/artifact_effect
+	var/effect_type = input(usr, "What type do you want?", "Effect Type") as null|anything in subtypesof(/datum/artifact_effect)
 	if(effect_type)
 		my_effect = new effect_type(src)
 		if(alert(usr, "Do you want a secondary effect?", "Second Effect", "No", "Yes") == "Yes")

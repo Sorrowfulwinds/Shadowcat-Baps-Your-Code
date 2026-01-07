@@ -258,7 +258,7 @@
 //
 
 /datum/event/supply_demand/proc/choose_food_items(var/differentTypes)
-	var/list/types = typesof(/datum/recipe) - /datum/recipe
+	var/list/types = subtypesof(/datum/recipe)
 	for(var/i in 1 to differentTypes)
 		var/datum/recipe/R = pick(types)
 		types -= R // Don't pick the same thing twice
@@ -268,7 +268,7 @@
 	return
 
 /datum/event/supply_demand/proc/choose_research_items(var/differentTypes)
-	var/list/types = typesof(/datum/prototype/design) - /datum/prototype/design
+	var/list/types = subtypesof(/datum/prototype/design)
 	for(var/i in 1 to differentTypes)
 		var/datum/prototype/design/D = pick(types)
 		types -= D // Don't pick the same thing twice
@@ -280,7 +280,7 @@
 /datum/event/supply_demand/proc/choose_chemistry_items(var/differentTypes)
 	// Checking if they show up in health analyzer is good huristic for it being a drug
 	var/list/medicineReagents = list()
-	for(var/path in typesof(/datum/chemical_reaction) - /datum/chemical_reaction)
+	for(var/path in subtypesof(/datum/chemical_reaction))
 		var/datum/chemical_reaction/CR = path // Stupid casting required for reading
 		var/datum/reagent/R = SSchemistry.reagent_lookup[initial(CR.result)]
 		if(R && R.scannable)
@@ -294,7 +294,7 @@
 
 /datum/event/supply_demand/proc/choose_bar_items(var/differentTypes)
 	var/list/drinkReagents = list()
-	for(var/path in typesof(/datum/chemical_reaction) - /datum/chemical_reaction)
+	for(var/path in subtypesof(/datum/chemical_reaction))
 		var/datum/chemical_reaction/CR = path // Stupid casting required for reading
 		var/datum/reagent/R = SSchemistry.reagent_lookup[initial(CR.result)]
 		if(istype(R, /datum/reagent/drink) || istype(R, /datum/reagent/ethanol))
@@ -335,7 +335,7 @@
 	return
 */
 /datum/event/supply_demand/proc/choose_alloy_items(var/differentTypes)
-	var/list/types = typesof(/datum/alloy) - /datum/alloy
+	var/list/types = subtypesof(/datum/alloy)
 	for(var/i in 1 to differentTypes)
 		var/datum/alloy/A = pick(types)
 		types -= A // Don't pick the same thing twice

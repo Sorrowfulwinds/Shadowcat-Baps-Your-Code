@@ -57,7 +57,7 @@ research holder datum.
 /datum/research/New() //Insert techs into possible_tech here. Known_tech automatically updated.
 	if(stores_designs)
 		known_design_ids = list()
-	for(var/T in typesof(/datum/tech) - /datum/tech)
+	for(var/T in subtypesof(/datum/tech))
 		known_tech += new T(src)
 	RefreshResearch()
 

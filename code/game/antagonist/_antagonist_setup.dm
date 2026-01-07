@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(antag_names_to_ids)
 			antag.update_all_icons()
 
 /proc/populate_antag_type_list()
-	for(var/antag_type in typesof(/datum/antagonist)-/datum/antagonist)
+	for(var/antag_type in subtypesof(/datum/antagonist))
 		var/datum/antagonist/A = new antag_type
 		GLOB.all_antag_types[A.id] = A
 		GLOB.all_antag_spawnpoints[A.landmark_id] = list()

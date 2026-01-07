@@ -1,7 +1,7 @@
 /datum/tgs_api/v4/proc/ListCustomCommands()
 	var/results = list()
 	custom_commands = list()
-	for(var/I in typesof(/datum/tgs_chat_command) - /datum/tgs_chat_command)
+	for(var/I in subtypesof(/datum/tgs_chat_command))
 		var/datum/tgs_chat_command/stc = new I
 		if(stc.ignore_type == I)
 			continue

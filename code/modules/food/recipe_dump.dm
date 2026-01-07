@@ -8,7 +8,7 @@
 
 	//////////////////////// DRINK
 	var/list/drink_recipes = list()
-	for(var/path in typesof(/datum/chemical_reaction/drinks) - /datum/chemical_reaction/drinks)
+	for(var/path in subtypesof(/datum/chemical_reaction/drinks))
 		var/datum/chemical_reaction/drinks/CR = new path()
 		drink_recipes[path] = list("Result" = CR.name,
         						"ResAmt" = CR.result_amount,
@@ -16,7 +16,7 @@
 		qdel(CR)
 
 	//////////////////////// FOOD
-	var/list/food_recipes = typesof(/datum/recipe) - /datum/recipe
+	var/list/food_recipes = subtypesof(/datum/recipe)
 	//Build a useful list
 	for(var/Rp in food_recipes)
 		//Lists don't work with datum-stealing no-instance initial() so we have to.
@@ -39,7 +39,7 @@
 		qdel(R)
 
 	//////////////////////// FOOD+ (basically condiments, tofu, cheese, soysauce, etc)
-	for(var/path in typesof(/datum/chemical_reaction/food) - /datum/chemical_reaction/food)
+	for(var/path in subtypesof(/datum/chemical_reaction/food))
 		var/datum/chemical_reaction/food/CR = new path()
 		food_recipes[path] = list("Result" = CR.name,
 								"ResAmt" = CR.result_amount,

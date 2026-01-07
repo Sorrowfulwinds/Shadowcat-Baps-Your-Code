@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(events)
 
 /datum/controller/subsystem/events/Initialize()
 	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(HolidayRoundstart)))
-	allEvents = typesof(/datum/event) - /datum/event
+	allEvents = subtypesof(/datum/event)
 	event_containers = list(
 			new/datum/event_container/mundane,
 			new/datum/event_container/moderate,

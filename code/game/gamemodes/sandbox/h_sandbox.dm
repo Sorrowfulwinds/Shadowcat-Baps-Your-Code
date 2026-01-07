@@ -106,7 +106,7 @@ datum/hSB
 					hsb.loc = usr.loc
 					to_chat(usr, "<b>Sandbox:  Created an airlock.</b>")
 				if("hsbcanister")
-					var/list/hsbcanisters = typesof(/obj/machinery/portable_atmospherics/canister/) - /obj/machinery/portable_atmospherics/canister/
+					var/list/hsbcanisters = subtypesof(/obj/machinery/portable_atmospherics/canister/)
 					var/hsbcanister = input(usr, "Choose a canister to spawn.", "Sandbox:") in hsbcanisters + "Cancel"
 					if(!(hsbcanister == "Cancel"))
 						new hsbcanister(usr.loc)

@@ -50,7 +50,7 @@
 				var/amount = rand(2,6)
 				var/quantity = rand(10,50)
 				var/list/possible_spawns = list()
-				for(var/bar_type in typesof(/obj/item/stack/material) - /obj/item/stack/material - /obj/item/stack/animalhide - typesof(/obj/item/stack/material/cyborg))
+				for(var/bar_type in subtypesof(/obj/item/stack/material) - /obj/item/stack/animalhide - typesof(/obj/item/stack/material/cyborg))
 					possible_spawns += bar_type
 
 				var/bar_type = pick(possible_spawns)
@@ -61,7 +61,7 @@
 				//credits
 				var/amount = rand(2,6)
 				var/list/possible_spawns = list()
-				for(var/cash_type in typesof(/obj/item/spacecash) - /obj/item/spacecash)
+				for(var/cash_type in subtypesof(/obj/item/spacecash))
 					possible_spawns += cash_type
 
 				var/cash_type = pick(possible_spawns)

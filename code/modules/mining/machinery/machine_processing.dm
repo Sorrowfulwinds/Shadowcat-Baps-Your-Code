@@ -176,7 +176,7 @@
 	// initialize static alloy_data list
 	if(!alloy_data)
 		alloy_data = list()
-		for(var/alloytype in typesof(/datum/alloy)-/datum/alloy)
+		for(var/alloytype in subtypesof(/datum/alloy))
 			alloy_data += new alloytype()
 	for(var/orename in GLOB.ore_data)
 		var/datum/ore/O = GLOB.ore_data[orename]

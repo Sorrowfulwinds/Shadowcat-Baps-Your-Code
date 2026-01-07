@@ -11,7 +11,7 @@
 
 	// Add your new gateway level to this list to add it into the spawn randomization.
 	// Keep it alphabetical you heathen
-	var/list/potentialGatewayLevels = subtypesof_non_abstract(/datum/map/gateway)
+	var/list/potentialGatewayLevels = SUBTYPESOF_non_abstract(/datum/map/gateway)
 	for(var/datum/map/gateway/casted as anything in potentialGatewayLevels)
 		if(casted.width > world.maxx)
 			potentialGatewayLevels -= casted

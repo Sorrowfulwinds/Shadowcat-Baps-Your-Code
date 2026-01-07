@@ -115,7 +115,7 @@ GLOBAL_LIST_EMPTY(mannequins)
 	var/list/paths
 
 	// Custom species traits
-	paths = typesof(/datum/trait) - /datum/trait - /datum/trait/negative - /datum/trait/neutral - /datum/trait/positive
+	paths = subtypesof(/datum/trait) - /datum/trait/negative - /datum/trait/neutral - /datum/trait/positive
 	for(var/path in paths)
 		var/datum/trait/instance = new path()
 		if(!instance.name)
@@ -550,7 +550,7 @@ var/global/list/remainless_species = list(SPECIES_ID_PROMETHEAN,
 	var/paths
 
 	// Custom species traits
-	paths = typesof(/datum/trait) - /datum/trait
+	paths = subtypesof(/datum/trait)
 	for(var/path in paths)
 		var/datum/trait/instance = new path()
 		if(!instance.name)
@@ -567,7 +567,7 @@ var/global/list/remainless_species = list(SPECIES_ID_PROMETHEAN,
 				positive_traits[path] = instance
 
 	// Trait groups
-	paths = typesof(/datum/trait_group) - /datum/trait_group
+	paths = subtypesof(/datum/trait_group)
 	for(var/path in paths)
 		var/datum/trait_group/instance = new path()
 		if(!instance.name)

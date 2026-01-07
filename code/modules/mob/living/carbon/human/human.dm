@@ -761,7 +761,7 @@
 		update_eyes()
 
 	// hair
-	var/list/all_hairs = typesof(/datum/sprite_accessory/hair) - /datum/sprite_accessory/hair
+	var/list/all_hairs = subtypesof(/datum/sprite_accessory/hair)
 	var/list/hairs = list()
 
 	// loop through potential hairs
@@ -777,7 +777,7 @@
 		h_style = new_style
 
 	// facial hair
-	var/list/all_fhairs = typesof(/datum/sprite_accessory/facial_hair) - /datum/sprite_accessory/facial_hair
+	var/list/all_fhairs = subtypesof(/datum/sprite_accessory/facial_hair)
 	var/list/fhairs = list()
 
 	for(var/x in all_fhairs)

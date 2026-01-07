@@ -6,7 +6,7 @@
  *
  * * Runtimes if path is not a datum.
  */
-/proc/subtypesof_non_abstract(datum_path)
+/proc/SUBTYPESOF_non_abstract(datum_path)
 	. = list()
 	for(var/datum/dpath as anything in (typesof(datum_path) - datum_path))
 		if(initial(dpath.abstract_type) == dpath)

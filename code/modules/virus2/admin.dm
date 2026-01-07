@@ -59,7 +59,7 @@
 
 	var/list/L = list()
 
-	for(var/e in (typesof(/datum/disease2/effect) - /datum/disease2/effect))
+	for(var/e in subtypesof(/datum/disease2/effect))
 		var/datum/disease2/effect/f = e
 		if(initial(f.stage) <= stage)
 			L[initial(f.name)] = e

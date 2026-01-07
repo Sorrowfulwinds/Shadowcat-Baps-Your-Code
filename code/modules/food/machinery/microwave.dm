@@ -34,7 +34,7 @@
 	reagents.my_atom = src
 	if (!available_recipes)
 		available_recipes = new
-		for (var/type in (typesof(/datum/recipe)-/datum/recipe))
+		for (var/type in subtypesof(/datum/recipe))
 			var/datum/recipe/test = new type
 			if ((test.appliance & appliancetype))
 				available_recipes += test

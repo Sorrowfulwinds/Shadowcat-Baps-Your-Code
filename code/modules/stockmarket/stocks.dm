@@ -59,7 +59,7 @@
 	A.ticks = world.time
 
 /datum/stock/proc/generateEvents()
-	var/list/types = typesof(/datum/stockEvent) - /datum/stockEvent
+	var/list/types = subtypesof(/datum/stockEvent)
 	for(var/T in types)
 		generateEvent(T)
 
@@ -85,7 +85,7 @@
 	else if(findtext(name, "Wholesale") || findtext(name, "Stores"))
 		industry = new /datum/industry/consumer
 	else
-		var/ts = typesof(/datum/industry) - /datum/industry
+		var/ts = subtypesof(/datum/industry)
 		var/in_t = pick(ts)
 		industry = new in_t
 	for(var/i = 0, i < rand(2, 5), i++)

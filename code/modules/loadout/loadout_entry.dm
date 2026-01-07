@@ -118,7 +118,7 @@ var/list/gear_datums = list()
 /legacy_hook/startup/proc/populate_gear_list()
 
 	// Create a list of gear datums to sort
-	for(var/geartype in typesof(/datum/loadout_entry)-/datum/loadout_entry)
+	for(var/geartype in subtypesof(/datum/loadout_entry))
 		var/datum/loadout_entry/G = geartype
 		if(initial(G.abstract_type) == geartype)
 			continue
