@@ -65,7 +65,7 @@
 	///Alternate title for our assigned_role (if we have one)
 	var/alt_title_id
 	///Evil assigned_role (if we have one)
-	var/special_role_id
+	var/secret_role_id
 
 	var/list/datum/objective/objectives = list()
 	var/list/datum/objective/special_verbs = list()

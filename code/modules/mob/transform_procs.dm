@@ -34,11 +34,11 @@
 
 	return src
 
-/mob/new_player/AIize()
+/mob/new_player/AIize(move = 1, /obj/landmark/spawnpoint/S)
 	spawning = 1
 	return ..()
 
-/mob/living/carbon/human/AIize(move=1) // 'move' argument needs defining here too because BYOND is dumb
+/mob/living/carbon/human/AIize(move = 1, /obj/landmark/spawnpoint/S)
 	if (transforming)
 		return
 	for(var/t in organs)
@@ -46,7 +46,7 @@
 
 	return ..(move)
 
-/mob/living/carbon/AIize()
+/mob/living/carbon/AIize(move = 1, /obj/landmark/spawnpoint/S)
 	if (transforming)
 		return
 	drop_inventory(TRUE, TRUE, TRUE)
@@ -56,10 +56,16 @@
 	invisibility = 101
 	return ..()
 
-/mob/proc/AIize(move=1)
+/mob/proc/AIize(move = 1, /obj/landmark/spawnpoint/S)
 	if(client)
 		SEND_SOUND(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = 1)) // stop the jams for AIs
-	var/mob/living/silicon/ai/O = new (loc, (LEGACY_MAP_DATUM).default_law_type,,1)//No MMI but safety is in effect.
+
+	if(move && !istype(S))
+		S = SSrole.get_latejoin_spawnpoint(job_path = /datum/prototype/role/job/station/ai)
+	else if(!move)
+		S = null
+
+	var/mob/living/silicon/ai/O = new ((move ? S : loc), (LEGACY_MAP_DATUM).default_law_type,,1)//No MMI but safety is in effect.
 	O.invisibility = 0
 	O.aiRestorePowerRoutine = 0
 
@@ -77,11 +83,6 @@
 		O.add_language(LANGUAGE_ROOTGLOBAL, 1)
 	if(LANGUAGE_ROOTLOCAL in languages)
 		O.add_language(LANGUAGE_ROOTLOCAL, 1)
-
-	if(move)
-		var/obj/landmark/spawnpoint/S = SSrole.get_latejoin_spawnpoint(job_path = /datum/prototype/role/job/station/ai)
-		O.forceMove(S.GetSpawnLoc())
-		S.OnSpawn(O)
 
 	O.on_mob_init()
 
@@ -136,7 +137,6 @@
 		transfer_client_to(O)
 
 	O.forceMove(loc)
-	O.job = "Cyborg"
 
 	for(var/i in languages)
 		O.add_language(i)

@@ -461,6 +461,21 @@
 		qdel(fingerprints)
 	return
 
+/**
+ * Recursively touches everything in item and put fingerprints on it.
+ * @params
+ * - M - Whos fingerprints to add
+ * - item - The item optionally with contents to add fingerprints to
+ */
+/proc/apply_fingerprints_to_item_recursive(mob/M, var/obj/item/item)
+	if(!M || !item)
+		return
+
+	item.add_fingerprint(M,1)
+	if(item.contents.len)
+		for(var/obj/item/sub_item in item.contents)
+			apply_fingerprints_to_item_recursive(M, sub_item)
+
 
 /atom/proc/transfer_fingerprints_to(var/atom/A)
 

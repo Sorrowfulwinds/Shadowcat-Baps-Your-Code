@@ -30,14 +30,15 @@
 
 /**
  * Flags for when a role should be assigned roundstart
- * PRE_ASSIGNMENT - Major roles that need to go before others. Nukies, Wizards, Etc.
+ * PRE_ASSIGNMENT - Major capturing roles that need to go before others. Nukies, Wizards, Etc.
  * DURING_ASSIGNMENT - Normal role picking, station jobs, civilians, etc.
  * POST_ASSIGNMENT - Modifying roles that need to go after others. Traitors, Lings, Cultists
+ * NO_ASSIGNMENT - SSroles does not try to assign this role at roundstart.
  */
-#define PRE_ASSIGNMENT 		(1<<0)
-#define DURING_ASSIGNMENT 	(1<<1)
-#define POST_ASSIGNMENT 	(1<<2)
-#define NO_ASSIGNMENT		(1<<3)
+#define SSR_PRE_ASSIGNMENT 		(1<<0)
+#define SSR_DURING_ASSIGNMENT 	(1<<1)
+#define SSR_POST_ASSIGNMENT 	(1<<2)
+#define SSR_NO_ASSIGNMENT		(1<<3)
 
 /**
  * To be overhauled post SSrole's and replaced with SSteams.
@@ -50,3 +51,9 @@
 #define JOB_FACTION_STATION			"Station"
 /// tradeport job faction
 #define JOB_FACTION_TRADEPORT		"Tradeport"
+
+/**
+ * Used by alt-title's to set if their uniform var is culmulative or replacing.
+ */
+#define SSR_UNIFORM_REPLACE (1<<0)
+#define SSR_UNIFORM_ADDON	(1<<1)

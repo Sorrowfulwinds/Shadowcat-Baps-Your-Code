@@ -272,7 +272,8 @@
 	var/list/grabbed_by = list(  )
 
 	// todo: nuke from orbit
-	var/job = null //?Living
+	//TODO CAT: Nuking from orbit!
+	//var/job = null //?Living
 
 	// todo: nuke from orbit
 	var/const/blindness = 1 //?Carbon

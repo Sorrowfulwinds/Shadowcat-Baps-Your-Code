@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(role)
 	//todo: Go forth and gather all roles_total from map datums.
 
 	//Populate departments AFTER gathering all roles into roles_total.
-	populate_departments()
+	_populate_departments()
 	return SS_INIT_SUCCESS
 
 /**

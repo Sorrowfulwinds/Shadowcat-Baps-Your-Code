@@ -16,3 +16,5 @@
 	var/const/additional_spawntext = null
 	/// The outfit used by the alt-title. If it's the same as the base job, leave this null.
 	var/const/datum/outfit/outfit = null
+	/// If outfit replaces the base role outfit or adds on too it.
+	var/const/outfit_flag = SSR_UNIFORM_REPLACE

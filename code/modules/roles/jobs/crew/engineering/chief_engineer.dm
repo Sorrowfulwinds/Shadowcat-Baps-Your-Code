@@ -5,7 +5,7 @@
 
 	desc = "The Chief Engineer manages the Engineering Department, ensuring that the Engineers work on what needs to be done, handling distribution of manpower as much as they handle hands-on operations and repairs. They are also expected to keep the rest of the station informed of any structural threats to the station that may be hazardous to health or disruptive to work."
 
-	spawntext = "As the manager of Engineering you report to the Facility Director."
+	spawntext = "As the manager of Engineering you report to the Captain."
 
 	important_info = "You are playing a job that is important for Game Progression. If you have to disconnect immediately, please notify the admins via adminhelp. Otherwise put your locker gear back into the locker and cryo out."
 

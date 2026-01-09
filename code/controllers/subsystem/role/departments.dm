@@ -2,9 +2,9 @@
 var/alist/all_departments = alist()
 
 /**
- *
+ * Populate all_departments var with datum/department's
  */
-/datum/controller/subsystem/role/proc/populate_departments()
+/datum/controller/subsystem/role/proc/_populate_departments()
 	all_departments = alist()
 
 	for(var/datum/department/dept in (typesof(/datum/department)-/datum/department))
@@ -20,4 +20,3 @@ var/alist/all_departments = alist()
 				all_departments[role_dept_id]?:primary_jobs?:Add(roleid)
 				continue
 			all_departments[role_dept_id]?:secondary_jobs?:Add(roleid)
-

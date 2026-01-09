@@ -89,9 +89,9 @@ GLOBAL_VAR_INIT(economy_init, FALSE)
 
 	create_station_account()
 
-	for(var/department in economy_station_departments)
-		create_department_account(department)
-	create_department_account("Vendor")
+	for(var/datum/department/department in SSrole.all_departments)
+		create_department_account(department.id, department.name)
+	create_department_account("Vendor", "Vendor")
 	GLOB.vendor_account = GLOB.department_accounts["Vendor"]
 
 	for(var/obj/item/retail_scanner/RS in GLOB.transaction_devices)
@@ -129,11 +129,11 @@ GLOBAL_VAR_INIT(economy_init, FALSE)
 		GLOB.station_account.transaction_log.Add(T)
 		GLOB.all_money_accounts.Add(GLOB.station_account)
 
-/proc/create_department_account(department)
+/proc/create_department_account(id, name)
 	GLOB.next_account_number = rand(111111, 999999)
 
 	var/datum/money_account/department_account = new()
-	department_account.owner_name = "[department] Account"
+	department_account.owner_name = "[name] Account"
 	department_account.account_number = rand(111111, 999999)
 	department_account.remote_access_pin = rand(1111, 111111)
 	department_account.money = 10000
@@ -151,4 +151,4 @@ GLOBAL_VAR_INIT(economy_init, FALSE)
 	department_account.transaction_log.Add(T)
 	GLOB.all_money_accounts.Add(department_account)
 
-	GLOB.department_accounts[department] = department_account
+	GLOB.department_accounts[id] = department_account

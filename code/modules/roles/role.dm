@@ -20,6 +20,8 @@
 	var/const/spawntext
 	/// Important rules/policy info
 	var/const/important_info
+	/// If/When SSroles should try filling this role roundstart
+	var/const/roundstart_flag = SSR_NO_ASSIGNMENT
 
 	//? Access
 	// The use of minimal_access and additional_access is determined by a config setting: config.jobs_have_minimal_access. May be irrelivant if this role never has an ID card.
@@ -40,11 +42,11 @@
 	//? Advanced Info
 	/// Lazylist of alternate title ids, if any.
 	var/const/list/alt_titles = null
-	/// The faction string this role belongs to. May be replaced by a datum later.
+	/// The faction string this role belongs to. Might be replaced by a datum later.
 	var/const/team = JOB_FACTION_STATION
-	/// Outfit to equip to this role, if any. May be trampled by spawner if invalid.
+	/// Outfit to equip to this role, if any. Might be ignored by instancer.
 	var/const/datum/outfit/outfit
-	/// The instantiator to spawn this role. May override player character.
+	/// The instantiator to spawn this role. Might override player character.
 	var/const/datum/role_instantiator/instancer
 	/// The uninstantiator to clean up this role.
 	var/const/datum/role_uninstantiator/uninstancer

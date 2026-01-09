@@ -71,7 +71,8 @@
  * - C - (optional) - the client of the player
  */
 /obj/landmark/spawnpoint/proc/OnSpawn(mob/M, client/C)
-	spawns_left = max(0, spawns_left - 1)
+	if(spawns_left != INFINITY)
+		spawns_left = max(0, spawns_left - 1)
 	++spawned
 
 /**
