@@ -32,11 +32,10 @@
 /datum/prototype/struct/alt_title/chaplain/counselor
 	title = "Counselor"
 
-/datum/prototype/role/job/station/chaplain/equip(mob/living/carbon/human/H, source)
+/datum/prototype/role/job/station/chaplain/equip(mob/living/carbon/human/H, src)
 	. = ..()
 	if(H.mind)
 		H.mind.isholy = TRUE
-
 /datum/prototype/role/job/station/chaplain/equip(var/mob/living/carbon/human/H, var/alt_title, var/ask_questions = TRUE)
 	. = ..()
 	if(!.)

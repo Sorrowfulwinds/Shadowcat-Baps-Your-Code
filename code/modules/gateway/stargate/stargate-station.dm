@@ -126,12 +126,12 @@
 			to_chat(user, "<font color='black'>The gate is already calibrated, there is no work for you to do here.</font>")
 			return
 
-/obj/machinery/gateway/centerstation/proc/admin_setup(/mob/user)
+/obj/machinery/gateway/centerstation/proc/admin_setup(/mob/usr)
 	detect()
 
 	awaygate = locate(/obj/machinery/gateway/centeraway)
 	if(!awaygate) // We still can't find the damn thing because there is no destination.
-		to_chat(user, "Unable to locate awaygate (type: /obj/machinery/gateway/centeraway)")
+		to_chat(usr, "Unable to locate awaygate (type: /obj/machinery/gateway/centeraway)")
 		return
 
 	awaygate.stationgate = src
@@ -139,8 +139,8 @@
 
 	wait = 0
 
-	toggleon(user)
-	awaygate.toggleon(user)
+	toggleon(usr)
+	awaygate.toggleon(usr)
 
 /obj/machinery/gateway/centerstation/vv_get_dropdown()
 	. = ..()

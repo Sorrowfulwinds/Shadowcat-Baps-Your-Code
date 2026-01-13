@@ -12,5 +12,5 @@ if(attempt_vr(object,proc to call,args)) return
 The proc you're attemping should return nonzero values on success.
 */
 
-/proc/attempt_vr(callon, procname, list/arguments=null)
-	return call(callon,procname)(arglist(arguments))
+/proc/attempt_vr(callon, procname, list/args=null)
+	return call(callon,procname)(arglist(args))
