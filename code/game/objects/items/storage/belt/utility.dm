@@ -6,22 +6,22 @@
 	item_state = "utility"
 
 /obj/item/storage/belt/utility/full
-	starts_with = list(
-		/obj/item/tool/screwdriver,
-		/obj/item/tool/wrench,
-		/obj/item/weldingtool,
-		/obj/item/tool/crowbar,
-		/obj/item/tool/wirecutters,
-		/obj/item/stack/cable_coil/random_belt
+	starts_with = alist(
+		/obj/item/tool/screwdriver = 1,
+		/obj/item/tool/wrench = 1,
+		/obj/item/weldingtool = 1,
+		/obj/item/tool/crowbar = 1,
+		/obj/item/tool/wirecutters = 1,
+		/obj/item/stack/cable_coil/random_belt = 1
 	)
 
 /obj/item/storage/belt/utility/atmostech
-	starts_with = list(
-		/obj/item/tool/screwdriver,
-		/obj/item/tool/wrench,
-		/obj/item/weldingtool,
-		/obj/item/tool/crowbar,
-		/obj/item/tool/wirecutters,
+	starts_with = alist(
+		/obj/item/tool/screwdriver = 1,
+		/obj/item/tool/wrench = 1,
+		/obj/item/weldingtool = 1,
+		/obj/item/tool/crowbar = 1,
+		/obj/item/tool/wirecutters = 1,
 	)
 
 /obj/item/storage/belt/utility/chief
@@ -31,14 +31,14 @@
 	item_state = "utility_ce"
 
 /obj/item/storage/belt/utility/chief/full
-	starts_with = list(
-		/obj/item/tool/screwdriver/power,
-		/obj/item/tool/crowbar/power,
-		/obj/item/weldingtool/experimental,
-		/obj/item/multitool,
-		/obj/item/stack/cable_coil/random_belt,
-		/obj/item/extinguisher/mini,
-		/obj/item/atmos_analyzer/longrange
+	starts_with = alist(
+		/obj/item/tool/screwdriver/power = 1,
+		/obj/item/tool/crowbar/power = 1,
+		/obj/item/weldingtool/experimental = 1,
+		/obj/item/multitool = 1,
+		/obj/item/stack/cable_coil/random_belt = 1,
+		/obj/item/extinguisher/mini = 1,
+		/obj/item/atmos_analyzer/longrange = 1
 	)
 
 /obj/item/storage/belt/utility/alien
@@ -49,14 +49,14 @@
 	item_state = "security"
 
 /obj/item/storage/belt/utility/alien/full
-	starts_with = list(
-		/obj/item/tool/screwdriver/alien,
-		/obj/item/tool/wrench/alien,
-		/obj/item/weldingtool/alien,
-		/obj/item/tool/crowbar/alien,
-		/obj/item/tool/wirecutters/alien,
-		/obj/item/multitool/alien,
-		/obj/item/stack/cable_coil/alien
+	starts_with = alist(
+		/obj/item/tool/screwdriver/alien = 1,
+		/obj/item/tool/wrench/alien = 1,
+		/obj/item/weldingtool/alien = 1,
+		/obj/item/tool/crowbar/alien = 1,
+		/obj/item/tool/wirecutters/alien = 1,
+		/obj/item/multitool/alien = 1,
+		/obj/item/stack/cable_coil/alien = 1
 	)
 
 /obj/item/storage/belt/utility/crystal

@@ -78,11 +78,11 @@
 
 /obj/item/storage/box/syndie_kit/imp_compress
 	name = "box (C)"
-	starts_with = list(/obj/item/implanter/compressed)
+	starts_with = alist(/obj/item/implanter/compressed = 1)
 
 /obj/item/storage/box/syndie_kit/imp_explosive
 	name = "box (E)"
-	starts_with = list(/obj/item/implanter/explosive)
+	starts_with = alist(/obj/item/implanter/explosive = 1)
 
 /obj/item/storage/box/syndie_kit/imp_uplink
 	name = "boxed uplink implant (with injector)"
@@ -131,62 +131,62 @@
 
 /obj/item/storage/box/syndie_kit/space
 	name = "boxed space suit and helmet"
-	starts_with = list(
-		/obj/item/clothing/suit/space/syndicate,
-		/obj/item/clothing/head/helmet/space/syndicate,
-		/obj/item/clothing/mask/gas/syndicate,
-		/obj/item/tank/emergency/oxygen/double
+	starts_with = alist(
+		/obj/item/clothing/suit/space/syndicate = 1,
+		/obj/item/clothing/head/helmet/space/syndicate = 1,
+		/obj/item/clothing/mask/gas/syndicate = 1,
+		/obj/item/tank/emergency/oxygen/double = 1
 	)
 
 /obj/item/storage/box/syndie_kit/chameleon
 	name = "chameleon kit"
 	desc = "Comes with all the clothes you need to impersonate most people.  Acting lessons sold seperately."
-	starts_with = list(
-		/obj/item/clothing/under/chameleon,
-		/obj/item/clothing/head/chameleon,
-		/obj/item/clothing/suit/chameleon,
-		/obj/item/clothing/shoes/chameleon,
-		/obj/item/storage/backpack/chameleon,
-		/obj/item/clothing/gloves/chameleon,
-		/obj/item/clothing/mask/chameleon,
-		/obj/item/clothing/glasses/chameleon,
-		/obj/item/clothing/accessory/chameleon,
-		/obj/item/gun/projectile/energy/chameleon
+	starts_with = alist(
+		/obj/item/clothing/under/chameleon = 1,
+		/obj/item/clothing/head/chameleon = 1,
+		/obj/item/clothing/suit/chameleon = 1,
+		/obj/item/clothing/shoes/chameleon = 1,
+		/obj/item/storage/backpack/chameleon = 1,
+		/obj/item/clothing/gloves/chameleon = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/clothing/glasses/chameleon = 1,
+		/obj/item/clothing/accessory/chameleon = 1,
+		/obj/item/gun/projectile/energy/chameleon = 1
 	)
 
 /obj/item/storage/box/syndie_kit/clerical
 	name = "clerical kit"
 	desc = "Comes with all you need to fake paperwork. Assumes you have passed basic writing lessons."
-	starts_with = list(
-		/obj/item/stamp/chameleon,
-		/obj/item/pen/chameleon,
-		/obj/item/destTagger,
-		/obj/item/packageWrap,
-		/obj/item/hand_labeler
+	starts_with = alist(
+		/obj/item/stamp/chameleon = 1,
+		/obj/item/pen/chameleon = 1,
+		/obj/item/destTagger = 1,
+		/obj/item/packageWrap = 1,
+		/obj/item/hand_labeler = 1
 	)
 
 /obj/item/storage/box/syndie_kit/spy
 	name = "spy kit"
 	desc = "For when you want to conduct voyeurism from afar."
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/camerabug/spy = 6,
-		/obj/item/bug_monitor/spy
+		/obj/item/bug_monitor/spy = 1
 	)
 
 /obj/item/storage/box/syndie_kit/g9mm
 	name = "\improper Smooth operator"
 	desc = "Compact 9mm with silencer kit."
-	starts_with = list(
-		/obj/item/gun/projectile/ballistic/pistol,
-		/obj/item/silencer
+	starts_with = alist(
+		/obj/item/gun/projectile/ballistic/pistol = 1,
+		/obj/item/silencer = 1
 	)
 
 /obj/item/storage/box/syndie_kit/toxin
 	name = "toxin kit"
 	desc = "An apple will not be enough to keep the doctor away after this."
-	starts_with = list(
-		/obj/item/reagent_containers/glass/beaker/vial/random/toxin,
-		/obj/item/reagent_containers/syringe
+	starts_with = alist(
+		/obj/item/reagent_containers/glass/beaker/vial/random/toxin = 1,
+		/obj/item/reagent_containers/syringe = 1
 	)
 
 /obj/item/storage/box/syndie_kit/cigarette
@@ -236,50 +236,50 @@
 /obj/item/storage/box/syndie_kit/ewar_voice
 	name = "Electrowarfare and Voice Synthesizer kit"
 	desc = "Kit for confounding organic and synthetic entities alike."
-	starts_with = list(
-		/obj/item/hardsuit_module/electrowarfare_suite,
-		/obj/item/hardsuit_module/voice
+	starts_with = alist(
+		/obj/item/hardsuit_module/electrowarfare_suite = 1,
+		/obj/item/hardsuit_module/voice = 1
 	)
 
 /obj/item/storage/secure/briefcase/money
 	name = "suspicious briefcase"
 	desc = "An ominous briefcase that has the unmistakeable smell of old, stale, cigarette smoke, and gives those who look at it a bad feeling."
-	starts_with = list(/obj/item/spacecash/c1000 = 10)
+	starts_with = alist(/obj/item/spacecash/c1000 = 10)
 
 /obj/item/storage/box/syndie_kit/combat_armor
 	name = "combat armor kit"
 	desc = "Contains a full set of combat armor."
-	starts_with = list(
-		/obj/item/clothing/head/helmet/combat,
-		/obj/item/clothing/suit/armor/combat,
-		/obj/item/clothing/gloves/arm_guard/combat,
-		/obj/item/clothing/shoes/leg_guard/combat
+	starts_with = alist(
+		/obj/item/clothing/head/helmet/combat = 1,
+		/obj/item/clothing/suit/armor/combat = 1,
+		/obj/item/clothing/gloves/arm_guard/combat = 1,
+		/obj/item/clothing/shoes/leg_guard/combat = 1
 	)
 
 /obj/item/storage/box/syndie_kit/demolitions
-	starts_with = list(
-		/obj/item/syndie/c4explosive,
-		/obj/item/tool/screwdriver
+	starts_with = alist(
+		/obj/item/syndie/c4explosive = 1,
+		/obj/item/tool/screwdriver = 1
 	)
 
 /obj/item/storage/box/syndie_kit/demolitions_heavy
-	starts_with = list(
-		/obj/item/syndie/c4explosive/heavy,
-		/obj/item/tool/screwdriver
+	starts_with = alist(
+		/obj/item/syndie/c4explosive/heavy = 1,
+		/obj/item/tool/screwdriver = 1
 	)
 
 /obj/item/storage/box/syndie_kit/demolitions_super_heavy
-	starts_with = list(
-		/obj/item/syndie/c4explosive/heavy/super_heavy,
-		/obj/item/tool/screwdriver
+	starts_with = alist(
+		/obj/item/syndie/c4explosive/heavy/super_heavy = 1,
+		/obj/item/tool/screwdriver = 1
 	)
 
 /obj/item/storage/secure/briefcase/rifle
 	name = "secure briefcase"
-	starts_with = list(
-		/obj/item/sniper_rifle_part/barrel,
-		/obj/item/sniper_rifle_part/stock,
-		/obj/item/sniper_rifle_part/trigger_group,
+	starts_with = alist(
+		/obj/item/sniper_rifle_part/barrel = 1,
+		/obj/item/sniper_rifle_part/stock = 1,
+		/obj/item/sniper_rifle_part/trigger_group = 1,
 		/obj/item/ammo_casing/a12_7mm = 4
 	)
 
@@ -291,12 +291,10 @@
 	damage_force = 12 //Anti-rad lined i.e. Lead, probably gonna hurt a bit if you get bashed with it.
 	insertion_whitelist = list(/obj/item/gun/projectile/magnetic/fuelrod, /obj/item/fuel_assembly, /obj/item/cell, /obj/item/stock_parts, /obj/item/tool/screwdriver)
 	insertion_blacklist = list(/obj/item/tool/screwdriver/power)
-	starts_with = list(
-		/obj/item/gun/projectile/magnetic/fuelrod,
-		/obj/item/fuel_assembly/deuterium,
-		/obj/item/fuel_assembly/deuterium,
-		/obj/item/fuel_assembly/tritium,
-		/obj/item/fuel_assembly/tritium,
-		/obj/item/fuel_assembly/phoron,
-		/obj/item/tool/screwdriver
+	starts_with = alist(
+		/obj/item/gun/projectile/magnetic/fuelrod = 1,
+		/obj/item/fuel_assembly/deuterium = 2,
+		/obj/item/fuel_assembly/tritium = 2,
+		/obj/item/fuel_assembly/phoron = 1,
+		/obj/item/tool/screwdriver = 1
 	)

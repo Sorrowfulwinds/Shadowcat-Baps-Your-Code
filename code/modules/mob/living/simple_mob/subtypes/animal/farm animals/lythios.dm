@@ -257,14 +257,14 @@
 /obj/structure/largecrate/animal/icegoat
 	name = "glacicorn carrier"
 	desc = "Contains a pair of glacicorns, ill tempered ice goats. Warning glaicorns will die in enviroment with temperatures exceeding zero degress celcius."
-	starts_with = list(/mob/living/simple_mob/animal/icegoat = 2)
+	starts_with = alist(/mob/living/simple_mob/animal/icegoat = 2)
 
 /obj/structure/largecrate/animal/woolie
 	name = "woolie carrier"
 	desc = "Contains a pair of woolies, a sheep like animal designed to live in extreme cold."
-	starts_with = list(/mob/living/simple_mob/animal/passive/woolie = 2)
+	starts_with = alist(/mob/living/simple_mob/animal/passive/woolie = 2)
 
 /obj/structure/largecrate/animal/furnacegrub
 	name = "furnace grub carrier"
 	desc = "Contains one experimental furnace grub. Release into sealed cold enviroments to slowly heat them."
-	starts_with = list(/mob/living/simple_mob/animal/passive/furnacegrub)
+	starts_with = alist(/mob/living/simple_mob/animal/passive/furnacegrub = 1)

@@ -9,7 +9,7 @@
 	name = "kitchen cabinet"
 	req_access = list(ACCESS_GENERAL_KITCHEN)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/reagent_containers/food/condiment/flour = 7,
 		/obj/item/reagent_containers/food/condiment/sugar = 2)
 
@@ -19,13 +19,13 @@
 
 /obj/structure/closet/secure_closet/freezer/meat
 	name = "meat fridge"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/reagent_containers/food/snacks/meat/monkey = 10)
 
 
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/reagent_containers/food/drinks/milk = 6,
 		/obj/item/reagent_containers/food/drinks/soymilk = 4,
 		/obj/item/storage/fancy/egg_box = 4,
@@ -37,7 +37,7 @@
 	req_access = list(ACCESS_COMMAND_VAULT)
 
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/spacecash/c1000 = 3,
 		/obj/item/spacecash/c500 = 4,
 		/obj/item/spacecash/c200 = 5)

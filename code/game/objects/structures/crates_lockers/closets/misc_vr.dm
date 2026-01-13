@@ -5,10 +5,10 @@
 	store_mobs = FALSE
 	closet_appearance = /singleton/closet_appearance/wall/emergency
 
-	starts_with = list(
-		/obj/item/clothing/suit/space/void/autolok,
-		/obj/item/tank/emergency/oxygen/engi,
-		/obj/item/suit_cooling_unit/emergency
+	starts_with = alist(
+		/obj/item/clothing/suit/space/void/autolok = 1,
+		/obj/item/tank/emergency/oxygen/engi = 1,
+		/obj/item/suit_cooling_unit/emergency = 1
 	)
 
 /obj/structure/closet/walllocker/emergsuit_wall
@@ -17,9 +17,9 @@
 	store_mobs = FALSE
 	closet_appearance = /singleton/closet_appearance/wall/emergency
 
-	starts_with = list(
-		/obj/item/clothing/head/helmet/space/emergency,
-		/obj/item/clothing/suit/space/emergency,
-		/obj/item/tank/emergency/oxygen/engi,
-		/obj/item/suit_cooling_unit/emergency
+	starts_with = alist(
+		/obj/item/clothing/head/helmet/space/emergency = 1,
+		/obj/item/clothing/suit/space/emergency = 1,
+		/obj/item/tank/emergency/oxygen/engi = 1,
+		/obj/item/suit_cooling_unit/emergency = 1
 	)

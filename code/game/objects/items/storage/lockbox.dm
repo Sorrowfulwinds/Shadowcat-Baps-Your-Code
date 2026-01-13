@@ -70,30 +70,30 @@
 /obj/item/storage/lockbox/loyalty
 	name = "lockbox of loyalty implants"
 	req_access = list(ACCESS_SECURITY_EQUIPMENT)
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/implantcase/loyalty = 3,
-		/obj/item/implanter/loyalty,
+		/obj/item/implanter/loyalty = 1,
 	)
 
 /obj/item/storage/lockbox/clusterbang
 	name = "lockbox of clusterbangs"
 	desc = "You have a bad feeling about opening this."
 	req_access = list(ACCESS_SECURITY_EQUIPMENT)
-	starts_with = list(/obj/item/grenade/simple/flashbang/clusterbang)
+	starts_with = alist(/obj/item/grenade/simple/flashbang/clusterbang = 1)
 
 /obj/item/storage/lockbox/medal
 	name = "lockbox of medals"
 	desc = "A lockbox filled with commemorative medals, it has the Nanotrasen logo stamped on it."
 	req_access = list(ACCESS_COMMAND_BRIDGE)
 	max_items = 7
-	starts_with = list(
-		/obj/item/clothing/accessory/medal/conduct,
-		/obj/item/clothing/accessory/medal/bronze_heart,
-		/obj/item/clothing/accessory/medal/nobel_science,
-		/obj/item/clothing/accessory/medal/silver/valor,
-		/obj/item/clothing/accessory/medal/silver/security,
-		/obj/item/clothing/accessory/medal/gold/captain,
-		/obj/item/clothing/accessory/medal/gold/heroism,
+	starts_with = alist(
+		/obj/item/clothing/accessory/medal/conduct = 1,
+		/obj/item/clothing/accessory/medal/bronze_heart = 1,
+		/obj/item/clothing/accessory/medal/nobel_science = 1,
+		/obj/item/clothing/accessory/medal/silver/valor = 1,
+		/obj/item/clothing/accessory/medal/silver/security = 1,
+		/obj/item/clothing/accessory/medal/gold/captain = 1,
+		/obj/item/clothing/accessory/medal/gold/heroism = 1
 	)
 
 //Exploration "Gimmick" Boxes
@@ -101,7 +101,7 @@
 	name = "Colonial Equipment Pack"
 	req_access = list(ACCESS_GENERAL_PATHFINDER)
 	max_items = 34
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/under/customs/khaki = 4,
 		/obj/item/clothing/suit/colonial_redcoat = 4,
 		/obj/item/clothing/head/redcoat = 4,
@@ -117,7 +117,7 @@
 	name = "Gateway Guardian Pack"
 	req_access = list(ACCESS_GENERAL_PATHFINDER)
 	max_items = 24
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/under/tactical = 4,
 		/obj/item/clothing/accessory/storage/black_vest = 4,
 		/obj/item/clothing/head/soft/black = 4,
@@ -131,7 +131,7 @@
 	name = "Cyan Posse Pack"
 	req_access = list(ACCESS_GENERAL_PATHFINDER)
 	max_items = 33
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/storage/toggle/brown_jacket = 4,
 		/obj/item/clothing/shoes/boots/cowboy/classic = 4,
 		/obj/item/clothing/head/cowboy_hat = 4,
@@ -150,7 +150,7 @@
 	name = "Conscript Pack"
 	req_access = list(ACCESS_GENERAL_PATHFINDER)
 	max_items = 17
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/under/soviet = 4,
 		/obj/item/clothing/head/ushanka = 3,
 		/obj/item/clothing/head/bearpelt = 1,
@@ -165,7 +165,7 @@
 	name = "Holy Crusade Pack"
 	req_access = list(ACCESS_GENERAL_PATHFINDER)
 	max_items = 34
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/armor/medieval/crusader/cross/templar = 4,
 		/obj/item/clothing/head/helmet/medieval/crusader/templar = 4,
 		/obj/item/material/sword = 2,
@@ -178,7 +178,7 @@
 	name = "Maniple Pack"
 	req_access = list(ACCESS_GENERAL_PATHFINDER)
 	max_items = 16
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/under/roman = 4,
 		/obj/item/clothing/head/helmet/roman = 3,
 		/obj/item/clothing/head/helmet/romancent = 1,
@@ -190,7 +190,7 @@
 	name = "Away Team Pack"
 	req_access = list(ACCESS_GENERAL_PATHFINDER)
 	max_items = 17
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/under/rank/trek/command/ds9 = 1,
 		/obj/item/clothing/under/rank/trek/engsec/ds9 = 2,
 		/obj/item/clothing/under/rank/trek/medsci/ds9 = 1,
@@ -205,7 +205,7 @@
 	icon_state = "gunlockbox+l"
 	sfx_open = 'sound/items/storage/briefcase.ogg'
 	req_access = list(ACCESS_GENERAL_EXPLORER)
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/gun/projectile/ballistic/ax59 = 1,
 		/obj/item/clothing/accessory/holster/leg = 1,
 		/obj/item/ammo_magazine/a45/doublestack = 2,
@@ -221,21 +221,21 @@
 	desc = "A lockbox filled with a plate harness and modular limb armor."
 	req_access = list(ACCESS_SECURITY_EQUIPMENT)
 	max_items = 5
-	starts_with = list(
-		/obj/item/clothing/suit/armor/plate_harness,
-		/obj/item/clothing/accessory/armor/limb_plate/arm_r,
-		/obj/item/clothing/accessory/armor/limb_plate/arm_l,
-		/obj/item/clothing/accessory/armor/limb_plate/leg_r,
-		/obj/item/clothing/accessory/armor/limb_plate/leg_l,
+	starts_with = alist(
+		/obj/item/clothing/suit/armor/plate_harness = 1,
+		/obj/item/clothing/accessory/armor/limb_plate/arm_r = 1,
+		/obj/item/clothing/accessory/armor/limb_plate/arm_l = 1,
+		/obj/item/clothing/accessory/armor/limb_plate/leg_r = 1,
+		/obj/item/clothing/accessory/armor/limb_plate/leg_l = 1,
 	)
 
 /obj/item/storage/lockbox/limb_plate/emt
 	name = "Lightweight Plating Kit (Paramedic)"
 	req_access = list(ACCESS_MEDICAL_EQUIPMENT)
-	starts_with = list(
-		/obj/item/clothing/suit/armor/plate_harness,
-		/obj/item/clothing/accessory/armor/limb_plate/arm_r/emt,
-		/obj/item/clothing/accessory/armor/limb_plate/arm_l/emt,
-		/obj/item/clothing/accessory/armor/limb_plate/leg_r/emt,
-		/obj/item/clothing/accessory/armor/limb_plate/leg_l/emt,
+	starts_with = alist(
+		/obj/item/clothing/suit/armor/plate_harness = 1,
+		/obj/item/clothing/accessory/armor/limb_plate/arm_r/emt = 1,
+		/obj/item/clothing/accessory/armor/limb_plate/arm_l/emt = 1,
+		/obj/item/clothing/accessory/armor/limb_plate/leg_r/emt = 1,
+		/obj/item/clothing/accessory/armor/limb_plate/leg_l/emt = 1,
 	)

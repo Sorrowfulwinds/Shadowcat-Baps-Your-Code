@@ -57,12 +57,12 @@
 	\t6) Contact the medical team with your location.
 	\t7) Stay in place once they respond.\
 		"}
-	starts_with = list(
-		/obj/item/reagent_containers/hypospray/autoinjector,
-		/obj/item/reagent_containers/hypospray/autoinjector/pouch_pain,
-		/obj/item/reagent_containers/pill/inaprovaline/pouch,
-		/obj/item/reagent_containers/pill/bicaridine/pouch,
-		/obj/item/stack/medical/bruise_pack,
+	starts_with = alist(
+		/obj/item/reagent_containers/hypospray/autoinjector = 1,
+		/obj/item/reagent_containers/hypospray/autoinjector/pouch_pain = 1,
+		/obj/item/reagent_containers/pill/inaprovaline/pouch = 1,
+		/obj/item/reagent_containers/pill/bicaridine/pouch = 1,
+		/obj/item/stack/medical/bruise_pack = 1,
 	)
 
 /obj/item/storage/single_use/med_pouch/burn
@@ -79,13 +79,13 @@
 	\t6) Contact the medical team with your location.
 	\t7) Stay in place once they respond.\
 		"}
-	starts_with = list(
+	starts_with = alist(
 		// /obj/item/chems/hypospray/autoinjector/pouch_auto/nanoblood, // Maybe we add nanoblood one day.
-		/obj/item/reagent_containers/hypospray/autoinjector/burn_pouch, // Used to be an adrenaline one, but adrenaline is kinda bad here.
-		/obj/item/reagent_containers/hypospray/autoinjector/pouch_pain,
-		/obj/item/reagent_containers/pill/kelotane,
-		/obj/item/reagent_containers/pill/spaceacillin,
-		/obj/item/stack/medical/ointment,
+		/obj/item/reagent_containers/hypospray/autoinjector/burn_pouch = 1, // Used to be an adrenaline one, but adrenaline is kinda bad here.
+		/obj/item/reagent_containers/hypospray/autoinjector/pouch_pain = 1,
+		/obj/item/reagent_containers/pill/kelotane = 1,
+		/obj/item/reagent_containers/pill/spaceacillin = 1,
+		/obj/item/stack/medical/ointment = 1,
 	)
 
 /obj/item/storage/single_use/med_pouch/oxyloss
@@ -102,12 +102,12 @@
 	\t7) Update the medical team with your new location.\n\
 	\t8) Stay in place once they respond.\
 		"}
-	starts_with = list(
+	starts_with = alist(
 		// /obj/item/chems/hypospray/autoinjector/pouch_auto/adrenaline,
-		/obj/item/reagent_containers/hypospray/autoinjector,
-		/obj/item/reagent_containers/hypospray/autoinjector/pouch_oxy, // Used to be an inhaler.
+		/obj/item/reagent_containers/hypospray/autoinjector = 1,
+		/obj/item/reagent_containers/hypospray/autoinjector/pouch_oxy = 1, // Used to be an inhaler.
 		/obj/item/reagent_containers/pill/dexalin = 2,
-		/obj/item/reagent_containers/pill/inaprovaline/pouch,
+		/obj/item/reagent_containers/pill/inaprovaline/pouch = 1,
 	)
 
 /obj/item/storage/single_use/med_pouch/toxin
@@ -122,9 +122,9 @@
 	\t5) Contact the medical team with your location.\n\
 	\t6) Stay in place once they respond.\
 		"}
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/reagent_containers/hypospray/autoinjector/detox = 2,
-		/obj/item/reagent_containers/hypospray/autoinjector/pouch_tox,
+		/obj/item/reagent_containers/hypospray/autoinjector/pouch_tox = 1,
 		/obj/item/reagent_containers/pill/antitox = 2,
 	)
 
@@ -140,7 +140,7 @@
 	\t5) Contact the medical team with your location.
 	\t6) Stay in place once they respond.\
 		"}
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/reagent_containers/hypospray/autoinjector/detox = 1,
 		/obj/item/reagent_containers/hypospray/autoinjector/pouch_rad = 2,
 		/obj/item/reagent_containers/pill/antitox = 2,
@@ -159,13 +159,13 @@
 	\t7) Update the medical team with your new location.\n\
 	\t8) Stay in place once they respond.\
 		"}
-	starts_with = list(
+	starts_with = alist(
 		// /obj/item/chems/hypospray/autoinjector/pouch_auto/adrenaline,
-		/obj/item/reagent_containers/hypospray/autoinjector,
-		/obj/item/reagent_containers/hypospray/autoinjector/detox,
-		/obj/item/reagent_containers/hypospray/autoinjector/pouch_antialcohol,
-		/obj/item/reagent_containers/hypospray/autoinjector/pouch_oxy, // Used to be an inhaler.
-		/obj/item/reagent_containers/pill/carbon,
+		/obj/item/reagent_containers/hypospray/autoinjector = 1,
+		/obj/item/reagent_containers/hypospray/autoinjector/detox = 1,
+		/obj/item/reagent_containers/hypospray/autoinjector/pouch_antialcohol = 1,
+		/obj/item/reagent_containers/hypospray/autoinjector/pouch_oxy = 1, // Used to be an inhaler.
+		/obj/item/reagent_containers/pill/carbon = 1,
 	)
 
 // Pills

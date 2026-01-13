@@ -5,7 +5,7 @@
 	icon_state = "densecrate"
 	density = 1
 	worth_intrinsic = 200
-	var/list/starts_with
+	var/alist/starts_with
 	var/storage_capacity = 2 * MOB_LARGE //This is so that someone can't pack hundreds of items in a locker/crate
 							  //then open it in a populated area to crash clients.
 
@@ -20,7 +20,7 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/structure/largecrate/LateInitialize()
-	if(starts_with)
+	if(!isnull(starts_with))
 		create_objects_in_loc(src, starts_with)
 		starts_with = null
 	update_icon()
@@ -109,16 +109,16 @@
 
 /obj/structure/largecrate/vehicle/bike
 	name = "spacebike crate"
-	starts_with = list(/obj/structure/vehiclecage/spacebike)
+	starts_with = alist(/obj/structure/vehiclecage/spacebike = 1)
 
 /obj/structure/largecrate/vehicle/quadbike
 	name = "\improper ATV crate"
-	starts_with = list(/obj/vehicle/ridden/quadbike/random,
-		/obj/item/key/quadbike)
+	starts_with = alist(/obj/vehicle/ridden/quadbike/random = 1,
+		/obj/item/key/quadbike = 1)
 
 /obj/structure/largecrate/vehicle/quadtrailer
 	name = "\improper ATV trailer crate"
-	starts_with = list(/obj/structure/vehiclecage/quadtrailer)
+	starts_with = alist(/obj/structure/vehiclecage/quadtrailer = 1)
 
 /obj/structure/largecrate/animal
 	icon_state = "lisacrate"
@@ -126,42 +126,42 @@
 /obj/structure/largecrate/animal/mulebot
 	name = "Mulebot crate"
 	icon_state = "mulecrate"
-	starts_with = list(/mob/living/bot/mulebot)
+	starts_with = alist(/mob/living/bot/mulebot = 1)
 
 /obj/structure/largecrate/animal/corgi
 	name = "corgi carrier"
-	starts_with = list(/mob/living/simple_mob/animal/passive/dog/corgi)
+	starts_with = alist(/mob/living/simple_mob/animal/passive/dog/corgi = 1)
 
 /obj/structure/largecrate/animal/cow
 	name = "cow crate"
-	starts_with = list(/mob/living/simple_mob/animal/passive/cow)
+	starts_with = alist(/mob/living/simple_mob/animal/passive/cow = 1)
 
 /obj/structure/largecrate/animal/goat
 	name = "goat crate"
-	starts_with = list(/mob/living/simple_mob/animal/goat)
+	starts_with = alist(/mob/living/simple_mob/animal/goat = 1)
 
 /obj/structure/largecrate/animal/horse
 	name = "horse crate"
-	starts_with = list(/mob/living/simple_mob/horse)
+	starts_with = alist(/mob/living/simple_mob/horse = 1)
 
 /obj/structure/largecrate/animal/cat
 	name = "cat carrier"
-	starts_with = list(/mob/living/simple_mob/animal/passive/cat)
+	starts_with = alist(/mob/living/simple_mob/animal/passive/cat = 1)
 
 /obj/structure/largecrate/animal/cat/bones
-	starts_with = list(/mob/living/simple_mob/animal/passive/cat/bones)
+	starts_with = alist(/mob/living/simple_mob/animal/passive/cat/bones = 1)
 
 /obj/structure/largecrate/animal/chick
 	name = "chicken crate"
-	starts_with = list(/mob/living/simple_mob/animal/passive/chick = 5)
+	starts_with = alist(/mob/living/simple_mob/animal/passive/chick = 5)
 
 /obj/structure/largecrate/animal/carp
 	name = "space carp crate"
-	starts_with = list(/mob/living/simple_mob/animal/space/carp = 3)
+	starts_with = alist(/mob/living/simple_mob/animal/space/carp = 3)
 
 /obj/structure/largecrate/animal/spiders
 	name = "spider crate"
-	starts_with = list(/mob/living/simple_mob/animal/giant_spider= 3)
+	starts_with = alist(/mob/living/simple_mob/animal/giant_spider = 3)
 
 //! ## VR FILE MERGE ## !//
 /obj/structure/largecrate/birds //This is an awful hack, but it's the only way to get multiple mobs spawned in one crate.
@@ -205,11 +205,13 @@
 /*
 /obj/structure/largecrate/animal/pred
 	name = "Predator carrier"
-	starts_with = list(/mob/living/simple_mob/vore/catgirl)
+	starts_with = alist(/mob/living/simple_mob/vore/catgirl)
 */
 
 /obj/structure/largecrate/animal/pred/Initialize(mapload) //This is nessesary to get a random one each time.
-	starts_with = list(pick(/mob/living/simple_mob/vore/bee,
+	starts_with = alist(
+					pick(
+						/mob/living/simple_mob/vore/bee,
 						/mob/living/simple_mob/vore/aggressive/frog,
 						/mob/living/simple_mob/vore/aggressive/panther,
 						/mob/living/simple_mob/vore/aggressive/giant_snake,
@@ -220,35 +222,36 @@
 						/mob/living/simple_mob/vore/aggressive/rat,
 						/mob/living/simple_mob/vore/aggressive/rat/tame,
 //						/mob/living/simple_mob/otie;0.5
-						))
+						) = 1)
 	return ..()
 
 /obj/structure/largecrate/animal/dangerous
 	name = "Dangerous Predator carrier"
-	starts_with = list(/mob/living/simple_mob/animal/space/xenomorph/warrior)
+	starts_with = alist(/mob/living/simple_mob/animal/space/xenomorph/warrior = 1)
 
 /obj/structure/largecrate/animal/dangerous/Initialize(mapload)
-	starts_with = list(pick(/mob/living/simple_mob/animal/space/carp/large,
+	var/path_picked = pick(/mob/living/simple_mob/animal/space/carp/large,
 						/mob/living/simple_mob/vore/aggressive/deathclaw,
 						/mob/living/simple_mob/vore/aggressive/dino,
 						/mob/living/simple_mob/animal/space/xenomorph/drone,
 						/mob/living/simple_mob/animal/space/xenomorph/neurotoxin_spitter,
-						/mob/living/simple_mob/vore/aggressive/corrupthound))
+						/mob/living/simple_mob/vore/aggressive/corrupthound)
+	starts_with = alist(path_picked = 1)
 	return ..()
 
 /obj/structure/largecrate/animal/wolfgirl
 	name = "Wolfgirl Crate"
 	desc = "A sketchy looking crate with airholes that shakes and thuds every now and then. Someone seems to be demanding they be let out."
-	starts_with = list(/mob/living/simple_mob/vore/wolfgirl)
+	starts_with = alist(/mob/living/simple_mob/vore/wolfgirl = 1)
 
 /obj/structure/largecrate/animal/fennec
 	name = "Fennec Crate"
 	desc = "Bounces around a lot. Looks messily packaged, were they in a hurry?"
-	starts_with = list(/mob/living/simple_mob/vore/fennec)
+	starts_with = alist(/mob/living/simple_mob/vore/fennec = 1)
 
 /obj/structure/largecrate/animal/fennec/Initialize(mapload)
-	starts_with = list(pick(/mob/living/simple_mob/vore/fennec,
-						/mob/living/simple_mob/vore/fennix;0.5))
+	starts_with = alist(pick(/mob/living/simple_mob/vore/fennec,
+						/mob/living/simple_mob/vore/fennix;0.5) = 1)
 	return ..()
 
 //Corporate Largecrates

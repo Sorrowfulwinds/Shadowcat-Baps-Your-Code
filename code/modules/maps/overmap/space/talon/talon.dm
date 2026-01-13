@@ -243,19 +243,19 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/air_alarm/talon, 26)
 	req_access = list(ACCESS_FACTION_TALON)
 	// closet_appearance = /singleton/// closet_appearance/secure_closet/talon/captain
 
-	starts_with = list(
-		/obj/item/storage/backpack/dufflebag/captain/talon,
-		/obj/item/clothing/suit/storage/vest,
-		/obj/item/melee/telebaton,
-		/obj/item/flash,
-		/obj/item/radio,
-		/obj/item/radio/headset/talon,
-		/obj/item/clothing/head/helmet/space/void/refurb/officer/talon,
-		/obj/item/clothing/suit/space/void/refurb/officer/talon,
-		/obj/item/clothing/shoes/magboots,
-		/obj/item/tank/oxygen,
-		/obj/item/suit_cooling_unit,
-		/obj/item/gps/command/taloncap
+	starts_with = alist(
+		/obj/item/storage/backpack/dufflebag/captain/talon = 1,
+		/obj/item/clothing/suit/storage/vest = 1,
+		/obj/item/melee/telebaton = 1,
+		/obj/item/flash = 1,
+		/obj/item/radio = 1,
+		/obj/item/radio/headset/talon = 1,
+		/obj/item/clothing/head/helmet/space/void/refurb/officer/talon = 1,
+		/obj/item/clothing/suit/space/void/refurb/officer/talon = 1,
+		/obj/item/clothing/shoes/magboots = 1,
+		/obj/item/tank/oxygen = 1,
+		/obj/item/suit_cooling_unit = 1,
+		/obj/item/gps/command/taloncap = 1
 	)
 
 /obj/structure/closet/secure_closet/talon_guard
@@ -263,28 +263,28 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/air_alarm/talon, 26)
 	req_access = list(ACCESS_FACTION_TALON)
 	// closet_appearance = /singleton/// closet_appearance/secure_closet/talon/guard
 
-	starts_with = list(
-		/obj/item/clothing/suit/armor/pcarrier/light,
-		/obj/item/clothing/under/utility,
-		/obj/item/clothing/shoes/boots/jackboots,
-		/obj/item/clothing/shoes/boots/jackboots/toeless,
+	starts_with = alist(
+		/obj/item/clothing/suit/armor/pcarrier/light = 1,
+		/obj/item/clothing/under/utility = 1,
+		/obj/item/clothing/shoes/boots/jackboots = 1,
+		/obj/item/clothing/shoes/boots/jackboots/toeless = 1,
 		/obj/item/handcuffs = 2,
-		/obj/item/gun/projectile/energy/stunrevolver,
-		/obj/item/clothing/accessory/armor/tag/civsec,
-		/obj/item/flash,
-		/obj/item/flashlight/maglight,
-		/obj/item/clothing/glasses/sunglasses,
-		/obj/item/storage/belt/security,
-		/obj/item/radio,
-		/obj/item/radio/headset/talon,
-		/obj/item/clothing/accessory/oricon/department/security,
-		/obj/item/clothing/head/helmet/space/void/refurb/marine/talon,
-		/obj/item/clothing/suit/space/void/refurb/marine/talon,
-		/obj/item/clothing/shoes/magboots,
-		/obj/item/tank/oxygen,
-		/obj/item/suit_cooling_unit,
-		/obj/item/gps/security/talonguard,
-		/obj/item/melee/baton
+		/obj/item/gun/projectile/energy/stunrevolver = 1,
+		/obj/item/clothing/accessory/armor/tag/civsec = 1,
+		/obj/item/flash = 1,
+		/obj/item/flashlight/maglight = 1,
+		/obj/item/clothing/glasses/sunglasses = 1,
+		/obj/item/storage/belt/security = 1,
+		/obj/item/radio = 1,
+		/obj/item/radio/headset/talon = 1,
+		/obj/item/clothing/accessory/oricon/department/security = 1,
+		/obj/item/clothing/head/helmet/space/void/refurb/marine/talon = 1,
+		/obj/item/clothing/suit/space/void/refurb/marine/talon = 1,
+		/obj/item/clothing/shoes/magboots = 1,
+		/obj/item/tank/oxygen = 1,
+		/obj/item/suit_cooling_unit = 1,
+		/obj/item/gps/security/talonguard = 1,
+		/obj/item/melee/baton = 1
 	)
 
 /obj/structure/closet/secure_closet/talon_doctor
@@ -292,21 +292,21 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/air_alarm/talon, 26)
 	req_access = list(ACCESS_FACTION_TALON)
 	// closet_appearance = /singleton/// closet_appearance/secure_closet/talon/doctor
 
-	starts_with = list(
-		/obj/item/clothing/under/rank/medical,
-		/obj/item/clothing/under/rank/nurse,
-		/obj/item/clothing/under/rank/orderly,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
-		/obj/item/clothing/suit/storage/toggle/fr_jacket,
-		/obj/item/clothing/shoes/white,
-		/obj/item/radio,
-		/obj/item/radio/headset/talon,
-		/obj/item/clothing/head/helmet/space/void/refurb/medical/alt/talon,
-		/obj/item/clothing/suit/space/void/refurb/medical/talon,
-		/obj/item/clothing/shoes/magboots,
-		/obj/item/tank/oxygen,
-		/obj/item/suit_cooling_unit,
-		/obj/item/gps/medical/talonmed
+	starts_with = alist(
+		/obj/item/clothing/under/rank/medical = 1,
+		/obj/item/clothing/under/rank/nurse = 1,
+		/obj/item/clothing/under/rank/orderly = 1,
+		/obj/item/clothing/suit/storage/toggle/labcoat = 1,
+		/obj/item/clothing/suit/storage/toggle/fr_jacket = 1,
+		/obj/item/clothing/shoes/white = 1,
+		/obj/item/radio = 1,
+		/obj/item/radio/headset/talon = 1,
+		/obj/item/clothing/head/helmet/space/void/refurb/medical/alt/talon = 1,
+		/obj/item/clothing/suit/space/void/refurb/medical/talon = 1,
+		/obj/item/clothing/shoes/magboots = 1,
+		/obj/item/tank/oxygen = 1,
+		/obj/item/suit_cooling_unit = 1,
+		/obj/item/gps/medical/talonmed = 1
 	)
 
 /obj/structure/closet/secure_closet/talon_engineer
@@ -314,22 +314,22 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/air_alarm/talon, 26)
 	req_access = list(ACCESS_FACTION_TALON)
 	// closet_appearance = /singleton/// closet_appearance/secure_closet/talon/engineer
 
-	starts_with = list(
-		/obj/item/clothing/accessory/storage/brown_vest,
-		/obj/item/flashlight,
-		/obj/item/extinguisher,
-		/obj/item/radio,
-		/obj/item/radio/headset/talon,
-		/obj/item/clothing/suit/storage/hazardvest,
-		/obj/item/clothing/mask/gas,
-		/obj/item/barrier_tape_roll/atmos,
-		/obj/item/tank/emergency/oxygen/engi,
-		/obj/item/clothing/head/helmet/space/void/refurb/engineering/talon,
-		/obj/item/clothing/suit/space/void/refurb/engineering/talon,
-		/obj/item/clothing/shoes/magboots,
-		/obj/item/tank/oxygen,
-		/obj/item/suit_cooling_unit,
-		/obj/item/gps/engineering/taloneng
+	starts_with = alist(
+		/obj/item/clothing/accessory/storage/brown_vest = 1,
+		/obj/item/flashlight = 1,
+		/obj/item/extinguisher = 1,
+		/obj/item/radio = 1,
+		/obj/item/radio/headset/talon = 1,
+		/obj/item/clothing/suit/storage/hazardvest = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/barrier_tape_roll/atmos = 1,
+		/obj/item/tank/emergency/oxygen/engi = 1,
+		/obj/item/clothing/head/helmet/space/void/refurb/engineering/talon = 1,
+		/obj/item/clothing/suit/space/void/refurb/engineering/talon = 1,
+		/obj/item/clothing/shoes/magboots = 1,
+		/obj/item/tank/oxygen = 1,
+		/obj/item/suit_cooling_unit = 1,
+		/obj/item/gps/engineering/taloneng = 1
 	)
 
 /obj/structure/closet/secure_closet/talon_pilot
@@ -337,27 +337,27 @@ CREATE_WALL_MOUNTING_TYPES_SHIFTED(/obj/machinery/air_alarm/talon, 26)
 	req_access = list(ACCESS_FACTION_TALON)
 	// closet_appearance = /singleton/// closet_appearance/secure_closet/talon/pilot
 
-	starts_with = list(
-		/obj/item/material/knife/tacknife/survival,
-		/obj/item/clothing/head/pilot,
-		/obj/item/clothing/under/rank/pilot1,
-		/obj/item/clothing/suit/storage/toggle/bomber/pilot,
-		/obj/item/clothing/gloves/fingerless,
-		/obj/item/reagent_containers/food/snacks/liquid,
-		/obj/item/reagent_containers/food/drinks/cans/waterbottle,
-		/obj/item/radio,
-		/obj/item/clothing/under/utility/blue,
-		/obj/item/clothing/accessory/oricon/specialty/pilot,
-		/obj/item/clothing/shoes/boots/jackboots,
-		/obj/item/clothing/shoes/boots/jackboots/toeless,
-		/obj/item/radio/headset/talon,
-		/obj/item/flashlight/color/orange,
-		/obj/item/clothing/head/helmet/space/void/refurb/pilot/talon,
-		/obj/item/clothing/suit/space/void/refurb/pilot/talon,
-		/obj/item/clothing/shoes/magboots,
-		/obj/item/tank/oxygen,
-		/obj/item/suit_cooling_unit,
-		/obj/item/gps/explorer/talonpilot
+	starts_with = alist(
+		/obj/item/material/knife/tacknife/survival = 1,
+		/obj/item/clothing/head/pilot = 1,
+		/obj/item/clothing/under/rank/pilot1 = 1,
+		/obj/item/clothing/suit/storage/toggle/bomber/pilot = 1,
+		/obj/item/clothing/gloves/fingerless = 1,
+		/obj/item/reagent_containers/food/snacks/liquid = 1,
+		/obj/item/reagent_containers/food/drinks/cans/waterbottle = 1,
+		/obj/item/radio = 1,
+		/obj/item/clothing/under/utility/blue = 1,
+		/obj/item/clothing/accessory/oricon/specialty/pilot = 1,
+		/obj/item/clothing/shoes/boots/jackboots = 1,
+		/obj/item/clothing/shoes/boots/jackboots/toeless = 1,
+		/obj/item/radio/headset/talon = 1,
+		/obj/item/flashlight/color/orange = 1,
+		/obj/item/clothing/head/helmet/space/void/refurb/pilot/talon = 1,
+		/obj/item/clothing/suit/space/void/refurb/pilot/talon = 1,
+		/obj/item/clothing/shoes/magboots = 1,
+		/obj/item/tank/oxygen = 1,
+		/obj/item/suit_cooling_unit = 1,
+		/obj/item/gps/explorer/talonpilot = 1
 	)
 
 ///////////////////////////

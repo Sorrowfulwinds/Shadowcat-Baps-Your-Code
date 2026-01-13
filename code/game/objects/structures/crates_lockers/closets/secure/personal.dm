@@ -22,9 +22,9 @@
 /obj/structure/closet/secure_closet/personal/cabinet
 	closet_appearance = /singleton/closet_appearance/cabinet/secure
 
-	starts_with = list(
-		/obj/item/storage/backpack/satchel/withwallet,
-		/obj/item/radio/headset
+	starts_with = alist(
+		/obj/item/storage/backpack/satchel/withwallet = 1,
+		/obj/item/radio/headset = 1
 		)
 
 /obj/structure/closet/secure_closet/personal/attackby(obj/item/W as obj, mob/user as mob)

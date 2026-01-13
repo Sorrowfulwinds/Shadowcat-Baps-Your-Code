@@ -38,7 +38,7 @@
 	var/store_mobs = 1		//Will the closet store mobs?
 	var/max_closets = 0		//Number of other closets allowed on tile before it won't close.
 
-	var/list/starts_with
+	var/alist/starts_with
 	var/singleton/closet_appearance = /singleton/closet_appearance
 	var/broken = FALSE
 	var/secure = FALSE
@@ -74,7 +74,7 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/structure/closet/LateInitialize()
-	if(starts_with)
+	if(!isnull(starts_with))
 		create_objects_in_loc(src, starts_with)
 		starts_with = null
 	if(!use_old_icon_update && ispath(closet_appearance))

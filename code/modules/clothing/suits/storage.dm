@@ -33,7 +33,7 @@
 	var/storage_datum_path = /datum/object_system/storage
 	/// Cleared after Initialize().
 	/// List of types associated to amounts.
-	var/list/starts_with
+	var/alist/starts_with
 	/// set to prevent us from spawning starts_with
 	var/empty = FALSE
 
@@ -50,8 +50,7 @@
 		// this is way too permissive already
 		var/safety = 256
 		var/atom/where_real_contents = obj_storage.real_contents_loc()
-		for(var/path in starts_with)
-			var/amount = starts_with[path] || 1
+		for(var/path, amount in starts_with)
 			for(var/i in 1 to amount)
 				if(!--safety)
 					CRASH("tried to spawn too many objects")

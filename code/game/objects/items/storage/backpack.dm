@@ -260,7 +260,7 @@
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "briefcase", SLOT_ID_LEFT_HAND = "briefcase")
 
 /obj/item/storage/backpack/satchel/withwallet
-	starts_with = list(/obj/item/storage/wallet/random)
+	starts_with = alist(/obj/item/storage/wallet/random = 1)
 
 /obj/item/storage/backpack/satchel/norm
 	name = "satchel"

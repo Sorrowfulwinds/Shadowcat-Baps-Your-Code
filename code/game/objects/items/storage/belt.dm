@@ -92,7 +92,7 @@
 	max_items = 6
 
 /obj/item/storage/belt/soulstone/full
-	starts_with = list(/obj/item/soulstone = 6)
+	starts_with = alist(/obj/item/soulstone = 6)
 
 /obj/item/storage/belt/medical/alien
 	name = "alien belt"
@@ -103,15 +103,15 @@
 	max_items = 8
 
 /obj/item/storage/belt/medical/alien
-	starts_with = list(
-		/obj/item/surgical/scalpel/alien,
-		/obj/item/surgical/hemostat/alien,
-		/obj/item/surgical/retractor/alien,
-		/obj/item/surgical/circular_saw/alien,
-		/obj/item/surgical/FixOVein/alien,
-		/obj/item/surgical/bone_clamp/alien,
-		/obj/item/surgical/cautery/alien,
-		/obj/item/surgical/surgicaldrill/alien
+	starts_with = alist(
+		/obj/item/surgical/scalpel/alien = 1,
+		/obj/item/surgical/hemostat/alien = 1,
+		/obj/item/surgical/retractor/alien = 1,
+		/obj/item/surgical/circular_saw/alien = 1,
+		/obj/item/surgical/FixOVein/alien = 1,
+		/obj/item/surgical/bone_clamp/alien = 1,
+		/obj/item/surgical/cautery/alien = 1,
+		/obj/item/surgical/surgicaldrill/alien = 1
 	)
 
 /obj/item/storage/belt/champion
@@ -128,7 +128,7 @@
 	max_single_weight_class = WEIGHT_CLASS_SMALL
 	max_combined_volume = WEIGHT_VOLUME_SMALL * 14
 	insertion_whitelist = list(/obj/item/melee/spike)
-	starts_with = list(/obj/item/melee/spike = 14)
+	starts_with = alist(/obj/item/melee/spike = 14)
 
 /obj/item/storage/belt/janitor
 	name = "janitorial belt"
@@ -208,8 +208,8 @@
 		/obj/item/material/sword/sabre,
 		/obj/item/melee/baton/stunsword,
 	)
-	starts_with = list(
-		/obj/item/material/sword/sabre,
+	starts_with = alist(
+		/obj/item/material/sword/sabre = 1,
 	)
 
 /obj/item/storage/belt/sheath/initialize_storage()
@@ -253,7 +253,7 @@
 	name = "leather quiver"
 	desc = "A quiver made from the hide of some animal. Used to hold arrows."
 	icon_state = "quiver"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/ammo_casing/arrow = /obj/item/storage/belt/quiver::set_max_combined_belt_small,
 	)
 
@@ -261,6 +261,6 @@
 	name = "leather quiver"
 	desc = "A quiver made from the hide of some animal. Used to hold arrows."
 	icon_state = "quiver"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/ammo_casing/arrow/bone = /obj/item/storage/belt/quiver::set_max_combined_belt_small,
 	)

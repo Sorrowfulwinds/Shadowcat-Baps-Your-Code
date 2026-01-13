@@ -11,12 +11,9 @@
 	name = "bible"
 	desc = "To be applied to the head repeatedly."
 	icon_state ="bible"
-	starts_with = list(
-		/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-		/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-		/obj/item/spacecash/c100,
-		/obj/item/spacecash/c100,
-		/obj/item/spacecash/c100
+	starts_with = alist(
+		/obj/item/reagent_containers/food/drinks/bottle/small/beer = 2,
+		/obj/item/spacecash/c100 = 3,
 	)
 
 /obj/item/storage/bible/afterattack(atom/target, mob/user, clickchain_flags, list/params)

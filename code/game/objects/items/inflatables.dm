@@ -73,7 +73,7 @@
 	insertion_whitelist = list(/obj/item/inflatable)
 	suit_storage_class = SUIT_STORAGE_CLASS_HARDWEAR
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/inflatable = 4,
 		/obj/item/inflatable/door = 3,
 	)

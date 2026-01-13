@@ -8,83 +8,59 @@
 /obj/item/storage/briefcase/fission/uranium
 	name = "lead lined uranium carrying case"
 	icon_state = "carrycaserad"
-	starts_with = list(
-		/obj/item/fuelrod/uranium,
-		/obj/item/fuelrod/uranium,
-		/obj/item/fuelrod/uranium,
-		/obj/item/fuelrod/uranium
+	starts_with = alist(
+		/obj/item/fuelrod/uranium = 4,
 	)
 
 /obj/item/storage/briefcase/fission/plutonium
 	name = "lead lined plutonium carrying case"
 	icon_state = "carrycaserad"
-	starts_with = list(
-		/obj/item/fuelrod/plutonium,
-		/obj/item/fuelrod/plutonium,
-		/obj/item/fuelrod/plutonium,
-		/obj/item/fuelrod/plutonium
+	starts_with = alist(
+		/obj/item/fuelrod/plutonium = 4,
 	)
 
 /obj/item/storage/briefcase/fission/beryllium
 	name = "lead lined beryllium carrying case"
-	starts_with = list(
-		/obj/item/fuelrod/beryllium,
-		/obj/item/fuelrod/beryllium,
-		/obj/item/fuelrod/beryllium,
-		/obj/item/fuelrod/beryllium
+	starts_with = alist(
+		/obj/item/fuelrod/beryllium = 4,
 	)
 
 /obj/item/storage/briefcase/fission/tungstencarbide
 	name = "lead lined tungsten carbide carrying case"
-	starts_with = list(
-		/obj/item/fuelrod/tungstencarbide,
-		/obj/item/fuelrod/tungstencarbide,
-		/obj/item/fuelrod/tungstencarbide,
-		/obj/item/fuelrod/tungstencarbide
+	starts_with = alist(
+		/obj/item/fuelrod/tungstencarbide = 4,
 	)
 
 /obj/item/storage/briefcase/fission/silver
 	name = "lead lined silver carrying case"
-	starts_with = list(
-		/obj/item/fuelrod/silver,
-		/obj/item/fuelrod/silver,
-		/obj/item/fuelrod/silver,
-		/obj/item/fuelrod/silver
+	starts_with = alist(
+		/obj/item/fuelrod/silver = 4,
 	)
 
 /obj/item/storage/briefcase/fission/boron
 	name = "lead lined boron carrying case"
-	starts_with = list(
-		/obj/item/fuelrod/boron,
-		/obj/item/fuelrod/boron,
-		/obj/item/fuelrod/boron,
-		/obj/item/fuelrod/boron
+	starts_with = alist(
+		/obj/item/fuelrod/boron = 4,
 	)
 
 /obj/item/storage/briefcase/fission/fuelmixed
 	name = "lead lined fuel rod case"
 	icon_state = "carrycaserad"
-	starts_with = list(
-		/obj/item/fuelrod/uranium,
-		/obj/item/fuelrod/uranium,
-		/obj/item/fuelrod/plutonium,
-		/obj/item/fuelrod/plutonium
+	starts_with = alist(
+		/obj/item/fuelrod/uranium = 2,
+		/obj/item/fuelrod/plutonium = 2,
 	)
 
 /obj/item/storage/briefcase/fission/reflectormixed
 	name = "lead lined reflector rod case"
-	starts_with = list(
-		/obj/item/fuelrod/tungstencarbide,
-		/obj/item/fuelrod/beryllium,
-		/obj/item/fuelrod/beryllium,
-		/obj/item/fuelrod/beryllium
+	starts_with = alist(
+		/obj/item/fuelrod/tungstencarbide = 1,
+		/obj/item/fuelrod/beryllium = 3,
 	)
 
 /obj/item/storage/briefcase/fission/controlmixed
 	name = "lead lined control rod case"
-	starts_with = list(
-		/obj/item/fuelrod/boron,
-		/obj/item/fuelrod/silver,
-		/obj/item/fuelrod/silver,
-		/obj/item/fuelrod/silver
+	starts_with = alist(
+		/obj/item/fuelrod/boron = 1,
+		/obj/item/fuelrod/silver = 3,
 	)

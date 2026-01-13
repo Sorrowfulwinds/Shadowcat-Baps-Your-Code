@@ -3,20 +3,20 @@
 	desc = "It's a storage unit for athletic wear."
 	closet_appearance = /singleton/closet_appearance/wardrobe/mixed
 
-	starts_with = list(
-		/obj/item/clothing/under/shorts/grey,
-		/obj/item/clothing/under/shorts/black,
-		/obj/item/clothing/under/shorts/red,
-		/obj/item/clothing/under/shorts/blue,
-		/obj/item/clothing/under/shorts/green,
-		/obj/item/clothing/under/swimsuit/red,
-		/obj/item/clothing/under/swimsuit/black,
-		/obj/item/clothing/under/swimsuit/blue,
-		/obj/item/clothing/under/swimsuit/green,
-		/obj/item/clothing/under/swimsuit/purple,
-		/obj/item/clothing/under/swimsuit/striped,
-		/obj/item/clothing/under/swimsuit/white,
-		/obj/item/clothing/under/swimsuit/earth,
+	starts_with = alist(
+		/obj/item/clothing/under/shorts/grey = 1,
+		/obj/item/clothing/under/shorts/black = 1,
+		/obj/item/clothing/under/shorts/red = 1,
+		/obj/item/clothing/under/shorts/blue = 1,
+		/obj/item/clothing/under/shorts/green = 1,
+		/obj/item/clothing/under/swimsuit/red = 1,
+		/obj/item/clothing/under/swimsuit/black = 1,
+		/obj/item/clothing/under/swimsuit/blue = 1,
+		/obj/item/clothing/under/swimsuit/green = 1,
+		/obj/item/clothing/under/swimsuit/purple = 1,
+		/obj/item/clothing/under/swimsuit/striped = 1,
+		/obj/item/clothing/under/swimsuit/white = 1,
+		/obj/item/clothing/under/swimsuit/earth = 1,
 		/obj/item/clothing/mask/snorkel = 2,
 		/obj/item/clothing/shoes/swimmingfins = 2,
 		/obj/item/reagent_containers/spray/squirt = 2)
@@ -25,20 +25,20 @@
 	name = "boxing gloves"
 	desc = "It's a storage unit for gloves for use in the boxing ring."
 
-	starts_with = list(
-		/obj/item/clothing/gloves/boxing/blue,
-		/obj/item/clothing/gloves/boxing/green,
-		/obj/item/clothing/gloves/boxing/yellow,
-		/obj/item/clothing/gloves/boxing)
+	starts_with = alist(
+		/obj/item/clothing/gloves/boxing/blue = 1,
+		/obj/item/clothing/gloves/boxing/green = 1,
+		/obj/item/clothing/gloves/boxing/yellow = 1,
+		/obj/item/clothing/gloves/boxing = 1)
 
 /obj/structure/closet/masks
 	name = "mask closet"
 	desc = "IT'S A STORAGE UNIT FOR FIGHTER MASKS OLE!"
 
-	starts_with = list(
-		/obj/item/clothing/mask/luchador,
-		/obj/item/clothing/mask/luchador/rudos,
-		/obj/item/clothing/mask/luchador/tecnicos)
+	starts_with = alist(
+		/obj/item/clothing/mask/luchador = 1,
+		/obj/item/clothing/mask/luchador/rudos = 1,
+		/obj/item/clothing/mask/luchador/tecnicos = 1)
 
 
 /obj/structure/closet/lasertag/red
@@ -46,7 +46,7 @@
 	desc = "It's a storage unit for laser tag equipment."
 	closet_appearance = /singleton/closet_appearance/wardrobe/red
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/gun/projectile/energy/lasertag/red = 5,
 		/obj/item/clothing/suit/redtag = 5)
 
@@ -56,6 +56,6 @@
 	desc = "It's a storage unit for laser tag equipment."
 	closet_appearance = /singleton/closet_appearance/wardrobe/legal
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/gun/projectile/energy/lasertag/blue = 5,
 		/obj/item/clothing/suit/bluetag = 5)

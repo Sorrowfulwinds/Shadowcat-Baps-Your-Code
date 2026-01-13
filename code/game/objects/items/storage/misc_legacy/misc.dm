@@ -9,7 +9,7 @@
 	max_combined_volume = WEIGHT_VOLUME_SMALL * 6
 	insertion_whitelist = list(/obj/item/reagent_containers/food/snacks/donut)
 	foldable = /obj/item/stack/material/cardboard
-	starts_with = list(/obj/item/reagent_containers/food/snacks/donut/normal = 6)
+	starts_with = alist(/obj/item/reagent_containers/food/snacks/donut/normal = 6)
 
 /obj/item/storage/box/donut/Initialize(mapload)
 	. = ..()
@@ -42,7 +42,7 @@
 		/obj/item/reagent_containers/food/snacks/worm,
 		/obj/item/reagent_containers/food/snacks/wormdeluxe
 	)
-	starts_with = list(/obj/item/reagent_containers/food/snacks/worm = 6)
+	starts_with = alist(/obj/item/reagent_containers/food/snacks/worm = 6)
 
 /obj/item/storage/box/wormcan/Initialize(mapload)
 	. = ..()
@@ -61,7 +61,7 @@
 	name = "can of sickly worms"
 	desc = "You probably don't want to open this can of worms."
 	max_combined_volume = WEIGHT_VOLUME_TINY * 6
-	starts_with = list(/obj/item/reagent_containers/food/snacks/wormsickly = 6)
+	starts_with = alist(/obj/item/reagent_containers/food/snacks/wormsickly = 6)
 
 /obj/item/storage/box/wormcan/sickly/update_icon_state()
 	icon_state = length(contents) ? "wormcan_empty_sickly" : "wormcan_sickly"
@@ -72,7 +72,7 @@
 	name = "can of deluxe worms"
 	desc = "You absolutely want to open this can of worms."
 	max_combined_volume = WEIGHT_VOLUME_TINY * 6
-	starts_with = list(/obj/item/reagent_containers/food/snacks/wormdeluxe = 6)
+	starts_with = alist(/obj/item/reagent_containers/food/snacks/wormdeluxe = 6)
 
 /obj/item/storage/box/wormcan/deluxe/update_icon(var/itemremoved = 0)
 	icon_state = length(contents) ? "wormcan_deluxe" : "wormcan_empty_deluxe"
@@ -98,7 +98,9 @@
 		/obj/item/flame/match,
 		/obj/item/flame/lighter
 		)
-	starts_with = list(/obj/item/pen/crayon/chalk, /obj/item/reagent_containers/pill/nutriment, /obj/item/gps/survival)
+	starts_with = alist(/obj/item/pen/crayon/chalk = 1,
+						/obj/item/reagent_containers/pill/nutriment = 1,
+						/obj/item/gps/survival = 1)
 
 /obj/item/storage/box/survival_knife/attack_self(mob/user, datum/event_args/actor/actor)
 	return
@@ -201,7 +203,7 @@
 	insertion_whitelist = list(
 		/obj/item/ammo_casing/musket
 		)
-	starts_with = list(/obj/item/ammo_casing/musket = 6)
+	starts_with = alist(/obj/item/ammo_casing/musket = 6)
 
 /obj/item/storage/box/munition_box/empty
-	starts_with = list()
+	starts_with = alist()
