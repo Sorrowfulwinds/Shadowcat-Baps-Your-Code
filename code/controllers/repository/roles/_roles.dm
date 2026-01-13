@@ -11,7 +11,7 @@ REPOSITORY_DEF(roles)
  * TRUE/FALSE
  */
 /datum/controller/repository/roles/proc/verify_id(id)
-	for(var/datum/prototype/role/r as anything in fetch_subtypes_immutable(/datum/prototype/role))
+	for(var/datum/prototype/role/r in fetch_subtypes_immutable(/datum/prototype/role))
 		if (r.id == id)
 			return TRUE
 	return FALSE

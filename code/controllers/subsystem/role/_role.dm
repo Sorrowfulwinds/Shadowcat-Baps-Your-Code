@@ -1,3 +1,6 @@
+/**
+ * Subsystem for tracking available roles/jobs/ghostroles/antagonists/whatever and the total slots available for those roles.
+ */
 SUBSYSTEM_DEF(role)
 	name = "Role"
 	init_order = INIT_ORDER_JOBS
@@ -21,9 +24,12 @@ SUBSYSTEM_DEF(role)
 /**
  * Adds [count] of [id] slots to the game. Invalidates role cache.
  */
-/datum/controller/subsystem/role/proc/add_slots(id, count = 0)
+/datum/controller/subsystem/role/proc/add_slots(id, count = 0, _register = TRUE)
 	if (!RSroles.verify_id(id))
+		//TODO CAT: Output an error for this. Bad id here means bad code somewhere else.
 		return
+	if (_register)
+		_sort_jobs_into_departments(alist(id = count))
 	count = abs(count)
 	//Add change to existing entry, else set new entry.
 	roles_total[id] = (roles_total[id] ? (roles_total[id] + count) : count)
@@ -37,6 +43,7 @@ SUBSYSTEM_DEF(role)
  */
 /datum/controller/subsystem/role/proc/remove_slots(id, count = 0)
 	if (!RSroles.verify_id(id))
+		//TODO CAT: Output an error for this. Bad id here means bad code somewhere else.
 		return
 	if (isnull(roles_total[id]))
 		return
@@ -59,6 +66,7 @@ SUBSYSTEM_DEF(role)
 /datum/controller/subsystem/role/proc/fill_role(id)
 	if (!RSroles.verify_id(id))
 		return
+		//TODO CAT: Also output a warning here.
 	if (isnull(roles_open[id]))
 		return
 
@@ -72,11 +80,23 @@ SUBSYSTEM_DEF(role)
 /datum/controller/subsystem/role/proc/unfill_role(id)
 	if (!RSroles.verify_id(id))
 		return
+		//TODO CAT: also also put a warning here too.
 	if (isnull(roles_open[id]))
 		return
 
 	if ((roles_open[id] + 1) <= roles_total[id])
 		roles_open[id] += 1
+
+/**
+ * add_slots but for entire alists of roles
+ * @params
+ *  - fresh_roles - The roles alist of ID - Count you want to add.
+ * @returns void
+ */
+/datum/controller/subsystem/role/proc/bulk_add_slots(alist/fresh_roles)
+	for(var/role, count in fresh_roles)
+		add_slots(role, count, FALSE)
+	_sort_jobs_into_departments(fresh_roles)
 
 /**
  * Returns FALSE if [id] has no open positions. Else returns the # of available positions.

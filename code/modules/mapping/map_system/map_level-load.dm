@@ -29,6 +29,9 @@
  */
 /datum/map_level/proc/on_loaded_finalize(z_index)
 	SHOULD_CALL_PARENT(TRUE)
+	//After map is fully loaded. Tell SSrole to add our roles.
+	if(roles)
+		SSrole.bulk_add_slots(roles)
 
 //* Unloading *//
 

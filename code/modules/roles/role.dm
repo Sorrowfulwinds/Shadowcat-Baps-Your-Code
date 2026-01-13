@@ -105,7 +105,7 @@
 		return "No open positions for this role. Please refresh your menu."
 
 	var/bancheck = jobban_isbanned(player, id)
-	if (bancheck)
+	if(bancheck)
 		return "You cannot spawn due to a role ban. Reason: [bancheck]"
 
 	if(whitelisted && !Configuration.check_role_whitelist(id, player.client.ckey))

@@ -135,6 +135,11 @@
 	//! legacy : spawn these shuttle datums on load
 	var/list/legacy_assert_shuttle_datums
 
+	//* Roles - SSroles *//
+	/// All roles available on this map to pass to SSroles after load. Associated as ID - Count. This is unique from roles on map_level.
+	var/tmp/alist/roles
+	///
+
 /datum/map/New()
 	// resolve overmap initializer
 	if(ispath(overmap_initializer) || IS_ANONYMOUS_TYPEPATH(overmap_initializer))

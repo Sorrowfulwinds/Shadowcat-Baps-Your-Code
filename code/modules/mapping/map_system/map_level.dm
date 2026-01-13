@@ -216,6 +216,11 @@
 	/// additional mesh heuristic per 1000 objects
 	var/persistent_trash_mesh_heuristic_escalate_per_thousand = OBJ_PERSIST_DEFAULT_TUNING_TRASH_MESH_HEURISTIC_ESCALATE_PER_THOUSAND
 
+	//* Roles - SSroles *//
+	/// All roles available on this map_level to pass to SSroles after load. Associated as ID - Count.
+	var/tmp/alist/roles
+	///
+
 /datum/map_level/New(datum/map/parent_map)
 	src.parent_map = parent_map
 
