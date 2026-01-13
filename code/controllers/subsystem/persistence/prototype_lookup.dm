@@ -15,7 +15,7 @@
 		var/atom/casted = path
 		var/casted_id = initial(casted.prototype_id)
 
-		if(casted == last)
+		if(casted_id == last)
 			continue
 		if(constructing[casted_id])
 			continue
