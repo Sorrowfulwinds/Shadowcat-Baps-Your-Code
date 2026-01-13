@@ -25,7 +25,7 @@
 	icon_closed = "syndicate1"
 	icon_opened = "syndicate1open"
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/head/ushanka = 5,
 		/obj/item/clothing/under/soviet = 5)
 
@@ -37,9 +37,9 @@
 	icon_closed = "syndicate1"
 	icon_opened = "syndicate1open"
 
-	starts_with = list(
-		/obj/item/clothing/glasses/eyepatch,
-		/obj/item/clothing/glasses/sunglasses,
+	starts_with = alist(
+		/obj/item/clothing/glasses/eyepatch = 1,
+		/obj/item/clothing/glasses/sunglasses = 1,
 		/obj/item/clothing/mask/gas = 2,
 		/obj/item/clothing/under/syndicate/tacticool = 2)
 
@@ -55,7 +55,7 @@
 /obj/structure/closet/thunderdome/tdred
 	name = "red-team Thunderdome closet"
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/armor/tdome/red = 3,
 		/obj/item/melee/transforming/energy/sword = 3,
 		/obj/item/gun/projectile/energy/laser = 3,
@@ -69,7 +69,7 @@
 	icon_closed = "syndicate1"
 	icon_opened = "syndicate1open"
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/armor/tdome/green = 3,
 		/obj/item/melee/transforming/energy/sword = 3,
 		/obj/item/gun/projectile/energy/laser = 3,

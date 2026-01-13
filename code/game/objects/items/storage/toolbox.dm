@@ -21,10 +21,10 @@
 	name = "emergency toolbox"
 	icon_state = "red"
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "toolbox_red", SLOT_ID_LEFT_HAND = "toolbox_red")
-	starts_with = list(
-		/obj/item/tool/crowbar/red,
-		/obj/item/extinguisher/mini,
-		/obj/item/radio
+	starts_with = alist(
+		/obj/item/tool/crowbar/red = 1,
+		/obj/item/extinguisher/mini = 1,
+		/obj/item/radio = 1
 	)
 /obj/item/storage/toolbox/emergency/Initialize(mapload)
 	if(prob(50))
@@ -37,26 +37,25 @@
 	name = "mechanical toolbox"
 	icon_state = "blue"
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "toolbox_blue", SLOT_ID_LEFT_HAND = "toolbox_blue")
-	starts_with = list(
-		/obj/item/tool/screwdriver,
-		/obj/item/tool/wrench,
-		/obj/item/weldingtool,
-		/obj/item/tool/crowbar,
-		/obj/item/atmos_analyzer,
-		/obj/item/tool/wirecutters
+	starts_with = alist(
+		/obj/item/tool/screwdriver = 1,
+		/obj/item/tool/wrench = 1,
+		/obj/item/weldingtool = 1,
+		/obj/item/tool/crowbar = 1,
+		/obj/item/atmos_analyzer = 1,
+		/obj/item/tool/wirecutters = 1
 	)
 
 /obj/item/storage/toolbox/electrical
 	name = "electrical toolbox"
 	icon_state = "yellow"
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "toolbox_yellow", SLOT_ID_LEFT_HAND = "toolbox_yellow")
-	starts_with = list(
-		/obj/item/tool/screwdriver,
-		/obj/item/tool/wirecutters,
-		/obj/item/t_scanner,
-		/obj/item/tool/crowbar,
-		/obj/item/stack/cable_coil/random_belt,
-		/obj/item/stack/cable_coil/random_belt
+	starts_with = alist(
+		/obj/item/tool/screwdriver = 1,
+		/obj/item/tool/wirecutters = 1,
+		/obj/item/t_scanner = 1,
+		/obj/item/tool/crowbar = 1,
+		/obj/item/stack/cable_coil/random_belt = 2,
 	)
 /obj/item/storage/toolbox/electrical/Initialize(mapload)
 	. = ..()
@@ -72,25 +71,25 @@
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "toolbox_syndi", SLOT_ID_LEFT_HAND = "toolbox_syndi")
 	origin_tech = list(TECH_COMBAT = 1, TECH_ILLEGAL = 1)
 	damage_force = 14
-	starts_with = list(
-		/obj/item/clothing/gloves/yellow,
-		/obj/item/tool/screwdriver,
-		/obj/item/tool/wrench,
-		/obj/item/weldingtool,
-		/obj/item/tool/crowbar,
-		/obj/item/tool/wirecutters,
-		/obj/item/multitool
+	starts_with = alist(
+		/obj/item/clothing/gloves/yellow = 1,
+		/obj/item/tool/screwdriver = 1,
+		/obj/item/tool/wrench = 1,
+		/obj/item/weldingtool = 1,
+		/obj/item/tool/crowbar = 1,
+		/obj/item/tool/wirecutters = 1,
+		/obj/item/multitool = 1
 	)
 
 /obj/item/storage/toolbox/syndicate/powertools
-	starts_with = list(
-		/obj/item/clothing/gloves/yellow,
-		/obj/item/tool/screwdriver/power,
-		/obj/item/weldingtool/experimental,
-		/obj/item/tool/crowbar/power,
-		/obj/item/multitool,
-		/obj/item/stack/cable_coil/random_belt,
-		/obj/item/atmos_analyzer
+	starts_with = alist(
+		/obj/item/clothing/gloves/yellow = 1,
+		/obj/item/tool/screwdriver/power = 1,
+		/obj/item/weldingtool/experimental = 1,
+		/obj/item/tool/crowbar/power = 1,
+		/obj/item/multitool = 1,
+		/obj/item/stack/cable_coil/random_belt = 1,
+		/obj/item/atmos_analyzer = 1
 	)
 
 /obj/item/storage/toolbox/gold_fake // used in crafting

@@ -6,43 +6,43 @@
 /obj/structure/closet/syndicate/personal
 	desc = "It's a storage unit for operative gear."
 
-	starts_with = list(
-		/obj/item/tank/jetpack/oxygen,
-		/obj/item/clothing/mask/gas/syndicate,
-		/obj/item/clothing/under/syndicate,
-		/obj/item/clothing/head/helmet/space/void/merc,
-		/obj/item/clothing/suit/space/void/merc,
-		/obj/item/tool/crowbar/red,
-		/obj/item/cell/basic/tier_4/medium,
-		/obj/item/cell/basic/tier_4/weapon,
-		/obj/item/card/id/syndicate,
-		/obj/item/multitool,
-		/obj/item/shield/transforming/energy,
-		/obj/item/clothing/shoes/magboots)
+	starts_with = alist(
+		/obj/item/tank/jetpack/oxygen = 1,
+		/obj/item/clothing/mask/gas/syndicate = 1,
+		/obj/item/clothing/under/syndicate = 1,
+		/obj/item/clothing/head/helmet/space/void/merc = 1,
+		/obj/item/clothing/suit/space/void/merc = 1,
+		/obj/item/tool/crowbar/red = 1,
+		/obj/item/cell/basic/tier_4/medium = 1,
+		/obj/item/cell/basic/tier_4/weapon = 1,
+		/obj/item/card/id/syndicate = 1,
+		/obj/item/multitool = 1,
+		/obj/item/shield/transforming/energy = 1,
+		/obj/item/clothing/shoes/magboots = 1)
 
 
 /obj/structure/closet/syndicate/suit
 	desc = "It's a storage unit for voidsuits."
 
-	starts_with = list(
-		/obj/item/tank/jetpack/oxygen,
-		/obj/item/clothing/shoes/magboots,
-		/obj/item/clothing/suit/space/void/merc,
-		/obj/item/clothing/mask/gas/syndicate,
-		/obj/item/clothing/head/helmet/space/void/merc)
+	starts_with = alist(
+		/obj/item/tank/jetpack/oxygen = 1,
+		/obj/item/clothing/shoes/magboots = 1,
+		/obj/item/clothing/suit/space/void/merc = 1,
+		/obj/item/clothing/mask/gas/syndicate = 1,
+		/obj/item/clothing/head/helmet/space/void/merc = 1)
 
 
 /obj/structure/closet/syndicate/nuclear
 	desc = "It's a storage unit for nuclear-operative gear."
 
-	starts_with = list(
+	starts_with = alist(
 	/obj/item/ammo_magazine/a10mm = 5,
-	/obj/item/storage/box/handcuffs,
-	/obj/item/storage/box/flashbangs,
+	/obj/item/storage/box/handcuffs = 1,
+	/obj/item/storage/box/flashbangs = 1,
 	/obj/item/gun/projectile/energy/gun = 5,
 	/obj/item/pinpointer/nukeop = 5,
-	/obj/item/pda/syndicate,
-	/obj/item/radio/uplink)
+	/obj/item/pda/syndicate = 1,
+	/obj/item/radio/uplink = 1)
 
 /obj/structure/closet/syndicate/resources
 	desc = "An old, dusty locker."
@@ -126,13 +126,13 @@
 /obj/structure/closet/syndicate/clownops/personal
 	desc = "It's a storage unit for operative gear."
 
-	starts_with = list(
-		/obj/item/tank/jetpack/oxygen,
-		/obj/item/clothing/mask/gas/clown_hat,
-		/obj/item/clothing/under/rank/clown,
-		/obj/item/bikehorn,
-		/obj/item/bananapeel,
-		/obj/item/card/id/syndicate,
-		/obj/item/assembly/mousetrap/armed,
-		/obj/item/grenade/simple/chemical/premade/lube_tactical,
-		/obj/item/clothing/shoes/clown_shoes)
+	starts_with = alist(
+		/obj/item/tank/jetpack/oxygen = 1,
+		/obj/item/clothing/mask/gas/clown_hat = 1,
+		/obj/item/clothing/under/rank/clown = 1,
+		/obj/item/bikehorn = 1,
+		/obj/item/bananapeel = 1,
+		/obj/item/card/id/syndicate = 1,
+		/obj/item/assembly/mousetrap/armed = 1,
+		/obj/item/grenade/simple/chemical/premade/lube_tactical = 1,
+		/obj/item/clothing/shoes/clown_shoes = 1)

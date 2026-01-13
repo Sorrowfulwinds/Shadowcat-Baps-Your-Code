@@ -134,13 +134,13 @@
 	anchored = 1
 	density = 0
 
-	starts_with = list(
-		/obj/item/clothing/suit/fire/firefighter,
-		/obj/item/clothing/mask/gas,
-		/obj/item/flashlight,
-		/obj/item/tank/oxygen/red,
-		/obj/item/extinguisher,
-		/obj/item/clothing/head/hardhat/red)
+	starts_with = alist(
+		/obj/item/clothing/suit/fire/firefighter = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/flashlight = 1,
+		/obj/item/tank/oxygen/red = 1,
+		/obj/item/extinguisher = 1,
+		/obj/item/clothing/head/hardhat/red = 1)
 
 /obj/structure/closet/walllocker_double/hydrant/north
 	pixel_y = 32

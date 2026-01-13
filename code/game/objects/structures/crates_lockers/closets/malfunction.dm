@@ -4,12 +4,12 @@
 	icon_closed = "syndicate"
 	icon_opened = "syndicateopen"
 
-	starts_with = list(
-		/obj/item/tank/jetpack/void,
-		/obj/item/clothing/mask/breath,
-		/obj/item/clothing/head/helmet/space/void,
-		/obj/item/clothing/suit/space/void,
-		/obj/item/tool/crowbar,
-		/obj/item/cell/basic/tier_2/medium,
-		/obj/item/multitool,
+	starts_with = alist(
+		/obj/item/tank/jetpack/void = 1,
+		/obj/item/clothing/mask/breath = 1,
+		/obj/item/clothing/head/helmet/space/void = 1,
+		/obj/item/clothing/suit/space/void = 1,
+		/obj/item/tool/crowbar = 1,
+		/obj/item/cell/basic/tier_2/medium = 1,
+		/obj/item/multitool = 1,
 	)

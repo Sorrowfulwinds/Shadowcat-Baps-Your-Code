@@ -51,15 +51,15 @@
 	name = "Xenoarchaeologist Locker"
 	req_access = list(ACCESS_SCIENCE_TOXINS)
 
-	starts_with = list(
-		/obj/item/clothing/under/rank/scientist,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
-		/obj/item/clothing/shoes/white,
-		/obj/item/melee/umbrella,
-		/obj/item/clothing/glasses/science,
-		/obj/item/radio/headset/headset_sci,
-		/obj/item/storage/belt/archaeology,
-		/obj/item/storage/excavation)
+	starts_with = alist(
+		/obj/item/clothing/under/rank/scientist = 1,
+		/obj/item/clothing/suit/storage/toggle/labcoat = 1,
+		/obj/item/clothing/shoes/white = 1,
+		/obj/item/melee/umbrella = 1,
+		/obj/item/clothing/glasses/science = 1,
+		/obj/item/radio/headset/headset_sci = 1,
+		/obj/item/storage/belt/archaeology = 1,
+		/obj/item/storage/excavation = 1)
 
 /obj/structure/closet/excavation
 	name = "Excavation tools"
@@ -67,28 +67,25 @@
 	icon_closed = "toolcloset"
 	icon_opened = "toolclosetopen"
 
-	starts_with = list(
-		/obj/item/storage/belt/archaeology,
-		/obj/item/storage/excavation,
-		/obj/item/flashlight/lantern,
-		/obj/item/ano_scanner,
-		/obj/item/depth_scanner,
-		/obj/item/core_sampler,
-		/obj/item/gps,
-		/obj/item/clothing/glasses/meson,
-		/obj/item/pickaxe,
-		/obj/item/measuring_tape,
-		/obj/item/pickaxe/hand,
-		/obj/item/storage/bag/fossils,
-		/obj/item/camera_film,
-		/obj/item/camera_film,
-		/obj/item/camera_film,
-		/obj/item/camera,
-		/obj/item/storage/box/evidence,
-		/obj/item/storage/box/evidence,
-		/obj/item/storage/secure/briefcase,
-		/obj/item/paper_bin,
-		/obj/item/hand_labeler)
+	starts_with = alist(
+		/obj/item/storage/belt/archaeology = 1,
+		/obj/item/storage/excavation = 1,
+		/obj/item/flashlight/lantern = 1,
+		/obj/item/ano_scanner = 1,
+		/obj/item/depth_scanner = 1,
+		/obj/item/core_sampler = 1,
+		/obj/item/gps = 1,
+		/obj/item/clothing/glasses/meson = 1,
+		/obj/item/pickaxe = 1,
+		/obj/item/measuring_tape = 1,
+		/obj/item/pickaxe/hand = 1,
+		/obj/item/storage/bag/fossils = 1,
+		/obj/item/camera_film = 3,
+		/obj/item/camera = 1,
+		/obj/item/storage/box/evidence = 2,
+		/obj/item/storage/secure/briefcase = 1,
+		/obj/item/paper_bin = 1,
+		/obj/item/hand_labeler = 1)
 
 /obj/machinery/air_alarm/isolation
 	req_one_access = list(ACCESS_SCIENCE_MAIN, ACCESS_ENGINEERING_ATMOS, ACCESS_ENGINEERING_ENGINE)

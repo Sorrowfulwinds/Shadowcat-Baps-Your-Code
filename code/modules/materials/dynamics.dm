@@ -127,7 +127,7 @@
 /datum/controller/subsystem/materials/proc/reinforcing_materials_armor(list/datum/prototype/material/materials)
 	var/list/cache_key = list()
 	for(var/datum/prototype/material/mat as anything in materials)
-		if(isnull(mat))
+		if(!istype(mat))
 			continue
 		cache_key += "[mat.id]-[materials[mat]]"
 	cache_key = jointext(cache_key, ";")
@@ -136,7 +136,7 @@
 		return resolved
 	var/list/datum/armor/collected = list()
 	for(var/datum/prototype/material/mat as anything in materials)
-		if(isnull(mat))
+		if(!istype(mat))
 			continue
 		collected[mat.create_armor(materials[mat]).to_list()] = materials[mat]
 
@@ -166,7 +166,7 @@
 /datum/controller/subsystem/materials/proc/wall_materials_armor(list/datum/prototype/material/materials)
 	var/list/cache_key = list()
 	for(var/datum/prototype/material/mat as anything in materials)
-		if(isnull(mat))
+		if(!istype(mat))
 			continue
 		cache_key += "[mat.id]-[materials[mat]]"
 	cache_key = jointext(cache_key, ";")
@@ -175,7 +175,7 @@
 		return resolved
 	var/list/datum/armor/collected = list()
 	for(var/datum/prototype/material/mat as anything in materials)
-		if(isnull(mat))
+		if(!istype(mat))
 			continue
 		collected[mat.create_armor(materials[mat]).to_list()] = materials[mat]
 

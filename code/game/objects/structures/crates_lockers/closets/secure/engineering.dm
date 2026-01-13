@@ -3,37 +3,37 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/engineering/ce
 	req_access = list(ACCESS_ENGINEERING_CE)
 
-	starts_with = list(
-		/obj/item/clothing/shoes/magboots/advanced,
-		/obj/item/clothing/accessory/storage/brown_vest,
-		/obj/item/blueprints,
-		/obj/item/clothing/under/rank/chief_engineer,
-		/obj/item/clothing/under/rank/chief_engineer/skirt,
-		/obj/item/clothing/under/rank/chief_engineer/skirt_pleated,
-		/obj/item/clothing/head/hardhat/white,
-		/obj/item/clothing/head/welding,
-		/obj/item/clothing/gloves/yellow,
-		/obj/item/clothing/shoes/brown,
-		/obj/item/cartridge/ce,
-		/obj/item/radio/headset/heads/ce,
-		/obj/item/radio/headset/heads/ce/alt,
-		/obj/item/storage/toolbox/mechanical,
-		/obj/item/clothing/suit/storage/hazardvest,
-		/obj/item/clothing/mask/gas,
-		/obj/item/multitool,
-		/obj/item/storage/belt/utility/chief/full,
-		/obj/item/flash,
-		/obj/item/t_scanner/upgraded,
-		/obj/item/barrier_tape_roll/engineering,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering/ce,
-		/obj/item/clothing/shoes/boots/winter/engineering,
-		/obj/item/tank/emergency/oxygen/engi,
-		/obj/item/gps/engineering/ce,
-		/obj/item/reagent_containers/spray/windowsealant,
-		/obj/item/pipe_dispenser,
-		/obj/item/shield_diffuser,
-		/obj/item/switchtool/holo/CE,
-		/obj/item/clothing/accessory/poncho/roles/cloak/ce,
+	starts_with = alist(
+		/obj/item/clothing/shoes/magboots/advanced = 1,
+		/obj/item/clothing/accessory/storage/brown_vest = 1,
+		/obj/item/blueprints = 1,
+		/obj/item/clothing/under/rank/chief_engineer = 1,
+		/obj/item/clothing/under/rank/chief_engineer/skirt = 1,
+		/obj/item/clothing/under/rank/chief_engineer/skirt_pleated = 1,
+		/obj/item/clothing/head/hardhat/white = 1,
+		/obj/item/clothing/head/welding = 1,
+		/obj/item/clothing/gloves/yellow = 1,
+		/obj/item/clothing/shoes/brown = 1,
+		/obj/item/cartridge/ce = 1,
+		/obj/item/radio/headset/heads/ce = 1,
+		/obj/item/radio/headset/heads/ce/alt = 1,
+		/obj/item/storage/toolbox/mechanical = 1,
+		/obj/item/clothing/suit/storage/hazardvest = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/multitool = 1,
+		/obj/item/storage/belt/utility/chief/full = 1,
+		/obj/item/flash = 1,
+		/obj/item/t_scanner/upgraded = 1,
+		/obj/item/barrier_tape_roll/engineering = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering/ce = 1,
+		/obj/item/clothing/shoes/boots/winter/engineering = 1,
+		/obj/item/tank/emergency/oxygen/engi = 1,
+		/obj/item/gps/engineering/ce = 1,
+		/obj/item/reagent_containers/spray/windowsealant = 1,
+		/obj/item/pipe_dispenser = 1,
+		/obj/item/shield_diffuser = 1,
+		/obj/item/switchtool/holo/CE = 1,
+		/obj/item/clothing/accessory/poncho/roles/cloak/ce = 1,
 		)
 
 /obj/structure/closet/secure_closet/engineering_chief/Initialize(mapload)
@@ -50,7 +50,7 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/engineering/electrical
 	req_access = list(ACCESS_ENGINEERING_ENGINE)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/gloves/yellow = 2,
 		/obj/item/storage/toolbox/electrical = 3,
 		/obj/item/module/power_control = 3,
@@ -64,7 +64,7 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/engineering/welding
 	req_access = list(ACCESS_ENGINEERING_CONSTRUCTION)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/head/welding = 3,
 		/obj/item/weldingtool/largetank = 3,
 		/obj/item/weldpack = 3,
@@ -75,24 +75,24 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/engineering
 	req_access = list(ACCESS_ENGINEERING_ENGINE)
 
-	starts_with = list(
-		/obj/item/clothing/accessory/storage/brown_vest,
-		/obj/item/storage/toolbox/mechanical,
-		/obj/item/radio/headset/headset_eng,
-		/obj/item/radio/headset/headset_eng/alt,
-		/obj/item/clothing/suit/storage/hazardvest,
-		/obj/item/clothing/under/bodysuit/bodysuithazard,
-		/obj/item/clothing/mask/gas,
-		/obj/item/clothing/glasses/meson,
-		/obj/item/cartridge/engineering,
-		/obj/item/barrier_tape_roll/engineering,
-		/obj/item/clothing/head/hardhat,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering,
-		/obj/item/clothing/shoes/boots/winter/engineering,
-		/obj/item/tank/emergency/oxygen/engi,
-		/obj/item/gps/engineering,
-		/obj/item/reagent_containers/spray/windowsealant,
-		/obj/item/shield_diffuser,
+	starts_with = alist(
+		/obj/item/clothing/accessory/storage/brown_vest = 1,
+		/obj/item/storage/toolbox/mechanical = 1,
+		/obj/item/radio/headset/headset_eng = 1,
+		/obj/item/radio/headset/headset_eng/alt = 1,
+		/obj/item/clothing/suit/storage/hazardvest = 1,
+		/obj/item/clothing/under/bodysuit/bodysuithazard = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/clothing/glasses/meson = 1,
+		/obj/item/cartridge/engineering = 1,
+		/obj/item/barrier_tape_roll/engineering = 1,
+		/obj/item/clothing/head/hardhat = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering = 1,
+		/obj/item/clothing/shoes/boots/winter/engineering = 1,
+		/obj/item/tank/emergency/oxygen/engi = 1,
+		/obj/item/gps/engineering = 1,
+		/obj/item/reagent_containers/spray/windowsealant = 1,
+		/obj/item/shield_diffuser = 1,
 		)
 
 /obj/structure/closet/secure_closet/engineering_personal/Initialize(mapload)
@@ -110,24 +110,24 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/engineering/atmos
 	req_access = list(ACCESS_ENGINEERING_ATMOS)
 
-	starts_with = list(
-		/obj/item/clothing/accessory/storage/brown_vest,
-		/obj/item/clothing/suit/fire/firefighter,
-		/obj/item/clothing/head/hardhat/red,
-		/obj/item/flashlight,
-		/obj/item/extinguisher,
-		/obj/item/radio/headset/headset_eng,
-		/obj/item/radio/headset/headset_eng/alt,
-		/obj/item/clothing/suit/storage/hazardvest,
-		/obj/item/clothing/mask/gas,
-		/obj/item/cartridge/atmos,
-		/obj/item/barrier_tape_roll/atmos,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering/atmos,
-		/obj/item/clothing/shoes/boots/winter/atmos,
-		/obj/item/tank/emergency/oxygen/engi,
-		/obj/item/gps/engineering/atmos,
-		/obj/item/pipe_dispenser,
-		/obj/item/shield_diffuser,
+	starts_with = alist(
+		/obj/item/clothing/accessory/storage/brown_vest = 1,
+		/obj/item/clothing/suit/fire/firefighter = 1,
+		/obj/item/clothing/head/hardhat/red = 1,
+		/obj/item/flashlight = 1,
+		/obj/item/extinguisher = 1,
+		/obj/item/radio/headset/headset_eng = 1,
+		/obj/item/radio/headset/headset_eng/alt = 1,
+		/obj/item/clothing/suit/storage/hazardvest = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/cartridge/atmos = 1,
+		/obj/item/barrier_tape_roll/atmos = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering/atmos = 1,
+		/obj/item/clothing/shoes/boots/winter/atmos = 1,
+		/obj/item/tank/emergency/oxygen/engi = 1,
+		/obj/item/gps/engineering/atmos = 1,
+		/obj/item/pipe_dispenser = 1,
+		/obj/item/shield_diffuser = 1,
 		)
 
 /obj/structure/closet/secure_closet/atmos_personal/Initialize(mapload)
@@ -145,32 +145,32 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/engineering/senior
 	req_access = list(ACCESS_ENGINEERING_ENGINE)
 
-	starts_with = list(
-		/obj/item/clothing/accessory/storage/brown_vest,
-		/obj/item/storage/toolbox/mechanical,
-		/obj/item/radio/headset/headset_eng,
-		/obj/item/radio/headset/headset_eng/alt,
-		/obj/item/clothing/suit/storage/hazardvest,
-		/obj/item/clothing/under/bodysuit/bodysuithazard,
-		/obj/item/clothing/mask/gas,
-		/obj/item/clothing/glasses/meson,
-		/obj/item/cartridge/engineering,
-		/obj/item/barrier_tape_roll/engineering,
-		/obj/item/clothing/head/hardhat,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering,
-		/obj/item/clothing/shoes/boots/winter/engineering,
-		/obj/item/tank/emergency/oxygen/engi,
-		/obj/item/gps/engineering,
-		/obj/item/reagent_containers/spray/windowsealant,
-		/obj/item/shield_diffuser,
-		/obj/item/clothing/suit/fire/firefighter,
-		/obj/item/clothing/head/hardhat/red,
-		/obj/item/flashlight,
-		/obj/item/extinguisher,
-		/obj/item/cartridge/atmos,
-		/obj/item/barrier_tape_roll/atmos,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering/atmos,
-		/obj/item/clothing/shoes/boots/winter/atmos,
-		/obj/item/gps/engineering/atmos,
-		/obj/item/pipe_dispenser,
+	starts_with = alist(
+		/obj/item/clothing/accessory/storage/brown_vest = 1,
+		/obj/item/storage/toolbox/mechanical = 1,
+		/obj/item/radio/headset/headset_eng = 1,
+		/obj/item/radio/headset/headset_eng/alt = 1,
+		/obj/item/clothing/suit/storage/hazardvest = 1,
+		/obj/item/clothing/under/bodysuit/bodysuithazard = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/clothing/glasses/meson = 1,
+		/obj/item/cartridge/engineering = 1,
+		/obj/item/barrier_tape_roll/engineering = 1,
+		/obj/item/clothing/head/hardhat = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering = 1,
+		/obj/item/clothing/shoes/boots/winter/engineering = 1,
+		/obj/item/tank/emergency/oxygen/engi = 1,
+		/obj/item/gps/engineering = 1,
+		/obj/item/reagent_containers/spray/windowsealant = 1,
+		/obj/item/shield_diffuser = 1,
+		/obj/item/clothing/suit/fire/firefighter = 1,
+		/obj/item/clothing/head/hardhat/red = 1,
+		/obj/item/flashlight = 1,
+		/obj/item/extinguisher = 1,
+		/obj/item/cartridge/atmos = 1,
+		/obj/item/barrier_tape_roll/atmos = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering/atmos = 1,
+		/obj/item/clothing/shoes/boots/winter/atmos = 1,
+		/obj/item/gps/engineering/atmos = 1,
+		/obj/item/pipe_dispenser = 1,
 		)

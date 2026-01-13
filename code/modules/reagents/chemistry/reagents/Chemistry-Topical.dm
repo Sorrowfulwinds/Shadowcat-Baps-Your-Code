@@ -173,7 +173,7 @@
 /obj/item/storage/box/touch_bottles
 	name = "Box of Touch-Medicine"
 	desc = "A box with already prepared Medicine for application via touch."
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/reagent_containers/glass/bottle/inaprovalaze = 1,
 		/obj/item/reagent_containers/glass/bottle/bicarilaze = 1,
 		/obj/item/reagent_containers/glass/bottle/kelotalaze = 1,

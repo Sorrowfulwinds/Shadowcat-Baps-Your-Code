@@ -5,19 +5,19 @@
 	name = "bottle of Happy pills"
 	desc = "Highly illegal drug. When you want to see the rainbow."
 	//wrapper_color = COLOR_PINK
-	starts_with = list(/obj/item/reagent_containers/pill/happy = 7)
+	starts_with = alist(/obj/item/reagent_containers/pill/happy = 7)
 
 /obj/item/storage/pill_bottle/zoom
 	name = "bottle of Zoom pills"
 	desc = "Highly illegal drug. Trade brain for speed."
 	//wrapper_color = COLOR_BLUE
-	starts_with = list(/obj/item/reagent_containers/pill/zoom = 7)
+	starts_with = alist(/obj/item/reagent_containers/pill/zoom = 7)
 
 /obj/item/storage/pill_bottle/polonium
 	name = "bottle of pills"
 	desc = "An unlabeled bottle of pills. It seems vaguely warm."
 	//wrapper_color = COLOR_BLUE
-	starts_with = list(/obj/item/reagent_containers/pill/polonium = 7)
+	starts_with = alist(/obj/item/reagent_containers/pill/polonium = 7)
 
 /obj/item/reagent_containers/glass/beaker/vial/random
 	atom_flags = NONE
@@ -153,27 +153,27 @@
 	name = "\improper Havana cigar case"
 	desc = "Save these for the fancy-pantses at the next CentCom black tie reception. You can't blow the smoke from such majestic stogies in just anyone's face."
 	insertion_whitelist = list(/obj/item/clothing/mask/smokable/cigarette/cigar/havana)
-	starts_with = list(/obj/item/clothing/mask/smokable/cigarette/cigar/havana = 7)
+	starts_with = alist(/obj/item/clothing/mask/smokable/cigarette/cigar/havana = 7)
 
 /obj/item/storage/fancy/cigar/cohiba
 	name = "\improper Cohiba Robusto cigar case"
 	desc = "If Havana cigars were meant for the black tie reception, then these are meant to be family heirlooms instead of being smoked. These are the pinnacle of smoking luxury, make no mistake."
 	insertion_whitelist = list(/obj/item/clothing/mask/smokable/cigarette/cigar/cohiba)
-	starts_with = list(/obj/item/clothing/mask/smokable/cigarette/cigar/cohiba = 7)
+	starts_with = alist(/obj/item/clothing/mask/smokable/cigarette/cigar/cohiba = 7)
 
 /obj/item/storage/fancy/cigar/taj
 	name = "\improper S'rendarr's Hand case"
 	desc = "A luxury medicinal cigar exported from Adhomai. The trifecta flag on the case showing a symbol of unity amongst producers of S'rendarr's from all Tajaran nations."
 	icon_state = "cigarcase-taj"
 	insertion_whitelist = list(/obj/item/clothing/mask/smokable/cigarette/cigar/taj)
-	starts_with = list(/obj/item/clothing/mask/smokable/cigarette/cigar/taj = 7)
+	starts_with = alist(/obj/item/clothing/mask/smokable/cigarette/cigar/taj = 7)
 
 /obj/item/storage/fancy/cigar/taj/premium
 	name = "\improper S'rendarr's Own case"
 	desc = "Truly luxurious medicinal cigars bearing the proof marks of the Confederate Commonwealth, the \"united\" galactic lobbying body of all three Tajaran states, marking these cigars as the best Adhomai has to offer."
 	icon_state = "cigarcase-tajalt"
 	insertion_whitelist = list(/obj/item/clothing/mask/smokable/cigarette/cigar/taj/premium)
-	starts_with = list(/obj/item/clothing/mask/smokable/cigarette/cigar/taj/premium = 7)
+	starts_with = alist(/obj/item/clothing/mask/smokable/cigarette/cigar/taj/premium = 7)
 
 
 /obj/item/stolenpackageplus

@@ -9,13 +9,13 @@
 	set_max_combined_belt_medium = /datum/object_system/storage/belt::max_combined_belt_medium
 
 /obj/item/storage/belt/security/nt_isd_preload
-	starts_with = list(
-		/obj/item/handcuffs,
-		/obj/item/flash,
-		/obj/item/gun/projectile/energy/nt_isd/sidearm/with_light,
-		/obj/item/melee/baton/loaded,
-		/obj/item/cell/basic/tier_2/weapon,
-		/obj/item/reagent_containers/spray/pepper,
+	starts_with = alist(
+		/obj/item/handcuffs = 1,
+		/obj/item/flash = 1,
+		/obj/item/gun/projectile/energy/nt_isd/sidearm/with_light = 1,
+		/obj/item/melee/baton/loaded = 1,
+		/obj/item/cell/basic/tier_2/weapon = 1,
+		/obj/item/reagent_containers/spray/pepper = 1,
 	)
 
 /obj/item/storage/belt/security/tactical

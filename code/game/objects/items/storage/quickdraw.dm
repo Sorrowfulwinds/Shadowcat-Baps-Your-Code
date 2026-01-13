@@ -75,11 +75,6 @@
 
 	// quickmode = 1 //Starts in quickdraw mode
 	//Preloaded for your convenience!
-	starts_with = list(
-		/obj/item/reagent_containers/syringe,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/reagent_containers/syringe
+	starts_with = alist(
+		/obj/item/reagent_containers/syringe = 6,
 	)

@@ -5,7 +5,7 @@
 	icon_state = "dnakit"
 	insertion_whitelist = list(/obj/item/forensics/swab)
 	max_items = 14
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/forensics/swab = 14,
 	)
 
@@ -14,7 +14,7 @@
 	desc = "A box claiming to contain evidence bags."
 	max_items = 7
 	insertion_whitelist = list(/obj/item/evidencebag)
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/evidencebag = 7,
 	)
 
@@ -25,6 +25,6 @@
 	icon_state = "dnakit"
 	insertion_whitelist = list(/obj/item/sample/print)
 	max_items = 14
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/sample/print = 14,
 	)

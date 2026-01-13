@@ -393,16 +393,9 @@
 	desc = "A delicious box of pocky sticks!"
 	icon = 'icons/obj/food.dmi'
 	icon_state = "pockys"
-	starts_with = list(
-		/obj/item/reagent_containers/food/snacks/pockystick,
-		/obj/item/reagent_containers/food/snacks/pockystick,
-		/obj/item/reagent_containers/food/snacks/pockystick,
-		/obj/item/reagent_containers/food/snacks/pockystick,
-		/obj/item/reagent_containers/food/snacks/pockystick,
-		/obj/item/reagent_containers/food/snacks/pockystick,
-		/obj/item/reagent_containers/food/snacks/pockystick,
-		/obj/item/reagent_containers/food/snacks/pockystick
-	)
+	starts_with = alist(
+		/obj/item/reagent_containers/food/snacks/pockystick = 8,
+		)
 	w_class = WEIGHT_CLASS_TINY
 	max_combined_volume = WEIGHT_VOLUME_TINY * 8
 	insertion_whitelist = list(/obj/item/reagent_containers/food/snacks/pockystick)
@@ -439,14 +432,7 @@
 	desc = "Small cookies filled with chocolates."
 	icon = 'icons/obj/food.dmi'
 	icon_state = "hellogonda"
-	starts_with = list(/obj/item/reagent_containers/food/snacks/gondolas,
-		/obj/item/reagent_containers/food/snacks/gondolas,
-		/obj/item/reagent_containers/food/snacks/gondolas,
-		/obj/item/reagent_containers/food/snacks/gondolas,
-		/obj/item/reagent_containers/food/snacks/gondolas,
-		/obj/item/reagent_containers/food/snacks/gondolas,
-		/obj/item/reagent_containers/food/snacks/gondolas,
-		/obj/item/reagent_containers/food/snacks/gondolas
+	starts_with = alist(/obj/item/reagent_containers/food/snacks/gondolas = 8,
 	)
 	w_class = WEIGHT_CLASS_TINY
 	max_combined_volume = WEIGHT_VOLUME_TINY * 8

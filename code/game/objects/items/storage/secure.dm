@@ -156,9 +156,9 @@
 	desc = "A not-so large briefcase with a digital locking system. Holds less, but fits into more."
 	w_class = WEIGHT_CLASS_NORMAL
 
-	starts_with = list(
-		/obj/item/paper,
-		/obj/item/pen
+	starts_with = alist(
+		/obj/item/paper = 1,
+		/obj/item/pen = 1,
 	)
 //DONATOR ITEM
 
@@ -193,9 +193,9 @@
 	anchored = 1.0
 	density = 0
 	insertion_blacklist = list(/obj/item/storage/secure/briefcase)
-	starts_with = list(
-		/obj/item/paper,
-		/obj/item/pen
+	starts_with = alist(
+		/obj/item/paper = 1,
+		/obj/item/pen = 1
 	)
 
 /obj/item/storage/secure/safe/attack_hand(mob/user, datum/event_args/actor/clickchain/e_args)

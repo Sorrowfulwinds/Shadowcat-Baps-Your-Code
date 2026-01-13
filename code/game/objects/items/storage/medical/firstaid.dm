@@ -25,26 +25,20 @@
 	desc = "It's an emergency medical kit, loaded with everything you would need to treat burns of any kind."
 	icon_state = "ointment"
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "firstaid-ointment", SLOT_ID_LEFT_HAND = "firstaid-ointment")
-	starts_with = list(
-		/obj/item/healthanalyzer,
-		/obj/item/reagent_containers/hypospray/autoinjector,
-		/obj/item/stack/medical/ointment,
-		/obj/item/stack/medical/ointment,
-		/obj/item/reagent_containers/pill/kelotane,
-		/obj/item/reagent_containers/pill/kelotane,
-		/obj/item/reagent_containers/pill/kelotane
+	starts_with = alist(
+		/obj/item/healthanalyzer = 1,
+		/obj/item/reagent_containers/hypospray/autoinjector = 1,
+		/obj/item/stack/medical/ointment = 2,
+		/obj/item/reagent_containers/pill/kelotane = 3,
 	)
 
 /obj/item/storage/firstaid/regular
 	icon_state = "firstaid"
-	starts_with = list(
-		/obj/item/stack/medical/bruise_pack,
-		/obj/item/stack/medical/bruise_pack,
-		/obj/item/stack/medical/bruise_pack,
-		/obj/item/stack/medical/ointment,
-		/obj/item/stack/medical/ointment,
-		/obj/item/healthanalyzer,
-		/obj/item/reagent_containers/hypospray/autoinjector
+	starts_with = alist(
+		/obj/item/stack/medical/bruise_pack = 3,
+		/obj/item/stack/medical/ointment = 2,
+		/obj/item/healthanalyzer = 1,
+		/obj/item/reagent_containers/hypospray/autoinjector = 1
 	)
 
 /obj/item/storage/firstaid/toxin
@@ -52,14 +46,10 @@
 	desc = "Used to treat when one has a high amount of toxins in their body."
 	icon_state = "antitoxin"
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "firstaid-toxin", SLOT_ID_LEFT_HAND = "firstaid-toxin")
-	starts_with = list(
-		/obj/item/reagent_containers/syringe/antitoxin,
-		/obj/item/reagent_containers/syringe/antitoxin,
-		/obj/item/reagent_containers/syringe/antitoxin,
-		/obj/item/reagent_containers/pill/antitox,
-		/obj/item/reagent_containers/pill/antitox,
-		/obj/item/reagent_containers/pill/antitox,
-		/obj/item/healthanalyzer
+	starts_with = alist(
+		/obj/item/reagent_containers/syringe/antitoxin = 3,
+		/obj/item/reagent_containers/pill/antitox = 3,
+		/obj/item/healthanalyzer = 1
 	)
 
 /obj/item/storage/firstaid/o2
@@ -67,14 +57,11 @@
 	desc = "It's an emergency medical kit, commonly seen aboard spacecraft, loaded with chemicals to treat oxygen deprivation."
 	icon_state = "o2"
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "firstaid-o2", SLOT_ID_LEFT_HAND = "firstaid-o2")
-	starts_with = list(
-		/obj/item/reagent_containers/pill/dexalin,
-		/obj/item/reagent_containers/pill/dexalin,
-		/obj/item/reagent_containers/pill/dexalin,
-		/obj/item/reagent_containers/pill/dexalin,
-		/obj/item/reagent_containers/hypospray/autoinjector,
-		/obj/item/reagent_containers/syringe/inaprovaline,
-		/obj/item/healthanalyzer
+	starts_with = alist(
+		/obj/item/reagent_containers/pill/dexalin = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector = 1,
+		/obj/item/reagent_containers/syringe/inaprovaline = 1,
+		/obj/item/healthanalyzer = 1
 	)
 
 /obj/item/storage/firstaid/adv
@@ -82,14 +69,11 @@
 	desc = "Contains advanced medical items, for when serious injuries require serious medicine."
 	icon_state = "advfirstaid"
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "firstaid-advanced", SLOT_ID_LEFT_HAND = "firstaid-advanced")
-	starts_with = list(
-		/obj/item/reagent_containers/hypospray/autoinjector,
-		/obj/item/stack/medical/advanced/bruise_pack,
-		/obj/item/stack/medical/advanced/bruise_pack,
-		/obj/item/stack/medical/advanced/bruise_pack,
-		/obj/item/stack/medical/advanced/ointment,
-		/obj/item/stack/medical/advanced/ointment,
-		/obj/item/stack/medical/splint
+	starts_with = alist(
+		/obj/item/reagent_containers/hypospray/autoinjector = 1,
+		/obj/item/stack/medical/advanced/bruise_pack = 3,
+		/obj/item/stack/medical/advanced/ointment = 2,
+		/obj/item/stack/medical/splint = 1
 	)
 
 /obj/item/storage/firstaid/combat
@@ -97,16 +81,16 @@
 	desc = "A collection of everything an enterprising operative needs to stay alive in the field."
 	icon_state = "bezerk"
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "firstaid-advanced", SLOT_ID_LEFT_HAND = "firstaid-advanced")
-	starts_with = list(
-		/obj/item/storage/pill_bottle/bicaridine,
-		/obj/item/storage/pill_bottle/dermaline,
-		/obj/item/storage/pill_bottle/dexalin_plus,
-		/obj/item/storage/pill_bottle/dylovene,
-		/obj/item/storage/pill_bottle/tramadol,
-		/obj/item/storage/pill_bottle/spaceacillin,
-		/obj/item/reagent_containers/hypospray/autoinjector/biginjector/clotting,
-		/obj/item/stack/medical/splint,
-		/obj/item/healthanalyzer/advanced
+	starts_with = alist(
+		/obj/item/storage/pill_bottle/bicaridine = 1,
+		/obj/item/storage/pill_bottle/dermaline = 1,
+		/obj/item/storage/pill_bottle/dexalin_plus = 1,
+		/obj/item/storage/pill_bottle/dylovene = 1,
+		/obj/item/storage/pill_bottle/tramadol = 1,
+		/obj/item/storage/pill_bottle/spaceacillin = 1,
+		/obj/item/reagent_containers/hypospray/autoinjector/biginjector/clotting = 1,
+		/obj/item/stack/medical/splint = 1,
+		/obj/item/healthanalyzer/advanced = 1
 	)
 
 /obj/item/storage/firstaid/surgery
@@ -126,18 +110,18 @@
 		/obj/item/autopsy_scanner
 		)
 
-	starts_with = list(
-		/obj/item/surgical/bonesetter,
-		/obj/item/surgical/cautery,
-		/obj/item/surgical/circular_saw,
-		/obj/item/surgical/hemostat,
-		/obj/item/surgical/retractor,
-		/obj/item/surgical/scalpel,
-		/obj/item/surgical/surgicaldrill,
-		/obj/item/surgical/bonegel,
-		/obj/item/surgical/FixOVein,
-		/obj/item/stack/medical/advanced/bruise_pack,
-		/obj/item/autopsy_scanner
+	starts_with = alist(
+		/obj/item/surgical/bonesetter = 1,
+		/obj/item/surgical/cautery = 1,
+		/obj/item/surgical/circular_saw = 1,
+		/obj/item/surgical/hemostat = 1,
+		/obj/item/surgical/retractor = 1,
+		/obj/item/surgical/scalpel = 1,
+		/obj/item/surgical/surgicaldrill = 1,
+		/obj/item/surgical/bonegel = 1,
+		/obj/item/surgical/FixOVein = 1,
+		/obj/item/stack/medical/advanced/bruise_pack = 1,
+		/obj/item/autopsy_scanner = 1
 		)
 
 /obj/item/storage/firstaid/clotting
@@ -145,13 +129,13 @@
 	desc = "Contains chemicals to stop bleeding."
 	icon_state = "clottingkit"
 	max_combined_volume = WEIGHT_VOLUME_SMALL * 7
-	starts_with = list(/obj/item/reagent_containers/hypospray/autoinjector/biginjector/clotting = 8)
+	starts_with = alist(/obj/item/reagent_containers/hypospray/autoinjector/biginjector/clotting = 8)
 
 /obj/item/storage/firstaid/bonemed
 	name = "bone repair kit"
 	desc = "Contains chemicals to mend broken bones."
 	max_combined_volume = WEIGHT_VOLUME_SMALL * 7
-	starts_with = list(/obj/item/reagent_containers/hypospray/autoinjector/biginjector/bonemed = 8)
+	starts_with = alist(/obj/item/reagent_containers/hypospray/autoinjector/biginjector/bonemed = 8)
 
 /obj/item/storage/firstaid/clotting
 	icon_state = "clottingkit"
@@ -164,14 +148,14 @@
 	desc = "Contains advanced organ medical treatments."
 	icon_state = "bezerk"
 	item_state_slots = list(SLOT_ID_RIGHT_HAND = "firstaid-advanced", SLOT_ID_LEFT_HAND = "firstaid-advanced")
-	starts_with = list(
-		/obj/item/storage/pill_bottle/rezadone,
-		/obj/item/storage/pill_bottle/peridaxon,
-		/obj/item/storage/pill_bottle/carthatoline,
-		/obj/item/storage/pill_bottle/alkysine,
-		/obj/item/storage/pill_bottle/imidazoline,
-		/obj/item/storage/pill_bottle/osteodaxon,
-		/obj/item/storage/pill_bottle/myelamine,
-		/obj/item/storage/pill_bottle/arithrazine,
-		/obj/item/healthanalyzer/advanced
+	starts_with = alist(
+		/obj/item/storage/pill_bottle/rezadone = 1,
+		/obj/item/storage/pill_bottle/peridaxon = 1,
+		/obj/item/storage/pill_bottle/carthatoline = 1,
+		/obj/item/storage/pill_bottle/alkysine = 1,
+		/obj/item/storage/pill_bottle/imidazoline = 1,
+		/obj/item/storage/pill_bottle/osteodaxon = 1,
+		/obj/item/storage/pill_bottle/myelamine = 1,
+		/obj/item/storage/pill_bottle/arithrazine = 1,
+		/obj/item/healthanalyzer/advanced = 1
 	)

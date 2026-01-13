@@ -4,32 +4,32 @@
 	closet_appearance = /singleton/closet_appearance/bio
 
 /obj/structure/closet/l3closet/general
-	starts_with = list(
-		/obj/item/clothing/suit/bio_suit/general,
-		/obj/item/clothing/head/bio_hood/general)
+	starts_with = alist(
+		/obj/item/clothing/suit/bio_suit/general = 1,
+		/obj/item/clothing/head/bio_hood/general = 1)
 
 
 /obj/structure/closet/l3closet/virology
 	closet_appearance = /singleton/closet_appearance/bio/virology
 
-	starts_with = list(
-		/obj/item/clothing/suit/bio_suit/virology,
-		/obj/item/clothing/head/bio_hood/virology,
-		/obj/item/clothing/mask/gas,
-		/obj/item/tank/oxygen)
+	starts_with = alist(
+		/obj/item/clothing/suit/bio_suit/virology = 1,
+		/obj/item/clothing/head/bio_hood/virology = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/tank/oxygen = 1)
 
 
 /obj/structure/closet/l3closet/security
 	closet_appearance = /singleton/closet_appearance/bio/security
 
-	starts_with = list(
-		/obj/item/clothing/suit/bio_suit/security,
-		/obj/item/clothing/head/bio_hood/security)
+	starts_with = alist(
+		/obj/item/clothing/suit/bio_suit/security = 1,
+		/obj/item/clothing/head/bio_hood/security = 1)
 
 /obj/structure/closet/l3closet/janitor
 	closet_appearance = /singleton/closet_appearance/bio/janitor
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/bio_suit/janitor = 2,
 		/obj/item/clothing/head/bio_hood/janitor = 2,
 		/obj/item/clothing/mask/gas = 2,
@@ -39,12 +39,12 @@
 /obj/structure/closet/l3closet/scientist
 	closet_appearance = /singleton/closet_appearance/bio/science
 
-	starts_with = list(
-		/obj/item/clothing/suit/bio_suit/scientist,
-		/obj/item/clothing/head/bio_hood/scientist)
+	starts_with = alist(
+		/obj/item/clothing/suit/bio_suit/scientist = 1,
+		/obj/item/clothing/head/bio_hood/scientist = 1)
 
 /obj/structure/closet/l3closet/scientist/double
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/bio_suit/scientist = 2,
 		/obj/item/clothing/head/bio_hood/scientist = 2)
 
@@ -52,7 +52,7 @@
 /obj/structure/closet/l3closet/medical
 	closet_appearance = /singleton/closet_appearance/bio/medical
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/bio_suit/general = 3,
 		/obj/item/clothing/head/bio_hood/general = 3,
 		/obj/item/clothing/mask/gas = 3)

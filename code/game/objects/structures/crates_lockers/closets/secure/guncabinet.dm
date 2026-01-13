@@ -59,7 +59,7 @@
 	name = "emergency weapon cabinet"
 	req_one_access = list(ACCESS_SECURITY_ARMORY,ACCESS_COMMAND_CAPTAIN)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/gun/projectile/energy/gun = 4)
 
 
@@ -67,7 +67,7 @@
 	name = "rifle cabinet"
 	req_one_access = list(ACCESS_GENERAL_EXPLORER,ACCESS_SECURITY_BRIG)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/ammo_magazine/a7_62mm/clip/hunter = 9,
 		/obj/item/gun/projectile/ballistic/shotgun/pump/rifle = 2)
 
@@ -82,10 +82,10 @@
 	name = "explorer weapon cabinet"
 	req_one_access = list(ACCESS_GENERAL_EXPLORER,ACCESS_SECURITY_BRIG)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/gun/projectile/energy/phasegun = 2,
 		/obj/item/cell/basic/tier_1/weapon = 2,
-		/obj/item/clothing/accessory/permit/gun/planetside)
+		/obj/item/clothing/accessory/permit/gun/planetside = 1)
 
 /obj/structure/closet/secure_closet/guncabinet/robotics
 	name = "exosuit equipment cabinet"

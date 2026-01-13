@@ -56,7 +56,7 @@
 		/obj/item/reagent_containers/food/snacks/egg,
 		/obj/item/reagent_containers/food/snacks/boiledegg
 		)
-	starts_with = list(/obj/item/reagent_containers/food/snacks/egg = 12)
+	starts_with = alist(/obj/item/reagent_containers/food/snacks/egg = 12)
 
 /*
  * Candle Boxes
@@ -72,7 +72,7 @@
 	throw_force = 2
 	slot_flags = SLOT_BELT
 	max_combined_volume = WEIGHT_VOLUME_SMALL * 5
-	starts_with = list(/obj/item/flame/candle = 5)
+	starts_with = alist(/obj/item/flame/candle = 5)
 
 /obj/item/storage/fancy/whitecandle_box
 	name = "white candle pack"
@@ -84,7 +84,7 @@
 	throw_force = 2
 	slot_flags = SLOT_BELT
 	max_combined_volume = WEIGHT_VOLUME_SMALL * 5
-	starts_with = list(/obj/item/flame/candle/white = 5)
+	starts_with = alist(/obj/item/flame/candle/white = 5)
 
 /obj/item/storage/fancy/blackcandle_box
 	name = "black candle pack"
@@ -96,7 +96,7 @@
 	throw_force = 2
 	slot_flags = SLOT_BELT
 	max_combined_volume = WEIGHT_VOLUME_SMALL * 5
-	starts_with = list(/obj/item/flame/candle/black = 5)
+	starts_with = alist(/obj/item/flame/candle/black = 5)
 
 
 /*
@@ -113,13 +113,13 @@
 	insertion_whitelist = list(
 		/obj/item/pen/crayon
 	)
-	starts_with = list(
-		/obj/item/pen/crayon/red,
-		/obj/item/pen/crayon/orange,
-		/obj/item/pen/crayon/yellow,
-		/obj/item/pen/crayon/green,
-		/obj/item/pen/crayon/blue,
-		/obj/item/pen/crayon/purple
+	starts_with = alist(
+		/obj/item/pen/crayon/red = 1,
+		/obj/item/pen/crayon/orange = 1,
+		/obj/item/pen/crayon/yellow = 1,
+		/obj/item/pen/crayon/green = 1,
+		/obj/item/pen/crayon/blue = 1,
+		/obj/item/pen/crayon/purple = 1
 	)
 
 /obj/item/storage/fancy/crayons/Initialize(mapload)
@@ -154,14 +154,14 @@
 	insertion_whitelist = list(
 		/obj/item/pen/crayon/marker
 	)
-	starts_with = list(
-		/obj/item/pen/crayon/marker/black,
-		/obj/item/pen/crayon/marker/red,
-		/obj/item/pen/crayon/marker/orange,
-		/obj/item/pen/crayon/marker/yellow,
-		/obj/item/pen/crayon/marker/green,
-		/obj/item/pen/crayon/marker/blue,
-		/obj/item/pen/crayon/marker/purple
+	starts_with = alist(
+		/obj/item/pen/crayon/marker/black = 1,
+		/obj/item/pen/crayon/marker/red = 1,
+		/obj/item/pen/crayon/marker/orange = 1,
+		/obj/item/pen/crayon/marker/yellow = 1,
+		/obj/item/pen/crayon/marker/green = 1,
+		/obj/item/pen/crayon/marker/blue = 1,
+		/obj/item/pen/crayon/marker/purple = 1
 	)
 
 /obj/item/storage/fancy/markers/Initialize(mapload)
@@ -196,11 +196,11 @@
 	insertion_whitelist = list(
 		/obj/item/pen/crayon/chalk
 	)
-	starts_with = list(
-		/obj/item/pen/crayon/chalk/white,
-		/obj/item/pen/crayon/chalk/red,
-		/obj/item/pen/crayon/chalk/black,
-		/obj/item/pen/crayon/chalk/blue
+	starts_with = alist(
+		/obj/item/pen/crayon/chalk/white = 1,
+		/obj/item/pen/crayon/chalk/red = 1,
+		/obj/item/pen/crayon/chalk/black = 1,
+		/obj/item/pen/crayon/chalk/blue = 1
 	)
 
 /obj/item/storage/fancy/chalk/Initialize(mapload)
@@ -227,7 +227,7 @@
 	max_single_weight_class = WEIGHT_CLASS_TINY
 	w_class = WEIGHT_CLASS_SMALL
 	insertion_whitelist = list(/obj/item/reagent_containers/food/snacks/cracker)
-	starts_with = list(/obj/item/reagent_containers/food/snacks/cracker = 6)
+	starts_with = alist(/obj/item/reagent_containers/food/snacks/cracker = 6)
 
 ////////////
 //CIG PACK//
@@ -246,7 +246,7 @@
 	max_items = 6
 	insertion_whitelist = list(/obj/item/clothing/mask/smokable/cigarette, /obj/item/flame/lighter, /obj/item/cigbutt)
 	icon_type = "cigarette"
-	starts_with = list(/obj/item/clothing/mask/smokable/cigarette = 6)
+	starts_with = alist(/obj/item/clothing/mask/smokable/cigarette = 6)
 	var/brand = "\improper Trans-Stellar Duty-free"
 	var/overlay_amount = 6
 
@@ -345,21 +345,21 @@
 	name = "\improper pack of Black Stars"
 	desc = "A rare brand of imported herbal cigarettes. The package smells faintly of allspice."
 	icon_state = "BSpacket"
-	starts_with = list(/obj/item/clothing/mask/smokable/cigarette/import = 6)
+	starts_with = alist(/obj/item/clothing/mask/smokable/cigarette/import = 6)
 	brand = "\improper Black Star"
 
 /obj/item/storage/fancy/cigarettes/kingsilvers
 	name = "\improper pack of Kyningc Silvers"
 	desc = "A brand of imported cigarettes. A homegrown favourite to many a pretentious Eridanian businessman."
 	icon_state = "KSpacket"
-	starts_with = list(/obj/item/clothing/mask/smokable/cigarette/light = 6)
+	starts_with = alist(/obj/item/clothing/mask/smokable/cigarette/light = 6)
 	brand = "\improper Kyningc Silver"
 
 /obj/item/storage/fancy/cigarettes/subrosas
 	name = "\improper pack of Subrosas"
 	desc = "A brand of imported cigarettes. These ones contain a proprietary herbal blend, 100% nicotine free."
 	icon_state = "SRpacket"
-	starts_with = list(/obj/item/clothing/mask/smokable/cigarette/herbal = 6)
+	starts_with = alist(/obj/item/clothing/mask/smokable/cigarette/herbal = 6)
 	brand = "\improper Subrosa"
 
 /obj/item/storage/fancy/cigar
@@ -373,7 +373,7 @@
 	max_items = 7
 	insertion_whitelist = list(/obj/item/clothing/mask/smokable/cigarette/cigar, /obj/item/cigbutt/cigarbutt)
 	icon_type = "cigar"
-	starts_with = list(/obj/item/clothing/mask/smokable/cigarette/cigar = 7)
+	starts_with = alist(/obj/item/clothing/mask/smokable/cigarette/cigar = 7)
 
 /obj/item/storage/fancy/cigar/Initialize(mapload)
 	. = ..()
@@ -400,7 +400,7 @@
 	slot_flags = SLOT_BELT
 	max_items = 14
 	insertion_whitelist = list(/obj/item/rollingpaper)
-	starts_with = list(/obj/item/rollingpaper = 14)
+	starts_with = alist(/obj/item/rollingpaper = 14)
 
 /obj/item/storage/rollingblunts
 	name = "blunt paper pack"
@@ -412,7 +412,7 @@
 	slot_flags = SLOT_BELT
 	max_items = 7
 	insertion_whitelist = list(/obj/item/rollingblunt)
-	starts_with = list(/obj/item/rollingblunt = 7)
+	starts_with = alist(/obj/item/rollingblunt = 7)
 
 /*
  * Vial Box
@@ -425,7 +425,7 @@
 	name = "vial storage box"
 	max_items = 6
 	insertion_whitelist = list(/obj/item/reagent_containers/glass/beaker/vial)
-	starts_with = list(/obj/item/reagent_containers/glass/beaker/vial = 6)
+	starts_with = alist(/obj/item/reagent_containers/glass/beaker/vial = 6)
 
 /obj/item/storage/lockbox/vials
 	name = "secure vial storage box"
@@ -482,13 +482,10 @@
 		/obj/item/reagent_containers/food/snacks/chocolatepiece/white,
 		/obj/item/reagent_containers/food/snacks/chocolatepiece/truffle
 		)
-	starts_with = list(
-		/obj/item/reagent_containers/food/snacks/chocolatepiece,
-		/obj/item/reagent_containers/food/snacks/chocolatepiece,
-		/obj/item/reagent_containers/food/snacks/chocolatepiece,
-		/obj/item/reagent_containers/food/snacks/chocolatepiece/white,
-		/obj/item/reagent_containers/food/snacks/chocolatepiece/white,
-		/obj/item/reagent_containers/food/snacks/chocolatepiece/truffle
+	starts_with = alist(
+		/obj/item/reagent_containers/food/snacks/chocolatepiece = 3,
+		/obj/item/reagent_containers/food/snacks/chocolatepiece/white = 2,
+		/obj/item/reagent_containers/food/snacks/chocolatepiece/truffle = 1
 	)
 
 /obj/item/storage/fancy/heartbox/Initialize(mapload)

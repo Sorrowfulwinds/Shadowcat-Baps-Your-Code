@@ -4,9 +4,9 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/medical
 	req_access = list(ACCESS_MEDICAL_MAIN)
 
-	starts_with = list(
-		/obj/item/storage/box/autoinjectors,
-		/obj/item/storage/box/syringes,
+	starts_with = alist(
+		/obj/item/storage/box/autoinjectors = 1,
+		/obj/item/storage/box/syringes = 1,
 		/obj/item/reagent_containers/dropper = 2,
 		/obj/item/reagent_containers/glass/beaker = 2,
 		/obj/item/reagent_containers/glass/bottle/inaprovaline = 2,
@@ -19,7 +19,7 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/medical/alt
 	req_access = list(ACCESS_MEDICAL_SURGERY)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/tank/anesthetic = 3,
 		/obj/item/clothing/mask/breath/medical = 3)
 
@@ -29,21 +29,21 @@
 	req_access = list(ACCESS_MEDICAL_EQUIPMENT)
 	closet_appearance = /singleton/closet_appearance/secure_closet/medical
 
-	starts_with = list(
-		/obj/item/clothing/under/rank/medical,
-		/obj/item/clothing/under/rank/nurse,
-		/obj/item/clothing/under/rank/orderly,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
-		/obj/item/clothing/suit/storage/toggle/fr_jacket,
-		/obj/item/clothing/shoes/white,
-		/obj/item/cartridge/medical,
-		/obj/item/radio/headset/headset_med,
-		/obj/item/radio/headset/headset_med/alt,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/medical,
-		/obj/item/clothing/shoes/boots/winter/medical,
-		/obj/item/clothing/under/rank/nursesuit,
-		/obj/item/clothing/head/nursehat,
-		/obj/item/gps/medical,
+	starts_with = alist(
+		/obj/item/clothing/under/rank/medical = 1,
+		/obj/item/clothing/under/rank/nurse = 1,
+		/obj/item/clothing/under/rank/orderly = 1,
+		/obj/item/clothing/suit/storage/toggle/labcoat = 1,
+		/obj/item/clothing/suit/storage/toggle/fr_jacket = 1,
+		/obj/item/clothing/shoes/white = 1,
+		/obj/item/cartridge/medical = 1,
+		/obj/item/radio/headset/headset_med = 1,
+		/obj/item/radio/headset/headset_med/alt = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/medical = 1,
+		/obj/item/clothing/shoes/boots/winter/medical = 1,
+		/obj/item/clothing/under/rank/nursesuit = 1,
+		/obj/item/clothing/head/nursehat = 1,
+		/obj/item/gps/medical = 1,
 		/obj/item/storage/box/freezer = 3)
 
 /obj/structure/closet/secure_closet/medical3/Initialize(mapload)
@@ -94,35 +94,35 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/medical/paramedic
 	req_access = list(ACCESS_MEDICAL_EQUIPMENT)
 
-	starts_with = list(
-		/obj/item/storage/backpack/dufflebag/emt,
-		/obj/item/clothing/under/bodysuit/bodysuitemt,
-		/obj/item/storage/box/autoinjectors,
-		/obj/item/storage/box/syringes,
-		/obj/item/reagent_containers/glass/bottle/inaprovaline,
-		/obj/item/reagent_containers/glass/bottle/antitoxin,
-		/obj/item/storage/belt/medical/emt,
-		/obj/item/clothing/mask/gas,
-		/obj/item/clothing/suit/storage/toggle/fr_jacket,
-		/obj/item/clothing/suit/storage/toggle/labcoat/emt,
-		/obj/item/radio/headset/headset_med/alt,
-		/obj/item/clothing/accessory/armor/helmetcamera/body,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/para,
-		/obj/item/cartridge/medical,
-		/obj/item/storage/briefcase/inflatable,
-		/obj/item/flashlight,
-		/obj/item/tank/emergency/oxygen/engi,
-		/obj/item/clothing/glasses/hud/health,
-		/obj/item/healthanalyzer,
-		/obj/item/radio/off,
-		/obj/random/medical,
-		/obj/item/tool/crowbar,
-		/obj/item/gps/medical,
-		/obj/item/extinguisher/mini,
-		/obj/item/storage/box/freezer,
-		/obj/item/clothing/accessory/storage/white_vest,
-		/obj/item/barrier_tape_roll/medical,
-		/obj/item/storage/lockbox/limb_plate/emt)
+	starts_with = alist(
+		/obj/item/storage/backpack/dufflebag/emt = 1,
+		/obj/item/clothing/under/bodysuit/bodysuitemt = 1,
+		/obj/item/storage/box/autoinjectors = 1,
+		/obj/item/storage/box/syringes = 1,
+		/obj/item/reagent_containers/glass/bottle/inaprovaline = 1,
+		/obj/item/reagent_containers/glass/bottle/antitoxin = 1,
+		/obj/item/storage/belt/medical/emt = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/clothing/suit/storage/toggle/fr_jacket = 1,
+		/obj/item/clothing/suit/storage/toggle/labcoat/emt = 1,
+		/obj/item/radio/headset/headset_med/alt = 1,
+		/obj/item/clothing/accessory/armor/helmetcamera/body = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/para = 1,
+		/obj/item/cartridge/medical = 1,
+		/obj/item/storage/briefcase/inflatable = 1,
+		/obj/item/flashlight = 1,
+		/obj/item/tank/emergency/oxygen/engi = 1,
+		/obj/item/clothing/glasses/hud/health = 1,
+		/obj/item/healthanalyzer = 1,
+		/obj/item/radio/off = 1,
+		/obj/random/medical = 1,
+		/obj/item/tool/crowbar = 1,
+		/obj/item/gps/medical = 1,
+		/obj/item/extinguisher/mini = 1,
+		/obj/item/storage/box/freezer = 1,
+		/obj/item/clothing/accessory/storage/white_vest = 1,
+		/obj/item/barrier_tape_roll/medical = 1,
+		/obj/item/storage/lockbox/limb_plate/emt = 1)
 
 /obj/structure/closet/secure_closet/paramedic/Initialize(mapload)
 	starts_with += /obj/item/gps/medical
@@ -133,29 +133,29 @@
 	req_access = list(ACCESS_MEDICAL_CMO)
 	closet_appearance = /singleton/closet_appearance/secure_closet/cmo
 
-	starts_with = list(
-		/obj/item/clothing/under/rank/chief_medical_officer,
-		/obj/item/clothing/under/rank/chief_medical_officer/skirt,
-		/obj/item/clothing/under/rank/chief_medical_officer/skirt_pleated,
-		/obj/item/clothing/suit/storage/toggle/labcoat/cmo,
-		/obj/item/clothing/suit/storage/toggle/labcoat/cmoalt,
-		/obj/item/cartridge/cmo,
-		/obj/item/clothing/gloves/sterile/latex,
-		/obj/item/clothing/shoes/brown	,
-		/obj/item/radio/headset/heads/cmo,
-		/obj/item/radio/headset/heads/cmo/alt,
-		/obj/item/flash,
-		/obj/item/storage/hypokit/advanced/cmo/full/loaded,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/cmo,
-		/obj/item/clothing/shoes/boots/winter/medical,
-		/obj/item/storage/box/freezer,
-		/obj/item/clothing/mask/gas,
-		/obj/item/barrier_tape_roll/medical,
-		/obj/item/clothing/suit/bio_suit/cmo,
-		/obj/item/clothing/head/bio_hood/cmo,
-		/obj/item/gps/medical/cmo,
-		/obj/item/clothing/shoes/white,
-		/obj/item/clothing/under/rank/chief_medical_officer/turtleneck)
+	starts_with = alist(
+		/obj/item/clothing/under/rank/chief_medical_officer = 1,
+		/obj/item/clothing/under/rank/chief_medical_officer/skirt = 1,
+		/obj/item/clothing/under/rank/chief_medical_officer/skirt_pleated = 1,
+		/obj/item/clothing/suit/storage/toggle/labcoat/cmo = 1,
+		/obj/item/clothing/suit/storage/toggle/labcoat/cmoalt = 1,
+		/obj/item/cartridge/cmo = 1,
+		/obj/item/clothing/gloves/sterile/latex = 1,
+		/obj/item/clothing/shoes/brown = 1,
+		/obj/item/radio/headset/heads/cmo = 1,
+		/obj/item/radio/headset/heads/cmo/alt = 1,
+		/obj/item/flash = 1,
+		/obj/item/storage/hypokit/advanced/cmo/full/loaded = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/cmo = 1,
+		/obj/item/clothing/shoes/boots/winter/medical = 1,
+		/obj/item/storage/box/freezer = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/barrier_tape_roll/medical = 1,
+		/obj/item/clothing/suit/bio_suit/cmo = 1,
+		/obj/item/clothing/head/bio_hood/cmo = 1,
+		/obj/item/gps/medical/cmo = 1,
+		/obj/item/clothing/shoes/white = 1,
+		/obj/item/clothing/under/rank/chief_medical_officer/turtleneck = 1)
 
 /obj/structure/closet/secure_closet/CMO/Initialize(mapload)
 	if(prob(50))
@@ -187,8 +187,8 @@
 	name = "animal control closet"
 	req_access = list(ACCESS_MEDICAL_SURGERY)
 
-	starts_with = list(
-		/obj/item/assembly/signaler,
+	starts_with = alist(
+		/obj/item/assembly/signaler = 1,
 		/obj/item/radio/electropack = 3)
 
 
@@ -198,15 +198,15 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/medical/chemicals
 	req_access = list(ACCESS_MEDICAL_CHEMISTRY)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/storage/box/pillbottles = 2,
-		/obj/item/storage/box/beakers,
-		/obj/item/storage/box/autoinjectors,
-		/obj/item/storage/box/syringes,
+		/obj/item/storage/box/beakers = 1,
+		/obj/item/storage/box/autoinjectors = 1,
+		/obj/item/storage/box/syringes = 1,
 		/obj/item/reagent_containers/dropper = 2,
 		/obj/item/reagent_containers/glass/bottle/inaprovaline = 2,
 		/obj/item/reagent_containers/glass/bottle/antitoxin = 2,
-		/obj/item/storage/fancy/vials)
+		/obj/item/storage/fancy/vials = 1)
 
 
 /obj/structure/closet/secure_closet/psych
@@ -215,20 +215,20 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/medical
 	req_access = list(ACCESS_MEDICAL_PSYCH)
 
-	starts_with = list(
-		/obj/item/clothing/under/rank/psych,
-		/obj/item/clothing/under/rank/psych/turtleneck,
-		/obj/item/clothing/suit/straight_jacket,
-		/obj/item/reagent_containers/glass/bottle/stoxin,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/storage/pill_bottle/citalopram,
-		/obj/item/reagent_containers/pill/methylphenidate,
-		/obj/item/clipboard,
-		/obj/item/folder/white,
-		/obj/item/tape_recorder,
+	starts_with = alist(
+		/obj/item/clothing/under/rank/psych = 1,
+		/obj/item/clothing/under/rank/psych/turtleneck = 1,
+		/obj/item/clothing/suit/straight_jacket = 1,
+		/obj/item/reagent_containers/glass/bottle/stoxin = 1,
+		/obj/item/reagent_containers/syringe = 1,
+		/obj/item/storage/pill_bottle/citalopram = 1,
+		/obj/item/reagent_containers/pill/methylphenidate = 1,
+		/obj/item/clipboard = 1,
+		/obj/item/folder/white = 1,
+		/obj/item/tape_recorder = 1,
 		/obj/item/cassette_tape/random = 3,
-		/obj/item/camera,
-		/obj/item/toy/plushie/therapy/blue)
+		/obj/item/camera = 1,
+		/obj/item/toy/plushie/therapy/blue = 1)
 
 
 /obj/structure/closet/secure_closet/medical_wall
@@ -245,11 +245,11 @@
 /obj/structure/closet/secure_closet/medical_wall/pills
 	name = "pill cabinet"
 
-	starts_with = list(
-		/obj/item/storage/pill_bottle/tramadol,
-		/obj/item/storage/pill_bottle/antitox,
-		/obj/item/storage/pill_bottle/carbon,
-		/obj/random/medical/pillbottle)
+	starts_with = alist(
+		/obj/item/storage/pill_bottle/tramadol = 1,
+		/obj/item/storage/pill_bottle/antitox = 1,
+		/obj/item/storage/pill_bottle/carbon = 1,
+		/obj/random/medical/pillbottle = 1)
 
 
 /obj/structure/closet/secure_closet/medical_wall/anesthetics
@@ -257,7 +257,7 @@
 	desc = "Used to knock people out."
 	req_access = list(ACCESS_MEDICAL_SURGERY)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/tank/anesthetic = 3,
 		/obj/item/clothing/mask/breath/medical = 3)
 
@@ -266,6 +266,6 @@
 	desc = "Used to knock people out."
 	req_access = list(ACCESS_SCIENCE_ROBOTICS)
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/tank/anesthetic = 3,
 		/obj/item/clothing/mask/breath/medical = 3)

@@ -1376,14 +1376,14 @@
 	name = "box of miniatures"
 	desc = "The nerd's best friends."
 	icon_state = "box"
-/obj/item/storage/box/characters/starts_with = list(
+/obj/item/storage/box/characters/starts_with = alist(
 //	/obj/item/toy/character/alien,
-	/obj/item/toy/character/cleric,
-	/obj/item/toy/character/warrior,
-	/obj/item/toy/character/thief,
-	/obj/item/toy/character/wizard,
-	/obj/item/toy/character/voidone,
-	/obj/item/toy/character/lich
+	/obj/item/toy/character/cleric = 1,
+	/obj/item/toy/character/warrior = 1,
+	/obj/item/toy/character/thief = 1,
+	/obj/item/toy/character/wizard = 1,
+	/obj/item/toy/character/voidone = 1,
+	/obj/item/toy/character/lich = 1
 	)
 
 /obj/item/toy/AI

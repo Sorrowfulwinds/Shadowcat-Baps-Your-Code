@@ -15,7 +15,7 @@
 /obj/item/storage/box/fluff/charactername
 	name = ""
 	desc = ""
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/head/thing1,
 		/obj/item/clothing/shoes/thing2,
 		/obj/item/clothing/suit/thing3,
@@ -26,7 +26,7 @@
 /obj/item/storage/box/fluff/cassandra
 	name = "Cassandra Selone's Spawn Kit"
 	desc = "A spawn Kit, holding Cassandra Selone's Item's"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/gloves/fluff/kilano/purple,
 		/obj/item/clothing/under/fluff/kilanosuit/purple,
 		/obj/item/clothing/shoes/boots/fluff/kilano/purple)
@@ -35,7 +35,7 @@
 /obj/item/storage/box/fluff/tasald
 	name = "Tasald's Kit"
 	desc = "A kit containing Talsald's equipment."
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/storage/det_suit/fluff/tasald,
 		/obj/item/clothing/suit/storage/det_suit/fluff/tas_coat,
 		/obj/item/clothing/under/det/fluff/tasald,
@@ -47,7 +47,7 @@
 /obj/item/storage/box/fluff/octavious
 	name = "Octavious's Kit"
 	desc = "A kit containing Octavious's work clothes."
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/storage/trench/fluff/octaviouscoat,
 		/obj/item/clothing/under/det/fluff/octavious,
 		/obj/item/clothing/mask/gas/plaguedoctor/fluff/octaviousmask,
@@ -61,7 +61,7 @@
 /obj/item/storage/box/fluff/cirra
 	name = "Instant Pirate Kit"
 	desc = "Just add Akula!"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/head/pirate,
 		/obj/item/clothing/glasses/eyepatch,
 		/obj/item/clothing/suit/pirate,
@@ -71,7 +71,7 @@
 /obj/item/storage/box/fluff/emoticon
 	name = "Emoticon's Mime Kit"
 	desc = "Specially packaged for the hungry catgirl mime with a taste for clown."
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/fluff/id_kit_mime,
 		/obj/item/clothing/gloves/white,
 		/obj/item/clothing/head/beret,
@@ -123,7 +123,7 @@
 /obj/item/storage/box/fluff/drake
 	name = "United Federation Uniform Kit"
 	desc = "A box containing all the parts of a United Federation Uniform"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/under/rank/internalaffairs/fluff/joan,
 		/obj/item/clothing/suit/storage/fluff/modernfedcoat/modernfedsec,
 		/obj/item/clothing/head/caphat/formal/fedcover/fedcoversec,
@@ -134,7 +134,7 @@
 /obj/item/storage/box/fluff/yonra
 	name = "Yonra's Starting Kit"
 	desc = "A small box containing Yonra's personal effects"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/melee/fluff/holochain/mass,
 		/obj/item/implanter/reagent_generator/yonra,
 		/obj/item/clothing/accessory/medal/silver/unity)
@@ -142,7 +142,7 @@
 //Razerwing:Archer Maximus
 /obj/item/storage/box/fluff/archermaximus
 	desc = "Personal Effects"
-	starts_with = list()
+	starts_with = alist()
 
 //ivymoomoo:Ivy Baladeva
 /obj/item/storage/backpack/messenger/sec/fluff/ivymoomoo
@@ -168,12 +168,12 @@
 	w_class = WEIGHT_CLASS_SMALL
 	max_single_weight_class = WEIGHT_CLASS_NORMAL
 	insertion_whitelist = list(/obj/item/clothing/under/swimsuit/)
-	starts_with = list(/obj/item/clothing/under/swimsuit/fluff/penelope)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/fluff/penelope)
 
 // Aerowing:Sebastian Aji
 /obj/item/storage/box/fluff/sebastian_aji
 	name = "Sebastian's Lumoco Arms P3 Box"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/gun/projectile/ballistic/pistol,
 		/obj/item/ammo_magazine/a9mm/compact/flash,
 		/obj/item/ammo_magazine/a9mm/compact/flash,
@@ -182,7 +182,7 @@
 /*
 /obj/item/storage/box/fluff/briana_moore
 	name = "Briana's Derringer Box"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/gun/projectile/ballistic/derringer/fluff/briana,
 		/obj/item/clothing/accessory/permit/gun/fluff/briana_moore)
 */
@@ -191,7 +191,7 @@
 //SilencedMP5A5:Serdykov Antoz
 /obj/item/storage/box/fluff/serdykov_antoz
 	name = "Serdy's Weapon Box"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/accessory/permit/gun/fluff/silencedmp5a5,
 		/obj/item/gun/projectile/ballistic/colt/fluff/serdy)
 */
@@ -200,7 +200,7 @@
 /obj/item/storage/box/fluff/kilano
 	name = "Ne'tra Ky'ram's Kit"
 	desc = "A kit containing Ne'tra Ky'ram's clothing."
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/storage/hooded/wintercoat/kilanocoat,
 		/obj/item/clothing/under/fluff/kilanosuit,
 		/obj/item/storage/backpack/messenger/sec/fluff/kilano,
@@ -214,7 +214,7 @@
 /obj/item/storage/box/fluff/morxaina
 	name = "Fashionable clothes set"
 	desc = "Set of custom-made, expensive attire elements."
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/shoes/fluff/morthighs,
 		/obj/item/clothing/gloves/fluff/morsleeves,
 		/obj/item/clothing/under/fluff/morunder)
@@ -222,7 +222,7 @@
 // Mewchild: Phi Vietsi
 /obj/item/storage/box/fluff/vietsi
 	name = "Phi's Personal Items"
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/accessory/medal/bronze_heart,
 		/obj/item/clothing/gloves/ring/seal/signet/fluff/vietsi)
 END OF CITADEL CHANGES */
@@ -241,75 +241,75 @@ Swimsuits, for general use, to avoid arriving to work with your swimsuit.
 	weight_volume = WEIGHT_VOLUME_SMALL
 	max_single_weight_class = WEIGHT_CLASS_NORMAL
 	insertion_whitelist = list(/obj/item/clothing/under/swimsuit/)
-	starts_with = list(/obj/item/clothing/under/swimsuit/black)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/black = 1)
 
 /obj/item/storage/box/fluff/swimsuit/blue
 	name = "Blue Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/blue)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/blue = 1)
 
 /obj/item/storage/box/fluff/swimsuit/purple
 	name = "Purple Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/purple)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/purple = 1)
 
 /obj/item/storage/box/fluff/swimsuit/green
 	name = "Green Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/green)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/green = 1)
 
 /obj/item/storage/box/fluff/swimsuit/red
 	name = "Red Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/red)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/red = 1)
 
 /obj/item/storage/box/fluff/swimsuit/white
 	name = "White Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/white)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/white = 1)
 
 /obj/item/storage/box/fluff/swimsuit/blue
 	name = "Striped Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/striped)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/striped = 1)
 
 /obj/item/storage/box/fluff/swimsuit/earth
 	name = "Earthen Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/earth)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/earth = 1)
 
 /obj/item/storage/box/fluff/swimsuit/engineering
 	name = "Engineering Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/fluff/engineering)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/fluff/engineering = 1)
 
 /obj/item/storage/box/fluff/swimsuit/science
 	name = "Science Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/fluff/science)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/fluff/science = 1)
 
 /obj/item/storage/box/fluff/swimsuit/security
 	name = "Security Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/fluff/security)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/fluff/security = 1)
 
 /obj/item/storage/box/fluff/swimsuit/medical
 	name = "Medical Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/fluff/medical)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/fluff/medical = 1)
 
 /obj/item/storage/box/fluff/swimsuit/cowbikini
 	name = "Cow Bikini capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/stripper/cowbikini)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/stripper/cowbikini = 1)
 
 /obj/item/storage/box/fluff/swimsuit/captain
 	name = "Sexy Captain capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/stripper/captain)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/stripper/captain = 1)
 
 /obj/item/storage/box/fluff/swimsuit/highclass
 	name = "High Class Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/highclass)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/highclass = 1)
 
 /obj/item/storage/box/fluff/swimsuit/latex
 	name = "Latex Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/latex)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/latex = 1)
 
 /obj/item/storage/box/fluff/swimsuit/risque
 	name = "Risque Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/risque)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/risque = 1)
 
 /obj/item/storage/box/fluff/swimsuit/streamlined
 	name = "Streamlined Swimsuit capsule"
-	starts_with = list(/obj/item/clothing/under/swimsuit/streamlined)
+	starts_with = alist(/obj/item/clothing/under/swimsuit/streamlined = 1)
 
 //Monkey boxes for the new primals we have
 /obj/item/storage/box/monkeycubes/sobakacubes

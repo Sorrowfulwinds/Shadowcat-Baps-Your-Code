@@ -27,7 +27,7 @@
 	icon_opened = "poireactor_open"
 	icon_closed = "poireactor"
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/fuel_assembly/deuterium = 6)
 
 /obj/item/poi/brokenoldreactor

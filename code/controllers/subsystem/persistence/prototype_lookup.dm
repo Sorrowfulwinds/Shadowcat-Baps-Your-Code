@@ -4,7 +4,7 @@
 /datum/controller/subsystem/persistence/proc/build_prototype_id_lookup()
 	var/list/constructing = list()
 
-	var/last
+	var/last_id
 
 	for(var/path in subtypesof(/atom))
 		// so the key here is in most but not all cases,
@@ -15,11 +15,11 @@
 		var/atom/casted = path
 		var/casted_id = initial(casted.prototype_id)
 
-		if(casted_id == last)
+		if(casted_id == last_id)
 			continue
 		if(constructing[casted_id])
 			continue
 		constructing[casted_id] = path
-		last = path
+		last_id = casted_id
 
 	prototype_id_to_path = constructing

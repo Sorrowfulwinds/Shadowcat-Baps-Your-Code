@@ -339,20 +339,20 @@
 	icon_state = "engi_crate"
 	//closet_appearance = /singleton/closet_appearance/crate/engineering
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/rcd_ammo = 3,
-		/obj/item/rcd)
+		/obj/item/rcd = 1)
 
 /obj/structure/closet/crate/solar
 	name = "solar pack crate"
 	icon_state = "engi_crate"
 	//closet_appearance = /singleton/closet_appearance/crate/engineering
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/frame2/solar_panel = 2,
-		/obj/item/circuitboard/solar_control,
-		/obj/item/tracker_electronics,
-		/obj/item/paper/solar)
+		/obj/item/circuitboard/solar_control = 1,
+		/obj/item/tracker_electronics = 1,
+		/obj/item/paper/solar = 1)
 
 /obj/structure/closet/crate/freezer
 	name = "freezer"
@@ -391,7 +391,7 @@
 	name = "emergency rations"
 	desc = "A crate of emergency rations."
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/random/mre = 6)
 
 /obj/structure/closet/crate/freezer/centauri
@@ -425,7 +425,7 @@
 	icon_state = "radiation"
 	//closet_appearance = /singleton/closet_appearance/crate/radiation
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/clothing/suit/radiation = 4,
 		/obj/item/clothing/head/radiation = 4)
 
@@ -563,7 +563,7 @@
 	icon_state = "scicrate"
 	//closet_appearance = /singleton/closet_appearance/crate/science
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/stack/material/plasteel = 10,
 		/obj/item/stack/material/steel/full_stack = 5,
 		/obj/fiftyspawner/glass = 4,
@@ -581,21 +581,21 @@
 	//closet_appearance = /singleton/closet_appearance/crate/hydroponics
 
 /obj/structure/closet/crate/hydroponics/prespawned
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/reagent_containers/spray/plantbgone = 2,
-		/obj/item/material/minihoe)
+		/obj/item/material/minihoe = 1)
 
 /obj/structure/closet/crate/hydroponics/exotic
 	name = "exotic seeds crate"
 	desc = "All you need to destroy that pesky planet."
 
-	starts_with = list(
+	starts_with = alist(
 		/obj/item/seeds/random = 6,
 		/obj/item/seeds/replicapod = 2,
 		/obj/item/seeds/ambrosiavulgarisseed = 2,
-		/obj/item/seeds/kudzuseed,
-		/obj/item/seeds/libertymycelium,
-		/obj/item/seeds/reishimycelium)
+		/obj/item/seeds/kudzuseed = 1,
+		/obj/item/seeds/libertymycelium = 1,
+		/obj/item/seeds/reishimycelium = 1)
 
 /obj/structure/closet/crate/medical/blood
 	icon_state = "blood"

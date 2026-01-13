@@ -3,22 +3,22 @@
 	req_access = list(ACCESS_SUPPLY_BAY)
 	closet_appearance = /singleton/closet_appearance/secure_closet/cargo
 
-	starts_with = list(
-		/obj/item/clothing/under/rank/cargotech,
-		/obj/item/clothing/under/rank/cargotech/skirt,
-		/obj/item/clothing/under/rank/cargotech/skirt_pleated,
-		/obj/item/clothing/under/rank/cargotech/jeans,
-		/obj/item/clothing/under/rank/cargotech/jeans/female,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/cargo,
-		/obj/item/clothing/shoes/boots/winter/supply,
-		/obj/item/clothing/shoes/black,
-		/obj/item/radio/headset/headset_cargo,
-		/obj/item/radio/headset/headset_cargo/alt,
-		/obj/item/clothing/gloves/black,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/cargo,
-		/obj/item/clothing/gloves/fingerless,
-		/obj/item/stamp/cargo,
-		/obj/item/clothing/head/soft)
+	starts_with = alist(
+		/obj/item/clothing/under/rank/cargotech = 1,
+		/obj/item/clothing/under/rank/cargotech/skirt = 1,
+		/obj/item/clothing/under/rank/cargotech/skirt_pleated = 1,
+		/obj/item/clothing/under/rank/cargotech/jeans = 1,
+		/obj/item/clothing/under/rank/cargotech/jeans/female = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/cargo = 1,
+		/obj/item/clothing/shoes/boots/winter/supply = 1,
+		/obj/item/clothing/shoes/black = 1,
+		/obj/item/radio/headset/headset_cargo = 1,
+		/obj/item/radio/headset/headset_cargo/alt = 1,
+		/obj/item/clothing/gloves/black = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/cargo = 1,
+		/obj/item/clothing/gloves/fingerless = 1,
+		/obj/item/stamp/cargo = 1,
+		/obj/item/clothing/head/soft = 1)
 
 /obj/structure/closet/secure_closet/cargotech/Initialize(mapload)
 	if(prob(75))
@@ -34,26 +34,26 @@
 	req_access = list(ACCESS_SUPPLY_QM)
 	closet_appearance = /singleton/closet_appearance/secure_closet/cargo/qm
 
-	starts_with = list(
-		/obj/item/clothing/under/rank/cargo,
-		/obj/item/clothing/under/rank/cargo/skirt,
-		/obj/item/clothing/under/rank/cargo/skirt_pleated,
-		/obj/item/clothing/under/rank/cargo/jeans,
-		/obj/item/clothing/under/rank/cargo/jeans/female,
-		/obj/item/clothing/shoes/brown,
-		/obj/item/radio/headset/headset_cargo,
-		/obj/item/radio/headset/headset_cargo/alt,
-		/obj/item/radio/headset/headset_mine,
-		/obj/item/clothing/gloves/black,
-		/obj/item/clothing/gloves/fingerless,
-		/obj/item/clothing/suit/fire/firefighter,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/qm,
-		/obj/item/tank/emergency/oxygen,
-		/obj/item/clothing/mask/gas,
-		/obj/item/clothing/glasses/meson,
-		/obj/item/clothing/head/soft,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/cargo,
-		/obj/item/clothing/shoes/boots/winter/supply)
+	starts_with = alist(
+		/obj/item/clothing/under/rank/cargo = 1,
+		/obj/item/clothing/under/rank/cargo/skirt = 1,
+		/obj/item/clothing/under/rank/cargo/skirt_pleated = 1,
+		/obj/item/clothing/under/rank/cargo/jeans = 1,
+		/obj/item/clothing/under/rank/cargo/jeans/female = 1,
+		/obj/item/clothing/shoes/brown = 1,
+		/obj/item/radio/headset/headset_cargo = 1,
+		/obj/item/radio/headset/headset_cargo/alt = 1,
+		/obj/item/radio/headset/headset_mine = 1,
+		/obj/item/clothing/gloves/black = 1,
+		/obj/item/clothing/gloves/fingerless = 1,
+		/obj/item/clothing/suit/fire/firefighter = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/qm = 1,
+		/obj/item/tank/emergency/oxygen = 1,
+		/obj/item/clothing/mask/gas = 1,
+		/obj/item/clothing/glasses/meson = 1,
+		/obj/item/clothing/head/soft = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/cargo = 1,
+		/obj/item/clothing/shoes/boots/winter/supply = 1)
 
 /obj/structure/closet/secure_closet/quartermaster/Initialize(mapload)
 	if(prob(75))
@@ -69,26 +69,26 @@
 	closet_appearance = /singleton/closet_appearance/secure_closet/mining
 	req_access = list(ACCESS_SUPPLY_MINE)
 
-	starts_with = list(
-		/obj/item/radio/headset/headset_mine,
-		/obj/item/clothing/under/rank/miner,
-		/obj/item/clothing/gloves/black,
-		/obj/item/clothing/shoes/black,
-		/obj/item/atmos_analyzer,
-		/obj/item/storage/bag/ore,
-		/obj/item/flashlight/lantern,
-		/obj/item/shovel,
-		/obj/item/pickaxe,
-		/obj/item/mining_scanner,
-		/obj/item/gps/mining,
-		/obj/item/survivalcapsule,
-		/obj/item/clothing/glasses/meson,
-		/obj/item/clothing/suit/storage/hooded/miner,
-		/obj/item/clothing/suit/storage/hooded/wintercoat/miner,
-		/obj/item/clothing/shoes/boots/winter/mining,
-		/obj/item/reagent_containers/portable_fuelcan/miniature,
-		/obj/item/stack/marker_beacon/thirty,
-		/obj/item/gun/projectile/energy/kinetic_accelerator)
+	starts_with = alist(
+		/obj/item/radio/headset/headset_mine = 1,
+		/obj/item/clothing/under/rank/miner = 1,
+		/obj/item/clothing/gloves/black = 1,
+		/obj/item/clothing/shoes/black = 1,
+		/obj/item/atmos_analyzer = 1,
+		/obj/item/storage/bag/ore = 1,
+		/obj/item/flashlight/lantern = 1,
+		/obj/item/shovel = 1,
+		/obj/item/pickaxe = 1,
+		/obj/item/mining_scanner = 1,
+		/obj/item/gps/mining = 1,
+		/obj/item/survivalcapsule = 1,
+		/obj/item/clothing/glasses/meson = 1,
+		/obj/item/clothing/suit/storage/hooded/miner = 1,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/miner = 1,
+		/obj/item/clothing/shoes/boots/winter/mining = 1,
+		/obj/item/reagent_containers/portable_fuelcan/miniature = 1,
+		/obj/item/stack/marker_beacon/thirty = 1,
+		/obj/item/gun/projectile/energy/kinetic_accelerator = 1)
 
 /obj/structure/closet/secure_closet/miner/Initialize(mapload)
 	if(prob(50))
