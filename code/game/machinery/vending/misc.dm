@@ -390,7 +390,7 @@
 
 /obj/machinery/vending/survivalist
 	name = "SDF Surplus Gear Vendor"
-	desc = "A vending machine put here by the System Defence Force, because of the rising ammount of pirates and danger in the sector."
+	desc = "A vending machine put here by the System Defense Force, because of the rising ammount of pirates and danger in the sector."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "generic"
 	icon_deny = "generic-deny"

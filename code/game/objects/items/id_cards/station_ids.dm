@@ -808,7 +808,7 @@
 
 /obj/item/card/id/external/id_sdf
 	name = "haddi's folley SDF ID"
-	desc = "An ID issued to members of the system defence force of haddi's folley."
+	desc = "An ID issued to members of the system defense force of haddi's folley."
 	icon_state = "sdf"
 	job_access_type = null
 	access = list(155)
