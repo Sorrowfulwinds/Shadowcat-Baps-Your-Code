@@ -4,7 +4,7 @@
 /datum/controller/subsystem/role
 	/// All spawnpoints
 	var/static/list/spawnpoints = list()
-	/// Job spawnpoints keyed to job id/typepath
+	/// Role spawnpoints keyed to role id, nested list role_id = list()
 	var/static/alist/job_spawnpoints = alist()
 	/// Generic latejoin spawnpoints, nested list faction = list()
 	var/static/alist/latejoin_spawnpoints = alist()
@@ -22,25 +22,30 @@
 	latejoin_spawnpoints = alist()
 	overflow_spawnpoints = alist()
 	custom_spawnpoints = alist()
-	// O(2n) but sue me
+
 	for(var/obj/landmark/spawnpoint/S in GLOB.landmarks_list)
 		spawnpoints += S
-	for(var/obj/landmark/spawnpoint/job/S in GLOB.landmarks_list)
-		if(!S.job_path)
-			continue
-		LAZYDISTINCTADD(job_spawnpoints[S.job_path], S)
-	for(var/obj/landmark/spawnpoint/latejoin/S in GLOB.landmarks_list)
-		if(!S.faction)
-			continue
-		LAZYDISTINCTADD(latejoin_spawnpoints[S.faction], S)
-	for(var/obj/landmark/spawnpoint/overflow/S in GLOB.landmarks_list)
-		if(!S.faction)
-			continue
-		LAZYDISTINCTADD(overflow_spawnpoints[S.faction], S)
-	for(var/obj/landmark/spawnpoint/custom/S in GLOB.landmarks_list)
-		if(!S.key)
-			continue
-		LAZYDISTINCTADD(custom_spawnpoints[S.key], S)
+		switch(S.type)
+			if(/obj/landmark/spawnpoint/job)
+				var/obj/landmark/spawnpoint/job/S = S
+				if(S.job_path)
+					LAZYDISTINCTADD(job_spawnpoints[S.job_path], S)
+				continue
+			if(/obj/landmark/spawnpoint/latejoin)
+				var/obj/landmark/spawnpoint/latejoin/S = S
+				if(S.faction)
+					LAZYDISTINCTADD(latejoin_spawnpoints[S.faction], S)
+				continue
+			if(/obj/landmark/spawnpoint/overflow)
+				var/obj/landmark/spawnpoint/overflow/S = S
+				if(S.faction)
+					LAZYDISTINCTADD(overflow_spawnpoints[S.faction], S)
+				continue
+			if(/obj/landmark/spawnpoint/custom)
+				var/obj/landmark/spawnpoint/custom/S = S
+				if(S.key)
+					LAZYDISTINCTADD(custom_spawnpoints[S.key], S)
+				continue
 
 /**
  * Gets a valid custom spawnpoint to use by key
@@ -84,7 +89,7 @@
 	if(!istype(role)) //fuck
 		return null
 
-	var/round_started = SSticker.HasRoundStarted()
+	var/round_started = (SSticker.current_state >= GAME_STATE_PLAYING)
 	var/pref_method
 	. = list()
 

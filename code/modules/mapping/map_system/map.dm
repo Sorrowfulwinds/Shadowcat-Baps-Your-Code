@@ -138,6 +138,8 @@
 	//* Roles - SSroles *//
 	/// All roles available on this map to pass to SSroles after load. Associated as ID - Count. This is unique from roles on map_level.
 	var/tmp/alist/roles
+	/// The default role id for this map datum. Usually assistant.
+	var/tmp/fallback_role_id
 	///
 
 /datum/map/New()

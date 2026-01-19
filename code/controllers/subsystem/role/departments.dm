@@ -16,7 +16,7 @@ var/alist/all_departments
  * Internal proc
  * Sorts an alist of jobs into
  */
-/datum/controller/subsytem/role/proc/_sort_jobs_into_departments(alist/new_jobs)
+/datum/controller/subsystem/role/proc/_sort_jobs_into_departments(alist/new_jobs)
 	for(var/roleid, _value in new_jobs)
 		var/datum/prototype/role/job/role = RSroles.get_role_by_id(roleid)
 

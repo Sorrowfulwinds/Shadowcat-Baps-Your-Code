@@ -6,7 +6,7 @@
 	/**
 	 * ?Value checks
 	 */
-	if(!istype(job) //Verify type so we can use the extra procs.
+	if(!istype(job)) //Verify type so we can use the extra procs.
 		return "Error! Please report this to staff. /role/job instantiator called with non-job role [job.id]."
 		//TODO CAT: admin log error
 
@@ -18,23 +18,18 @@
 	if(!istype(S))
 		return "Error! Please report this to staff. Could not find a valid spawnpoint for [job.id]!"
 
+
 	/**
 	 * ?Spawning new mob and mob details setup / Deleting old mob
 	 */
-
-
 	player.mind.assigned_role_id = job.id
 	player.mind.alt_title_id = alt_title?.id
 
 	var/mob/living/silicon/ai/new_ai = player.AIize(TRUE, S)
 	S.OnSpawn(new_ai)
 
-	//Useless shim, pending story-tellers update.
-	UpdateFactionList(new_ai)
-
 	//We are actively in the world and recorded now so might as well log it.
 	log_game("JOINED [key_name(new_ai)] as \"[job.id]\"")
-	log_game("SPECIES [key_name(new_ai)] is a: \"[new_ai.species.name]\"")
 
 	/**
 	 * ?Tell player the basics of their stuff
@@ -54,3 +49,7 @@
 	new_ai.update_hud_sec_implants()
 	new_ai.update_hud_antag()
 	new_ai.reset_perspective(no_optimizations = TRUE)
+
+	//Until AI get better preferences integration they get less welcome than visitors.
+	if(SSticker.current_state >= GAME_STATE_PLAYING)
+		GLOB.global_announcer.autosay("A new [alt_title ? alt_title.title : job.title] has been transferred to the empty core in \the [new_ai.loc.loc].", "Arrivals Announcement Computer")

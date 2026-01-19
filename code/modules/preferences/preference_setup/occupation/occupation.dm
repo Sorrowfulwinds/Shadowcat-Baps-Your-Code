@@ -315,7 +315,7 @@
  *
  * @return list of id = priority
  */
-/client/proc/effective_job_priorities()
+/client/proc/effective_job_priorities() as list
 	RETURN_TYPE(/list)
 	. = list()
 	var/list/priorities = sanitize_islist(prefs.get_character_data(CHARACTER_DATA_JOBS))

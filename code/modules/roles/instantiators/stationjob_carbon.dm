@@ -48,9 +48,6 @@
 	job.setup_managed_accounts(new_player, job.team)
 	job.email_setup(new_player)
 
-	//Useless shim, pending story-tellers update.
-	UpdateFactionList(new_player)
-
 	//We are actively in the world and recorded now so might as well log it.
 	log_game("JOINED [key_name(new_player)] as \"[job.id]\"")
 	log_game("SPECIES [key_name(new_player)] is a: \"[new_player.species.name]\"")
@@ -62,22 +59,28 @@
 	var/list/obj/item/loadout_rejected = list()
 	prefs.equip_loadout(
 		new_player,
-		SSticker.HasRoundStarted()? PREF_COPY_TO_FOR_LATEJOIN : PREF_COPY_TO_FOR_ROUNDSTART,
+		SSticker.current_state >= GAME_STATE_PLAYING ? PREF_COPY_TO_FOR_LATEJOIN : PREF_COPY_TO_FOR_ROUNDSTART,
 		job.id,
 		reject = loadout_rejected
 		)
 
 	// Equip job items.
-	var/datum/outfit/outfit = alt_title?.outfit ? alt_title.outfit : job.outfit
-	outfit?.equip(new_player, job.title, alt_title?.title ? alt_title.title : job.title)
+	if(alt_title)
+		if(alt_title.outfit_flag & SSR_UNIFORM_ADDON)
+			job.outfit?.equip(new_player, job.title, alt_title.title)
+			alt_title.outfit?.equip(new_player, job.title, alt_title.title)
+		else
+			alt_title.outfit?.equip(new_player, job.title, alt_title.title)
+	else
+		job.outfit?.equip(new_player, job.title, alt_title.title)
 
 	// Species level equip post job
 	new_player.equip_post_job()
 
-	// Backpack any leftover items from loadout.
+	// Backpack any rejected items from loadout.
 	prefs.overflow_loadout(
 		new_player,
-		SSticker.HasRoundStarted()? PREF_COPY_TO_FOR_LATEJOIN : PREF_COPY_TO_FOR_ROUNDSTART,
+		SSticker.current_state >= GAME_STATE_PLAYING ? PREF_COPY_TO_FOR_LATEJOIN : PREF_COPY_TO_FOR_ROUNDSTART,
 		loadout_rejected
 		)
 
@@ -112,7 +115,7 @@
 	/**
 	 * ?Tell player the basics of their stuff
 	 */
-	to_chat(new_player, SPAN_BOLD("You are [SSrole.roles_total[job.id] == 1 ? "the" : "a"] [alt_title ? alt_title.title : job.title]."))
+	to_chat(new_player, SPAN_BOLD("You are [(SSrole.roles_total[job.id] == 1) ? "the" : "a"] [alt_title ? alt_title.title : job.title]."))
 
 	if(job.spawntext)
 		to_chat(new_player, SPAN_BOLD("[job.spawntext]"))
@@ -130,3 +133,12 @@
 	new_player.update_hud_sec_implants()
 	new_player.update_hud_antag()
 	new_player.reset_perspective(no_optimizations = TRUE)
+
+	if(SSticker.current_state >= GAME_STATE_PLAYING)
+		GLOB.global_announcer.autosay(S.RenderAnnounceMessage(
+			new_player,
+			new_player.client,
+			job.id,
+			new_player.real_name,
+			(alt_title ? alt_title.title : job.title)
+		), "Arrivals Announcement Computer")

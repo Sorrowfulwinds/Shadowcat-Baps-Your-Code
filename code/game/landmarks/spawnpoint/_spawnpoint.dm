@@ -137,7 +137,7 @@
  * name - spawnee's name
  * job_name - job's name - useful for alt titles
  */
-/obj/landmark/spawnpoint/proc/RenderAnnounceMessage(mob/M, client/C, datum/prototype/role/job/J, name, job_name)
+/obj/landmark/spawnpoint/proc/RenderAnnounceMessage(mob/M, client/C, role_id, name, job_name)
 	return "[name || "Unknown"] will arrive shortly."
 
 /**
@@ -186,7 +186,7 @@
 	if(var_name == NAMEOF(src, faction))
 		Unregister()
 
-/obj/landmark/spawnpoint/latejoin/RenderAnnounceMessage(mob/M, client/C, name, job_name)
+/obj/landmark/spawnpoint/latejoin/RenderAnnounceMessage(mob/M, client/C, role_id, name, job_name)
 	. = announce_template
 	. = replacetext(., "%NAME%", name)
 	. = replacetext(., "%JOB%", job_name)

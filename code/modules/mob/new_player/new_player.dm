@@ -394,112 +394,6 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	// Timer still going
 	return timer - world.time
 
-/mob/new_player/proc/AttemptLateSpawn(rank)
-	// don't lose out if we join fast
-	SSplaytime.queue_playtimes(client)
-	if (src != usr)
-		return 0
-	if(SSticker.current_state != GAME_STATE_PLAYING)
-		to_chat(usr, "<font color='red'>The round is either not ready, or has already finished...</font>")
-		return 0
-	if(!config_legacy.enter_allowed)
-		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
-		return 0
-	if(client.persistent.ligma)
-		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
-		log_shadowban("[key_name(src)] latejoin as [rank] blocked.")
-		return 0
-	var/datum/prototype/role/job/J = RSroles.legacy_job_by_title(rank)
-	var/reason
-	if((reason = J.check_client_availability_one(client)) != ROLE_AVAILABLE)
-		to_chat(src, SPAN_WARNING("[rank] is not available: [J.get_availability_reason(client, reason)]"))
-		return FALSE
-	if(!client?.legacy_spawn_checks_vr())
-		return FALSE
-	var/list/errors = list()
-	var/list/warnings = list()
-	var/failing = FALSE
-	if(!client.prefs.spawn_checks(PREF_COPY_TO_FOR_LATEJOIN, errors = errors, warnings = warnings))
-		to_chat(src, "<h3><center>--- Character Setup Errors - Please resolve these to continue ---</center></h3><br><b>-&nbsp;&nbsp;&nbsp;&nbsp;[jointext(errors, "<br>-&nbsp;&nbsp;&nbsp;&nbsp;")]</b>")
-		failing = TRUE
-	if(length(warnings))
-		to_chat(src, "<h3><center>--- Character Setup Warnings---</center></h3><br><b>-&nbsp;&nbsp;&nbsp;&nbsp;[jointext(warnings, "<br>-&nbsp;&nbsp;&nbsp;&nbsp;")]</b>")
-	if(failing)
-		return FALSE
-	else if(length(warnings))
-		if(tgui_alert(src, "You do not seem to have your preferences set properly. Are you sure you wish to join the game?", "Spawn Checks", list("Yes", "No")) != "Yes")
-			return
-
-	//Find our spawning point.
-	var/list/join_props = SSjob.LateSpawn(client, rank)
-	var/obj/landmark/spawnpoint/SP = pick(join_props["spawnpoint"])
-	var/announce_channel = join_props["channel"] || "Common"
-
-	if(!SP)
-		return 0
-
-	spawning = 1
-	close_spawn_windows()
-
-	if(!SSjob.AssignRole(src, rank, 1))
-		to_chat(src, SPAN_WARNING("SSjob.AssignRole failed; something is seriously wrong. Attempted: [rank]."))
-		. = FALSE
-		CRASH("AssignRole failed; something is seriously wrong!")
-
-	var/mob/living/character = create_character(SP.GetSpawnLoc())		// Creates the human and transfers vars and mind
-	SP.OnSpawn(character)
-	//Announces Cyborgs early, because that is the only way it works
-	if(character.mind.assigned_role == "Cyborg")
-		AnnounceCyborg(character, rank, SP.RenderAnnounceMessage(character, name = character.name, job_name = character.mind.role_alt_title || rank), announce_channel, character.z)
-	character = SSjob.EquipRank(character, rank, 1)	// Equips the human
-	UpdateFactionList(character)
-
-	// AIs don't need a spawnpoint, they must spawn at an empty core
-	if(character.mind.assigned_role == "AI")
-
-		character = character.AIize(move=0)	// AIize the character, but don't move them yet
-
-		// IsJobAvailable for AI checks that there is an empty core available in this list
-		var/obj/structure/AIcore/deactivated/C = GLOB.empty_playable_ai_cores[1]
-		GLOB.empty_playable_ai_cores -= C
-
-		character.forceMove(C.loc)
-
-		AnnounceCyborg(character, rank, "has been transferred to the empty core in \the [character.loc.loc]")
-		SSticker.mode.latespawn(character)
-
-		qdel(C)
-		qdel(src)
-		return
-
-	// Equip our custom items only AFTER deploying to spawn points eh?
-	//equip_custom_items(character)
-
-	//character.apply_traits()
-
-	// Moving wheelchair if they have one
-	if(character.buckled && istype(character.buckled, /obj/structure/bed/chair/wheelchair))
-		character.buckled.forceMove(character.loc)
-
-	SSticker.mode.latespawn(character)
-
-	if(character.mind.assigned_role != "Cyborg")
-		data_core.manifest_inject(character)
-		SSticker.minds += character.mind//Cyborgs and AIs handle this in the transform proc.	//TODO!!!!! ~Carn
-
-		//Grab some data from the character prefs for use in random news procs.
-
-		AnnounceArrival(character, rank, SP.RenderAnnounceMessage(character, name = character.mind.name, job_name = (GetAssignment(character) || rank)))
-
-	qdel(src)
-
-/mob/new_player/proc/AnnounceCyborg(var/mob/living/character, var/rank, var/join_message)
-	if (SSticker.current_state == GAME_STATE_PLAYING)
-		if(character.mind.role_alt_title)
-			rank = character.mind.role_alt_title
-		// can't use their name here, since cyborg namepicking is done post-spawn, so we'll just say "A new Cyborg has arrived"/"A new Android has arrived"/etc.
-		GLOB.global_announcer.autosay("A new [rank] has arrived on the station.", "Arrivals Announcement Computer")
-
 
 /mob/new_player/proc/create_character(var/turf/T)
 	// don't lose out if we join fast
@@ -507,8 +401,14 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	if(!client?.legacy_spawn_checks_vr())
 		return FALSE
 	var/list/errors = list()
+	var/list/warnings = list()
 	// warnings ignored for now.
-	if(!client.prefs.spawn_checks(PREF_COPY_TO_FOR_ROUNDSTART, errors))
+	if(!client.prefs.spawn_checks(
+		((SSticker.current_state >= GAME_STATE_PLAYING) ? PREF_COPY_TO_FOR_LATEJOIN : PREF_COPY_TO_FOR_ROUNDSTART),
+		errors,
+		warnings))
+		if(length(warnings))
+			to_chat(src, "<h3><center>--- Character Setup Warnings---</center></h3><br><b>-&nbsp;&nbsp;&nbsp;&nbsp;[jointext(warnings, "<br>-&nbsp;&nbsp;&nbsp;&nbsp;")]</b>")
 		to_chat(src, SPAN_WARNING("<h3><center>--- Character Setup Errors - Please resolve these to continue ---</center></h3><br><b>-&nbsp;&nbsp;&nbsp;&nbsp;[jointext(errors, "<br>-&nbsp;&nbsp;&nbsp;&nbsp;")]</b>"))
 		return FALSE
 	spawning = 1

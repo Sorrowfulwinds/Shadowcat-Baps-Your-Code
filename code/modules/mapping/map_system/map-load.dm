@@ -143,6 +143,7 @@
 	//After map is fully loaded. Tell SSrole to add our roles.
 	if(roles)
 		SSrole.bulk_add_slots(roles)
+	SSrole.fallback_role_id = fallback_role_id
 
 //* Unloading *//
 

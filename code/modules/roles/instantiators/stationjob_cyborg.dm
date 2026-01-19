@@ -6,7 +6,7 @@
 	/**
 	 * ?Value checks
 	 */
-	if(!istype(job) //Verify type so we can use the extra procs.
+	if(!istype(job)) //Verify type so we can use the extra procs.
 		return "Error! Please report this to staff. /role/job instantiator called with non-job role [job.id]."
 		//TODO CAT: admin log error
 
@@ -34,12 +34,8 @@
 
 	S.OnSpawn(new_borg)
 
-	//Useless shim, pending story-tellers update.
-	UpdateFactionList(new_borg)
-
 	//We are actively in the world and recorded now so might as well log it.
 	log_game("JOINED [key_name(new_borg)] as \"[job.id]\"")
-	log_game("SPECIES [key_name(new_borg)] is a: \"[new_borg.species.name]\"")
 
 	/**
 	 * ?Tell player the basics of their stuff
@@ -59,3 +55,7 @@
 	new_borg.update_hud_sec_implants()
 	new_borg.update_hud_antag()
 	new_borg.reset_perspective(no_optimizations = TRUE)
+
+	//Until borgs get better preferences integration they get less welcome than visitors.
+	if(SSticker.current_state >= GAME_STATE_PLAYING)
+		GLOB.global_announcer.autosay("A new [alt_title ? alt_title.title : job.title] has arrived on the station.", "Arrivals Announcement Computer")

@@ -41,7 +41,7 @@
 
 	//? Advanced Info
 	/// Lazylist of alternate title ids, if any.
-	var/const/list/alt_titles = null
+	var/const/list/alt_titles
 	/// The faction string this role belongs to. Might be replaced by a datum later.
 	var/const/team = JOB_FACTION_STATION
 	/// Outfit to equip to this role, if any. Might be ignored by instancer.
@@ -63,7 +63,7 @@
  *
  * @return 0 to X days remaining to unlock this role.
  */
-/datum/prototype/role/proc/unlock_in_days(client/C)
+/datum/prototype/role/proc/unlock_in_days(client/C) as num
 	if(C.has_jexp_bypass())
 		return 0
 	if(!CONFIG_GET(flag/job_check_account_age))
@@ -73,7 +73,7 @@
 /**
  * @return a list of access macros for this role.
  */
-/datum/prototype/role/proc/get_access()
+/datum/prototype/role/proc/get_access() as /list
 	. = minimal_access
 	. |= config_legacy.jobs_have_minimal_access ? 0 : additional_access
 
@@ -81,7 +81,7 @@
  * Verify the client attached to a mob is valid for this role with their current selected character slot.
  *
  * @params
- * player - A mob with the client we are trying to spawn. The mob is not inspected.
+ * player - A mob with the client we are trying to verify. The mob is not inspected.
  * alt_title - Optional alternate title to verify,
  * ignore_slots - Do not check if slots are full
  *
