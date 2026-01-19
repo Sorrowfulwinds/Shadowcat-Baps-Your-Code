@@ -18,7 +18,7 @@
 
 /obj/item/airlock_electronics/ui_static_data(mob/user, datum/tgui/ui)
 	. = ..()
-	.["access"] = SSjob.tgui_access_data()
+	.["access"] = SSrole.tgui_access_data()
 
 /obj/item/airlock_electronics/ui_data(mob/user, datum/tgui/ui)
 	. = ..()

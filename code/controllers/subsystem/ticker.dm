@@ -56,8 +56,6 @@ SUBSYSTEM_DEF(ticker)
 	/// List of factions with openings.
 	var/list/availablefactions = list()
 
-	var/triai = 0//Global holder for Triumvirate
-
 	var/delay_explained = FALSE
 	var/round_end_announced = 0 // Spam Prevention. Announce round end only once.
 

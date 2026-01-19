@@ -119,7 +119,7 @@
 
 /obj/machinery/computer/guestpass/ui_static_data(mob/user, datum/tgui/ui)
 	. = ..()
-	.["access"] = SSjob.tgui_access_data()
+	.["access"] = SSrole.tgui_access_data()
 	.["allowed"] = allowed_accesses()
 	.["selected"] = selected
 	.["durationMax"] = max_duration

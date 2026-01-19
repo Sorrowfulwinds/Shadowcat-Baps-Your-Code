@@ -31,7 +31,7 @@
 	var/primary_color = rgb(0,0,0) // Obtained by eyedroppering the stripe in the middle of the card
 	var/secondary_color = rgb(0,0,0) // Likewise for the oval in the top-left corner
 
-	var/role_access_id = "JobNtAssistant"    // role id to acquire access rights from, if any
+	var/role_access_id = "JobNtAssistant"	// role id to acquire access rights from, if any
 
 	//alt titles are handled a bit weirdly in order to unobtrusively integrate into existing ID system
 	var/assignment = null	//can be alt title or the actual job
@@ -426,7 +426,7 @@
 	var/sentence = 0 //Sentence in minutes
 	var/crime = "\[redacted\]"
 
-	job_access_type = null
+	role_access_id = null
 	access = list(ACCESS_SECURITY_GENPOP_ENTER)
 
 /obj/item/card/id/prisoner/New()
@@ -668,7 +668,7 @@
 	icon_state = "pirate"
 	primary_color = rgb(17, 1, 1)
 	secondary_color = rgb(149, 152, 153)
-	job_access_type = null
+	role_access_id = null
 	access = list(168)
 
 /obj/item/card/id/medical/sar
@@ -710,7 +710,7 @@
 	name = "Happy Trails Resort Company Day Pass"
 	desc = "A pass giving one access to the normal facilties at Happy Trails Resort stations."
 	icon_state = "gaia_normal"
-	job_access_type = null
+	role_access_id = null
 	access = list(250)
 
 /obj/item/card/id/external/gaia/vip
@@ -729,56 +729,56 @@
 	name = "Card to Room 1"
 	desc = "A card that grants usage of Room 1 of the Nebula Motel"
 	icon_state = "guest"
-	job_access_type = null
+	role_access_id = null
 	access = list(161)
 
 /obj/item/card/id/external/nebula/room2
 	name = "Card to Room 2"
 	desc = "A card that grants usage of Room 2 of the Nebula Motel"
 	icon_state = "guest"
-	job_access_type = null
+	role_access_id = null
 	access = list(162)
 
 /obj/item/card/id/external/nebula/room3
 	name = "Card to Room 3"
 	desc = "A card that grants usage of Room 3 of the Nebula Motel"
 	icon_state = "guest"
-	job_access_type = null
+	role_access_id = null
 	access = list(163)
 
 /obj/item/card/id/external/nebula/room4
 	name = "Card to Room 4"
 	desc = "A card that grants usage of Room 4 of the Nebula Motel"
 	icon_state = "guest"
-	job_access_type = null
+	role_access_id = null
 	access = list(164)
 
 /obj/item/card/id/external/nebula/room5
 	name = "Card to Room 5"
 	desc = "A card that grants usage of Room 5 of the Nebula Motel"
 	icon_state = "guest"
-	job_access_type = null
+	role_access_id = null
 	access = list(165)
 
 /obj/item/card/id/external/nebula/room6
 	name = "Card to Room 6"
 	desc = "A card that grants usage of Room 6 of the Nebula Motel"
 	icon_state = "guest"
-	job_access_type = null
+	role_access_id = null
 	access = list(166)
 
 /obj/item/card/id/external/nebula/room7
 	name = "Card to Room 7"
 	desc = "A card that grants usage of Room 7 of the Nebula Motel"
 	icon_state = "guest"
-	job_access_type = null
+	role_access_id = null
 	access = list(167)
 
 /obj/item/card/id/external/nebula/room8
 	name = "Card to Room 8"
 	desc = "A card that grants usage of Room 8 of the Nebula Motel"
 	icon_state = "guest"
-	job_access_type = null
+	role_access_id = null
 	access = list(169)
 
 /obj/item/card/id/external/nebula/room9
@@ -786,20 +786,20 @@
 	color = "#ffbd17"
 	desc = "A card that grants usage to the VIP suite of the Nebula Motel, and its Arrowhead shuttle."
 	icon_state = "guest"
-	job_access_type = null
+	role_access_id = null
 	access = list(170)
 
 /obj/item/card/id/external/id_nka
 	name = "New Kingdom of Adhomai Commoner's ID"
 	desc = "An ID issued to the non-noble commoners of the New Kingdom of Adhomai. In some regions, adults must legally carry it on their person at all times."
 	icon_state = "nka"
-	job_access_type = null
+	role_access_id = null
 
 /obj/item/card/id/external/id_sdf
 	name = "haddi's folley SDF ID"
 	desc = "An ID issued to members of the system defence force of haddi's folley."
 	icon_state = "sdf"
-	job_access_type = null
+	role_access_id = null
 	access = list(155)
 
 /obj/item/card/id/external/id_occulum

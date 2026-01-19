@@ -105,7 +105,7 @@ Warning: While there is no regulation regarding visiting and scavenging operatio
 	name = "Security Casino Ship 1"
 	desc = "A Casino Chip working like a ID."
 	icon_state = "casino-chip"
-	job_access_type = null
+	role_access_id = null
 	color ="#ff0000f8"
 	access = list(410)
 
@@ -113,7 +113,7 @@ Warning: While there is no regulation regarding visiting and scavenging operatio
 	name = "Security Casino Ship 2"
 	desc = "A Casino Chip working like a ID."
 	icon_state = "casino-chip"
-	job_access_type = null
+	role_access_id = null
 	color ="#fff200f8"
 	access = list(411)
 
@@ -121,7 +121,7 @@ Warning: While there is no regulation regarding visiting and scavenging operatio
 	name = "Security Casino Ship 3"
 	desc = "A Casino Chip working like a ID."
 	icon_state = "casino-chip"
-	job_access_type = null
+	role_access_id = null
 	color ="#1500fff8"
 	access = list(412)
 

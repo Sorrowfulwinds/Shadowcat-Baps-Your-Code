@@ -373,7 +373,7 @@
 		if(!M.ckey)	//sanity
 			to_chat(usr, "<span class='adminlog'>This mob has no ckey</span>")
 			return
-		if(!SSjob)
+		if(!SSrole)
 			to_chat(usr, "<span class='adminlog'>Job Master has not been setup!</span>")
 			return
 

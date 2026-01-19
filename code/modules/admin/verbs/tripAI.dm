@@ -1,3 +1,5 @@
+//TODO Bring this into new SSrole properly. This needs needs to check if spawnpoints exist or you will be spawning AI cores at arrivals.
+/*
 /client/proc/triple_ai()
 	set category = "Fun"
 	set name = "Create AI Triumvirate"
@@ -20,3 +22,4 @@
 			to_chat(usr, "There will be an AI Triumvirate at round start.")
 			message_admins("<font color=#4F49AF>[key_name_admin(usr)] has toggled on triple AIs at round start.</font>", 1)
 	return
+*/
