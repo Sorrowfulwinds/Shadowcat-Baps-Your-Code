@@ -36,11 +36,7 @@
 	 */
 	to_chat(new_ai, SPAN_BOLD("You are [SSrole.roles_total[job.id] == 1 ? "the" : "a"] [alt_title ? alt_title.title : job.title]."))
 
-	if(job.spawntext)
-		to_chat(new_ai, SPAN_BOLD("[job.spawntext]"))
-
-	if(job.important_info)
-		to_chat(new_ai, SPAN_BOLD("[job.important_info]"))
+	to_chat(new_ai, SPAN_BOLD("[job.spawn_blurb]"))
 
 	/**
 	 * ?Cleanup and HUD updates
@@ -50,6 +46,6 @@
 	new_ai.update_hud_antag()
 	new_ai.reset_perspective(no_optimizations = TRUE)
 
-	//Until AI get better preferences integration they get less welcome than visitors.
+	//Until AI get name in preferences integration they get less welcome than visitors.
 	if(SSticker.current_state >= GAME_STATE_PLAYING)
 		GLOB.global_announcer.autosay("A new [alt_title ? alt_title.title : job.title] has been transferred to the empty core in \the [new_ai.loc.loc].", "Arrivals Announcement Computer")

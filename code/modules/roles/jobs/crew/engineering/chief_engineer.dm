@@ -1,32 +1,15 @@
 /datum/prototype/role/job/chief_engineer
-	//? Basic Info
 	id = "JobNtChiefEngineer"
 	title = "Chief Engineer"
 
-	desc = "The Chief Engineer manages the Engineering Department, ensuring that the Engineers work on what needs to be done, handling distribution of manpower as much as they handle hands-on operations and repairs. They are also expected to keep the rest of the station informed of any structural threats to the station that may be hazardous to health or disruptive to work."
+	menu_blurb = "The Chief Engineer manages the Engineering Department, ensuring that the Engineers work on what needs to be done, handling distribution of manpower as much as they handle hands-on operations and repairs. They are also expected to keep the rest of the station informed of any structural threats to the station that may be hazardous to health or disruptive to work."
 
-	spawntext = "As the manager of Engineering you report to the Captain."
+	spawn_blurb = "As the manager of Engineering you report to the Captain.\n" + IMPORTANT_JOB_TELL_ADMINS
 
-	important_info = "You are playing a job that is important for Game Progression. If you have to disconnect immediately, please notify the admins via adminhelp. Otherwise put your locker gear back into the locker and cryo out."
-
-	//? Requirements
 	minimum_player_age = 7
-
-	//? Advanced Info
-	alt_titles = list(
-		"AltCeEngineeringDirector",
-		"AltCeHeadEngineer",
-		)
 	outfit = /datum/outfit/job/station/chief_engineer
-	/// The instantiator to spawn this role. May override player character.
-	instancer
-	/// The uninstantiator to clean up this role.
-	uninstancer
-
-	//? Settings
 	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
 
-	//? Access
 	minimal_access = list(
 		ACCESS_ENGINEERING_ATMOS,
 		ACCESS_ENGINEERING_AIRLOCK,
@@ -47,29 +30,30 @@
 		ACCESS_COMMAND_UPLOAD,
 		ACCESS_SECURITY_MAIN,
 	)
-	//? Unsorted
+
 	selection_color =  "#7F6E2C"
 	departments = list(
-		"DeptEngineering",
-		"DeptCommand",
+		/datum/department/engineering::id,
+		/datum/department/command::id,
 	)
-	sorting_order = 2
-	departments_managed = list(DEPARTMENT_ENGINEERING)
-	department_accounts = list(DEPARTMENT_ENGINEERING)
-
+	sorting_order = 5
+	departments_managed = list(/datum/department/engineering::name)
+	department_accounts = list(/datum/department/engineering::name)
 	minimum_character_age = 25
-	ideal_character_age = 50
-
 	allow_jobhop = FALSE
+	alt_titles = list(
+		/datum/prototype/alt_title/engineering_director::id,
+		/datum/prototype/alt_title/head_engineer::id,
+		)
 
 /datum/prototype/alt_title/engineering_director
 	id = "AltCeEngineeringDirector"
-	parent_role = "JobNtChiefEngineer"
+	parent_role = /datum/prototype/role/job/chief_engineer::id
 	title = "Engineering Director"
 
 /datum/prototype/alt_title/head_engineer
 	id = "AltCeHeadEngineer"
-	parent_role = "JobNtChiefEngineer"
+	parent_role = /datum/prototype/role/job/chief_engineer::id
 	title = "Head of Engineering"
 
 /datum/outfit/job/station/chief_engineer

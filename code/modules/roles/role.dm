@@ -12,15 +12,13 @@
 	//id = RoleSkissuemancer
 
 	//? Basic Info
-	///The name of the role. What players see ic.
+	/// The name of the role. What players see ic.
 	var/const/title = "Coder skill issue"
-	/// Short description - use spawntext for long one.
-	var/const/desc = "Wow, a coder fucked up."
-	/// Default message to show after join, also shows in spawners menu.
-	var/const/spawntext
-	/// Important rules/policy info
-	var/const/important_info
-	/// If/When SSroles should try filling this role roundstart
+	/// The text displayed on the main/join/ghost/tooltip menu describing this role.
+	var/tmp/menu_blurb = "A coder messed up, report this please."
+	/// The text displayed in chat to the role's player after joining.
+	var/tmp/spawn_blurb = menu_blurb
+	/// If/When SSroles should try filling this role roundstart, see MACRO comments.
 	var/const/roundstart_flag = SSR_NO_ASSIGNMENT
 
 	//? Access
@@ -32,7 +30,7 @@
 
 	//? Requirements
 	/// Determines when this role can be spawned into by players
-	var/const/join_types = JOB_ROUNDSTART | JOB_LATEJOIN
+	var/const/join_types = SSR_ROUNDSTART | SSR_LATEJOIN
 
 	/// If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least this many days old. (meaning they first signed in at least that many days before.)
 	var/const/minimum_player_age = 0

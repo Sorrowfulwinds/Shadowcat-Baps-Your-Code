@@ -117,11 +117,8 @@
 	 */
 	to_chat(new_player, SPAN_BOLD("You are [(SSrole.roles_total[job.id] == 1) ? "the" : "a"] [alt_title ? alt_title.title : job.title]."))
 
-	if(job.spawntext)
-		to_chat(new_player, SPAN_BOLD("[job.spawntext]"))
+	to_chat(new_player, SPAN_BOLD("[job.spawn_blurb]"))
 
-	if(job.important_info)
-		to_chat(new_player, SPAN_BOLD("[job.important_info]"))
 
 	if(istype(job.outfit.l_ear, /obj/item/radio) || istype(job.outfit.r_ear, /obj/item/radio))
 		to_chat(new_player, SPAN_BOLD("To speak on your department's radio channel use :h. For the use of other channels, examine your headset."))

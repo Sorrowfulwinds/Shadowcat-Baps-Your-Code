@@ -12,8 +12,10 @@
 
 	/// New title to replace base title.
 	var/const/title = "GENERIC ALT TITLE"
-	/// Text to add to the base roles spawntext. If nothing's added, leave null.
-	var/const/additional_spawntext = null
+	/// Text to replace the roles menu_blurb text
+	var/const/menu_blurb = null
+	/// Text to replace the roles spawn_blurb text
+	var/const/spawn_blurb = null
 	/// The outfit used by the alt-title. If it's the same as the base job, leave this null.
 	var/const/datum/outfit/outfit = null
 	/// If outfit replaces the base role outfit or adds on too it.

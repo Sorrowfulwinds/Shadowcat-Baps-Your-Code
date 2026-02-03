@@ -1,3 +1,5 @@
+// SSR = SSRoles
+
 /**
  * Flags for displaying role info on the manifest
  * - IC is for ingame manifests for that roles faction.
@@ -25,8 +27,8 @@
  * Flags for when a role can be joined
  * None of these is a valid option.
  */
-#define JOB_ROUNDSTART		(1<<0)
-#define JOB_LATEJOIN		(1<<1)
+#define SSR_ROUNDSTART		(1<<0)
+#define SSR_LATEJOIN		(1<<1)
 
 /**
  * Flags for when a role should be assigned roundstart

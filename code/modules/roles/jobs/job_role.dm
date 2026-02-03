@@ -18,7 +18,7 @@
 	var/const/selection_color = COLOR_WHITE
 	/// List of departments this job belongs to, if any. The first one on the list will be the 'primary' department.
 	var/const/list/departments = list()
-	/// Used for sorting jobs so boss jobs go above regular ones, and their boss's boss is above that. Larger number = higher in sorting.
+	/// Used for sorting jobs so boss jobs go above regular ones, and their boss's boss is above that. Larger number = higher in sorting. Weakly; 5 = Head, 4 = Senior, 3 = Normal, 2 = Juinor, 1 = Intern
 	var/const/sorting_order = 0
 
 	/// Is this a management position?  If yes, list of departments managed.  Otherwise null.
@@ -28,13 +28,15 @@
 
 	/// How young a character can be for this job
 	var/const/minimum_character_age = 0
-	/// Character age discrimination for roundstart job assignment lottery
-	var/const/ideal_character_age = 30
 
 	/// Should it show up on things like the ID computer?
 	var/const/can_assign = TRUE
 	// Allow joining as this job midround from off-duty position via going on-duty
 	var/const/allow_jobhop = TRUE
+
+	roundstart_flag = SSR_DURING_ASSIGNMENT
+	//instancer // TODO CAT: blah
+	//uninstancer // TODO CAT: blah
 
 /datum/prototype/role/job/get_access()
 	. = ..()
@@ -58,7 +60,8 @@
 
 /datum/prototype/role/job/proc/get_economic_payscale()
 	if(departments[1])
-		return economy_payscale * all_departments[departments[1]]
+		var/datum/department/dept = all_departments[departments[1]]
+		return economy_payscale * dept.economy_payscale
 	return economy_payscale
 
 /**
@@ -142,4 +145,3 @@
 		EA.login = 	complete_login
 		to_chat(H, "Your email account address is <b>[EA.login]</b> and the password is <b>[EA.password]</b>. This information has also been placed into your notes.")
 		H.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].")
-	// END EMAIL GENERATION

@@ -42,11 +42,7 @@
 	 */
 	to_chat(new_borg, SPAN_BOLD("You are [SSrole.roles_total[job.id] == 1 ? "the" : "a"] [alt_title ? alt_title.title : job.title]."))
 
-	if(job.spawntext)
-		to_chat(new_borg, SPAN_BOLD("[job.spawntext]"))
-
-	if(job.important_info)
-		to_chat(new_borg, SPAN_BOLD("[job.important_info]"))
+	to_chat(new_borg, SPAN_BOLD("[job.spawn_blurb]"))
 
 	/**
 	 * ?Cleanup and HUD updates
@@ -56,6 +52,6 @@
 	new_borg.update_hud_antag()
 	new_borg.reset_perspective(no_optimizations = TRUE)
 
-	//Until borgs get better preferences integration they get less welcome than visitors.
+	//Until borgs get better name in preferences integration they get less welcome than visitors.
 	if(SSticker.current_state >= GAME_STATE_PLAYING)
 		GLOB.global_announcer.autosay("A new [alt_title ? alt_title.title : job.title] has arrived on the station.", "Arrivals Announcement Computer")
