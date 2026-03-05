@@ -5108,6 +5108,7 @@
 #include "code\modules\roles\instantiators\stationjob_carbon.dm"
 #include "code\modules\roles\instantiators\stationjob_cyborg.dm"
 #include "code\modules\roles\jobs\job_role.dm"
+#include "code\modules\roles\jobs\crew\civilian\assistant.dm"
 #include "code\modules\roles\jobs\crew\command\blueshield.dm"
 #include "code\modules\roles\jobs\crew\command\bridge_officer.dm"
 #include "code\modules\roles\jobs\crew\command\captain.dm"
