@@ -4,7 +4,7 @@
 
 	menu_blurb = "The Head of Personnel manages the Service department, the Exploration team, and most other civilians. They also manage the Supply department, through the Quartermaster. In addition, the Head of Personnel oversees the personal accounts of the crew, including their money and access. If necessary, the Head of Personnel is first in line to assume Acting Command."
 
-	spawn_blurb = "You report to the Captain.\n" + IMPORTANT_JOB_TELL_ADMINS
+	spawn_blurb = CAPTAIN_REPORTEE + IMPORTANT_JOB_TELL_ADMINS
 
 	minimum_player_age = 10
 	outfit = /datum/outfit/job/station/head_of_personnel

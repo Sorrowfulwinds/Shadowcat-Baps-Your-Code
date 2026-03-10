@@ -35,34 +35,30 @@
 	)
 
 /datum/prototype/alt_title/miner
+	parent_role = /datum/prototype/role/job/miner::id
 	abstract_type = /datum/prototype/alt_title/miner
 
 /datum/prototype/alt_title/miner/drill_tech
 	id = "AltMinerDrillTech"
-	parent_role = /datum/prototype/role/job/miner::id
 	title = "Drill Technician"
 	menu_blurb = "A Drill Technician specializes in operating and maintaining the machinery needed to extract ore from veins deep below the surface."
 
 /datum/prototype/alt_title/miner/belt
 	id = "AltMinerBelt"
-	parent_role = /datum/prototype/role/job/miner::id
 	title = "Belt Miner"
 
 /datum/prototype/alt_title/miner/apprenticemine
 	id = "AltMinerApprentice"
-	parent_role = /datum/prototype/role/job/miner::id
 	title = "Apprentice Miner"
 	menu_blurb = "An Apprentice Miner is still learning about the typical grind of a miner, and should seek the guidance of other miners and salvagers for direction."
 
 /datum/prototype/alt_title/miner/apprenticesalv
 	id = "AltMinerApprenticeSalv"
-	parent_role = /datum/prototype/role/job/miner::id
 	title = "Apprentice Salvager"
 	menu_blurb = "An Apprentice Salvager is still learning about the typical grind of a salvager, and should seek the guidance of other miners and salvagers for direction."
 
 /datum/prototype/alt_title/miner/salvage
 	id = "AltMinerSalvage"
-	parent_role = /datum/prototype/role/job/miner::id
 	title = "Salvage Technician"
 	menu_blurb = "A Salvage Technician specialized in traveling to wrecks and stripping them of useful items and materials."
 

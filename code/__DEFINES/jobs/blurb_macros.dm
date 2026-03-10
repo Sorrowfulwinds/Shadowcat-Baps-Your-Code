@@ -1,1 +1,3 @@
 #define IMPORTANT_JOB_TELL_ADMINS "You are playing a job that is important for Game Progression. If you have to disconnect immediately, please notify the admins via adminhelp. Otherwise put your locker gear back into the locker and cryo out.\n"
+
+#define CAPTAIN_REPORTEE "You report to the Captain.\n"

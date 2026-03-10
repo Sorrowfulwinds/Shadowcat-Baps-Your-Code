@@ -4,7 +4,7 @@
 
 	menu_blurb = "The Chief Engineer manages the Engineering Department, ensuring that the Engineers work on what needs to be done, handling distribution of manpower as much as they handle hands-on operations and repairs. They are also expected to keep the rest of the station informed of any structural threats to the station that may be hazardous to health or disruptive to work."
 
-	spawn_blurb = "As the manager of Engineering you report to the Captain.\n" + IMPORTANT_JOB_TELL_ADMINS
+	spawn_blurb = CAPTAIN_REPORTEE + IMPORTANT_JOB_TELL_ADMINS
 
 	minimum_player_age = 7
 	outfit = /datum/outfit/job/station/chief_engineer

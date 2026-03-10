@@ -39,22 +39,20 @@
 
 /datum/prototype/alt_title/atmotech
 	abstract_type = /datum/prototype/alt_title/atmotech
+	parent_role = /datum/prototype/role/job/atmo_tech::id
 
 /datum/prototype/alt_title/atmotech/life_support
 	id = "AltAtmoLifeSupport"
-	parent_role = /datum/prototype/role/job/atmo_tech::id
 	title = "Life Support Technician"
 	menu_blurb = "A Life Support Technician is an Atmospheric Technician who specializes in establishing and maintaining breathable air in a needed area, whether that's the primary facility or a forward base."
 
 /datum/prototype/alt_title/atmotech/pipe_spec
 	id = "AltAtmoPipeSpec"
-	parent_role = /datum/prototype/role/job/atmo_tech::id
 	title = "Pipe Network Specialist"
 	menu_blurb = "A Pipe Network Specialist is an Atmospheric Technician who specializes in the complicated art of pipe networks."
 
 /datum/prototype/alt_title/atmotech/disposals_tech
 	id = "AltAtmoDisposalTech"
-	parent_role = /datum/prototype/role/job/atmo_tech::id
 	title = "Disposals Technician"
 	menu_blurb = "A Disposals Technician is an Atmospheric Technician still and can fulfill all the same duties, although specializes more in disposals delivery system's operations and configurations."
 

@@ -31,25 +31,22 @@
 
 /datum/prototype/alt_title/captain
 	abstract_type = /datum/prototype/alt_title/captain
+	parent_role = /datum/prototype/role/job/captain::id
 
 /datum/prototype/alt_title/captain/overseer
 	id = "AltCaptOverseer"
-	parent_role = /datum/prototype/role/job/captain::id
 	title = "Overseer"
 
 /datum/prototype/alt_title/captain/site
 	id = "AltCaptSite"
-	parent_role = /datum/prototype/role/job/captain::id
 	title = "Site Manager"
 
 /datum/prototype/alt_title/captain/doo
 	id = "AltCaptDirector"
-	parent_role = /datum/prototype/role/job/captain::id
 	title = "Director of Operations"
 
 /datum/prototype/alt_title/captain/facility_director
 	id = "AltCaptFacDir"
-	parent_role = /datum/prototype/role/job/captain::id
 	title = "Facility Director"
 
 /datum/outfit/job/station/captain

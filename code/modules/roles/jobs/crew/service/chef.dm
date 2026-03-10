@@ -29,27 +29,24 @@
 	)
 
 /datum/prototype/alt_title/chef
+	parent_role = /datum/prototype/role/job/chef::id
 	abstract_type = /datum/prototype/alt_title/chef
 
 /datum/prototype/alt_title/chef/souschef
 	id = "AltChefSous"
-	parent_role = /datum/prototype/role/job/chef::id
 	title = "Sous-chef"
 
 /datum/prototype/alt_title/chef/kitchen_worker
 	id = "AltChefKitchenWorker"
-	parent_role = /datum/prototype/role/job/chef::id
 	title = "Kitchen Worker"
 	menu_blurb = "A Kitchen Worker has the same duties as a Chef, though they may be less experienced."
 
 /datum/prototype/alt_title/chef/line
 	id = "AltChefLine"
-	parent_role = /datum/prototype/role/job/chef::id
 	title = "Line Cook"
 
 /datum/prototype/alt_title/chef/cook
 	id = "AltChefCook"
-	parent_role = /datum/prototype/role/job/chef::id
 	title = "Cook"
 	menu_blurb = "A Cook has the same duties as a Chef, though they may be less experienced."
 

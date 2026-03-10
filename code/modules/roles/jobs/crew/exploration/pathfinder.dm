@@ -4,7 +4,7 @@
 
 	menu_blurb = "The Pathfinder's job is to lead and manage expeditions, and is the primary authority on all off-station expeditions."
 
-	spawn_blurb = "You direct the Exploration department and report to the Facility Director"
+	spawn_blurb = CAPTAIN_REPORTEE
 
 	minimum_player_age = 7
 	outfit = /datum/outfit/job/station/pathfinder

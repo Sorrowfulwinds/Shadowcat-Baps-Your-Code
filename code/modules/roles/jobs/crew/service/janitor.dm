@@ -28,26 +28,23 @@
 	)
 
 /datum/prototype/alt_title/janitor
+	parent_role = /datum/prototype/role/job/janitor::id
 	abstract_type = /datum/prototype/alt_title/janitor
 
 /datum/prototype/alt_title/janitor/custodian
 	id = "AltJanitorCustodian"
-	parent_role = /datum/prototype/role/job/janitor::id
 	title = "Custodian"
 
 /datum/prototype/alt_title/janitor/tech
 	id = "AltJanitorTech"
-	parent_role = /datum/prototype/role/job/janitor::id
 	title = "Sanitation Technician"
 
 /datum/prototype/alt_title/janitor/gorecleaner
 	id = "AltJanitorViscera"
-	parent_role = /datum/prototype/role/job/janitor::id
 	title = "Viscera Cleaner"
 
 /datum/prototype/alt_title/janitor/maid
 	id = "AltJanitorMaid"
-	parent_role = /datum/prototype/role/job/janitor::id
 	title = "Maid"
 	outfit = /datum/outfit/job/station/janitor/maid
 

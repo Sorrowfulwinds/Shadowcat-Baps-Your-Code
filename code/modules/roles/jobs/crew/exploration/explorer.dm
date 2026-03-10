@@ -30,23 +30,21 @@
 	)
 
 /datum/prototype/alt_title/explorer
+	parent_role = /datum/prototype/role/job/explorer::id
 	abstract_type = /datum/prototype/alt_title/explorer
 
 /datum/prototype/alt_title/explorer/surveyor
 	id = "AltExploSurveyor"
-	parent_role = /datum/prototype/role/job/explorer::id
 	title = "Surveyor"
 	menu_blurb = "A Surveyor is an Explorer who specializes in measuring and mapping previously unknown areas."
 
 /datum/prototype/alt_title/explorer/field_scout
 	id = "AltExploFieldScout"
-	parent_role = /datum/prototype/role/job/explorer::id
 	title = "Field Scout"
 	menu_blurb = "A Field Scout is an Explorer who specializes in navigating unknown environment and locating points of interest to the team."
 
 /datum/prototype/alt_title/explorer/junior
 	id = "AltExploJuinor"
-	parent_role = /datum/prototype/role/job/explorer::id
 	title = "Junior Explorer"
 	menu_blurb = "A Junior Explorer has less experience than a full Explorer, and should listen to their direction."
 
