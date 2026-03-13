@@ -9,6 +9,9 @@
 	minimum_player_age = 14
 	outfit = /datum/outfit/job/station/medical_doctor/senior_physician
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
+	selection_color = "#013D3B"
+	sorting_order = 4
+	minimum_character_age = 25
 
 	minimal_access = list(
 		ACCESS_COMMAND_EVA,
@@ -23,15 +26,9 @@
 		ACCESS_SCIENCE_GENETICS,
 	)
 
-	selection_color = "#013D3B"
-	departments = list(
-		/datum/department/medical::id,
-	)
-	sorting_order = 4
-	minimum_character_age = 25
-	alt_titles = list(
-		/datum/prototype/alt_title/medical_specialist::id,
-	)
+	departments = list(/datum/department/medical::id)
+
+	alt_titles = list(/datum/prototype/alt_title/medical_specialist::id)
 
 /datum/prototype/alt_title/medical_specialist
 	id = "AltSeniorPhysicianSpecialist"

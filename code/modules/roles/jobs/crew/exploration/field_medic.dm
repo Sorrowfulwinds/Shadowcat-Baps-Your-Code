@@ -8,6 +8,8 @@
 
 	outfit = /datum/outfit/job/station/sar
 	economy_payscale = ECONOMY_PAYSCALE_JOB_DANGER
+	selection_color = "#999440"
+	sorting_order = 3
 
 	minimal_access = list(
 		ACCESS_MEDICAL_MAIN,
@@ -24,16 +26,12 @@
 		ACCESS_ENGINEERING_AIRLOCK,
 	)
 
-	selection_color = "#999440"
 	departments = list(
 		/datum/department/exploration::id,
 		/datum/department/medical::id,
 	)
-	sorting_order = 3
 
-	alt_titles = list(
-		/datum/prototype/alt_title/expedition_medic::id,
-	)
+	alt_titles = list(/datum/prototype/alt_title/expedition_medic::id)
 
 /datum/prototype/alt_title/expedition_medic
 	id = "AltFieldMedExpedition"

@@ -9,6 +9,9 @@
 	minimum_player_age = 14
 	outfit = /datum/outfit/job/station/station_engineer/senior
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
+	selection_color =  "#5B4D20"
+	sorting_order = 4
+	minimum_character_age = 25
 
 	minimal_access = list(
 		ACCESS_COMMAND_EVA,
@@ -21,17 +24,10 @@
 		ACCESS_ENGINEERING_CONSTRUCTION,
 	)
 
-	//? Unsorted
-	selection_color =  "#5B4D20"
-	departments = list(
-		/datum/department/engineering::id,
-	)
 
-	sorting_order = 4
-	minimum_character_age = 25
-	alt_titles = list(
-		/datum/prototype/alt_title/engi_trainer::id,
-	)
+	departments = list(/datum/department/engineering::id)
+
+	alt_titles = list(/datum/prototype/alt_title/engi_trainer::id)
 
 /datum/prototype/alt_title/engi_trainer
 	id = "AltSenEngiTrainer"

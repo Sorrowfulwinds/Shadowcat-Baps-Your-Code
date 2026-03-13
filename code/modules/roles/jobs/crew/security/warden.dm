@@ -8,6 +8,8 @@
 
 	minimum_player_age = 5
 	outfit = /datum/outfit/job/station/warden
+	selection_color = "#601C1C"
+	sorting_order = 4
 
 	minimal_access = list(
 		ACCESS_SECURITY_EQUIPMENT,
@@ -24,11 +26,7 @@
 		ACCESS_ENGINEERING_AIRLOCK,
 	)
 
-	selection_color = "#601C1C"
-	departments = list(
-		/datum/department/security::id,
-	)
-	sorting_order = 4
+	departments = list(/datum/department/security::id)
 
 	alt_titles = list(
 		/datum/prototype/alt_title/warden/overseer::id,

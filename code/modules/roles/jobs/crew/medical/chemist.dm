@@ -8,6 +8,9 @@
 
 	minimum_player_age = 3
 	outfit = /datum/outfit/job/station/chemist
+	selection_color = "#013D3B"
+	sorting_order = 3
+
 
 	minimal_access = list(
 		ACCESS_MEDICAL_MAIN,
@@ -21,11 +24,7 @@
 		ACCESS_SCIENCE_GENETICS,
 	)
 
-	selection_color = "#013D3B"
-	departments = list(
-		/datum/department/medical::id,
-	)
-	sorting_order = 3
+	departments = list(/datum/department/medical::id)
 
 	alt_titles = list(
 		/datum/prototype/alt_title/chemist/pharmacist::id,

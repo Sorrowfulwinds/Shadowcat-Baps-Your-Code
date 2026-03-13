@@ -7,6 +7,8 @@
 	spawn_blurb = "Grow plants for the Chef and Bartender. Appease your boss the Head of Personnel.\n"
 
 	outfit = /datum/outfit/job/station/botanist
+	selection_color = "#515151"
+	sorting_order = 3
 
 	minimal_access = list(
 		ACCESS_GENERAL_BOTANY,
@@ -16,14 +18,9 @@
 		ACCESS_GENERAL_KITCHEN,
 	)
 
-	selection_color = "#515151"
-	departments = list(
-		/datum/department/civilian::id,
-	)
-	sorting_order = 3
-	alt_titles = list(
-		/datum/prototype/alt_title/gardener::id
-	)
+	departments = list(/datum/department/civilian::id)
+
+	alt_titles = list(/datum/prototype/alt_title/gardener::id)
 
 /datum/prototype/alt_title/gardener
 	id = "AltBotanistGardener"

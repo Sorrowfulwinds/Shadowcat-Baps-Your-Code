@@ -9,6 +9,9 @@
 
 	outfit = /datum/outfit/job/station/quartermaster
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
+	selection_color =  "#9b633e"
+	sorting_order = 4 //Senior because qm is a quasi-head
+
 
 	minimal_access = list(
 		ACCESS_ENGINEERING_MAINT,
@@ -21,11 +24,8 @@
 		ACCESS_SUPPLY_QM,
 	)
 
-	selection_color =  "#9b633e"
-	departments = list(
-		/datum/department/cargo::id,
-	)
-	sorting_order = 4 //Senior because qm is a quasi-head
+	departments = list(/datum/department/cargo::id)
+
 	departments_managed = list(/datum/department/cargo::name)
 	department_accounts = list(/datum/department/cargo::name)
 

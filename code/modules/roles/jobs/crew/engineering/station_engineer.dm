@@ -8,8 +8,9 @@
 
 	minimum_player_age = 3
 	outfit = /datum/outfit/job/station/station_engineer
+	selection_color =  "#5B4D20"
+	sorting_order = 3
 
-	//? Access
 	minimal_access = list(
 		ACCESS_COMMAND_EVA,
 		ACCESS_ENGINEERING_MAIN,
@@ -23,12 +24,7 @@
 		ACCESS_ENGINEERING_ATMOS,
 	)
 
-	//? Unsorted
-	selection_color =  "#5B4D20"
-	departments = list(
-		/datum/department/engineering::id,
-	)
-	sorting_order = 3
+	departments = list(/datum/department/engineering::id)
 
 	alt_titles = list(
 		/datum/prototype/alt_title/engi/maint_tech::id,

@@ -9,6 +9,10 @@
 	minimum_player_age = 14
 	outfit = /datum/outfit/job/station/research_director
 	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
+	selection_color =  "#7F6E2C"
+	minimum_character_age = 25
+	sorting_order = 5
+	allow_jobhop = FALSE
 
 	minimal_access = list(
 		ACCESS_COMMAND_ANNOUNCE,
@@ -38,16 +42,13 @@
 		ACCESS_SECURITY_MAIN,
 	)
 
-	selection_color =  "#7F6E2C"
 	departments = list(
-		/datum/department/science::id,
+		/datum/department/research::id,
 		/datum/department/command::id,
 	)
-	sorting_order = 5
-	departments_managed = list(/datum/department/science::name)
-	department_accounts = list(/datum/department/science::name)
-	minimum_character_age = 25
-	allow_jobhop = FALSE
+	departments_managed = list(/datum/department/research::name)
+	department_accounts = list(/datum/department/research::name)
+
 	alt_titles = list(
 		/datum/prototype/alt_title/research_supervisor::id,
 		/datum/prototype/alt_title/cso::id,

@@ -9,6 +9,8 @@
 	minimum_player_age = 7
 	outfit = /datum/outfit/job/station/pathfinder
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
+	selection_color = "#d6d05c"
+	sorting_order = 5
 
 	minimal_access = list(
 		ACCESS_COMMAND_EVA,
@@ -23,17 +25,15 @@
 		ACCESS_ENGINEERING_MAINT,
 	)
 
-	selection_color = "#d6d05c"
 	departments = list(
 		/datum/department/exploration::id,
 		/datum/department/medical::id,
 	)
-	sorting_order = 5
+
 	departments_managed = list(/datum/department/exploration::name)
 	department_accounts = list(/datum/department/exploration::name)
-	alt_titles = list(
-		/datum/prototype/alt_title/expedition_lead::id,
-	)
+
+	alt_titles = list(/datum/prototype/alt_title/expedition_lead::id)
 
 /datum/prototype/alt_title/expedition_lead
 	id = "AltPathfinderLead"

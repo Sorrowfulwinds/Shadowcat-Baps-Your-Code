@@ -8,6 +8,9 @@
 
 	minimum_player_age = 5
 	outfit = /datum/outfit/job/station/command_secretary/bridge_officer
+	economy_payscale = ECONOMY_PAYSCALE_JOB_HELM
+	selection_color = "#1D1D4F"
+	sorting_order = 2
 
 	minimal_access = list(
 		ACCESS_COMMAND_BRIDGE,
@@ -15,12 +18,7 @@
 		ACCESS_ENGINEERING_MAINT,
 	)
 
-	departments = list(
-		/datum/department/command::id,
-	)
-	economy_payscale = ECONOMY_PAYSCALE_JOB_HELM
-	selection_color = "#1D1D4F"
-	sorting_order = 2
+	departments = list(/datum/department/command::id)
 	department_accounts = list(/datum/department/command::name)
 
 	alt_titles = list(

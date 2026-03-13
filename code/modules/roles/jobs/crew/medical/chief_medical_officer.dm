@@ -9,6 +9,10 @@
 	minimum_player_age = 10
 	outfit = /datum/outfit/job/station/chief_medical_officer
 	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
+	selection_color = "#026865"
+	sorting_order = 5
+	minimum_character_age = 25
+	allow_jobhop = FALSE
 
 	minimal_access = list(
 		ACCESS_COMMAND_ANNOUNCE,
@@ -30,21 +34,14 @@
 		ACCESS_SCIENCE_GENETICS,
 	)
 
-
-	selection_color = "#026865"
 	departments = list(
-		/datum/department/command::id,
 		/datum/department/medical::id,
+		/datum/department/command::id,
 	)
-	sorting_order = 5
-	departments_managed = list(
-		/datum/department/medical::name,
-	)
-	department_accounts = list(
-		/datum/department/medical::name,
-	)
-	minimum_character_age = 25
-	allow_jobhop = FALSE
+
+	departments_managed = list(/datum/department/medical::name)
+	department_accounts = list(/datum/department/medical::name)
+
 	alt_titles = list(
 			/datum/prototype/alt_title/fo::id,
 			/datum/prototype/alt_title/cro::id,

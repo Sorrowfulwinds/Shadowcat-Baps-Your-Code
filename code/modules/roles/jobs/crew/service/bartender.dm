@@ -7,6 +7,8 @@
 	spawn_blurb = "Operate the Bar. Appease your boss the Head of Personnel.\n"
 
 	outfit = /datum/outfit/job/station/bartender
+	selection_color = "#515151"
+	sorting_order = 3
 
 	minimal_access = list(
 		ACCESS_GENERAL_BAR,
@@ -16,11 +18,8 @@
 		ACCESS_GENERAL_KITCHEN,
 	)
 
-	selection_color = "#515151"
-	departments = list(
-		/datum/department/civilian::id,
-	)
-	sorting_order = 3
+	departments = list(/datum/department/civilian::id)
+
 	alt_titles = list(
 		/datum/prototype/alt_title/bartender/barkeeper::id,
 		/datum/prototype/alt_title/bartender/barmaid::id,

@@ -8,6 +8,8 @@
 
 	outfit = /datum/outfit/job/station/explorer
 	economy_payscale = ECONOMY_PAYSCALE_JOB_DANGER
+	selection_color = "#999440"
+	sorting_order = 3
 
 	minimal_access = list(
 		ACCESS_GENERAL_EXPLORER,
@@ -17,11 +19,7 @@
 		ACCESS_GENERAL_GATEWAY,
 	)
 
-	selection_color = "#999440"
-	departments = list(
-		/datum/department/exploration::id,
-	)
-	sorting_order = 3
+	departments = list(/datum/department/exploration::id)
 
 	alt_titles = list(
 		/datum/prototype/alt_title/explorer/surveyor::id,

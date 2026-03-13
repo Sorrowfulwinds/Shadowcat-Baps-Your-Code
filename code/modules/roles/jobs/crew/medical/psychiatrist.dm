@@ -7,6 +7,8 @@
 	spawn_blurb = "You work in the medical department and report to the Chief Medical Officer."
 
 	outfit = /datum/outfit/job/station/psychiatrist
+	selection_color = "#013D3B"
+	sorting_order = 3
 
 	minimal_access = list(
 		ACCESS_MEDICAL_MAIN,
@@ -18,15 +20,11 @@
 		ACCESS_MEDICAL_MORGUE,
 	)
 
-	selection_color = "#013D3B"
-	departments = list(
-		/datum/department/medical::id,
-	)
-	sorting_order = 3
 
-	alt_titles = list(
-		/datum/prototype/alt_title/psychologist::id,
-	)
+	departments = list(/datum/department/medical::id)
+
+
+	alt_titles = list(/datum/prototype/alt_title/psychologist::id)
 
 /datum/prototype/alt_title/psychologist
 	id = "AltPsychiatristPsycho"

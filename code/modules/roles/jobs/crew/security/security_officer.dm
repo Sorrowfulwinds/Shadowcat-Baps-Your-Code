@@ -8,6 +8,9 @@
 
 	minimum_player_age = 3
 	outfit = /datum/outfit/job/station/security_officer
+	selection_color = "#601C1C"
+	sorting_order = 3
+
 
 	minimal_access = list(
 		ACCESS_SECURITY_EQUIPMENT,
@@ -23,11 +26,7 @@
 		ACCESS_MEDICAL_MORGUE,
 	)
 
-	selection_color = "#601C1C"
-	departments = list(
-		/datum/department/security::id,
-	)
-	sorting_order = 3
+	departments = list(/datum/department/security::id)
 
 	alt_titles = list(
 		/datum/prototype/alt_title/security_officer/juinor::id,

@@ -8,6 +8,8 @@
 	spawn_blurb = "You report to the Quartermaster and the Head of Personnel.\n"
 
 	outfit = /datum/outfit/job/station/cargo_technician
+	selection_color =  "#7a4f33"
+	sorting_order = 3
 
 	minimal_access = list(
 		ACCESS_ENGINEERING_MAINT,
@@ -20,14 +22,9 @@
 		ACCESS_SUPPLY_MINE_OUTPOST,
 	)
 
-	selection_color =  "#7a4f33"
-	departments = list(
-		/datum/department/cargo::id,
-	)
-	sorting_order = 3
-	alt_titles = list(
-		/datum/prototype/alt_title/logi_spec::id,
-	)
+	departments = list(/datum/department/cargo::id)
+
+	alt_titles = list(/datum/prototype/alt_title/logi_spec::id)
 
 /datum/prototype/alt_title/logi_spec
 	id = "AltCargoLogiSpec"

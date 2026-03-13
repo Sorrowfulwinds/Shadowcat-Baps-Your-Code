@@ -8,12 +8,11 @@
 	spawn_blurb = "You report to no one. Self-actualize!\n"
 
 	outfit = /datum/outfit/job/station/assistant
-
 	selection_color =  "#515151"
-	departments = list(
-		/datum/department/civilian::id,
-	)
 	sorting_order = 1
+
+	departments = list(/datum/department/civilian::id)
+
 	alt_titles = list(
 		/datum/prototype/alt_title/visitor::id,
 		/datum/prototype/alt_title/server::id,
@@ -40,7 +39,6 @@
 	id = "AltCivMoraleOfficer"
 	parent_role = /datum/prototype/role/job/assistant::id
 	title = "Morale Officer"
-
 
 
 /datum/outfit/job/station/assistant

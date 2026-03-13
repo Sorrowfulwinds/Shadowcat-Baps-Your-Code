@@ -8,6 +8,9 @@
 
 	minimum_player_age = 10
 	outfit = /datum/outfit/job/station/blueshield
+	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
+	selection_color = "#1D1D4F"
+	sorting_order = 2 //Command's lapdog
 
 	minimal_access = list(
 		ACCESS_COMMAND_BLUESHIELD,
@@ -36,12 +39,7 @@
 		ACCESS_SUPPLY_MINE,
 	)
 
-	departments = list(
-		/datum/department/command::id,
-	)
-	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
-	selection_color = "#1D1D4F"
-	sorting_order = 2 //Command's lapdog
+	departments = list(/datum/department/command::id)
 
 /datum/outfit/job/station/blueshield
 	name = OUTFIT_JOB_NAME("Blueshield")

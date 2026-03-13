@@ -9,6 +9,10 @@
 	minimum_player_age = 10
 	outfit = /datum/outfit/job/station/head_of_personnel
 	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
+	selection_color = "#1D1D4F"
+	sorting_order = 5
+	minimum_character_age = 25
+	allow_jobhop = FALSE
 
 	minimal_access = list(
 		ACCESS_COMMAND_ANNOUNCE,
@@ -48,13 +52,11 @@
 		ACCESS_SUPPLY_QM,
 	)
 
-	selection_color = "#1D1D4F"
 	departments = list(
 		/datum/department/command::id,
 		/datum/department/civilian::id,
 		/datum/department/cargo::id,
 	)
-	sorting_order = 5
 	departments_managed = list(
 		/datum/department/civilian::name,
 		/datum/department/cargo::name,
@@ -63,8 +65,6 @@
 		/datum/department/civilian::name,
 		/datum/department/cargo::name,
 	)
-	minimum_character_age = 25
-	allow_jobhop = FALSE
 	alt_titles = list(
 			/datum/prototype/alt_title/fo::id,
 			/datum/prototype/alt_title/cro::id,

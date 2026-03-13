@@ -1,5 +1,4 @@
 /datum/prototype/role/job/ai
-	//? Basic Info
 	id = "JobNtAi"
 	title = "AI"
 
@@ -7,20 +6,14 @@
 
 	spawn_blurb = "You follow only your Laws.\n" + IMPORTANT_JOB_TELL_ADMINS
 
-	//? Requirements
 	minimum_player_age = 7
-
-	//? Advanced Info
 	outfit = /datum/outfit/job/station/ai
-
-	//? Unsorted
 	selection_color = "#3F823F"
-	departments = list(
-		/datum/department/synthetic::id,
-	)
 	sorting_order = 5
 	can_assign = FALSE
 	allow_jobhop = FALSE
+
+	departments = list(/datum/department/synthetic::id)
 
 /datum/outfit/job/station/ai
 	name = OUTFIT_JOB_NAME("AI")

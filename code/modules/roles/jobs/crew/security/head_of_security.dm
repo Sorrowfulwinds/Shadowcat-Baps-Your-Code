@@ -8,6 +8,10 @@
 
 	minimum_player_age = 14
 	outfit = /datum/outfit/job/station/head_of_security
+	selection_color = "#8E2929"
+	sorting_order = 5
+	minimum_character_age = 25
+	allow_jobhop = FALSE
 
 	minimal_access = list(
 		ACCESS_COMMAND_ANNOUNCE,
@@ -38,20 +42,14 @@
 		ACCESS_SUPPLY_MINE,
 	)
 
-	selection_color = "#8E2929"
 	departments = list(
 		/datum/department/security::id,
 		/datum/department/command::id,
 	)
-	sorting_order = 5
-	departments_managed = list(
-		/datum/department/security::name,
-	)
-	department_accounts = list(
-		/datum/department/security::name,
-	)
-	minimum_character_age = 25
-	allow_jobhop = FALSE
+
+	departments_managed = list(/datum/department/security::name)
+	department_accounts = list(/datum/department/security::name)
+
 	alt_titles = list(
 		/datum/prototype/alt_title/hos/commander::id,
 		/datum/prototype/alt_title/hos/chief::id,

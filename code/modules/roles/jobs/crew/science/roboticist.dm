@@ -8,6 +8,8 @@
 
 	minimum_player_age = 7
 	outfit = /datum/outfit/job/station/roboticist
+	selection_color = "#633D63"
+	sorting_order = 3
 
 	minimal_access = list(
 		ACCESS_ENGINEERING_TECHSTORAGE,
@@ -20,11 +22,7 @@
 		ACCESS_MEDICAL_MORGUE,
 	)
 
-	selection_color = "#633D63"
-	departments = list(
-		/datum/department/science::id,
-	)
-	sorting_order = 3
+	departments = list(/datum/department/research::id)
 
 	alt_titles = list(
 		/datum/prototype/alt_title/junior_roboticist::id,

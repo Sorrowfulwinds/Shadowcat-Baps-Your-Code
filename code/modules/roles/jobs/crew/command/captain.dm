@@ -9,16 +9,16 @@
 	minimum_player_age = 14
 	outfit = /datum/outfit/job/station/captain
 	economy_payscale = ECONOMY_PAYSCALE_JOB_CAPTAIN
-
 	selection_color = "#2F2F7F"
-	departments = list(
-		/datum/department/command::id,
-	)
 	sorting_order = 6 //One role above them all
-	departments_managed = list(/datum/department/command::name)
-	department_accounts = list(/datum/department/command::name)
 	minimum_character_age = 25
 	allow_jobhop = FALSE
+
+	departments = list(/datum/department/command::id)
+
+	departments_managed = list(/datum/department/command::name)
+	department_accounts = list(/datum/department/command::name)
+
 	alt_titles = list(
 		/datum/prototype/alt_title/captain/overseer::id,
 		/datum/prototype/alt_title/captain/site::id,

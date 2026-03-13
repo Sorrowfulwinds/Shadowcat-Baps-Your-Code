@@ -9,6 +9,9 @@
 	minimum_player_age = 14
 	outfit = /datum/outfit/job/station/scientist/senior_researcher
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
+	selection_color = "#633D63"
+	sorting_order = 4
+	minimum_character_age = 25
 
 	minimal_access = list(
 		ACCESS_SCIENCE_FABRICATION,
@@ -21,15 +24,9 @@
 		ACCESS_SCIENCE_GENETICS,
 	)
 
-	selection_color = "#633D63"
-	departments = list(
-		/datum/department/science::id,
-	)
-	sorting_order = 4
-	minimum_character_age = 25
-	alt_titles = list(
-		/datum/prototype/alt_title/sci_trainer::id,
-	)
+	departments = list(/datum/department/research::id)
+
+	alt_titles = list(/datum/prototype/alt_title/sci_trainer::id)
 
 /datum/prototype/alt_title/sci_trainer
 	id = "AltSeniorResearcherTrainer"

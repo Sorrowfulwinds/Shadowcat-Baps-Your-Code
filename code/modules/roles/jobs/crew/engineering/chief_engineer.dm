@@ -9,6 +9,10 @@
 	minimum_player_age = 7
 	outfit = /datum/outfit/job/station/chief_engineer
 	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
+	selection_color =  "#7F6E2C"
+	sorting_order = 5
+	minimum_character_age = 25
+	allow_jobhop = FALSE
 
 	minimal_access = list(
 		ACCESS_ENGINEERING_ATMOS,
@@ -31,16 +35,14 @@
 		ACCESS_SECURITY_MAIN,
 	)
 
-	selection_color =  "#7F6E2C"
+
 	departments = list(
 		/datum/department/engineering::id,
 		/datum/department/command::id,
 	)
-	sorting_order = 5
 	departments_managed = list(/datum/department/engineering::name)
 	department_accounts = list(/datum/department/engineering::name)
-	minimum_character_age = 25
-	allow_jobhop = FALSE
+
 	alt_titles = list(
 		/datum/prototype/alt_title/engineering_director::id,
 		/datum/prototype/alt_title/head_engineer::id,

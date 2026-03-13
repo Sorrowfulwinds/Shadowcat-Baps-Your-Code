@@ -8,15 +8,12 @@
 
 	minimum_player_age = 3
 	outfit = /datum/outfit/job/station/cyborg
-
-	//? Unsorted
 	selection_color = "#254C25"
-	departments = list(
-		/datum/department/synthetic::id,
-	)
 	sorting_order = 3
 	can_assign = FALSE
 	allow_jobhop = FALSE
+
+	departments = list(/datum/department/synthetic::id)
 
 	alt_titles = list(
 		/datum/prototype/alt_title/robot::id,

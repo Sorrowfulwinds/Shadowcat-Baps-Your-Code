@@ -9,6 +9,8 @@
 
 	outfit = /datum/outfit/job/station/shaft_miner
 	economy_payscale = ECONOMY_PAYSCALE_JOB_DANGER
+	selection_color =  "#7a4f33"
+	sorting_order = 3
 
 	minimal_access = list(
 		ACCESS_SUPPLY_MINE,
@@ -21,11 +23,8 @@
 		ACCESS_ENGINEERING_MAINT,
 	)
 
-	selection_color =  "#7a4f33"
-	departments = list(
-		/datum/department/cargo::id,
-	)
-	sorting_order = 3
+	departments = list(/datum/department/cargo::id)
+
 	alt_titles = list(
 		/datum/prototype/alt_title/miner/drill_tech::id,
 		/datum/prototype/alt_title/miner/belt::id,
