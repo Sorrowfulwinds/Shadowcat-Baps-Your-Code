@@ -229,6 +229,7 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define DEPARTMENT_TRADE			"trade"
 #define DEPARTMENT_UNKNOWN			"unknown"
 
+//TODO CAT: Delete these when done :3
 // Off-duty time
 #define PTO_CARGO			"Cargo"
 #define PTO_CIVILIAN		"Civilian"
