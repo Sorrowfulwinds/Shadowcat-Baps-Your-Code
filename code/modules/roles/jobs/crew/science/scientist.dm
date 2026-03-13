@@ -88,12 +88,12 @@
 /datum/prototype/alt_title/scientist/xenobiologist/xenozoologist
 	id = "AltScientistXenobioZoo"
 	title = "Xenozoologist"
-	title_blurb = "Xenozoologists are well versed in the study of extra-terrestrial behavior, physiology, classification, and habitats."
+	menu_blurb = "Xenozoologists are well versed in the study of extra-terrestrial behavior, physiology, classification, and habitats."
 
 /datum/prototype/alt_title/scientist/xenobiologist/xenoanthropologist
 	id = "AltScientistXenobioAnthro"
 	title = "Xenoanthropologist"
-	title_blurb = "Xenoanthropologist still heavily focuses their study on alien lifeforms, but their specialty leans more towards fellow sapient beings than simple animals."
+	menu_blurb = "Xenoanthropologist still heavily focuses their study on alien lifeforms, but their specialty leans more towards fellow sapient beings than simple animals."
 
 /datum/prototype/alt_title/scientist/xenobotanist
 	id = "AltScientistXenobotanist"

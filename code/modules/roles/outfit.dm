@@ -19,5 +19,6 @@
 		var/datum/mind/M = H.mind
 		if(M.initial_account)
 			var/datum/money_account/A = M.initial_account
+			//TODO CAT: I think this is supposed to be card and not client. iforgor how were supposed to get card here.
 			C.associated_account_number = A.account_number
 	return C
