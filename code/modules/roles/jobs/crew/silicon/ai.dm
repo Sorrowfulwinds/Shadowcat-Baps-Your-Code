@@ -12,6 +12,7 @@
 	sorting_order = 5
 	can_assign = FALSE
 	allow_jobhop = FALSE
+	instancer = /datum/role_instantiator/job_ai
 
 	departments = list(/datum/department/synthetic::id)
 

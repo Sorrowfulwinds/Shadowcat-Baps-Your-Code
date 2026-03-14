@@ -35,7 +35,7 @@
 	var/const/allow_jobhop = TRUE
 
 	roundstart_flag = SSR_DURING_ASSIGNMENT
-	//instancer // TODO CAT: blah
+	instancer = /datum/role_instantiator/job
 	//uninstancer // TODO CAT: blah
 
 /datum/prototype/role/job/get_access()
