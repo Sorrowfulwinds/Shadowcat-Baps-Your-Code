@@ -1,2 +1,2 @@
 /datum/outfit/costume
-	undress = 0
+	undress = FALSE

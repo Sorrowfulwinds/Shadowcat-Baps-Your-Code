@@ -53,7 +53,7 @@
 
 	var/flags // Specific flags
 
-	var/undress = 1	//Does the outfit undress the mob upon equp?
+	var/undress = TRUE	//Does the outfit undress the mob upon equp?
 
 /datum/outfit/proc/pre_equip(mob/living/carbon/human/H)
 	if(flags & OUTFIT_HAS_BACKPACK)

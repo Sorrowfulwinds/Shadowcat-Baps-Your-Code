@@ -44,9 +44,7 @@
 	id_type = /obj/item/card/id/civilian/chaplain
 	pda_type = /obj/item/pda/chaplain
 
-
-//TODO CAT: Good fucking god make this an instantiator. Also most of this should be under preferences. Asking this once the player is in round is way too late.
-/datum/prototype/role/job/station/chaplain/equip(var/mob/living/carbon/human/H, var/alt_title, var/ask_questions = TRUE)
+/datum/outfit/job/station/chaplain/equip(var/mob/living/carbon/human/H)
 	. = ..()
 	if(!.)
 		return
@@ -54,8 +52,6 @@
 	if(H.mind)
 		H.mind.isholy = TRUE
 
-	if(!ask_questions)
-		return
 	var/obj/item/storage/bible/B = locate(/obj/item/storage/bible) in H
 	if(!B)
 		return

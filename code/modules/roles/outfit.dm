@@ -13,12 +13,12 @@
 
 	flags = OUTFIT_HAS_BACKPACK
 
-//TODO CAT: Delete this, IDs get their own access and bank accounts should be in instantiators
 /datum/outfit/job/equip_id(mob/living/carbon/human/H, rank, assignment)
+	var/obj/item/card/id/C = ..()
+	if(!C)
+		return
 	if(H.mind)
 		var/datum/mind/M = H.mind
 		if(M.initial_account)
-			var/datum/money_account/A = M.initial_account
-			//TODO CAT: I think this is supposed to be card and not client. iforgor how were supposed to get card here.
-			C.associated_account_number = A.account_number
+			C.associated_account_number = M.initial_account
 	return C

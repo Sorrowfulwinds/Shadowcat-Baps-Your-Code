@@ -12,10 +12,11 @@
  * player - the mob of the client to spawn in
  * role - the role datum to spawn
  * alt_title - optional alternate title for the role
+ * extra_args - optional extra arguments for custom use
  *
  * Returns TRUE if spawning completes or a player readable string if spawning fails.
  */
-/datum/role_instantiator/proc/AttemptInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title, list/extra_args)
+/datum/role_instantiator/proc/AttemptInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title, list/extra_args) as text|null
 	/**
 	 * This is the last point for if the process actually spawns the player or rejects the spawning.
 	 * The instantiator is past the point of confirming if a role is available or if a player is banned.
@@ -30,6 +31,6 @@
  * Admin override proc. Will try to push through any non-critical issues and complete the spawning.
  * Return TRUE if successful or an Admin-readable string if it fails.
  */
-/datum/role_instantiator/proc/ForceInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title, list/extra_args)
+/datum/role_instantiator/proc/ForceInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title, list/extra_args) as text|num
 	//If your instantiator is particularly simple consider just hooking this straight into AttemptInstantiate() above.
 	return "No ForceInstantiate proc set for this instantiator. Try FALSE for force_instantiator"
