@@ -441,10 +441,6 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 
 	if(mind)
 		mind.active = 0					// We wish to transfer the key manually
-		// Edited to disable the destructive forced renaming for our responsible whitelist clowns.
-		//if(mind.assigned_role == "Clown")				// Give them a clownname if they are a clown
-		//	new_character.real_name = pick(GLOB.clown_names)	// I hate this being here of all places but unfortunately dna is based on real_name!
-		//	new_character.rename_self("clown")
 		mind.original = new_character
 		// todo: kick vore's persist shit into new persistence system...
 		mind.loaded_from_ckey = client.ckey

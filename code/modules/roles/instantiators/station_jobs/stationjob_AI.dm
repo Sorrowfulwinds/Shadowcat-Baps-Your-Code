@@ -7,15 +7,16 @@
 	 * ?Value checks
 	 */
 	if(!istype(job)) //Verify type so we can use the extra procs.
+		WARNING("Instantiator called with non-job role [job.id]")
 		return "Error! Please report this to staff. /role/job instantiator called with non-job role [job.id]."
-		//TODO CAT: admin log error
 
 	if(!isnewplayer(player)) //We need the mob/new_player procs to make people.
+		WARNING("Instantiator called without mob/new_player type: [player.type]")
 		return "Error! Please report this to staff. /role/job instantiator called without mob/new_player type."
-		//TODO CAT: admin log error
 
 	var/obj/landmark/spawnpoint/S = SSrole.get_role_spawnpoint(null, job.id)
 	if(!istype(S))
+		WARNING("Instantiator could not find a valid spawnpoint for [job.id].")
 		return "Error! Please report this to staff. Could not find a valid spawnpoint for [job.id]!"
 
 

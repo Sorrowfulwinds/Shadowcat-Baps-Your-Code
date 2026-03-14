@@ -5,20 +5,21 @@
  * Deletes the old mob.
  * Creates a manifest, records, bank accounts, and email account for the new char.
  */
-/datum/role_instantiator/job/AttemptInstantiate(mob/new_player/old_player, datum/prototype/role/job/job, datum/prototype/alt_title/alt_title)
+/datum/role_instantiator/job/AttemptInstantiate(mob/new_player/old_player, datum/prototype/role/job/job, datum/prototype/alt_title/alt_title, list/extra_args)
 	/**
 	 * ?Value checks
 	 */
 	if(!istype(job)) //Verify type so we can use the extra procs.
-		return "Error! Please report this to staff. /role/job instantiator called with non-job role [job.id]."
-		//TODO CAT: admin log error
+		WARNING("Instantiator called with non-job role [job.id]")
+		return "Error! Please report this to staff. /role/job instantiator called with non-job role: [job.id]."
 
 	if(!isnewplayer(old_player)) //We need the mob/new_player procs to make people.
+		WARNING("Instantiator called without mob/new_player type: [old_player.type]")
 		return "Error! Please report this to staff. /role/job instantiator called without mob/new_player type."
-		//TODO CAT: admin log error
 
 	var/obj/landmark/spawnpoint/S = SSrole.get_role_spawnpoint(old_player, job.id)
 	if(!istype(S))
+		WARNING("Instantiator could not find a valid spawnpoint for [job.id].")
 		return "Error! Please report this to staff. Could not find a valid spawnpoint for [job.id]!"
 
 	//Cache prefs in case client explodes during spawning.

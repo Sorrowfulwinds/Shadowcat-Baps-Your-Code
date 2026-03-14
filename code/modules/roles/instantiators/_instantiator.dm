@@ -15,7 +15,7 @@
  *
  * Returns TRUE if spawning completes or a player readable string if spawning fails.
  */
-/datum/role_instantiator/proc/AttemptInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title)
+/datum/role_instantiator/proc/AttemptInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title, list/extra_args)
 	/**
 	 * This is the last point for if the process actually spawns the player or rejects the spawning.
 	 * The instantiator is past the point of confirming if a role is available or if a player is banned.
@@ -23,12 +23,13 @@
 	 * Instantiators only fail if the client's spawnpoint/mob details/etc are unnacceptable.
 	 * alt_title will be null or valid.
 	 */
+	WARNING("Role <[role.id]> called with the default instantiator!")
 	return "Error! Please report this to staff immediately! Role [role.id] has the default instantiator and will not work."
 
 /**
  * Admin override proc. Will try to push through any non-critical issues and complete the spawning.
  * Return TRUE if successful or an Admin-readable string if it fails.
  */
-/datum/role_instantiator/proc/ForceInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title)
+/datum/role_instantiator/proc/ForceInstantiate(mob/player, datum/prototype/role/role, datum/prototype/alt_title, list/extra_args)
 	//If your instantiator is particularly simple consider just hooking this straight into AttemptInstantiate() above.
 	return "No ForceInstantiate proc set for this instantiator. Try FALSE for force_instantiator"
