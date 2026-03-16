@@ -7,18 +7,15 @@
 	//!Set id on downstreams
 	//id = "AltStationFungineer"
 
-	/// What role id is this alt_title used by.
-	var/const/parent_role = null
-
 	/// New title to replace base title.
-	var/const/title = "GENERIC ALT TITLE"
+	var/title = "GENERIC ALT TITLE"
 	/// Text to replace the roles menu_blurb text
-	var/const/menu_blurb = null
+	var/menu_blurb = null
 	/// Text to replace the roles spawn_blurb text
-	var/const/spawn_blurb = null
+	var/spawn_blurb = null
 	/// Override the sorting order for this role.
-	var/const/sorting_order = null
+	var/sorting_order = null
 	/// The outfit used by the alt-title. If it's the same as the base job, leave this null.
-	var/const/datum/outfit/outfit = null
+	var/datum/outfit/outfit = null
 	/// If outfit replaces the base role outfit or adds on too it.
-	var/const/outfit_flag = SSR_UNIFORM_REPLACE
+	var/outfit_flag = SSR_UNIFORM_REPLACE

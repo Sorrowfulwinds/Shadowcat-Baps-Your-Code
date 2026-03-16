@@ -56,12 +56,10 @@
 
 /datum/prototype/alt_title/research_supervisor
 	id = "AltRdSupervisor"
-	parent_role = /datum/prototype/role/job/research_director::id
 	title = "Research Supervisor"
 
 /datum/prototype/alt_title/cso
 	id = "AltRdChiefScienceOfficer"
-	parent_role = /datum/prototype/role/job/research_director::id
 	title = "Chief Science Officer"
 
 /datum/outfit/job/station/research_director

@@ -36,7 +36,6 @@
 	)
 
 /datum/prototype/alt_title/medical_doctor
-	parent_role = /datum/prototype/role/job/doctor::id
 	abstract_type = /datum/prototype/alt_title/doctor
 
 /datum/prototype/alt_title/medical_doctor/surgeon

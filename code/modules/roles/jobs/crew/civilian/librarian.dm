@@ -28,7 +28,6 @@
 	)
 
 /datum/prototype/alt_title/librarian
-	parent_role = /datum/prototype/role/job/librarian::id
 	abstract_type = /datum/prototype/alt_title/librarian
 
 /datum/prototype/alt_title/librarian/journalist

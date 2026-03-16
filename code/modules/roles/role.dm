@@ -13,45 +13,45 @@
 
 	//? Basic Info
 	/// The name of the role. What players see ic.
-	var/const/title = "Coder skill issue"
+	var/title = "Coder skill issue"
 	/// The text displayed on the main/join/ghost/tooltip menu describing this role.
 	var/tmp/menu_blurb = "A coder messed up, report this please."
 	/// The text displayed in chat to the role's player after joining.
 	var/tmp/spawn_blurb = menu_blurb
 	/// If/When SSroles should try filling this role roundstart, see MACRO comments.
-	var/const/roundstart_flag = SSR_NO_ASSIGNMENT
+	var/roundstart_flag = SSR_NO_ASSIGNMENT
 
 	//? Access
 	// The use of minimal_access and additional_access is determined by a config setting: config.jobs_have_minimal_access. May be irrelivant if this role never has an ID card.
 	/// Minimum access
-	var/const/list/minimal_access
+	var/list/minimal_access
 	/// With minimal access off, this gets added
-	var/const/list/additional_access
+	var/list/additional_access
 
 	//? Requirements
 	/// Determines when this role can be spawned into by players
-	var/const/join_types = SSR_ROUNDSTART | SSR_LATEJOIN
+	var/join_types = SSR_ROUNDSTART | SSR_LATEJOIN
 
 	/// If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least this many days old. (meaning they first signed in at least that many days before.)
-	var/const/minimum_player_age = 0
+	var/minimum_player_age = 0
 	/// This option will require players to be whitelisted via check_role_whitelist() if enabled.
-	var/const/whitelisted = FALSE
+	var/whitelisted = FALSE
 
 	//? Advanced Info
 	/// Lazylist of alternate title ids, if any.
-	var/const/list/alt_titles
+	var/list/alt_titles
 	/// The faction string this role belongs to. Might be replaced by a datum later.
-	var/const/team = JOB_FACTION_STATION
+	var/team = JOB_FACTION_STATION
 	/// Outfit to equip to this role, if any. Might be ignored by instancer.
-	var/const/datum/outfit/outfit
+	var/datum/outfit/outfit
 	/// The instantiator to spawn this role. Might override player character.
-	var/const/datum/role_instantiator/instancer
+	var/datum/role_instantiator/instancer
 	/// The uninstantiator to clean up this role.
-	var/const/datum/role_uninstantiator/uninstancer
+	var/datum/role_uninstantiator/uninstancer
 
 	//? Settings
 	/// Flags for this role's behavior on manifests. See flags for more details.
-	var/const/manifest_flags = MANIFEST_SHOW_ALL
+	var/manifest_flags = MANIFEST_SHOW_ALL
 
 /datum/prototype/role/can_be_unloaded()
 	return FALSE
@@ -113,7 +113,7 @@
 	if(!unlock_in_days(player.client))
 		return "Your account is not old enough for this role. Please try again in [unlock_in_days(C)] days."
 
-	if(alt_title?.parent_role != id) //Should be impossible to select or is a coder flub
+	if(!alt_titles.Find(alt_title.id)) //Should be impossible to select or is a coder flub
 		WARNING("Tried verifying {[id]} role with invalid alt title: {[alt_title.id]}.")
 		return "Error! Please report this to staff! Tried spawning {[id]} role with invalid {[alt_title.id]} alt title."
 
@@ -182,7 +182,7 @@
 	if(!player.client)
 		return "Error! Mob does not have a player client attached. Did they log out?"
 
-	if(alt_title?.parent_role != id)
+	if(!alt_titles.Find(alt_title.id))
 		return "Error! Invalid alt-title, null is acceptable."
 
 	if(!istype(instancer))

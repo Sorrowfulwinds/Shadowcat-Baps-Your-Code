@@ -36,12 +36,10 @@
 
 /datum/prototype/alt_title/supply_chief
 	id = "AltQmSupplyChief"
-	parent_role = /datum/prototype/role/job/quartermaster::id
 	title = "Supply Chief"
 
 /datum/prototype/alt_title/logi_man
 	id = "AltQmLogiMan"
-	parent_role = /datum/prototype/role/job/quartermaster::id
 	title= "Logistics Manager"
 
 /datum/outfit/job/station/quartermaster

@@ -11,28 +11,28 @@
 
 	//? Economy
 	/// starting money multiplier
-	var/const/economy_payscale = ECONOMY_PAYSCALE_JOB_DEFAULT
+	var/economy_payscale = ECONOMY_PAYSCALE_JOB_DEFAULT
 
 	//? Unsorted
 	/// Selection screen color
-	var/const/selection_color = COLOR_WHITE
+	var/selection_color = COLOR_WHITE
 	/// List of departments this job belongs to, if any. The first one on the list will be the 'primary' department.
-	var/const/list/departments = list()
+	var/list/departments = list()
 	/// Used for sorting jobs so boss jobs go above regular ones, and their boss's boss is above that. Larger number = higher in sorting.
-	var/const/sorting_order = SSR_NOBODY
+	var/sorting_order = SSR_NOBODY
 
 	/// Is this a management position?  If yes, list of departments managed.  Otherwise null.
-	var/const/departments_managed = null
+	var/departments_managed = null
 	/// Which department accounts should people with this position be given the pin for? Hint: should match departments_managed.
-	var/const/department_accounts = null
+	var/department_accounts = null
 
 	/// How young a character can be for this job
-	var/const/minimum_character_age = 0
+	var/minimum_character_age = 0
 
 	/// Should it show up on things like the ID computer?
-	var/const/can_assign = TRUE
+	var/can_assign = TRUE
 	// Allow joining as this job midround from off-duty position via going on-duty
-	var/const/allow_jobhop = TRUE
+	var/allow_jobhop = TRUE
 
 	roundstart_flag = SSR_DURING_ASSIGNMENT
 	instancer = /datum/role_instantiator/job

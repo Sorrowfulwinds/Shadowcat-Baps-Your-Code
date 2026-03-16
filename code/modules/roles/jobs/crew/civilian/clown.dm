@@ -27,12 +27,10 @@
 
 /datum/prototype/alt_title/jester
 	id = "AltClownJester"
-	parent_role = /datum/prototype/role/job/clown::id
 	title = "Jester"
 
 /datum/prototype/alt_title/fool
 	id = "AltClownFool"
-	parent_role = /datum/prototype/role/job/clown::id
 	title = "Fool"
 
 /datum/outfit/job/station/clown

@@ -31,7 +31,6 @@
 
 /datum/prototype/alt_title/captain
 	abstract_type = /datum/prototype/alt_title/captain
-	parent_role = /datum/prototype/role/job/captain::id
 
 /datum/prototype/alt_title/captain/overseer
 	id = "AltCaptOverseer"

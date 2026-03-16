@@ -35,7 +35,6 @@
 
 /datum/prototype/alt_title/atmotech
 	abstract_type = /datum/prototype/alt_title/atmotech
-	parent_role = /datum/prototype/role/job/atmo_tech::id
 
 /datum/prototype/alt_title/atmotech/life_support
 	id = "AltAtmoLifeSupport"

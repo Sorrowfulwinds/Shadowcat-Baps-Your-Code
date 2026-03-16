@@ -32,7 +32,6 @@
 
 /datum/prototype/alt_title/medical_specialist
 	id = "AltSeniorPhysicianSpecialist"
-	parent_role = /datum/prototype/role/job/senior_physician::id
 	title = "Medical Training Specialist"
 	menu_blurb = "A Medical Training Specialist is a senior medical professional with extensive knowledge within a particular field of medicine which is expected to perform the standard duties of a medical doctor, as well as offer training and guidance to both resident and attending physicians in all matters, especially when presented with difficult situations within their field of expertise."
 

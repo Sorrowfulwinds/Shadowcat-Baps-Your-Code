@@ -25,7 +25,6 @@
 		)
 
 /datum/prototype/alt_title/pilot
-	parent_role = /datum/prototype/role/job/pilot::id
 	abstract_type = /datum/prototype/alt_title/pilot
 
 /datum/prototype/alt_title/pilot/junior

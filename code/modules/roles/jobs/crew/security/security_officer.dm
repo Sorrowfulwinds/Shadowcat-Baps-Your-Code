@@ -35,7 +35,6 @@
 	)
 
 /datum/prototype/alt_title/security_officer
-	parent_role = /datum/prototype/role/job/security_officer::id
 	abstract_type = /datum/prototype/alt_title/security_officer
 
 /datum/prototype/alt_title/security_officer/juinor

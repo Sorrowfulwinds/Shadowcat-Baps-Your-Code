@@ -73,17 +73,14 @@
 
 /datum/prototype/alt_title/fo
 	id = "AltHopFo"
-	parent_role = /datum/prototype/role/job/hop::id
 	title = "First Officer"
 
 /datum/prototype/alt_title/cro
 	id = "AltHopCro"
-	parent_role = /datum/prototype/role/job/hop::id
 	title = "Crew Resources Officer"
 
 /datum/prototype/alt_title/hop/deputy
 	id = "AltHopDeputy"
-	parent_role = /datum/prototype/role/job/hop::id
 	title = "Deputy Director"
 
 /datum/outfit/job/station/head_of_personnel

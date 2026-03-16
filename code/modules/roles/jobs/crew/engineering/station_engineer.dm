@@ -37,7 +37,6 @@
 
 /datum/prototype/alt_title/engi
 	abstract_type = /datum/prototype/alt_title/engi
-	parent_role = /datum/prototype/role/job/engineer::id
 
 /datum/prototype/alt_title/engi/maint_tech
 	id = "AltEngiMaintTech"

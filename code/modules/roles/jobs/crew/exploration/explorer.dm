@@ -28,7 +28,6 @@
 	)
 
 /datum/prototype/alt_title/explorer
-	parent_role = /datum/prototype/role/job/explorer::id
 	abstract_type = /datum/prototype/alt_title/explorer
 
 /datum/prototype/alt_title/explorer/surveyor

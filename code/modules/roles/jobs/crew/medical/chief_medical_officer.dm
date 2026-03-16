@@ -49,7 +49,6 @@
 		)
 
 /datum/prototype/alt_title/cmo
-	parent_role = /datum/prototype/role/job/chief_medical_officer::id
 	abstract_type = /datum/prototype/alt_title/cmo
 
 /datum/prototype/alt_title/cmo/chief_physician

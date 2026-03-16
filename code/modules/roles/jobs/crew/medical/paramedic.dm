@@ -31,7 +31,6 @@
 
 /datum/prototype/alt_title/emt
 	id = "AltParamedicEmt"
-	parent_role = /datum/prototype/role/job/paramedic::id
 	title = "Emergency Medical Technician"
 	menu_blurb = "An Emergency Medical Technician is primarily concerned with the stabilization and recovery of patients who are unable to make it to the Medical Department on their own. They are capable of keeping a patient stabilized until they reach the hands of someone with more training."
 	outfit = /datum/outfit/job/station/paramedic/emt

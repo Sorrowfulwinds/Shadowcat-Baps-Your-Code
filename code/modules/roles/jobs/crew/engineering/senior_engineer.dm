@@ -31,7 +31,6 @@
 
 /datum/prototype/alt_title/engi_trainer
 	id = "AltSenEngiTrainer"
-	parent_role = /datum/prototype/role/job/senior_engineer::id
 	title = "Engineering Training Specialist"
 	menu_blurb = "An Engineering Training Specialist is an experienced engineer who dedicates their time and expertise to the training of those who are less knowledgeable."
 

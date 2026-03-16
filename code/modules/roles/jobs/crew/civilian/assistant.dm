@@ -21,7 +21,6 @@
 
 /datum/prototype/alt_title/visitor
 	id = "AltCivVisitor"
-	parent_role = /datum/prototype/role/job/assistant::id
 	title = "Visitor"
 	sorting_order = SSR_NOBODY
 	outfit = /datum/outfit/job/station/assistant/visitor
@@ -30,7 +29,6 @@
 
 /datum/prototype/alt_title/server
 	id = "AltCivServer"
-	parent_role = /datum/prototype/role/job/assistant::id
 	title = "Server"
 	outfit = /datum/outfit/job/station/assistant/server
 	menu_blurb = "An underpaid server for the dining facilities"
@@ -38,7 +36,6 @@
 
 /datum/prototype/alt_title/morale_officer
 	id = "AltCivMoraleOfficer"
-	parent_role = /datum/prototype/role/job/assistant::id
 	title = "Morale Officer"
 
 

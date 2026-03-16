@@ -26,7 +26,6 @@
 	)
 
 /datum/prototype/alt_title/chaplain
-	parent_role = /datum/prototype/role/job/chaplain::id
 	abstract_type = /datum/prototype/alt_title/chaplain
 
 /datum/prototype/alt_title/chaplain/therapist

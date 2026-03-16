@@ -28,17 +28,14 @@
 
 /datum/prototype/alt_title/bartender/barkeeper
 	id = "AltBarKeep"
-	parent_role = /datum/prototype/role/job/bartender::id
 	title = "Barkeeper"
 
 /datum/prototype/alt_title/bartender/barmaid
 	id = "AltBarMaid"
-	parent_role = /datum/prototype/role/job/bartender::id
 	title = "Barmaid"
 
 /datum/prototype/alt_title/bartender/barista
 	id = "AltBarBarista"
-	parent_role = /datum/prototype/role/job/bartender::id
 	title = "Barista"
 	menu_blurb = "A barista mans the Cafe, serving primarily non-alcoholic drinks to the crew. They generally have permission to charge for drinks or deny service to unruly patrons."
 	spawn_blurb = "Operate the Cafe. Appease your boss the Head of Personnel.\n"

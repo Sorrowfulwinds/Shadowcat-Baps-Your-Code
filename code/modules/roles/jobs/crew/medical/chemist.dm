@@ -32,7 +32,6 @@
 	)
 
 /datum/prototype/alt_title/chemist
-	parent_role = /datum/prototype/role/job/chemist::id
 	abstract_type = /datum/prototype/alt_title/chemist
 
 /datum/prototype/alt_title/chemist/pharmacist

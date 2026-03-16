@@ -29,19 +29,16 @@
 
 /datum/prototype/alt_title/command_intern
 	id = "AltBrofIntern"
-	parent_role = /datum/prototype/role/job/bridge_officer::id
 	sorting_order = SSR_INTERN
 	title = "Command Intern"
 	outfit = /datum/outfit/job/station/command_secretary
 
 /datum/prototype/alt_title/helmsman
 	id = "AltBrofHelmsman"
-	parent_role = /datum/prototype/role/job/bridge_officer::id
 	title = "Helmsman"
 
 /datum/prototype/alt_title/commsec
 	id = "AltBrofCommsec"
-	parent_role = /datum/prototype/role/job/bridge_officer::id
 	title = "Command Secretary"
 	outfit = /datum/outfit/job/station/command_secretary
 

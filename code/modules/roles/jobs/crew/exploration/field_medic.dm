@@ -35,7 +35,6 @@
 
 /datum/prototype/alt_title/expedition_medic
 	id = "AltFieldMedExpedition"
-	parent_role = /datum/prototype/role/job/field_medic::id
 	title = "Expedition Medic"
 
 /datum/outfit/job/station/sar

@@ -32,20 +32,17 @@
 
 /datum/prototype/alt_title/junior_roboticist
 	id = "AltRoboticistJuinor"
-	parent_role = /datum/prototype/role/job/roboticist::id
 	title = "Junior Roboticist"
 	sorting_order = SSR_JUINOR
 	menu_blurb = "A Junior Roboticist is someone still learning the field of robotics and should seek guidance from other roboticists and the research seniors and lead."
 
 /datum/prototype/alt_title/biomech
 	id = "AltRoboticistBiomech"
-	parent_role = /datum/prototype/role/job/roboticist::id
 	title = "Biomechanical Engineer"
 	menu_blurb = "A Biomechanical Engineer primarily works on prosthetics, and the organic parts attached to them. They may have some knowledge of the relatively simple surgical procedures used in making cyborgs and attaching prosthesis."
 
 /datum/prototype/alt_title/mech_tech
 	id = "AltRoboticistMechTech"
-	parent_role = /datum/prototype/role/job/roboticist::id
 	title = "Mechatronic Engineer"
 	menu_blurb = "A Mechatronic Engineer focuses on the construction and maintenance of Exosuits, and should be well versed in their use. They may also be called upon to work on synthetics and prosthetics, if needed."
 

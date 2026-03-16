@@ -30,7 +30,6 @@
 
 /datum/prototype/alt_title/sci_trainer
 	id = "AltSeniorResearcherTrainer"
-	parent_role = /datum/prototype/role/job/senior_researcher::id
 	title = "Research Training Specialist"
 	menu_blurb = "An Research Training Specialist is an experienced scientist who dedicates their time and expertise to the training of those who are less knowledgeable."
 

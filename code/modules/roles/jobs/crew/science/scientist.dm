@@ -42,7 +42,6 @@
 	)
 
 /datum/prototype/alt_title/scientist
-	parent_role = /datum/prototype/role/job/scientist::id
 	abstract_type = /datum/prototype/alt_title/scientist
 
 /datum/prototype/alt_title/scientist/juinor

@@ -34,7 +34,6 @@
 	)
 
 /datum/prototype/alt_title/warden
-	parent_role = /datum/prototype/role/job/warden::id
 	abstract_type = /datum/prototype/alt_title/warden
 
 /datum/prototype/alt_title/warden/overseer

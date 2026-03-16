@@ -27,7 +27,6 @@
 	)
 
 /datum/prototype/alt_title/janitor
-	parent_role = /datum/prototype/role/job/janitor::id
 	abstract_type = /datum/prototype/alt_title/janitor
 
 /datum/prototype/alt_title/janitor/custodian

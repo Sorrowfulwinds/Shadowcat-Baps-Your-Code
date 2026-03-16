@@ -23,14 +23,12 @@
 
 /datum/prototype/alt_title/robot
 	id = "AltCyborgRobot"
-	parent_role = /datum/prototype/role/job/cyborg::id
 	title = "Robot"
 	sorting_order = SSR_JUINOR
 	menu_blurb = "A Robot is a mobile station synthetic, piloted by an advanced piece of technology called a Positronic Brain. It is considered a person, legally, but is required to follow its Laws."
 
 /datum/prototype/alt_title/drone
 	id = "AltCyborgDrone"
-	parent_role = /datum/prototype/role/job/cyborg::id
 	title = "Drone"
 	sorting_order = SSR_INTERN
 	menu_blurb = "A Drone is a mobile station synthetic, piloted by a simple computer-based AI. As such, it is not a person, but rather an expensive and and important piece of station property, and is expected to follow its Laws."

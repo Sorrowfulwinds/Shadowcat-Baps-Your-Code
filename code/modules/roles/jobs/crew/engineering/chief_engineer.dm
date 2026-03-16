@@ -50,12 +50,10 @@
 
 /datum/prototype/alt_title/engineering_director
 	id = "AltCeEngineeringDirector"
-	parent_role = /datum/prototype/role/job/chief_engineer::id
 	title = "Engineering Director"
 
 /datum/prototype/alt_title/head_engineer
 	id = "AltCeHeadEngineer"
-	parent_role = /datum/prototype/role/job/chief_engineer::id
 	title = "Head of Engineering"
 
 /datum/outfit/job/station/chief_engineer

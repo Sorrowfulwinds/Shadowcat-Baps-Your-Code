@@ -24,7 +24,6 @@
 
 /datum/prototype/alt_title/poseur
 	id = "AltMimePoseur"
-	parent_role = /datum/prototype/role/job/mime::id
 	title = "Poseur"
 
 /datum/outfit/job/station/mime

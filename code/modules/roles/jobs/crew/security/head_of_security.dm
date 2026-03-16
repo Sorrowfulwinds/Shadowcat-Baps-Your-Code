@@ -57,7 +57,6 @@
 	)
 
 /datum/prototype/alt_title/hos
-	parent_role = /datum/prototype/role/job/head_of_security::id
 	abstract_type = /datum/prototype/alt_title/hos
 
 /datum/prototype/alt_title/hos/commander

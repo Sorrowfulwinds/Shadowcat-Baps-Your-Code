@@ -34,7 +34,6 @@
 	)
 
 /datum/prototype/alt_title/miner
-	parent_role = /datum/prototype/role/job/miner::id
 	abstract_type = /datum/prototype/alt_title/miner
 
 /datum/prototype/alt_title/miner/drill_tech

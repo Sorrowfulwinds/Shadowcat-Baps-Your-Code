@@ -37,7 +37,6 @@
 
 /datum/prototype/alt_title/expedition_lead
 	id = "AltPathfinderLead"
-	parent_role = /datum/prototype/role/job/pathfinder::id
 	title = "Expedition Lead"
 
 /datum/outfit/job/station/pathfinder

@@ -28,7 +28,6 @@
 
 /datum/prototype/alt_title/psychologist
 	id = "AltPsychiatristPsycho"
-	parent_role = /datum/prototype/role/job/psychiatrist::id
 	title = "Psychologist"
 	outfit = /datum/outfit/job/station/psychiatrist/psychologist
 

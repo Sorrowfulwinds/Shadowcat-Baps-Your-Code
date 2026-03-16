@@ -34,7 +34,6 @@
 	)
 
 /datum/prototype/alt_title/detective
-	parent_role = /datum/prototype/role/job/detective::id
 	abstract_type = /datum/prototype/alt_title/detective
 
 /datum/prototype/alt_title/detective/csi

@@ -28,7 +28,6 @@
 	)
 
 /datum/prototype/alt_title/chef
-	parent_role = /datum/prototype/role/job/chef::id
 	abstract_type = /datum/prototype/alt_title/chef
 
 /datum/prototype/alt_title/chef/souschef

@@ -24,7 +24,6 @@
 
 /datum/prototype/alt_title/gardener
 	id = "AltBotanistGardener"
-	parent_role = /datum/prototype/role/job/botanist::id
 	title = "Gardener"
 	menu_blurb = "A Gardener may be less professional than their counterparts, and are more likely to tend to the public gardens if they aren't needed elsewhere."
 	outfit = /datum/outfit/job/station/botanist/gardener

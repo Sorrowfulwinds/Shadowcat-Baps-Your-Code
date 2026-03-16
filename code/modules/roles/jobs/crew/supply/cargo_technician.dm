@@ -28,7 +28,6 @@
 
 /datum/prototype/alt_title/logi_spec
 	id = "AltCargoLogiSpec"
-	parent_role = /datum/prototype/role/job/cargo_tech::id
 	title = "Logistics Specialist"
 
 /datum/outfit/job/station/cargo_technician

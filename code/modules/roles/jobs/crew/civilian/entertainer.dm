@@ -29,7 +29,6 @@
 	)
 
 /datum/prototype/alt_title/entertainer
-	parent_role = /datum/prototype/role/job/entertainer::id
 	abstract_type = /datum/prototype/alt_title/entertainer
 
 /datum/prototype/alt_title/entertainer/actor
