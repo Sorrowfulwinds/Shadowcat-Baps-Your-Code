@@ -9,7 +9,7 @@
 
 	outfit = /datum/outfit/job/station/cargo_technician
 	selection_color =  "#7a4f33"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_ENGINEERING_MAINT,

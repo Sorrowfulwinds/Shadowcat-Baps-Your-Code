@@ -9,7 +9,7 @@
 	minimum_player_age = 5
 	outfit = /datum/outfit/job/station/warden
 	selection_color = "#601C1C"
-	sorting_order = 4
+	sorting_order = SSR_SENIOR
 
 	minimal_access = list(
 		ACCESS_SECURITY_EQUIPMENT,

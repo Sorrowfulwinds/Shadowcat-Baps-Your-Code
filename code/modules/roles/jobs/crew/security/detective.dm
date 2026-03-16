@@ -9,7 +9,7 @@
 	minimum_player_age = 3
 	outfit = /datum/outfit/job/station/detective
 	selection_color = "#601C1C"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_SECURITY_EQUIPMENT,

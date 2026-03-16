@@ -59,3 +59,15 @@
  */
 #define SSR_UNIFORM_REPLACE (1<<0)
 #define SSR_UNIFORM_ADDON	(1<<1)
+
+/**
+ * Used for sorting order in the manifests. Higher numbers are higher on the manifest.
+ * Weakly; 5 = Head, 4 = Senior, 3 = Normal, 2 = Juinor, 1 = Intern
+ */
+#define SSR_NOBODY		0
+#define SSR_INTERN		1
+#define SSR_JUINOR		2
+#define SSR_STANDARD	3
+#define SSR_SENIOR		4
+#define SSR_BOSS		5
+#define SSR_PROTAGONIST	6

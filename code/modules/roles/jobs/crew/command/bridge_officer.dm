@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/command_secretary/bridge_officer
 	economy_payscale = ECONOMY_PAYSCALE_JOB_HELM
 	selection_color = "#1D1D4F"
-	sorting_order = 2
+	sorting_order = SSR_NORMAL
 
 	minimal_access = list(
 		ACCESS_COMMAND_BRIDGE,
@@ -30,6 +30,7 @@
 /datum/prototype/alt_title/command_intern
 	id = "AltBrofIntern"
 	parent_role = /datum/prototype/role/job/bridge_officer::id
+	sorting_order = SSR_INTERN
 	title = "Command Intern"
 	outfit = /datum/outfit/job/station/command_secretary
 

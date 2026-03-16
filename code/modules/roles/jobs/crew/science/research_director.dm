@@ -11,7 +11,7 @@
 	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
 	selection_color =  "#7F6E2C"
 	minimum_character_age = 25
-	sorting_order = 5
+	sorting_order = SSR_BOSS
 	allow_jobhop = FALSE
 
 	minimal_access = list(

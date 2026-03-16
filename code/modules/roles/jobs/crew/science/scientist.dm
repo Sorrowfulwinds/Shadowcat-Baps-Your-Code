@@ -9,7 +9,7 @@
 	minimum_player_age = 14
 	outfit = /datum/outfit/job/station/scientist
 	selection_color = "#633D63"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_SCIENCE_FABRICATION,
@@ -48,11 +48,13 @@
 /datum/prototype/alt_title/scientist/juinor
 	id = "AltScientistJuinor"
 	title = "Juinor Scientist"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "A Junior Scientist is a lower-level member of research staff, whose main purpose is to help scientists with their specialized work in more menial fashion, while also learning the specializations in process."
 
 /datum/prototype/alt_title/scientist/assistant
 	id = "AltScientistAssistant"
 	title = "Lab Assistant"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "A Lab Assistant is a lower-level member of research staff, whose main purpose is to help scientists with their specialized work in more menial fashion, while also learning the specializations in process."
 
 /datum/prototype/alt_title/scientist/researcher

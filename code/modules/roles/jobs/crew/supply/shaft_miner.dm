@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/shaft_miner
 	economy_payscale = ECONOMY_PAYSCALE_JOB_DANGER
 	selection_color =  "#7a4f33"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_SUPPLY_MINE,
@@ -49,11 +49,13 @@
 /datum/prototype/alt_title/miner/apprenticemine
 	id = "AltMinerApprentice"
 	title = "Apprentice Miner"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "An Apprentice Miner is still learning about the typical grind of a miner, and should seek the guidance of other miners and salvagers for direction."
 
 /datum/prototype/alt_title/miner/apprenticesalv
 	id = "AltMinerApprenticeSalv"
 	title = "Apprentice Salvager"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "An Apprentice Salvager is still learning about the typical grind of a salvager, and should seek the guidance of other miners and salvagers for direction."
 
 /datum/prototype/alt_title/miner/salvage

@@ -18,8 +18,8 @@
 	var/const/selection_color = COLOR_WHITE
 	/// List of departments this job belongs to, if any. The first one on the list will be the 'primary' department.
 	var/const/list/departments = list()
-	/// Used for sorting jobs so boss jobs go above regular ones, and their boss's boss is above that. Larger number = higher in sorting. Weakly; 5 = Head, 4 = Senior, 3 = Normal, 2 = Juinor, 1 = Intern
-	var/const/sorting_order = 0
+	/// Used for sorting jobs so boss jobs go above regular ones, and their boss's boss is above that. Larger number = higher in sorting.
+	var/const/sorting_order = SSR_NOBODY
 
 	/// Is this a management position?  If yes, list of departments managed.  Otherwise null.
 	var/const/departments_managed = null
@@ -65,7 +65,7 @@
 	return economy_payscale
 
 /**
- * TODO: Staying in SSrole until the banking system is coded. Silicons pls
+ * TODO CAT: Move this to the instantiator.
  * Makes a bank acount for mob H.
  * @params
  * - H - mob/living/carbon/human
@@ -98,6 +98,7 @@
  * - H - A carbon/human with a mind
  * - faction - (optional) placeholder value
  */
+//TODO CAT: Also move this to the instantiator
 /datum/prototype/role/job/proc/setup_managed_accounts(var/mob/living/carbon/human/H, faction = JOB_FACTION_STATION)
 	if(department_accounts)
 		var/remembered_info = ""
@@ -116,6 +117,7 @@
  * @params
  * - H - A carbon/human to set up an email for.
  */
+//TODO CAT: Move this to the instantiator as well.
 /datum/prototype/role/job/proc/email_setup(var/mob/living/carbon/human/H)
 	var/domain = "freemail.nt"
 	if((LEGACY_MAP_DATUM) && LAZYLEN((LEGACY_MAP_DATUM).usable_email_tlds))

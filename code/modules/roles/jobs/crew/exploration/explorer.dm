@@ -9,7 +9,7 @@
 	outfit = /datum/outfit/job/station/explorer
 	economy_payscale = ECONOMY_PAYSCALE_JOB_DANGER
 	selection_color = "#999440"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_GENERAL_EXPLORER,
@@ -44,6 +44,7 @@
 /datum/prototype/alt_title/explorer/junior
 	id = "AltExploJuinor"
 	title = "Junior Explorer"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "A Junior Explorer has less experience than a full Explorer, and should listen to their direction."
 
 /datum/outfit/job/station/explorer

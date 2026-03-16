@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/scientist/senior_researcher
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
 	selection_color = "#633D63"
-	sorting_order = 4
+	sorting_order = SSR_SENIOR
 	minimum_character_age = 25
 
 	minimal_access = list(

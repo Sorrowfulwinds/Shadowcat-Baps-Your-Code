@@ -9,7 +9,7 @@
 	minimum_player_age = 3
 	outfit = /datum/outfit/job/station/station_engineer
 	selection_color =  "#5B4D20"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_COMMAND_EVA,
@@ -42,6 +42,7 @@
 /datum/prototype/alt_title/engi/maint_tech
 	id = "AltEngiMaintTech"
 	title = "Maintenance Technician"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "A Maintenance Technician is generally a junior Engineer, and can be expected to run the mildly unpleasant or boring tasks that other Engineers don't care to do."
 
 /datum/prototype/alt_title/engi/engine_tech
@@ -57,6 +58,7 @@
 /datum/prototype/alt_title/engi/apprentice_engineer
 	id = "AltEngiApprentice"
 	title = "Apprentice Engineer"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "An Apprentice Engineer is still learning the art of engineering, and should listen to other engineers for direction."
 
 /datum/prototype/alt_title/engi/construction_engi

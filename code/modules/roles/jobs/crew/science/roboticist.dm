@@ -9,7 +9,7 @@
 	minimum_player_age = 7
 	outfit = /datum/outfit/job/station/roboticist
 	selection_color = "#633D63"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_ENGINEERING_TECHSTORAGE,
@@ -34,6 +34,7 @@
 	id = "AltRoboticistJuinor"
 	parent_role = /datum/prototype/role/job/roboticist::id
 	title = "Junior Roboticist"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "A Junior Roboticist is someone still learning the field of robotics and should seek guidance from other roboticists and the research seniors and lead."
 
 /datum/prototype/alt_title/biomech

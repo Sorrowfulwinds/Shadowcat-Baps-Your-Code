@@ -9,7 +9,7 @@
 	minimum_player_age = 14
 	outfit = /datum/outfit/job/station/head_of_security
 	selection_color = "#8E2929"
-	sorting_order = 5
+	sorting_order = SSR_BOSS
 	minimum_character_age = 25
 	allow_jobhop = FALSE
 

@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/chief_engineer
 	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
 	selection_color =  "#7F6E2C"
-	sorting_order = 5
+	sorting_order = SSR_BOSS
 	minimum_character_age = 25
 	allow_jobhop = FALSE
 

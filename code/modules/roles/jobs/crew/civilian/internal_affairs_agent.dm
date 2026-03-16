@@ -9,7 +9,7 @@
 	minimum_player_age = 7
 	outfit = /datum/outfit/job/station/internal_affairs_agent
 	selection_color = "#515151"
-	sorting_order = 4
+	sorting_order = SSR_SENIOR
 
 	minimal_access = list(
 		ACCESS_COMMAND_IAA,

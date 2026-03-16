@@ -9,7 +9,7 @@
 	minimum_player_age = 3
 	outfit = /datum/outfit/job/station/security_officer
 	selection_color = "#601C1C"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 
 	minimal_access = list(
@@ -41,11 +41,13 @@
 /datum/prototype/alt_title/security_officer/juinor
 	id = "AltSecOffJuinor"
 	title = "Juinor Officer"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "A Junior Officer is an inexperienced Security Officer. They likely have training, but not experience, and are frequently paired off with a more senior co-worker. Junior Officers may also be expected to take over the boring duties of other Officers including patrolling the station or maintaining specific posts."
 
 /datum/prototype/alt_title/security_officer/cadet
 	id = "AltSecOffCadet"
 	title = "Security Cadet"
+	sorting_order = SSR_INTERN
 	menu_blurb = "A Security Cadet is in training to become an Officer. They have very little understanding of standard operations and procedure and should most often be partnered with an Officer to complete their training. Should the need arise a Cadet is treated in all respects as an Officer, such as if they need to make an arrest or handle a station threat. When functioning as part of a larger team, Cadets are often meant to observe and assist rather than take initiative."
 
 /datum/prototype/alt_title/security_officer/guard

@@ -9,7 +9,7 @@
 	outfit = /datum/outfit/job/station/sar
 	economy_payscale = ECONOMY_PAYSCALE_JOB_DANGER
 	selection_color = "#999440"
-	sorting_order = 3
+	sorting_order = SSR_SENIOR
 
 	minimal_access = list(
 		ACCESS_MEDICAL_MAIN,

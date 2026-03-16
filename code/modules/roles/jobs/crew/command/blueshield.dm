@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/blueshield
 	economy_payscale = ECONOMY_PAYSCALE_JOB_COMMAND
 	selection_color = "#1D1D4F"
-	sorting_order = 2 //Command's lapdog
+	sorting_order = SSR_SENIOR //Command's lapdog
 
 	minimal_access = list(
 		ACCESS_COMMAND_BLUESHIELD,

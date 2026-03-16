@@ -89,8 +89,9 @@
  */
 /datum/prototype/role/proc/VerifyPlayer(mob/player, datum/prototype/alt_title/alt_title, ignore_slots)
 	if(!istype(player)) //Should be impossible.
-		return "Error! Please report this to staff immediately! Tried spawning [id] role with non-mob!"
-		//TODO CAT: admin log this error
+		WARNING("Tried verifying {[id]} role with non-mob: {[player.type]}.")
+		return "Error! Please report this to staff immediately! Tried verifying {[id]} role with non-mob!"
+
 	if(!player.client)
 		return "You should not be able to see this. Client no longer exists on mob."
 	var/client/C = player.client
@@ -113,8 +114,8 @@
 		return "Your account is not old enough for this role. Please try again in [unlock_in_days(C)] days."
 
 	if(alt_title?.parent_role != id) //Should be impossible to select or is a coder flub
-		return "Error! Please report this to staff! Tried spawning [id] role with invalid [alt_title.id] alt title."
-		//TODO CAT: admin log this error too
+		WARNING("Tried verifying {[id]} role with invalid alt title: {[alt_title.id]}.")
+		return "Error! Please report this to staff! Tried spawning {[id]} role with invalid {[alt_title.id]} alt title."
 
 	return FALSE
 
@@ -137,14 +138,15 @@
  */
 /datum/prototype/role/proc/AttemptSpawn(mob/player, datum/prototype/alt_title/alt_title, ignore_slots, verify_player)
 	if(!istype(player)) //Should be impossible.
+		WARNING("Tried verifying {[id]} role with non-mob: {[player.type]}.")
 		return "Error! Please report this to staff immediately! Tried spawning [id] role with non-mob!"
-		//TODO CAT: admin log this error
+
 	if(!player.client)
 		return "You should not be able to see this. Client no longer exists on mob."
 
 	if(!istype(instancer)) //Coder error if true
+		WARNING("Tried spawning {[id]} role with no instantiator set.")
 		return "Error! No instantiator set for this role. Please report this to staff! [id] role has no instantiator set and failed AttemptSpawn()."
-		//TODO CAT: definitely admin log this error
 
 	if (verify_player)
 		. = VerifyPlayer(player, alt_title, ignore_slots)

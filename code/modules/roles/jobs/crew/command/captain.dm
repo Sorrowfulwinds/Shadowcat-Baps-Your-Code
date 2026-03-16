@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/captain
 	economy_payscale = ECONOMY_PAYSCALE_JOB_CAPTAIN
 	selection_color = "#2F2F7F"
-	sorting_order = 6 //One role above them all
+	sorting_order = SSR_PROTAGONIST //One role above them all
 	minimum_character_age = 25
 	allow_jobhop = FALSE
 

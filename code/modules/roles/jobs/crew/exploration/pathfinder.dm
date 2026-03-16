@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/pathfinder
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
 	selection_color = "#d6d05c"
-	sorting_order = 5
+	sorting_order = SSR_BOSS
 
 	minimal_access = list(
 		ACCESS_COMMAND_EVA,

@@ -9,7 +9,7 @@
 
 	outfit = /datum/outfit/job/station/assistant
 	selection_color =  "#515151"
-	sorting_order = 1
+	sorting_order = SSR_INTERN
 
 	departments = list(/datum/department/civilian::id)
 
@@ -23,6 +23,7 @@
 	id = "AltCivVisitor"
 	parent_role = /datum/prototype/role/job/assistant::id
 	title = "Visitor"
+	sorting_order = SSR_NOBODY
 	outfit = /datum/outfit/job/station/assistant/visitor
 	menu_blurb = "An approved visitor to the station."
 	spawn_blurb = "You are an approved visitor. You do not work here."

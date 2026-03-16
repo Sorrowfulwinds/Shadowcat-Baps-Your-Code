@@ -8,7 +8,7 @@
 
 	outfit = /datum/outfit/job/station/medical_doctor
 	selection_color = "#013D3B"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_MEDICAL_MAIN,
@@ -66,11 +66,13 @@
 /datum/prototype/alt_title/medical_doctor/resident
 	id = "AltDoctorResident"
 	title = "Medical Resident"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "A Medical Resident is someone who has a medical degree but is still in their residency, training under the supervision of more experienced doctors."
 
 /datum/prototype/alt_title/medical_doctor/intern
 	id = "AltDoctorIntern"
 	title = "Medical Intern"
+	sorting_order = SSR_INTERN
 	menu_blurb = "A Medical Intern is someone just learning the ropes of the medical field, learning from and answering to other medbay staff."
 
 

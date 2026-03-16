@@ -9,7 +9,7 @@
 	minimum_player_age = 3
 	outfit = /datum/outfit/job/station/atmospherics_technician
 	selection_color =  "#5B4D20"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_COMMAND_EVA,

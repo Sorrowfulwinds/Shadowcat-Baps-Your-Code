@@ -8,7 +8,7 @@
 
 	outfit = /datum/outfit/job/station/psychiatrist
 	selection_color = "#013D3B"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_MEDICAL_MAIN,

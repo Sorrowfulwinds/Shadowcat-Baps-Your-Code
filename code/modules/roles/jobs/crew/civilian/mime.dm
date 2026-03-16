@@ -9,7 +9,7 @@
 	outfit = /datum/outfit/job/station/mime
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
 	selection_color = "#515151"
-	sorting_order = 4
+	sorting_order = SSR_SENIOR
 	whitelisted = TRUE
 
 	minimal_access = list(

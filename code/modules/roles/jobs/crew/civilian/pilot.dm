@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/pilot
 	economy_payscale = ECONOMY_PAYSCALE_JOB_HELM
 	selection_color = "#515151"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_GENERAL_PILOT,
@@ -31,6 +31,7 @@
 /datum/prototype/alt_title/pilot/junior
 	id = "AltPilotJunior"
 	title = "Junior Pilot"
+	sorting_order = SSR_JUINOR
 	menu_blurb = "A Junior Pilot is still a trainee, here to learn from the Pilot and assist them. They are not qualified to pilot a shuttlecraft solo."
 
 /datum/prototype/alt_title/pilot/navigator

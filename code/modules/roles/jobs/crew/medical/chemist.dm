@@ -9,7 +9,7 @@
 	minimum_player_age = 3
 	outfit = /datum/outfit/job/station/chemist
 	selection_color = "#013D3B"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 
 	minimal_access = list(

@@ -8,7 +8,7 @@
 
 	outfit = /datum/outfit/job/station/assistant
 	selection_color =  "#515151"
-	sorting_order = 3
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_GENERAL_ENTERTAINMENT,

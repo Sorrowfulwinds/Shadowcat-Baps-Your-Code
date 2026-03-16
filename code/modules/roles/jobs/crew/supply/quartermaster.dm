@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/quartermaster
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
 	selection_color =  "#9b633e"
-	sorting_order = 4 //Senior because qm is a quasi-head
+	sorting_order = SSR_SENIOR //Senior because qm is a quasi-head
 
 
 	minimal_access = list(

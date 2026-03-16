@@ -9,7 +9,7 @@
 	minimum_player_age = 7
 	outfit = /datum/outfit/job/station/ai
 	selection_color = "#3F823F"
-	sorting_order = 5
+	sorting_order = SSR_BOSS
 	can_assign = FALSE
 	allow_jobhop = FALSE
 	instancer = /datum/role_instantiator/job_ai

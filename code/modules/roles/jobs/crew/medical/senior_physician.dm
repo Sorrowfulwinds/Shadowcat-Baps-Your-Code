@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/medical_doctor/senior_physician
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
 	selection_color = "#013D3B"
-	sorting_order = 4
+	sorting_order = SSR_SENIOR
 	minimum_character_age = 25
 
 	minimal_access = list(
