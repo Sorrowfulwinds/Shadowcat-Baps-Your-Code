@@ -11,12 +11,12 @@
 	outfit = /datum/outfit/trade
 	selection_color =  "#afccb8"
 	sorting_order = SSR_STANDARD
+	instancer = /datum/role_instantiator/job_trader
 
 	minimal_access = list(
 		ACCESS_FACTION_TRADER,
 		ACCESS_ENGINEERING_AIRLOCK
 		)
-
 
 	departments = list(/datum/department/misc::id)
 

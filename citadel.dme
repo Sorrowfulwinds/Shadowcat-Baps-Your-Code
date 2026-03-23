@@ -5102,6 +5102,7 @@
 #include "code\modules\roles\role.dm"
 #include "code\modules\roles\ghostrole\ghostrole.dm"
 #include "code\modules\roles\instantiators\_instantiator.dm"
+#include "code\modules\roles\instantiators\nebula_trader.dm"
 #include "code\modules\roles\instantiators\station_jobs\stationjob_AI.dm"
 #include "code\modules\roles\instantiators\station_jobs\stationjob_carbon.dm"
 #include "code\modules\roles\instantiators\station_jobs\stationjob_cyborg.dm"

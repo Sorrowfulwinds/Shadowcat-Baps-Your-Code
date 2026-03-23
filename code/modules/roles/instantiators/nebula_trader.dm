@@ -1,11 +1,7 @@
 /**
- * Instantiator for station jobs. The classic SS13 spawning experience.
- * Made for carbon humanoids and not borgs.
- * Creates a mob from the players currently selected preferences.
- * Deletes the old mob.
- * Creates a manifest, records, bank accounts, and email account for the new char.
+ * Instantiator for nebula traders.
  */
-/datum/role_instantiator/job/AttemptInstantiate(mob/new_player/old_player, datum/prototype/role/job/job, datum/prototype/alt_title/alt_title, list/extra_args)
+/datum/role_instantiator/job_trader/AttemptInstantiate(mob/new_player/old_player, datum/prototype/role/job/job, datum/prototype/alt_title/alt_title, list/extra_args)
 	/**
 	 * ?Value checks
 	 */
@@ -27,7 +23,6 @@
 
 	/**
 	 * ?Spawning new mob and mob details setup / Deleting old mob
-	 * !Here be dragons. Past this point actual ingame effects happen. Pray it works.
 	 */
 	//Creates a player's char mob at spawnpoint and moves the client to it. Ejects its own errors directly.
 	var/mob/living/carbon/human/new_player = old_player.create_character(get_turf(S.GetSpawnLoc()))
@@ -41,12 +36,8 @@
 	new_player.mind.assigned_role_id = job.id
 	new_player.mind.alt_title_id = alt_title?.id
 
-	//Legacy Manifest call
-	data_core.manifest_inject(new_player)
-
 	// Set up their accounts
 	setup_bank_account(new_player)
-	setup_managed_accounts(new_player)
 	email_setup(new_player)
 
 	//We are actively in the world and recorded now so might as well log it.
@@ -97,6 +88,7 @@
 	 */
 	to_chat(new_player, SPAN_BOLD("You are [(SSrole.roles_total[job.id] == 1) ? "the" : "a"] [alt_title ? alt_title.title : job.title]."))
 
+	to_chat(new_player, SPAN_BOLD("[job.menu_blurb]")) //Lets just reiterate your non-antag status.
 	to_chat(new_player, SPAN_BOLD("[job.spawn_blurb]"))
 
 
@@ -106,20 +98,7 @@
 	/**
 	 * ?Cleanup and HUD updates
 	 */
-	new_player.update_hud_sec_job()
-	new_player.update_hud_sec_implants()
-	new_player.update_hud_antag()
 	new_player.reset_perspective(no_optimizations = TRUE)
-
-	if(SSticker.current_state >= GAME_STATE_PLAYING)
-		GLOB.global_announcer.autosay(S.RenderAnnounceMessage(
-			new_player,
-			new_player.client,
-			job.id,
-			new_player.real_name,
-			(alt_title ? alt_title.title : job.title)
-		), "Arrivals Announcement Computer")
-
 
 
 /**
@@ -127,7 +106,7 @@
  * @params
  * - H - mob/living/carbon/human
  */
-/datum/role_instantiator/job/proc/setup_bank_account(var/mob/living/carbon/human/H)
+/datum/role_instantiator/job_trader/proc/setup_bank_account(var/mob/living/carbon/human/H)
 	if(H?.mind?.initial_account)
 		return
 
@@ -149,39 +128,18 @@
 	to_chat(H, "<span class='notice'><b>Your account number is: [M.account_number], your account pin is: [M.remote_access_pin], you have $[M.money].</b></span>")
 
 /**
- * Tell H all the department accounts they manage and their info.
- * @params
- * - H - A /carbon/human with a mind
- */
-/datum/role_instantiator/job/proc/setup_managed_accounts(var/mob/living/carbon/human/H)
-	if(department_accounts)
-		var/remembered_info = ""
-		for(var/D in department_accounts)
-			var/datum/money_account/d_a = GLOB.department_accounts[D]
-			remembered_info += "<b>[d_a.owner_name] number:</b> #[d_a.account_number]<br>"
-			remembered_info += "<b>[d_a.owner_name] pin:</b> [d_a.remote_access_pin]<br>"
-			remembered_info += "<b>[d_a.owner_name] funds:</b> $[d_a.money]<br>"
-
-		if(remembered_info)
-			H.mind.store_memory(remembered_info)
-
-/**
- * Set up an NT email for H.
+ * Set up an Nebula email for H.
  * @params
  * - H - A /carbon/human to set up an email for.
  */
-/datum/prototype/role/job/proc/email_setup(var/mob/living/carbon/human/H)
-	var/domain = "freemail.nt"
-	if((LEGACY_MAP_DATUM) && LAZYLEN((LEGACY_MAP_DATUM).usable_email_tlds))
-		domain = (LEGACY_MAP_DATUM).usable_email_tlds[1]
-
+/datum/prototype/role/job_trader/proc/email_setup(var/mob/living/carbon/human/H)
 	var/sanitized_name = sanitize(replacetext(replacetext(lowertext(H.real_name), " ", "."), "'", ""))
-	var/complete_login = "[sanitized_name]@[domain]"
+	var/complete_login = "[sanitized_name]@nebula.ftu"
 
 	//Try making a unique login up to 10 times.
 	var/fail_out = 0
 	while(ntnet_global.does_email_exist(complete_login) && (fail_out < 10))
-		complete_login = "[sanitized_name][random_id(/datum/computer_file/data/email_account/, 100, 999)]@[domain]"
+		complete_login = "[sanitized_name][random_id(/datum/computer_file/data/email_account/, 100, 999)]@nebula.ftu"
 
 	// If login generation failed they dont get an email.
 	if(ntnet_global.does_email_exist(complete_login))
@@ -199,7 +157,7 @@
  * @params
  * - H - A /carbon/human to give aids to.
  */
-/datum/prototype/role/job/proc/give_cripple_equipment(var/mob/living/carbon/human/H)
+/datum/prototype/role/job_trader/proc/give_cripple_equipment(var/mob/living/carbon/human/H)
 		//Deploy wheelchair if they have it or if they need it
 	if(istype(new_player))
 		var/obj/item/organ/external/l_foot = new_player.get_organ("l_foot")
