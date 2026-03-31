@@ -36,7 +36,7 @@
 	)
 
 /datum/prototype/alt_title/medical_doctor
-	abstract_type = /datum/prototype/alt_title/doctor
+	abstract_type = /datum/prototype/alt_title/medical_doctor
 
 /datum/prototype/alt_title/medical_doctor/surgeon
 	id = "AltDoctorSurgeon"

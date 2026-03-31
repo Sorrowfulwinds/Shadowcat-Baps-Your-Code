@@ -45,8 +45,9 @@
 	data_core.manifest_inject(new_player)
 
 	// Set up their accounts
-	setup_bank_account(new_player)
-	setup_managed_accounts(new_player)
+	setup_bank_account(new_player, job.get_economic_payscale())
+	if(job.department_accounts)
+		setup_managed_accounts(new_player, job.department_accounts)
 	email_setup(new_player)
 
 	//We are actively in the world and recorded now so might as well log it.
@@ -127,16 +128,16 @@
  * @params
  * - H - mob/living/carbon/human
  */
-/datum/role_instantiator/job/proc/setup_bank_account(var/mob/living/carbon/human/H)
+/datum/role_instantiator/job/proc/setup_bank_account(var/mob/living/carbon/human/H, var/economic_payscale)
 	if(H?.mind?.initial_account)
 		return
 
-	var/money_amount = round(get_economic_payscale() * ECONOMY_PAYSCALE_BASE * ECONOMY_PAYSCALE_MULT * H.mind.original_pref_economic_modifier + gaussian(ECONOMY_PAYSCALE_RANDOM_MEAN, ECONOMY_PAYSCALE_RANDOM_DEV))
+	var/money_amount = round(economic_payscale * ECONOMY_PAYSCALE_BASE * ECONOMY_PAYSCALE_MULT * H.mind.original_pref_economic_modifier + gaussian(ECONOMY_PAYSCALE_RANDOM_MEAN, ECONOMY_PAYSCALE_RANDOM_DEV))
 
 	var/datum/money_account/M = create_account(H.real_name, money_amount, null)
 
-	var/remembered_info = "<b>Your account number is:</b> #[M.account_number]<br> \
-							<b>Your account pin is:</b> [M.remote_access_pin]<br> \
+	var/remembered_info = "<b>Your account number is:</b> #[M.account_number]<br>\
+							<b>Your account pin is:</b> [M.remote_access_pin]<br>\
 							<b>Your account funds are:</b> $[M.money]<br>"
 
 	if(M.transaction_log.len)
@@ -153,17 +154,15 @@
  * @params
  * - H - A /carbon/human with a mind
  */
-/datum/role_instantiator/job/proc/setup_managed_accounts(var/mob/living/carbon/human/H)
-	if(department_accounts)
-		var/remembered_info = ""
-		for(var/D in department_accounts)
-			var/datum/money_account/d_a = GLOB.department_accounts[D]
-			remembered_info += "<b>[d_a.owner_name] number:</b> #[d_a.account_number]<br>"
-			remembered_info += "<b>[d_a.owner_name] pin:</b> [d_a.remote_access_pin]<br>"
-			remembered_info += "<b>[d_a.owner_name] funds:</b> $[d_a.money]<br>"
+/datum/role_instantiator/job/proc/setup_managed_accounts(var/mob/living/carbon/human/H, var/list/department_accounts)
+	var/remembered_info = ""
+	for(var/D in department_accounts)
+		var/datum/money_account/d_a = GLOB.department_accounts[D]
+		remembered_info += "<b>[d_a.owner_name] number:</b> #[d_a.account_number]<br>\
+							<b>[d_a.owner_name] pin:</b> [d_a.remote_access_pin]<br>\
+							<b>[d_a.owner_name] funds:</b> $[d_a.money]<br>"
 
-		if(remembered_info)
-			H.mind.store_memory(remembered_info)
+	H.mind.store_memory(remembered_info)
 
 /**
  * Set up an NT email for H.
@@ -201,11 +200,11 @@
  */
 /datum/prototype/role/job/proc/give_cripple_equipment(var/mob/living/carbon/human/H)
 		//Deploy wheelchair if they have it or if they need it
-	if(istype(new_player))
-		var/obj/item/organ/external/l_foot = new_player.get_organ("l_foot")
-		var/obj/item/organ/external/r_foot = new_player.get_organ("r_foot")
+	if(istype(H))
+		var/obj/item/organ/external/l_foot = H.get_organ("l_foot")
+		var/obj/item/organ/external/r_foot = H.get_organ("r_foot")
 
-		var/obj/item/storage/S = locate() in new_player.contents
+		var/obj/item/storage/S = locate() in H.contents
 		var/obj/item/wheelchair/R
 
 		if(S)
@@ -213,13 +212,13 @@
 
 		if(!l_foot || !r_foot || R)
 			var/wheelchair_type = R?.unfolded_type || /obj/structure/bed/chair/wheelchair
-			var/obj/structure/bed/chair/wheelchair/W = new wheelchair_type(new_player.loc)
-			W.buckle_mob(new_player)
-			W.add_fingerprint(new_player)
+			var/obj/structure/bed/chair/wheelchair/W = new wheelchair_type(H.loc)
+			W.buckle_mob(H)
+			W.add_fingerprint(H)
 			if(R)
 				W.color = R.color
 				qdel(R)
 
 	//Try giving the blind glasses
-	if(new_player.disabilities & DISABILITY_NEARSIGHTED)
-		new_player.equip_to_slot_or_del(new /obj/item/clothing/glasses/regular(new_player), SLOT_ID_GLASSES)
+	if(H.disabilities & DISABILITY_NEARSIGHTED)
+		H.equip_to_slot_or_del(new /obj/item/clothing/glasses/regular(H), SLOT_ID_GLASSES)

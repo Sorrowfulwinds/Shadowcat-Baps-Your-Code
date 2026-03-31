@@ -17,7 +17,7 @@
 	/// The text displayed on the main/join/ghost/tooltip menu describing this role.
 	var/tmp/menu_blurb = "A coder messed up, report this please."
 	/// The text displayed in chat to the role's player after joining.
-	var/tmp/spawn_blurb = menu_blurb
+	var/tmp/spawn_blurb = "A coder messed up, report this please."
 	/// If/When SSroles should try filling this role roundstart, see MACRO comments.
 	var/roundstart_flag = SSR_NO_ASSIGNMENT
 

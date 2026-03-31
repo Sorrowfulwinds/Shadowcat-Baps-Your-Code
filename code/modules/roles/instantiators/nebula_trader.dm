@@ -1,7 +1,7 @@
 /**
  * Instantiator for nebula traders.
  */
-/datum/role_instantiator/job_trader/AttemptInstantiate(mob/new_player/old_player, datum/prototype/role/job/job, datum/prototype/alt_title/alt_title, list/extra_args)
+/datum/role_instantiator/job/trader/AttemptInstantiate(mob/new_player/old_player, datum/prototype/role/job/job, datum/prototype/alt_title/alt_title, list/extra_args)
 	/**
 	 * ?Value checks
 	 */
@@ -37,7 +37,7 @@
 	new_player.mind.alt_title_id = alt_title?.id
 
 	// Set up their accounts
-	setup_bank_account(new_player)
+	setup_bank_account(new_player, job.get_economic_payscale())
 	email_setup(new_player)
 
 	//We are actively in the world and recorded now so might as well log it.
@@ -100,39 +100,12 @@
 	 */
 	new_player.reset_perspective(no_optimizations = TRUE)
 
-
-/**
- * Makes a bank acount for mob H.
- * @params
- * - H - mob/living/carbon/human
- */
-/datum/role_instantiator/job_trader/proc/setup_bank_account(var/mob/living/carbon/human/H)
-	if(H?.mind?.initial_account)
-		return
-
-	var/money_amount = round(get_economic_payscale() * ECONOMY_PAYSCALE_BASE * ECONOMY_PAYSCALE_MULT * H.mind.original_pref_economic_modifier + gaussian(ECONOMY_PAYSCALE_RANDOM_MEAN, ECONOMY_PAYSCALE_RANDOM_DEV))
-
-	var/datum/money_account/M = create_account(H.real_name, money_amount, null)
-
-	var/remembered_info = "<b>Your account number is:</b> #[M.account_number]<br> \
-							<b>Your account pin is:</b> [M.remote_access_pin]<br> \
-							<b>Your account funds are:</b> $[M.money]<br>"
-
-	if(M.transaction_log.len)
-		var/datum/transaction/T = M.transaction_log[1]
-		remembered_info += "<b>Your account was created:</b> [T.time], [T.date] at [T.source_terminal]<br>"
-	H.mind.store_memory(remembered_info)
-
-	H.mind.initial_account = M
-
-	to_chat(H, "<span class='notice'><b>Your account number is: [M.account_number], your account pin is: [M.remote_access_pin], you have $[M.money].</b></span>")
-
 /**
  * Set up an Nebula email for H.
  * @params
  * - H - A /carbon/human to set up an email for.
  */
-/datum/prototype/role/job_trader/proc/email_setup(var/mob/living/carbon/human/H)
+/datum/prototype/role/job/trader/proc/email_setup(var/mob/living/carbon/human/H)
 	var/sanitized_name = sanitize(replacetext(replacetext(lowertext(H.real_name), " ", "."), "'", ""))
 	var/complete_login = "[sanitized_name]@nebula.ftu"
 
@@ -151,33 +124,3 @@
 		EA.login = 	complete_login
 		to_chat(H, "Your email account address is <b>[EA.login]</b> and the password is <b>[EA.password]</b>. This information has also been placed into your notes.")
 		H.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].")
-
-/**
- * Give them a wheel chair and glasses if they need it.
- * @params
- * - H - A /carbon/human to give aids to.
- */
-/datum/prototype/role/job_trader/proc/give_cripple_equipment(var/mob/living/carbon/human/H)
-		//Deploy wheelchair if they have it or if they need it
-	if(istype(new_player))
-		var/obj/item/organ/external/l_foot = new_player.get_organ("l_foot")
-		var/obj/item/organ/external/r_foot = new_player.get_organ("r_foot")
-
-		var/obj/item/storage/S = locate() in new_player.contents
-		var/obj/item/wheelchair/R
-
-		if(S)
-			R = locate() in S.contents
-
-		if(!l_foot || !r_foot || R)
-			var/wheelchair_type = R?.unfolded_type || /obj/structure/bed/chair/wheelchair
-			var/obj/structure/bed/chair/wheelchair/W = new wheelchair_type(new_player.loc)
-			W.buckle_mob(new_player)
-			W.add_fingerprint(new_player)
-			if(R)
-				W.color = R.color
-				qdel(R)
-
-	//Try giving the blind glasses
-	if(new_player.disabilities & DISABILITY_NEARSIGHTED)
-		new_player.equip_to_slot_or_del(new /obj/item/clothing/glasses/regular(new_player), SLOT_ID_GLASSES)
