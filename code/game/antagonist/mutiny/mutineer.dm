@@ -6,7 +6,7 @@ var/datum/antagonist/mutineer/mutineers
 	role_text_plural = "Mutineers"
 	id = MODE_MUTINEER
 	antag_indicator = "mutineer"
-	restricted_jobs = list("Facility Director")
+	restricted_jobs = list(/datum/prototype/role/job/captain::id)
 
 /datum/antagonist/mutineer/New(var/no_reference)
 	..()

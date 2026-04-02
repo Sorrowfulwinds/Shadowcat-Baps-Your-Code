@@ -29,9 +29,26 @@ var/datum/antagonist/revolutionary/revs
 	faction_indicator = "rev"
 	faction_invisible = 1
 
-	restricted_jobs = list("AI", "Cyborg")
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Internal Affairs Agent", "Facility Director", "Head of Personnel", "Head of Security", "Chief Engineer", "Research Director", "Chief Medical Officer")
-	roundstart_restricted = list("Internal Affairs Agent", "Facility Director", "Head of Personnel", "Head of Security", "Chief Engineer", "Research Director", "Chief Medical Officer")
+	restricted_jobs = list(/datum/prototype/role/job/ai::id, /datum/prototype/role/job/cyborg::id)
+	protected_jobs = list(/datum/prototype/role/job/detective::id,
+							/datum/prototype/role/job/head_of_security::id,
+							/datum/prototype/role/job/security_officer::id,
+							/datum/prototype/role/job/warden::id,
+							/datum/prototype/role/job/captain::id,
+							/datum/prototype/role/job/internal_affairs_agent::id,
+							/datum/prototype/role/job/hop::id,
+							/datum/prototype/role/job/chief_engineer::id,
+							/datum/prototype/role/job/chief_medical_officer::id,
+							/datum/prototype/role/job/research_director::id,
+						)
+	roundstart_restricted = list(/datum/prototype/role/job/head_of_security::id,
+									/datum/prototype/role/job/captain::id,
+									/datum/prototype/role/job/internal_affairs_agent::id,
+									/datum/prototype/role/job/hop::id,
+									/datum/prototype/role/job/chief_engineer::id,
+									/datum/prototype/role/job/chief_medical_officer::id,
+									/datum/prototype/role/job/research_director::id,
+								)
 
 /datum/antagonist/revolutionary/New()
 	..()

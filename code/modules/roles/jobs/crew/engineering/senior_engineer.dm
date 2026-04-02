@@ -7,7 +7,7 @@
 	spawn_blurb = "You work in the Engineering department and report to the Chief Engineer."
 
 	minimum_player_age = 14
-	outfit = /datum/outfit/job/station/station_engineer/senior
+	outfit = /datum/outfit/job/station/senior_engineer
 	economy_payscale = ECONOMY_PAYSCALE_JOB_SENIOR
 	selection_color =  "#5B4D20"
 	sorting_order = SSR_SENIOR

@@ -11,7 +11,13 @@ var/datum/antagonist/traitor/infiltrator/infiltrators
 	role_text = "Infiltrator"
 	role_text_plural = "Infiltrators"
 	welcome_text = "To speak on your team's private channel, use :t."
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Internal Affairs Agent", "Head of Security", "Facility Director")
+	protected_jobs = list(/datum/prototype/role/job/detective::id,
+							/datum/prototype/role/job/head_of_security::id,
+							/datum/prototype/role/job/security_officer::id,
+							/datum/prototype/role/job/warden::id,
+							/datum/prototype/role/job/captain::id,
+							/datum/prototype/role/job/internal_affairs_agent::id,
+						)
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	can_speak_aooc = TRUE
 

@@ -198,7 +198,7 @@
 
 	var/out = "<B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"
 	out += "Mind currently owned by ckey: [ckey] [active?"(synced)":"(not synced)"]<br>"
-	out += "Assigned role: [assigned_role]. <a href='?src=\ref[src];role_edit=1'>Edit</a><br>"
+	out += "Assigned role: [assigned_role_id]. <a href='?src=\ref[src];role_edit=1'>Edit</a><br>"
 	out += "<hr>"
 	out += "Factions and special roles:<br><table>"
 	for(var/antag_type in GLOB.all_antag_types)
@@ -254,9 +254,9 @@
 		if(antag) antag.place_mob(src.current)
 
 	else if (href_list["role_edit"])
-		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in RSroles.legacy_all_job_titles()
+		var/new_role = input("Select new role", "Assigned role", assigned_role_id) as null|anything in RSroles.get_all_job_titles()
 		if (!new_role) return
-		assigned_role = new_role
+		assigned_role_id = new_role
 
 	else if (href_list["memory_edit"])
 		var/new_memo = sanitize(input("Write new memory", "Memory", memory) as null|message)
@@ -327,7 +327,7 @@
 					new_objective = new objective_path
 					new_objective.owner = src
 					new_objective:target = M.mind
-					new_objective.explanation_text = "[objective_type] [M.real_name], the [M.mind.special_role ? M.mind:special_role : M.mind:assigned_role]."
+					new_objective.explanation_text = "[objective_type] [M.real_name], the [M.mind.secret_role_id ? M.mind.secret_role_id : M.mind.assigned_role_id]."
 
 			if ("prevent")
 				new_objective = new /datum/objective/block
@@ -529,7 +529,7 @@
 
 /datum/mind/proc/reset()
 	assigned_role_id =   null
-	special_role_id =    null
+	secret_role_id =    null
 	alt_title_id =  null
 	changeling =      null
 	initial_account = null
@@ -538,16 +538,6 @@
 	has_been_rev =    0
 	rev_cooldown =    0
 	brigged_since =   -1
-
-//Antagonist role check
-/mob/living/proc/check_special_role(role)
-	if(mind)
-		if(!role)
-			return mind.special_role
-		else
-			return (mind.special_role == role) ? 1 : 0
-	else
-		return 0
 
 //Initialisation procs
 /mob/proc/mind_initialize()
@@ -569,8 +559,8 @@
 //HUMAN
 /mob/living/carbon/human/mind_initialize()
 	..()
-	if(!mind.assigned_role)
-		mind.assigned_role = USELESS_JOB
+	if(!mind.assigned_role_id)
+		mind.assigned_role_id = USELESS_JOB_ID
 
 //slime
 /mob/living/simple_mob/slime/mind_initialize()

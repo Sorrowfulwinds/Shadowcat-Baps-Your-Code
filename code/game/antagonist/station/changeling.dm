@@ -5,8 +5,13 @@
 	role_text_plural = "Changelings"
 	bantype = "changeling"
 	feedback_tag = "changeling_objective"
-	restricted_jobs = list("AI", "Cyborg")
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Facility Director")
+	restricted_jobs = list(/datum/prototype/role/job/ai::id, /datum/prototype/role/job/cyborg::id)
+	protected_jobs = list(/datum/prototype/role/job/detective::id,
+							/datum/prototype/role/job/head_of_security::id,
+							/datum/prototype/role/job/security_officer::id,
+							/datum/prototype/role/job/warden::id,
+							/datum/prototype/role/job/captain::id,
+						)
 	welcome_text = "Use say \"#g message\" to communicate with your fellow changelings. Remember: you get all of their absorbed DNA if you absorb them."
 	antag_sound = 'sound/effects/antag_notice/ling_alert.ogg'
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE

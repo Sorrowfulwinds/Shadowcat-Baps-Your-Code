@@ -245,7 +245,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			return
 		resting = 1
 		var/turf/location = get_turf(src)
-		var/special_role = check_special_role()
+		var/special_role = mind.secret_role_id
 		if(!istype(loc,/obj/machinery/cryopod))
 			log_and_message_admins("has ghosted outside cryo[special_role ? " as [special_role]" : ""]. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)",usr)
 		else if(special_role)

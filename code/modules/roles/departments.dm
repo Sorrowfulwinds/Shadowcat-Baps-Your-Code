@@ -23,7 +23,7 @@
 	name = DEPARTMENT_CARGO
 	id = "DeptCargo"
 	color = "#BB9040"
-	sorting_order = SSR_NORMAL
+	sorting_order = SSR_STANDARD
 	economy_payscale = ECONOMY_PAYSCALE_DEPT_SUP
 
 /datum/department/centcom
@@ -71,7 +71,7 @@
 	name = DEPARTMENT_PLANET
 	id = "DeptExploration"
 	color = "#bab421"
-	sorting_order = SSR_NORMAL
+	sorting_order = SSR_STANDARD
 	economy_payscale = ECONOMY_PAYSCALE_DEPT_SUP
 
 /datum/department/research
@@ -85,7 +85,7 @@
 	name = DEPARTMENT_SECURITY
 	id = "DeptSecurity"
 	color = "#8E0000"
-	sorting_order = SSR_NORMAL
+	sorting_order = SSR_STANDARD
 	economy_payscale = ECONOMY_PAYSCALE_DEPT_SEC
 
 /datum/department/synthetic

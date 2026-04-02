@@ -460,39 +460,6 @@ SUBSYSTEM_DEF(ticker)
 	if(temp_buckle)	qdel(temp_buckle)	//release everybody
 	return
 
-
-/datum/controller/subsystem/ticker/proc/create_characters()
-	//! TEMPORARY PATCH: putting people in nullspace results in obscene behavior from BYOND
-	//? since we really don't want to kill login ..() without reason, we spawn them at random overflow spawnpoint.
-	var/obj/landmark/spawnpoint/S
-	for(var/faction in SSrole.overflow_spawnpoints)
-		var/list/spawnpoints = SSrole.overflow_spawnpoints[faction]
-		S = SAFEPICK(spawnpoints)
-	if(!S)
-		log_and_message_admins("Unable to get overflow spawnpoint; roundstart is going to lag.")
-	//! END
-	for(var/mob/new_player/player in GLOB.player_list)
-		if(!player.mind)
-			continue
-
-		if(!player.ready)
-			player.new_player_panel_proc()
-			continue
-
-		if(player.mind.assigned_role=="AI")
-			player.close_spawn_windows()
-			player.AIize()
-		else if(!player.mind.assigned_role)
-			player.new_player_panel_proc()
-			continue
-		else
-			var/mob/living/carbon/human/new_char = player.create_character(S)
-			if(new_char)
-				qdel(player)
-			if(istype(new_char) && !(new_char.mind.assigned_role=="Cyborg"))
-				data_core.manifest_inject(new_char)
-
-
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/mob/living/player in GLOB.player_list)
 		if(player.mind)
@@ -630,7 +597,7 @@ SUBSYSTEM_DEF(ticker)
 	var/list/total_antagonists = list()
 	//Look into all mobs in world, dead or alive
 	for(var/datum/mind/Mind in minds)
-		var/temprole = Mind.special_role
+		var/temprole = Mind.secret_role_id
 		if(temprole)							//if they are an antagonist of some sort.
 			if(temprole in total_antagonists)	//If the role exists already, add the name to it
 				total_antagonists[temprole] += ", [Mind.name]([Mind.ckey])"

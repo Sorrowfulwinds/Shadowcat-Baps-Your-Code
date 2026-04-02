@@ -11,9 +11,18 @@ var/datum/antagonist/cultist/cult
 	role_text = "Cultist"
 	role_text_plural = "Cultists"
 	bantype = "cultist"
-	restricted_jobs = list("Chaplain","AI", "Cyborg")
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Internal Affairs Agent", "Head of Security", "Facility Director")
-	roundstart_restricted = list("Internal Affairs Agent", "Head of Security", "Facility Director")
+	restricted_jobs = list(/datum/prototype/role/job/chaplain::id, /datum/prototype/role/job/ai::id, /datum/prototype/role/job/cyborg::id)
+	protected_jobs = list(/datum/prototype/role/job/detective::id,
+							/datum/prototype/role/job/head_of_security::id,
+							/datum/prototype/role/job/security_officer::id,
+							/datum/prototype/role/job/warden::id,
+							/datum/prototype/role/job/captain::id,
+							/datum/prototype/role/job/internal_affairs_agent::id,
+						)
+	roundstart_restricted = list(/datum/prototype/role/job/head_of_security::id,
+									/datum/prototype/role/job/captain::id,
+									/datum/prototype/role/job/internal_affairs_agent::id,
+								)
 	role_type = BE_CULTIST
 	feedback_tag = "cult_objective"
 	antag_indicator = "cult"

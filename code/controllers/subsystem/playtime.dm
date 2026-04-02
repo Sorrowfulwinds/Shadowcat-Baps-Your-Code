@@ -62,10 +62,9 @@ SUBSYSTEM_DEF(playtime)
 		. = list(PLAYER_PLAYTIME_DEAD)
 	else
 		. = list(PLAYER_PLAYTIME_LIVING)
-		var/best_effort_attempt_at_resolving_legacy_name_based_roles = M.mind?.assigned_role
-		var/datum/prototype/role/job/J = RSroles.legacy_job_by_title(best_effort_attempt_at_resolving_legacy_name_based_roles)
-		if(J)
-			. += PLAYER_PLAYTIME_ROLE(J.id)
+		var/player_role_id = M.mind?.assigned_role_id
+		if(RSroles.verify_id(player_role_id))
+			. += PLAYER_PLAYTIME_ROLE(player_role_id)
 
 /datum/controller/subsystem/playtime/proc/queue_playtimes(client/C)
 	set waitfor = FALSE

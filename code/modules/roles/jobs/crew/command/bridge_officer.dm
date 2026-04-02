@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/station/command_secretary/bridge_officer
 	economy_payscale = ECONOMY_PAYSCALE_JOB_HELM
 	selection_color = "#1D1D4F"
-	sorting_order = SSR_NORMAL
+	sorting_order = SSR_STANDARD
 
 	minimal_access = list(
 		ACCESS_COMMAND_BRIDGE,

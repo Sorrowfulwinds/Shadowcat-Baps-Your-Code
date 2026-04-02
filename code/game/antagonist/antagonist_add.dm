@@ -5,8 +5,9 @@
 
 	//do this again, just in case
 	if(flags & ANTAG_OVERRIDE_JOB)
-		player.assigned_role = role_text
-	player.special_role = role_text
+	//TODO: Either neuter this proc or make sure role_text is always a valid ID.
+		player.assigned_role_id = role_text
+	player.secret_role_id = role_text
 
 	if(istype(player.current, /mob/observer/dead))
 		create_default(player.current)
@@ -43,7 +44,8 @@
 	if(nonstandard_role_type)
 		faction_members |= player
 		to_chat(player.current, "<span class='danger'><font size=3>You are \a [nonstandard_role_type]!</font></span>")
-		player.special_role = nonstandard_role_type
+		//TODO: Neuter this proc or confirm nonstandard_role_type is always a valid id
+		player.secret_role_id = nonstandard_role_type
 		if(nonstandard_role_msg)
 			to_chat(player.current, "<span class='notice'>[nonstandard_role_msg]</span>")
 		update_icons_added(player)
@@ -56,7 +58,7 @@
 		to_chat(player.current, "<span class='danger'><font size = 3>You are no longer a [role_text]!</font></span>")
 		current_antagonists -= player
 		faction_members -= player
-		player.special_role = null
+		player.secret_role_id = null
 		update_icons_removed(player)
 		player.current.update_hud_antag()
 		if(!is_special_character(player))

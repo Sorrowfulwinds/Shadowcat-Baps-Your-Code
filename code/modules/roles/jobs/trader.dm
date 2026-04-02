@@ -11,7 +11,7 @@
 	outfit = /datum/outfit/trade
 	selection_color =  "#afccb8"
 	sorting_order = SSR_STANDARD
-	instancer = /datum/role_instantiator/job_trader
+	instancer = /datum/role_instantiator/job/trader
 
 	minimal_access = list(
 		ACCESS_FACTION_TRADER,
